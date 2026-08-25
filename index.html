@@ -149,6 +149,13 @@
       border-radius: 15px;
       padding: 14px;
       margin: 12px 0;
+      transition: 0.25s;
+    }
+
+    .social-item.completed {
+      border-color: #20d66b;
+      background: rgba(32, 214, 107, 0.08);
+      box-shadow: 0 0 12px rgba(32, 214, 107, 0.12);
     }
 
     .social-icon {
@@ -176,6 +183,7 @@
 
     .social-info {
       flex: 1;
+      min-width: 0;
     }
 
     .social-info strong {
@@ -197,6 +205,18 @@
       border-radius: 9px;
       font-weight: 800;
       cursor: pointer;
+      white-space: nowrap;
+      transition: 0.25s;
+    }
+
+    .social-button:hover {
+      transform: scale(1.03);
+    }
+
+    .social-button.completed {
+      background: #20d66b;
+      color: white;
+      cursor: default;
     }
 
     .continue-button {
@@ -210,6 +230,7 @@
       font-weight: bold;
       font-size: 16px;
       cursor: not-allowed;
+      transition: 0.25s;
     }
 
     .continue-button.active {
@@ -324,7 +345,7 @@
       font-size: 25px;
       cursor: pointer;
       z-index: 1000;
-      box-shadow: 0 0 18px rgba(255, 208, 0, 0.35);
+      box-shadow: 0 0 18px rgba(255, 208, 7, 0.35);
     }
 
     .floating-menu {
@@ -449,7 +470,7 @@
 
 
   <!-- ==========================================
-       PANTALLA DE REDES SOCIALES
+       PANTALLA DE REDES
   =========================================== -->
 
   <section id="socialScreen" class="screen hidden">
@@ -467,16 +488,20 @@
 
     <div class="card">
 
-      <h2>🔥 Mis redes sociales</h2>
+      <h2>🔥 Sígueme en mis redes</h2>
 
       <p class="card-description">
-        Antes de continuar, visita mis tres redes oficiales.
+        Visita mis tres redes oficiales para continuar.
       </p>
 
 
-      <!-- YOUTUBE -->
+      <!-- =========================
+           YOUTUBE
+      ========================== -->
 
-      <div class="social-item">
+      <div
+        id="social-youtube"
+        class="social-item">
 
         <div class="social-icon youtube-icon">
           ▶
@@ -491,6 +516,7 @@
         </div>
 
         <button
+          id="button-youtube"
           class="social-button"
           onclick="openSocial(
             'youtube',
@@ -504,9 +530,13 @@
       </div>
 
 
-      <!-- FACEBOOK -->
+      <!-- =========================
+           FACEBOOK
+      ========================== -->
 
-      <div class="social-item">
+      <div
+        id="social-facebook"
+        class="social-item">
 
         <div class="social-icon facebook-icon">
           f
@@ -521,6 +551,7 @@
         </div>
 
         <button
+          id="button-facebook"
           class="social-button"
           onclick="openSocial(
             'facebook',
@@ -534,9 +565,13 @@
       </div>
 
 
-      <!-- WHATSAPP -->
+      <!-- =========================
+           WHATSAPP
+      ========================== -->
 
-      <div class="social-item">
+      <div
+        id="social-whatsapp"
+        class="social-item">
 
         <div class="social-icon whatsapp-icon">
           ☎
@@ -551,6 +586,7 @@
         </div>
 
         <button
+          id="button-whatsapp"
           class="social-button"
           onclick="openSocial(
             'whatsapp',
@@ -564,9 +600,12 @@
       </div>
 
 
+      <!-- CONTADOR SOLO DE REDES COMPLETADAS.
+           NO ES UN TEMPORIZADOR. -->
+
       <div class="social-counter">
 
-        Redes visitadas:
+        Redes completadas:
         <strong id="socialCount">0 / 3</strong>
 
       </div>
@@ -574,8 +613,7 @@
 
       <button
         id="continueButton"
-        class="continue-button"
-        onclick="goToMain()">
+        class="continue-button">
 
         🔒 CONTINUAR
 
@@ -607,9 +645,6 @@
 
     <div class="card">
 
-
-      <!-- ESTADÍSTICAS -->
-
       <div class="stat-box">
 
         <div class="stat">
@@ -639,8 +674,6 @@
 
       </div>
 
-
-      <!-- PRÓXIMO SORTEO -->
 
       <div class="next-draw">
 
@@ -731,22 +764,39 @@
 <script>
 
   /* ==========================================
-     REDES VISITADAS
+     ESTADO DE LAS REDES
   =========================================== */
 
-  let socialVisited = {
+  const socialState = {
 
-    youtube: false,
+    youtube: {
+      openedAt: null,
+      completed: false
+    },
 
-    facebook: false,
+    facebook: {
+      openedAt: null,
+      completed: false
+    },
 
-    whatsapp: false
+    whatsapp: {
+      openedAt: null,
+      completed: false
+    }
 
   };
 
 
+  /*
+   * 25 segundos expresados en milisegundos.
+   * El usuario NO verá este tiempo.
+   */
+
+  const REQUIRED_TIME = 25 * 1000;
+
+
   /* ==========================================
-     INICIO DE SESIÓN — DEMOSTRACIÓN
+     INICIO DE SESIÓN - DEMOSTRACIÓN
   =========================================== */
 
   function loginDemo(provider) {
@@ -770,10 +820,31 @@
 
 
   /* ==========================================
-     ABRIR RED SOCIAL
+     ABRIR UNA RED
   =========================================== */
 
   function openSocial(network, url) {
+
+    /*
+     * Si ya fue completada, no hacemos nada.
+     */
+
+    if (socialState[network].completed) {
+      return;
+    }
+
+
+    /*
+     * Guardamos el momento exacto
+     * en que abrió el enlace.
+     */
+
+    socialState[network].openedAt = Date.now();
+
+
+    /*
+     * Abrimos la red en una nueva pestaña.
+     */
 
     window.open(
       url,
@@ -781,60 +852,137 @@
       "noopener,noreferrer"
     );
 
+  }
 
-    socialVisited[network] = true;
+
+  /* ==========================================
+     CUANDO EL USUARIO REGRESA
+  =========================================== */
+
+  function checkSocialTime() {
+
+    let changed = false;
 
 
-    updateSocialCounter();
+    Object.keys(socialState).forEach(function(network) {
+
+      const state = socialState[network];
+
+
+      /*
+       * Si no ha abierto la red o ya está completada,
+       * no hacemos nada.
+       */
+
+      if (
+        state.openedAt === null ||
+        state.completed
+      ) {
+        return;
+      }
+
+
+      const elapsed =
+        Date.now() - state.openedAt;
+
+
+      /*
+       * Solo se completa después de 25 segundos.
+       */
+
+      if (elapsed >= REQUIRED_TIME) {
+
+        state.completed = true;
+
+        state.openedAt = null;
+
+        markSocialCompleted(network);
+
+        changed = true;
+
+      }
+
+    });
+
+
+    if (changed) {
+
+      updateSocialCounter();
+
+    }
 
   }
 
 
   /* ==========================================
-     ACTUALIZAR CONTADOR
+     MARCAR RED COMO COMPLETADA
+  =========================================== */
+
+  function markSocialCompleted(network) {
+
+    const item =
+      document.getElementById(
+        "social-" + network
+      );
+
+
+    const button =
+      document.getElementById(
+        "button-" + network
+      );
+
+
+    item.classList.add("completed");
+
+    button.classList.add("completed");
+
+    button.textContent =
+      "✓ COMPLETADO";
+
+  }
+
+
+  /* ==========================================
+     ACTUALIZAR ESTADO
   =========================================== */
 
   function updateSocialCounter() {
 
-    let count = 0;
+    let completedCount = 0;
 
 
-    if (socialVisited.youtube) {
+    Object.keys(socialState).forEach(function(network) {
 
-      count++;
+      if (socialState[network].completed) {
 
-    }
+        completedCount++;
 
+      }
 
-    if (socialVisited.facebook) {
-
-      count++;
-
-    }
-
-
-    if (socialVisited.whatsapp) {
-
-      count++;
-
-    }
+    });
 
 
     document
       .getElementById("socialCount")
-      .textContent = count + " / 3";
+      .textContent =
+      completedCount + " / 3";
 
 
-    const button =
-      document.getElementById("continueButton");
+    const continueButton =
+      document.getElementById(
+        "continueButton"
+      );
 
 
-    if (count >= 3) {
+    if (completedCount === 3) {
 
-      button.classList.add("active");
+      continueButton.classList.add("active");
 
-      button.textContent =
+      continueButton.textContent =
         "✅ CONTINUAR";
+
+      continueButton.onclick =
+        goToMain;
 
     }
 
@@ -842,20 +990,67 @@
 
 
   /* ==========================================
-     CONTINUAR A LA WEB
+     DETECTAR CUANDO REGRESA A LA PÁGINA
+  =========================================== */
+
+  document.addEventListener(
+    "visibilitychange",
+    function() {
+
+      if (
+        document.visibilityState === "visible"
+      ) {
+
+        checkSocialTime();
+
+      }
+
+    }
+  );
+
+
+  /*
+   * También comprobamos cuando la ventana
+   * vuelve a estar activa.
+   */
+
+  window.addEventListener(
+    "focus",
+    function() {
+
+      checkSocialTime();
+
+    }
+  );
+
+
+  /*
+   * Comprobación adicional al regresar.
+   * No muestra ningún temporizador.
+   */
+
+  setInterval(
+    checkSocialTime,
+    1000
+  );
+
+
+  /* ==========================================
+     CONTINUAR
   =========================================== */
 
   function goToMain() {
 
-    if (
+    const allCompleted =
+      Object.keys(socialState)
+        .every(function(network) {
 
-      !socialVisited.youtube ||
+          return socialState[network].completed;
 
-      !socialVisited.facebook ||
+        });
 
-      !socialVisited.whatsapp
 
-    ) {
+    if (!allCompleted) {
 
       return;
 
@@ -881,16 +1076,18 @@
   function toggleSocialMenu() {
 
     const menu =
-      document.getElementById("floatingMenu");
+      document.getElementById(
+        "floatingMenu"
+      );
 
 
-    if (menu.style.display === "block") {
+    if (
+      menu.style.display === "block"
+    ) {
 
       menu.style.display = "none";
 
-    }
-
-    else {
+    } else {
 
       menu.style.display = "block";
 
