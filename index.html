@@ -1207,4 +1207,42 @@ document.getElementById(
 
 /* =====================================
    MENÚ DE REDES
-======================
+===================================== */
+
+function toggleSocialMenu(){
+
+    const menu =
+        document.getElementById(
+            "socialMenu"
+        );
+
+
+    const button =
+        document.getElementById(
+            "socialToggle"
+        );
+
+
+    menu.classList.toggle(
+        "open"
+    );
+
+
+    if(
+        menu.classList.contains("open")
+    ){
+
+        button.textContent = "✕";
+
+    }else{
+
+        button.textContent = "🔗";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
