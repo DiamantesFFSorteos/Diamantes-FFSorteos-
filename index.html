@@ -1,1 +1,904 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Diamantes-FFSorteos | Soy Sigas</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, #3a2900 0%, #080808 35%, #000000 100%);
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .app {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .screen {
+      width: 100%;
+      max-width: 480px;
+      min-height: 650px;
+      position: relative;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* =========================
+       LOGO
+    ========================== */
+
+    .logo {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .logo-crown {
+      font-size: 55px;
+      filter: drop-shadow(0 0 15px #ffc400);
+    }
+
+    .logo h1 {
+      font-size: 42px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      color: #ffd000;
+      text-shadow:
+        0 0 8px #ffb700,
+        0 0 20px rgba(255, 183, 0, 0.5);
+    }
+
+    .logo p {
+      color: #ffffff;
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin-top: 5px;
+    }
+
+    /* =========================
+       TARJETAS
+    ========================== */
+
+    .card {
+      background: rgba(10, 10, 10, 0.94);
+      border: 1px solid rgba(255, 200, 0, 0.5);
+      border-radius: 22px;
+      padding: 28px 22px;
+      box-shadow:
+        0 0 25px rgba(255, 193, 7, 0.12),
+        inset 0 0 20px rgba(255, 193, 7, 0.03);
+    }
+
+    .card h2 {
+      text-align: center;
+      color: #ffd000;
+      margin-bottom: 10px;
+      font-size: 25px;
+    }
+
+    .card-description {
+      text-align: center;
+      color: #cfcfcf;
+      line-height: 1.5;
+      margin-bottom: 25px;
+      font-size: 14px;
+    }
+
+    /* =========================
+       LOGIN
+    ========================== */
+
+    .login-button {
+      width: 100%;
+      border: none;
+      border-radius: 13px;
+      padding: 15px;
+      margin-top: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .login-button:active {
+      transform: scale(0.98);
+    }
+
+    .google {
+      background: white;
+      color: #222;
+    }
+
+    .facebook {
+      background: #1877f2;
+      color: white;
+    }
+
+    .button-icon {
+      margin-right: 8px;
+      font-size: 18px;
+    }
+
+    /* =========================
+       REDES SOCIALES
+    ========================== */
+
+    .social-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 15px;
+      padding: 14px;
+      margin: 12px 0;
+    }
+
+    .social-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 23px;
+      flex-shrink: 0;
+    }
+
+    .youtube-icon {
+      background: #ff0000;
+    }
+
+    .facebook-icon {
+      background: #1877f2;
+    }
+
+    .whatsapp-icon {
+      background: #25d366;
+    }
+
+    .social-info {
+      flex: 1;
+    }
+
+    .social-info strong {
+      display: block;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .social-info span {
+      color: #999;
+      font-size: 12px;
+    }
+
+    .social-button {
+      border: none;
+      background: #ffd000;
+      color: #000;
+      padding: 10px 13px;
+      border-radius: 9px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .continue-button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 16px;
+      border: none;
+      border-radius: 13px;
+      background: #444;
+      color: #888;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: not-allowed;
+    }
+
+    .continue-button.active {
+      background: linear-gradient(135deg, #ffd000, #ff9d00);
+      color: #000;
+      cursor: pointer;
+      box-shadow: 0 0 18px rgba(255, 193, 7, 0.35);
+    }
+
+    .social-counter {
+      text-align: center;
+      color: #aaa;
+      font-size: 13px;
+      margin-top: 15px;
+    }
+
+    /* =========================
+       PÁGINA PRINCIPAL
+    ========================== */
+
+    .welcome {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .welcome h2 {
+      color: #ffd000;
+      font-size: 29px;
+      margin-bottom: 8px;
+    }
+
+    .welcome p {
+      color: #bbb;
+    }
+
+    .stat-box {
+      display: flex;
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .stat {
+      flex: 1;
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 15px;
+      padding: 18px 10px;
+      text-align: center;
+    }
+
+    .stat-number {
+      display: block;
+      color: #ffd000;
+      font-size: 27px;
+      font-weight: 900;
+    }
+
+    .stat-label {
+      color: #aaa;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .next-draw {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 208, 0, 0.12),
+        rgba(255, 140, 0, 0.04)
+      );
+      border: 1px solid rgba(255, 208, 0, 0.35);
+      border-radius: 18px;
+      padding: 22px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .next-draw h3 {
+      color: #ffd000;
+      margin-bottom: 12px;
+    }
+
+    .date {
+      font-size: 25px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .status {
+      display: inline-block;
+      background: #252000;
+      color: #ffd000;
+      padding: 7px 13px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* =========================
+       BOTÓN FLOTANTE
+    ========================== */
+
+    .floating-social {
+      position: fixed;
+      right: 18px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      border: 2px solid #ffd000;
+      background: #111;
+      color: #ffd000;
+      font-size: 25px;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 0 18px rgba(255, 208, 0, 0.35);
+    }
+
+    .floating-menu {
+      position: fixed;
+      right: 18px;
+      bottom: 88px;
+      width: 200px;
+      background: #101010;
+      border: 1px solid #ffd000;
+      border-radius: 15px;
+      padding: 10px;
+      display: none;
+      z-index: 999;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    }
+
+    .floating-menu a {
+      display: block;
+      text-decoration: none;
+      color: white;
+      padding: 12px;
+      border-radius: 9px;
+      margin: 4px 0;
+      background: #181818;
+    }
+
+    .floating-menu a:hover {
+      background: #252000;
+      color: #ffd000;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 400px) {
+
+      .logo h1 {
+        font-size: 34px;
+      }
+
+      .card {
+        padding: 22px 16px;
+      }
+
+      .social-item {
+        gap: 8px;
+      }
+
+      .social-button {
+        padding: 9px 10px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- ==========================================
+       PANTALLA DE INICIO DE SESIÓN
+  =========================================== -->
+
+  <section id="loginScreen" class="screen">
+
+    <div class="logo">
+
+      <div class="logo-crown">👑</div>
+
+      <h1>SOY SIGAS</h1>
+
+      <p>DIAMANTES-FFSORTEOS</p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h2>Bienvenido</h2>
+
+      <p class="card-description">
+        Inicia sesión para participar en nuestros sorteos.
+      </p>
+
+
+      <button
+        class="login-button google"
+        onclick="loginDemo('Google')">
+
+        <span class="button-icon">G</span>
+
+        Continuar con Google
+
+      </button>
+
+
+      <button
+        class="login-button facebook"
+        onclick="loginDemo('Facebook')">
+
+        <span class="button-icon">f</span>
+
+        Continuar con Facebook
+
+      </button>
+
+
+      <p
+        class="card-description"
+        style="margin-top:22px;margin-bottom:0;font-size:11px;">
+
+        Al continuar aceptas las reglas de participación
+        de Diamantes-FFSorteos.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==========================================
+       PANTALLA DE REDES SOCIALES
+  =========================================== -->
+
+  <section id="socialScreen" class="screen hidden">
+
+    <div class="logo">
+
+      <div class="logo-crown">👑</div>
+
+      <h1>SOY SIGAS</h1>
+
+      <p>FORMA PARTE DE LA FAMILIA</p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h2>🔥 Mis redes sociales</h2>
+
+      <p class="card-description">
+        Antes de continuar, visita mis tres redes oficiales.
+      </p>
+
+
+      <!-- YOUTUBE -->
+
+      <div class="social-item">
+
+        <div class="social-icon youtube-icon">
+          ▶
+        </div>
+
+        <div class="social-info">
+
+          <strong>YouTube</strong>
+
+          <span>Soy Sigas Official</span>
+
+        </div>
+
+        <button
+          class="social-button"
+          onclick="openSocial(
+            'youtube',
+            'https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b'
+          )">
+
+          ABRIR
+
+        </button>
+
+      </div>
+
+
+      <!-- FACEBOOK -->
+
+      <div class="social-item">
+
+        <div class="social-icon facebook-icon">
+          f
+        </div>
+
+        <div class="social-info">
+
+          <strong>Facebook</strong>
+
+          <span>Soy Sigas</span>
+
+        </div>
+
+        <button
+          class="social-button"
+          onclick="openSocial(
+            'facebook',
+            'https://www.facebook.com/profile.php?id=61593805138979'
+          )">
+
+          ABRIR
+
+        </button>
+
+      </div>
+
+
+      <!-- WHATSAPP -->
+
+      <div class="social-item">
+
+        <div class="social-icon whatsapp-icon">
+          ☎
+        </div>
+
+        <div class="social-info">
+
+          <strong>WhatsApp</strong>
+
+          <span>Canal Soy Sigas</span>
+
+        </div>
+
+        <button
+          class="social-button"
+          onclick="openSocial(
+            'whatsapp',
+            'https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g'
+          )">
+
+          ABRIR
+
+        </button>
+
+      </div>
+
+
+      <div class="social-counter">
+
+        Redes visitadas:
+        <strong id="socialCount">0 / 3</strong>
+
+      </div>
+
+
+      <button
+        id="continueButton"
+        class="continue-button"
+        onclick="goToMain()">
+
+        🔒 CONTINUAR
+
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==========================================
+       PÁGINA PRINCIPAL
+  =========================================== -->
+
+  <section id="mainScreen" class="screen hidden">
+
+    <div class="welcome">
+
+      <div class="logo-crown">👑</div>
+
+      <h2>Diamantes-FFSorteos</h2>
+
+      <p>
+        ¡Bienvenido a la familia Soy Sigas!
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+
+      <!-- ESTADÍSTICAS -->
+
+      <div class="stat-box">
+
+        <div class="stat">
+
+          <span class="stat-number">
+            0 / 50
+          </span>
+
+          <span class="stat-label">
+            Participantes
+          </span>
+
+        </div>
+
+
+        <div class="stat">
+
+          <span class="stat-number">
+            0
+          </span>
+
+          <span class="stat-label">
+            Total histórico
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRÓXIMO SORTEO -->
+
+      <div class="next-draw">
+
+        <h3>
+          🎡 PRÓXIMO SORTEO
+        </h3>
+
+
+        <div class="date">
+          Día 15 / 30
+        </div>
+
+
+        <p style="color:#aaa;margin-bottom:12px;">
+
+          Las inscripciones se abrirán
+          10 días antes.
+
+        </p>
+
+
+        <span class="status">
+
+          PRÓXIMAMENTE
+
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+
+<!-- ==========================================
+     BOTÓN FLOTANTE DE REDES
+=========================================== -->
+
+<button
+  class="floating-social"
+  onclick="toggleSocialMenu()">
+
+  🔗
+
+</button>
+
+
+<div
+  id="floatingMenu"
+  class="floating-menu">
+
+
+  <a
+    href="https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    ▶️ YouTube
+
+  </a>
+
+
+  <a
+    href="https://www.facebook.com/profile.php?id=61593805138979"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    🔵 Facebook
+
+  </a>
+
+
+  <a
+    href="https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    🟢 WhatsApp
+
+  </a>
+
+
+</div>
+
+
+<script>
+
+  /* ==========================================
+     REDES VISITADAS
+  =========================================== */
+
+  let socialVisited = {
+
+    youtube: false,
+
+    facebook: false,
+
+    whatsapp: false
+
+  };
+
+
+  /* ==========================================
+     INICIO DE SESIÓN — DEMOSTRACIÓN
+  =========================================== */
+
+  function loginDemo(provider) {
+
+    console.log(
+      "Inicio de sesión seleccionado:",
+      provider
+    );
+
+
+    document
+      .getElementById("loginScreen")
+      .classList.add("hidden");
+
+
+    document
+      .getElementById("socialScreen")
+      .classList.remove("hidden");
+
+  }
+
+
+  /* ==========================================
+     ABRIR RED SOCIAL
+  =========================================== */
+
+  function openSocial(network, url) {
+
+    window.open(
+      url,
+      "_blank",
+      "noopener,noreferrer"
+    );
+
+
+    socialVisited[network] = true;
+
+
+    updateSocialCounter();
+
+  }
+
+
+  /* ==========================================
+     ACTUALIZAR CONTADOR
+  =========================================== */
+
+  function updateSocialCounter() {
+
+    let count = 0;
+
+
+    if (socialVisited.youtube) {
+
+      count++;
+
+    }
+
+
+    if (socialVisited.facebook) {
+
+      count++;
+
+    }
+
+
+    if (socialVisited.whatsapp) {
+
+      count++;
+
+    }
+
+
+    document
+      .getElementById("socialCount")
+      .textContent = count + " / 3";
+
+
+    const button =
+      document.getElementById("continueButton");
+
+
+    if (count >= 3) {
+
+      button.classList.add("active");
+
+      button.textContent =
+        "✅ CONTINUAR";
+
+    }
+
+  }
+
+
+  /* ==========================================
+     CONTINUAR A LA WEB
+  =========================================== */
+
+  function goToMain() {
+
+    if (
+
+      !socialVisited.youtube ||
+
+      !socialVisited.facebook ||
+
+      !socialVisited.whatsapp
+
+    ) {
+
+      return;
+
+    }
+
+
+    document
+      .getElementById("socialScreen")
+      .classList.add("hidden");
+
+
+    document
+      .getElementById("mainScreen")
+      .classList.remove("hidden");
+
+  }
+
+
+  /* ==========================================
+     MENÚ FLOTANTE
+  =========================================== */
+
+  function toggleSocialMenu() {
+
+    const menu =
+      document.getElementById("floatingMenu");
+
+
+    if (menu.style.display === "block") {
+
+      menu.style.display = "none";
+
+    }
+
+    else {
+
+      menu.style.display = "block";
+
+    }
+
+  }
+
+</script>
+
+</body>
+  </html>
