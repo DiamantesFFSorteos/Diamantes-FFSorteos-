@@ -1,997 +1,2986 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Diamantes-FFSorteos | Soy Sigas</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top, #3b2a00 0%, #090909 34%, #000 100%);
-      color: #fff;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    button {
-      font-family: inherit;
-    }
-
-    .hidden {
-      display: none !important;
-    }
-
-    .app {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      padding: 18px;
-    }
-
-    .screen {
-      width: 100%;
-      max-width: 520px;
-      padding-bottom: 100px;
-    }
-
-    /* ==================================================
-       LOGO
-    ================================================== */
-
-    .logo {
-      text-align: center;
-      margin: 12px 0 25px;
-    }
-
-    .crown {
-      font-size: 50px;
-      filter: drop-shadow(0 0 12px #ffd000);
-    }
-
-    .logo h1 {
-      color: #ffd000;
-      font-size: 38px;
-      font-weight: 900;
-      letter-spacing: 3px;
-      text-shadow:
-        0 0 8px #ffb300,
-        0 0 22px rgba(255, 193, 7, .5);
-    }
-
-    .logo p {
-      color: #bbb;
-      font-size: 11px;
-      letter-spacing: 2px;
-      margin-top: 5px;
-    }
-
-    /* ==================================================
-       CARD
-    ================================================== */
-
-    .card {
-      background: rgba(10, 10, 10, .96);
-      border: 1px solid rgba(255, 208, 0, .4);
-      border-radius: 22px;
-      padding: 23px 18px;
-      box-shadow:
-        0 0 25px rgba(255, 193, 7, .12),
-        inset 0 0 20px rgba(255, 193, 7, .025);
-    }
-
-    .card h2 {
-      text-align: center;
-      color: #ffd000;
-      font-size: 25px;
-      margin-bottom: 9px;
-    }
-
-    .description {
-      text-align: center;
-      color: #aaa;
-      font-size: 13px;
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
-
-    /* ==================================================
-       LOGIN
-    ================================================== */
-
-    .login-button {
-      width: 100%;
-      border: 0;
-      border-radius: 13px;
-      padding: 15px;
-      margin-top: 11px;
-      font-size: 15px;
-      font-weight: 900;
-      cursor: pointer;
-    }
-
-    .google {
-      background: #fff;
-      color: #222;
-    }
-
-    .facebook {
-      background: #1877f2;
-      color: #fff;
-    }
-
-    /* ==================================================
-       REDES
-    ================================================== */
-
-    .social-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: #111;
-      border: 1px solid #303030;
-      border-radius: 15px;
-      padding: 12px;
-      margin: 11px 0;
-      transition: .25s;
-    }
-
-    .social-item.completed {
-      border-color: #20d66b;
-      background: rgba(32, 214, 107, .07);
-    }
-
-    .social-icon {
-      width: 44px;
-      height: 44px;
-      flex-shrink: 0;
-      border-radius: 12px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 22px;
-      font-weight: 900;
-    }
-
-    .youtube {
-      background: #f00;
-    }
-
-    .facebook-icon {
-      background: #1877f2;
-    }
-
-    .whatsapp {
-      background: #25d366;
-    }
-
-    .social-info {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .social-info strong {
-      display: block;
-      font-size: 13px;
-      margin-bottom: 3px;
-    }
-
-    .social-info span {
-      color: #999;
-      font-size: 10px;
-    }
-
-    .social-button {
-      border: 0;
-      background: #ffd000;
-      color: #000;
-      border-radius: 9px;
-      padding: 9px 10px;
-      font-weight: 900;
-      font-size: 11px;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .social-button.completed {
-      background: #20d66b;
-      color: #fff;
-    }
-
-    .continue-button {
-      width: 100%;
-      margin-top: 20px;
-      border: 0;
-      border-radius: 13px;
-      padding: 15px;
-      background: #333;
-      color: #888;
-      font-weight: 900;
-      cursor: not-allowed;
-    }
-
-    .continue-button.active {
-      background: linear-gradient(135deg, #ffd000, #ff9800);
-      color: #000;
-      cursor: pointer;
-      box-shadow: 0 0 18px rgba(255, 193, 7, .3);
-    }
-
-    .completed-count {
-      text-align: center;
-      color: #999;
-      font-size: 12px;
-      margin-top: 13px;
-    }
-
-    /* ==================================================
-       TOP MENU
-    ================================================== */
-
-    .top-header {
-      position: sticky;
-      top: 10px;
-      z-index: 900;
-      display: flex;
-      justify-content: flex-end;
-      margin-bottom: 5px;
-    }
-
-    .menu-button {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      border: 1px solid #ffd000;
-      background: rgba(12, 12, 12, .96);
-      color: #ffd000;
-      font-size: 25px;
-      cursor: pointer;
-      box-shadow: 0 0 15px rgba(255, 208, 0, .2);
-    }
-
-    .menu-panel {
-      position: absolute;
-      top: 57px;
-      right: 0;
-      width: 245px;
-      background: #0d0d0d;
-      border: 1px solid rgba(255, 208, 0, .55);
-      border-radius: 17px;
-      padding: 9px;
-      box-shadow: 0 15px 35px rgba(0,0,0,.75);
-    }
-
-    .menu-title {
-      color: #ffd000;
-      font-size: 12px;
-      font-weight: 900;
-      padding: 9px 10px;
-      letter-spacing: 1px;
-    }
-
-    .menu-option {
-      width: 100%;
-      border: 0;
-      border-radius: 10px;
-      background: #171717;
-      color: #fff;
-      text-align: left;
-      padding: 12px;
-      margin: 3px 0;
-      cursor: pointer;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .menu-option:hover {
-      background: #242424;
-      color: #ffd000;
-    }
-
-    .menu-option.admin {
-      border: 1px solid rgba(255, 208, 0, .35);
-      color: #ffd000;
-    }
-
-    .menu-lock {
-      float: right;
-      color: #888;
-    }
-
-    /* ==================================================
-       MAIN
-    ================================================== */
-
-    .welcome {
-      text-align: center;
-      margin-bottom: 18px;
-    }
-
-    .welcome h2 {
-      color: #ffd000;
-      font-size: 27px;
-      margin-bottom: 7px;
-    }
-
-    .welcome p {
-      color: #aaa;
-      font-size: 13px;
-    }
-
-    .draw-card {
-      text-align: center;
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,208,0,.12),
-          rgba(255,145,0,.03)
-        );
-      border: 1px solid rgba(255,208,0,.35);
-      border-radius: 19px;
-      padding: 22px 14px;
-    }
-
-    .draw-card h3 {
-      color: #ffd000;
-      font-size: 14px;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-    }
-
-    .draw-date {
-      font-size: 27px;
-      font-weight: 900;
-      margin-bottom: 8px;
-    }
-
-    .draw-time {
-      color: #aaa;
-      font-size: 12px;
-      margin-bottom: 15px;
-    }
-
-    .registration-status {
-      display: inline-block;
-      border-radius: 20px;
-      padding: 9px 14px;
-      background: #302800;
-      color: #ffd000;
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .registration-status.open {
-      background: rgba(32,214,107,.12);
-      color: #20d66b;
-    }
-
-    .registration-status.full {
-      background: rgba(255,70,70,.12);
-      color: #ff5b5b;
-    }
-
-    /* ==================================================
-       COUNTDOWN
-    ================================================== */
-
-    .countdown-box {
-      text-align: center;
-      background: #101010;
-      border: 1px solid #2c2c2c;
-      border-radius: 16px;
-      padding: 17px 10px;
-      margin-top: 17px;
-    }
-
-    .countdown-title {
-      color: #eee;
-      font-size: 13px;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-
-    .countdown {
-      color: #ffd000;
-      font-size: 20px;
-      font-weight: 900;
-    }
-
-    /* ==================================================
-       CUPOS
-    ================================================== */
-
-    .slots {
-      text-align: center;
-      background: #111;
-      border: 1px solid #303030;
-      border-radius: 16px;
-      padding: 17px;
-      margin-top: 17px;
-    }
-
-    .slots-number {
-      color: #ffd000;
-      font-size: 34px;
-      font-weight: 900;
-    }
-
-    .slots-label {
-      color: #999;
-      font-size: 11px;
-      margin-top: 4px;
-    }
-
-    .progress {
-      width: 100%;
-      height: 8px;
-      background: #292929;
-      border-radius: 20px;
-      margin-top: 13px;
-      overflow: hidden;
-    }
-
-    .progress-bar {
-      width: 0;
-      height: 100%;
-      background: linear-gradient(90deg, #ffd000, #ff8c00);
-      transition: width .4s;
-    }
-
-    /* ==================================================
-       STATS
-    ================================================== */
-
-    .stats {
-      display: flex;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .stat {
-      flex: 1;
-      background: #111;
-      border: 1px solid #303030;
-      border-radius: 14px;
-      padding: 14px 6px;
-      text-align: center;
-    }
-
-    .stat-number {
-      display: block;
-      color: #ffd000;
-      font-size: 24px;
-      font-weight: 900;
-    }
-
-    .stat-label {
-      display: block;
-      color: #888;
-      font-size: 10px;
-      margin-top: 4px;
-    }
-
-    /* ==================================================
-       PARTICIPANTES
-    ================================================== */
-
-    .participants {
-      margin-top: 20px;
-    }
-
-    .participants h3 {
-      color: #ffd000;
-      text-align: center;
-      margin-bottom: 12px;
-      font-size: 17px;
-    }
-
-    .participant-list {
-      display: grid;
-      gap: 7px;
-      max-height: 280px;
-      overflow-y: auto;
-    }
-
-    .participant {
-      background: #151515;
-      border: 1px solid #292929;
-      border-radius: 9px;
-      padding: 10px;
-      font-size: 13px;
-    }
-
-    /* ==================================================
-       RULETA
-    ================================================== */
-
-    .roulette-section {
-      margin-top: 23px;
-      text-align: center;
-    }
-
-    .roulette-section h3 {
-      color: #ffd000;
-      margin-bottom: 15px;
-    }
-
-    .roulette-wrap {
-      position: relative;
-      width: min(90vw, 390px);
-      height: min(90vw, 390px);
-      margin: auto;
-    }
-
-    .roulette {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      border: 8px solid #ffd000;
-      position: relative;
-      overflow: hidden;
-      background:
-        conic-gradient(
-          #ff1744 0deg 30deg,
-          #ffea00 30deg 60deg,
-          #00e676 60deg 90deg,
-          #00b0ff 90deg 120deg,
-          #d500f9 120deg 150deg,
-          #ff6d00 150deg 180deg,
-          #ff1744 180deg 210deg,
-          #ffea00 210deg 240deg,
-          #00e676 240deg 270deg,
-          #00b0ff 270deg 300deg,
-          #d500f9 300deg 330deg,
-          #ff6d00 330deg 360deg
-        );
-      box-shadow:
-        0 0 30px rgba(255,208,0,.25),
-        inset 0 0 25px rgba(0,0,0,.55);
-    }
-
-    .needle {
-      position: absolute;
-      z-index: 10;
-      top: -4px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0;
-      height: 0;
-      border-left: 14px solid transparent;
-      border-right: 14px solid transparent;
-      border-top: 38px solid #fff;
-      filter: drop-shadow(0 0 5px #000);
-    }
-
-    .roulette-center {
-      position: absolute;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: #111;
-      border: 4px solid #ffd000;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 5;
-    }
-
-    .roulette-message {
-      color: #999;
-      font-size: 11px;
-      margin-top: 11px;
-      line-height: 1.5;
-    }
-
-    /* ==================================================
-       ADMIN / INTERNAL PAGES
-    ================================================== */
-
-    .subpage-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 17px;
-    }
-
-    .back-button {
-      width: 42px;
-      height: 42px;
-      border-radius: 11px;
-      border: 1px solid #444;
-      background: #151515;
-      color: #fff;
-      cursor: pointer;
-      font-size: 19px;
-    }
-
-    .subpage-title {
-      color: #ffd000;
-      font-size: 21px;
-      font-weight: 900;
-    }
-
-    .admin-warning {
-      background: rgba(255,208,0,.07);
-      border: 1px solid rgba(255,208,0,.3);
-      border-radius: 14px;
-      padding: 13px;
-      color: #bbb;
-      font-size: 12px;
-      line-height: 1.5;
-      margin-bottom: 15px;
-    }
-
-    .admin-section {
-      background: #111;
-      border: 1px solid #303030;
-      border-radius: 15px;
-      padding: 15px;
-      margin-top: 12px;
-    }
-
-    .admin-section h3 {
-      color: #ffd000;
-      font-size: 15px;
-      margin-bottom: 8px;
-    }
-
-    .admin-button {
-      width: 100%;
-      border: 0;
-      border-radius: 10px;
-      padding: 12px;
-      background: #222;
-      color: #fff;
-      margin-top: 8px;
-      cursor: pointer;
-      font-weight: 800;
-      text-align: left;
-    }
-
-    .admin-button:hover {
-      color: #ffd000;
-    }
-
-    .admin-result {
-      color: #aaa;
-      font-size: 12px;
-      margin-top: 10px;
-      line-height: 1.5;
-    }
-
-    /* ==================================================
-       GANADOR
-    ================================================== */
-
-    .winner-box {
-      text-align: center;
-      padding: 25px 15px;
-      background:
-        radial-gradient(circle, rgba(255,208,0,.14), #101010 70%);
-      border: 1px solid rgba(255,208,0,.4);
-      border-radius: 18px;
-    }
-
-    .winner-trophy {
-      font-size: 55px;
-    }
-
-    .winner-box h2 {
-      color: #ffd000;
-      margin: 10px 0;
-    }
-
-    .winner-name {
-      font-size: 27px;
-      font-weight: 900;
-      margin: 12px 0;
-    }
-
-    .winner-id {
-      color: #ffd000;
-      font-size: 22px;
-      font-weight: 900;
-    }
-
-    /* ==================================================
-       NOTICE
-    ================================================== */
-
-    .notice {
-      margin-top: 17px;
-      padding: 13px;
-      border-radius: 13px;
-      text-align: center;
-      font-size: 11px;
-      color: #999;
-      background: #111;
-      border: 1px solid #292929;
-      line-height: 1.5;
-    }
-
-    /* ==================================================
-       FLOATING SOCIAL
-    ================================================== */
-
-    .floating-social {
-      position: fixed;
-      right: 17px;
-      bottom: 17px;
-      z-index: 1000;
-      width: 57px;
-      height: 57px;
-      border-radius: 50%;
-      border: 2px solid #ffd000;
-      background: #111;
-      color: #ffd000;
-      font-size: 23px;
-      cursor: pointer;
-      box-shadow: 0 0 18px rgba(255,208,0,.35);
-    }
-
-    .floating-menu {
-      display: none;
-      position: fixed;
-      right: 17px;
-      bottom: 85px;
-      width: 215px;
-      background: #101010;
-      border: 1px solid #ffd000;
-      border-radius: 15px;
-      padding: 9px;
-      z-index: 999;
-      box-shadow: 0 0 25px rgba(0,0,0,.7);
-    }
-
-    .floating-menu.show {
-      display: block;
-    }
-
-    .floating-menu a {
-      display: block;
-      text-decoration: none;
-      color: #fff;
-      background: #181818;
-      border-radius: 9px;
-      padding: 11px;
-      margin: 4px 0;
-      font-size: 12px;
-    }
-
-    .floating-menu a:hover {
-      color: #ffd000;
-    }
-
-    @media (max-width: 400px) {
-
-      .logo h1 {
-        font-size: 32px;
-      }
-
-      .card {
-        padding: 20px 14px;
-      }
-
-      .social-item {
-        gap: 7px;
-      }
-
-      .social-button {
-        padding: 8px;
-      }
-
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diamantes-FFSorteos | Soy Sigas</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:
+    radial-gradient(circle at top,#3b2a00 0%,#090909 35%,#000 100%);
+  color:#fff;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+button,input{
+  font-family:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+.hidden{
+  display:none!important;
+}
+
+.app{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  padding:15px;
+}
+
+.screen{
+  width:100%;
+  max-width:520px;
+  padding-bottom:100px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+  text-align:center;
+  margin:10px 0 25px;
+}
+
+.crown{
+  font-size:48px;
+  filter:drop-shadow(0 0 12px #ffd000);
+}
+
+.logo h1{
+  color:#ffd000;
+  font-size:37px;
+  font-weight:900;
+  letter-spacing:3px;
+  text-shadow:
+    0 0 8px #ffb300,
+    0 0 22px rgba(255,193,7,.5);
+}
+
+.logo p{
+  color:#aaa;
+  font-size:11px;
+  letter-spacing:2px;
+  margin-top:5px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+  background:rgba(10,10,10,.97);
+  border:1px solid rgba(255,208,0,.4);
+  border-radius:22px;
+  padding:22px 17px;
+  box-shadow:
+    0 0 25px rgba(255,193,7,.12),
+    inset 0 0 20px rgba(255,193,7,.025);
+}
+
+.card h2{
+  text-align:center;
+  color:#ffd000;
+  font-size:25px;
+  margin-bottom:9px;
+}
+
+.description{
+  text-align:center;
+  color:#aaa;
+  font-size:13px;
+  line-height:1.5;
+  margin-bottom:20px;
+}
+
+/* =========================
+   REGISTRO
+========================= */
+
+.input-group{
+  margin-bottom:14px;
+}
+
+.input-group label{
+  display:block;
+  color:#ddd;
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:7px;
+}
+
+.input-group input{
+  width:100%;
+  background:#151515;
+  border:1px solid #393939;
+  border-radius:12px;
+  padding:14px;
+  color:#fff;
+  outline:none;
+  font-size:14px;
+}
+
+.input-group input:focus{
+  border-color:#ffd000;
+  box-shadow:0 0 10px rgba(255,208,0,.15);
+}
+
+.register-button{
+  width:100%;
+  border:0;
+  border-radius:13px;
+  padding:15px;
+  margin-top:5px;
+  background:linear-gradient(135deg,#ffd000,#ff9800);
+  color:#000;
+  font-size:15px;
+  font-weight:900;
+}
+
+.error-message{
+  display:none;
+  margin-top:10px;
+  background:rgba(255,60,60,.1);
+  border:1px solid rgba(255,60,60,.4);
+  border-radius:10px;
+  color:#ff7070;
+  padding:10px;
+  font-size:11px;
+  text-align:center;
+}
+
+.notice{
+  margin-top:16px;
+  padding:13px;
+  border-radius:13px;
+  text-align:center;
+  font-size:11px;
+  color:#999;
+  background:#111;
+  border:1px solid #292929;
+  line-height:1.5;
+}
+
+/* =========================
+   REDES
+========================= */
+
+.social-item{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  background:#111;
+  border:1px solid #303030;
+  border-radius:15px;
+  padding:12px;
+  margin:11px 0;
+  transition:.25s;
+}
+
+.social-item.completed{
+  border-color:#20d66b;
+  background:rgba(32,214,107,.07);
+}
+
+.social-icon{
+  width:43px;
+  height:43px;
+  flex-shrink:0;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:21px;
+  font-weight:900;
+}
+
+.youtube{
+  background:#f00;
+}
+
+.facebook-icon{
+  background:#1877f2;
+}
+
+.whatsapp{
+  background:#25d366;
+}
+
+.social-info{
+  flex:1;
+  min-width:0;
+}
+
+.social-info strong{
+  display:block;
+  font-size:13px;
+  margin-bottom:3px;
+}
+
+.social-info span{
+  color:#999;
+  font-size:10px;
+}
+
+.social-button{
+  border:0;
+  background:#ffd000;
+  color:#000;
+  border-radius:9px;
+  padding:9px;
+  font-weight:900;
+  font-size:10px;
+  white-space:nowrap;
+}
+
+.social-button.completed{
+  background:#20d66b;
+  color:#fff;
+}
+
+.completed-count{
+  text-align:center;
+  color:#999;
+  font-size:12px;
+  margin-top:13px;
+}
+
+.continue-button{
+  width:100%;
+  margin-top:20px;
+  border:0;
+  border-radius:13px;
+  padding:15px;
+  background:#333;
+  color:#777;
+  font-weight:900;
+  cursor:not-allowed;
+}
+
+.continue-button.active{
+  background:linear-gradient(135deg,#ffd000,#ff9800);
+  color:#000;
+  cursor:pointer;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.top-header{
+  position:relative;
+  z-index:900;
+  display:flex;
+  justify-content:flex-end;
+  margin-bottom:8px;
+}
+
+.menu-button{
+  width:48px;
+  height:48px;
+  border-radius:14px;
+  border:1px solid #ffd000;
+  background:rgba(12,12,12,.97);
+  color:#ffd000;
+  font-size:25px;
+}
+
+.menu-panel{
+  position:absolute;
+  top:57px;
+  right:0;
+  width:245px;
+  background:#0d0d0d;
+  border:1px solid rgba(255,208,0,.55);
+  border-radius:17px;
+  padding:9px;
+  box-shadow:0 15px 35px rgba(0,0,0,.75);
+}
+
+.menu-title{
+  color:#ffd000;
+  font-size:12px;
+  font-weight:900;
+  padding:9px 10px;
+  letter-spacing:1px;
+}
+
+.menu-option{
+  width:100%;
+  border:0;
+  border-radius:10px;
+  background:#171717;
+  color:#fff;
+  text-align:left;
+  padding:12px;
+  margin:3px 0;
+  font-size:13px;
+  font-weight:700;
+}
+
+.menu-option:hover{
+  background:#242424;
+  color:#ffd000;
+}
+
+.menu-option.admin{
+  border:1px solid rgba(255,208,0,.35);
+  color:#ffd000;
+}
+
+.menu-lock{
+  float:right;
+  color:#888;
+}
+
+/* =========================
+   PRINCIPAL
+========================= */
+
+.welcome{
+  text-align:center;
+  margin-bottom:18px;
+}
+
+.welcome h2{
+  color:#ffd000;
+  font-size:27px;
+  margin-bottom:7px;
+}
+
+.welcome p{
+  color:#aaa;
+  font-size:13px;
+}
+
+.draw-card{
+  text-align:center;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,208,0,.12),
+      rgba(255,145,0,.03)
+    );
+  border:1px solid rgba(255,208,0,.35);
+  border-radius:19px;
+  padding:22px 14px;
+}
+
+.draw-card h3{
+  color:#ffd000;
+  font-size:14px;
+  letter-spacing:1px;
+  margin-bottom:12px;
+}
+
+.draw-date{
+  font-size:27px;
+  font-weight:900;
+  margin-bottom:8px;
+}
+
+.draw-time{
+  color:#aaa;
+  font-size:12px;
+  margin-bottom:15px;
+}
+
+.registration-status{
+  display:inline-block;
+  border-radius:20px;
+  padding:9px 14px;
+  background:#302800;
+  color:#ffd000;
+  font-size:12px;
+  font-weight:900;
+}
+
+.registration-status.open{
+  background:rgba(32,214,107,.12);
+  color:#20d66b;
+}
+
+.registration-status.full{
+  background:rgba(255,70,70,.12);
+  color:#ff5b5b;
+}
+
+/* =========================
+   CUENTA REGRESIVA
+========================= */
+
+.countdown-box{
+  text-align:center;
+  background:#101010;
+  border:1px solid #2c2c2c;
+  border-radius:16px;
+  padding:17px 10px;
+  margin-top:17px;
+}
+
+.countdown-title{
+  color:#eee;
+  font-size:13px;
+  font-weight:800;
+  margin-bottom:8px;
+}
+
+.countdown{
+  color:#ffd000;
+  font-size:20px;
+  font-weight:900;
+}
+
+/* =========================
+   CUPOS
+========================= */
+
+.slots{
+  text-align:center;
+  background:#111;
+  border:1px solid #303030;
+  border-radius:16px;
+  padding:17px;
+  margin-top:17px;
+}
+
+.slots-number{
+  color:#ffd000;
+  font-size:34px;
+  font-weight:900;
+}
+
+.slots-label{
+  color:#999;
+  font-size:11px;
+  margin-top:4px;
+}
+
+.progress{
+  width:100%;
+  height:8px;
+  background:#292929;
+  border-radius:20px;
+  margin-top:13px;
+  overflow:hidden;
+}
+
+.progress-bar{
+  width:0;
+  height:100%;
+  background:linear-gradient(90deg,#ffd000,#ff8c00);
+  transition:width .4s;
+}
+
+/* =========================
+   ESTADÍSTICAS
+========================= */
+
+.stats{
+  display:flex;
+  gap:10px;
+  margin-top:16px;
+}
+
+.stat{
+  flex:1;
+  background:#111;
+  border:1px solid #303030;
+  border-radius:14px;
+  padding:14px 6px;
+  text-align:center;
+}
+
+.stat-number{
+  display:block;
+  color:#ffd000;
+  font-size:24px;
+  font-weight:900;
+}
+
+.stat-label{
+  display:block;
+  color:#888;
+  font-size:10px;
+  margin-top:4px;
+}
+
+/* =========================
+   PARTICIPANTES
+========================= */
+
+.participants{
+  margin-top:20px;
+}
+
+.participants h3{
+  color:#ffd000;
+  text-align:center;
+  margin-bottom:12px;
+  font-size:17px;
+}
+
+.participant-list{
+  display:grid;
+  gap:7px;
+  max-height:280px;
+  overflow-y:auto;
+}
+
+.participant{
+  background:#151515;
+  border:1px solid #292929;
+  border-radius:9px;
+  padding:10px;
+  font-size:13px;
+}
+
+/* =========================
+   RULETA
+========================= */
+
+.roulette-section{
+  margin-top:23px;
+  text-align:center;
+}
+
+.roulette-section h3{
+  color:#ffd000;
+  margin-bottom:15px;
+}
+
+.roulette-wrap{
+  position:relative;
+  width:min(90vw,390px);
+  height:min(90vw,390px);
+  margin:auto;
+}
+
+.roulette{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  border:8px solid #ffd000;
+  position:relative;
+  overflow:hidden;
+  background:
+    conic-gradient(
+      #ff1744 0deg 30deg,
+      #ffea00 30deg 60deg,
+      #00e676 60deg 90deg,
+      #00b0ff 90deg 120deg,
+      #d500f9 120deg 150deg,
+      #ff6d00 150deg 180deg,
+      #ff1744 180deg 210deg,
+      #ffea00 210deg 240deg,
+      #00e676 240deg 270deg,
+      #00b0ff 270deg 300deg,
+      #d500f9 300deg 330deg,
+      #ff6d00 330deg 360deg
+    );
+  box-shadow:
+    0 0 30px rgba(255,208,0,.25),
+    inset 0 0 25px rgba(0,0,0,.55);
+}
+
+.needle{
+  position:absolute;
+  z-index:10;
+  top:-4px;
+  left:50%;
+  transform:translateX(-50%);
+  width:0;
+  height:0;
+  border-left:14px solid transparent;
+  border-right:14px solid transparent;
+  border-top:38px solid #fff;
+  filter:drop-shadow(0 0 5px #000);
+}
+
+.roulette-center{
+  position:absolute;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:#111;
+  border:4px solid #ffd000;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:5;
+}
+
+/* =========================
+   PÁGINAS
+========================= */
+
+.subpage-header{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:17px;
+}
+
+.back-button{
+  width:42px;
+  height:42px;
+  border-radius:11px;
+  border:1px solid #444;
+  background:#151515;
+  color:#fff;
+  font-size:19px;
+}
+
+.subpage-title{
+  color:#ffd000;
+  font-size:21px;
+  font-weight:900;
+}
+
+.admin-warning{
+  background:rgba(255,208,0,.07);
+  border:1px solid rgba(255,208,0,.3);
+  border-radius:14px;
+  padding:13px;
+  color:#bbb;
+  font-size:12px;
+  line-height:1.5;
+  margin-bottom:15px;
+}
+
+.admin-section{
+  background:#111;
+  border:1px solid #303030;
+  border-radius:15px;
+  padding:15px;
+  margin-top:12px;
+}
+
+.admin-section h3{
+  color:#ffd000;
+  font-size:15px;
+  margin-bottom:8px;
+}
+
+.admin-button{
+  width:100%;
+  border:0;
+  border-radius:10px;
+  padding:12px;
+  background:#222;
+  color:#fff;
+  margin-top:8px;
+  font-weight:800;
+  text-align:left;
+}
+
+.admin-result{
+  color:#aaa;
+  font-size:12px;
+  margin-top:10px;
+  line-height:1.5;
+}
+
+/* =========================
+   GANADOR
+========================= */
+
+.winner-box{
+  text-align:center;
+  padding:25px 15px;
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,208,0,.14),
+      #101010 70%
+    );
+  border:1px solid rgba(255,208,0,.4);
+  border-radius:18px;
+}
+
+.winner-trophy{
+  font-size:55px;
+}
+
+.winner-box h2{
+  color:#ffd000;
+  margin:10px 0;
+}
+
+.winner-name{
+  font-size:27px;
+  font-weight:900;
+  margin:12px 0;
+}
+
+.winner-id{
+  color:#ffd000;
+  font-size:22px;
+  font-weight:900;
+}
+
+/* =========================
+   BOTÓN REDES FLOTANTE
+========================= */
+
+.floating-social{
+  position:fixed;
+  right:17px;
+  bottom:17px;
+  z-index:1000;
+  width:57px;
+  height:57px;
+  border-radius:50%;
+  border:2px solid #ffd000;
+  background:#111;
+  color:#ffd000;
+  font-size:23px;
+  box-shadow:0 0 18px rgba(255,208,0,.35);
+}
+
+.floating-menu{
+  display:none;
+  position:fixed;
+  right:17px;
+  bottom:85px;
+  width:215px;
+  background:#101010;
+  border:1px solid #ffd000;
+  border-radius:15px;
+  padding:9px;
+  z-index:999;
+}
+
+.floating-menu.show{
+  display:block;
+}
+
+.floating-menu a{
+  display:block;
+  text-decoration:none;
+  color:#fff;
+  background:#181818;
+  border-radius:9px;
+  padding:11px;
+  margin:4px 0;
+  font-size:12px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:400px){
+
+  .logo h1{
+    font-size:32px;
+  }
+
+  .card{
+    padding:20px 14px;
+  }
+
+  .social-button{
+    padding:8px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <div class="app">
 
-  <!-- ==================================================
-       LOGIN
-  ================================================== -->
+<!-- =====================================================
+     REGISTRO
+===================================================== -->
 
-  <section id="loginScreen" class="screen">
+<section id="registerScreen" class="screen">
 
-    <div class="logo">
-      <div class="crown">👑</div>
-      <h1>SOY SIGAS</h1>
-      <p>DIAMANTES-FFSORTEOS</p>
-    </div>
+  <div class="logo">
+    <div class="crown">👑</div>
+    <h1>SOY SIGAS</h1>
+    <p>DIAMANTES-FFSORTEOS</p>
+  </div>
 
-    <div class="card">
+  <div class="card">
 
-      <h2>Bienvenido</h2>
+    <h2>🎟️ Participa en el sorteo</h2>
 
-      <p class="description">
-        Inicia sesión para participar en nuestros sorteos.
-      </p>
+    <p class="description">
+      Regístrate directamente para participar.
+      No necesitas Facebook ni Google.
+    </p>
 
-      <button
-        class="login-button google"
-        onclick="loginDemo('Google')">
-        🔴 &nbsp; Continuar con Google
-      </button>
+    <div class="input-group">
 
-      <button
-        class="login-button facebook"
-        onclick="loginDemo('Facebook')">
-        🔵 &nbsp; Continuar con Facebook
-      </button>
+      <label for="playerName">
+        👤 Nombre del participante
+      </label>
 
-      <div class="notice">
-        Una cuenta solamente podrá registrarse una vez
-        en cada sorteo.
-      </div>
+      <input
+        id="playerName"
+        type="text"
+        maxlength="40"
+        autocomplete="name"
+        placeholder="Escribe tu nombre real"
+      >
 
     </div>
 
-  </section>
 
+    <div class="input-group">
 
-  <!-- ==================================================
-       REDES
-  ================================================== -->
+      <label for="playerId">
+        🆔 ID del jugador
+      </label>
 
-  <section id="socialScreen" class="screen hidden">
+      <input
+        id="playerId"
+        type="text"
+        inputmode="numeric"
+        maxlength="11"
+        placeholder="ID de 8 a 11 cifras"
+      >
 
-    <div class="logo">
-      <div class="crown">👑</div>
-      <h1>SOY SIGAS</h1>
-      <p>SÍGUEME EN MIS REDES</p>
     </div>
 
-    <div class="card">
 
-      <h2>🔥 Mis redes oficiales</h2>
-
-      <p class="description">
-        Visita las tres redes oficiales para continuar.
-      </p>
+    <div
+      id="registerError"
+      class="error-message">
+    </div>
 
 
-      <div id="social-youtube" class="social-item">
+    <button
+      class="register-button"
+      onclick="startRegistration()">
 
-        <div class="social-icon youtube">▶</div>
+      CONTINUAR
 
-        <div class="social-info">
-          <strong>YouTube</strong>
-          <span>Soy Sigas Official</span>
-        </div>
+    </button>
 
-        <button
-          id="button-youtube"
-          class="social-button"
-          onclick="openSocial(
-            'youtube',
-            'https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b'
-          )">
-          ABRIR
-        </button>
 
+    <div class="notice">
+
+      Tu nombre aparecerá públicamente en la lista
+      de participantes.
+
+      <br><br>
+
+      Tu ID será privado y solamente estará disponible
+      para la administración.
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     REDES
+===================================================== -->
+
+<section id="socialScreen" class="screen hidden">
+
+  <div class="logo">
+
+    <div class="crown">👑</div>
+
+    <h1>SOY SIGAS</h1>
+
+    <p>SÍGUEME EN MIS REDES</p>
+
+  </div>
+
+
+  <div class="card">
+
+    <h2>🔥 Mis redes oficiales</h2>
+
+    <p class="description">
+      Visita las tres redes oficiales para continuar.
+    </p>
+
+
+    <div id="social-youtube" class="social-item">
+
+      <div class="social-icon youtube">
+        ▶
       </div>
 
-
-      <div id="social-facebook" class="social-item">
-
-        <div class="social-icon facebook-icon">f</div>
-
-        <div class="social-info">
-          <strong>Facebook</strong>
-          <span>Soy Sigas</span>
-        </div>
-
-        <button
-          id="button-facebook"
-          class="social-button"
-          onclick="openSocial(
-            'facebook',
-            'https://www.facebook.com/profile.php?id=61593805138979'
-          )">
-          ABRIR
-        </button>
-
+      <div class="social-info">
+        <strong>YouTube</strong>
+        <span>Soy Sigas Official</span>
       </div>
-
-
-      <div id="social-whatsapp" class="social-item">
-
-        <div class="social-icon whatsapp">☎</div>
-
-        <div class="social-info">
-          <strong>WhatsApp</strong>
-          <span>Canal Soy Sigas</span>
-        </div>
-
-        <button
-          id="button-whatsapp"
-          class="social-button"
-          onclick="openSocial(
-            'whatsapp',
-            'https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g'
-          )">
-          ABRIR
-        </button>
-
-      </div>
-
-
-      <div class="completed-count">
-        Redes completadas:
-        <strong id="socialCount">0 / 3</strong>
-      </div>
-
 
       <button
-        id="continueButton"
-        class="continue-button">
-        🔒 CONTINUAR
+        id="button-youtube"
+        class="social-button"
+        onclick="openSocial(
+          'youtube',
+          'https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b'
+        )">
+
+        ABRIR
+
       </button>
 
     </div>
 
-  </section>
 
+    <div id="social-facebook" class="social-item">
 
-  <!-- ==================================================
-       PÁGINA PRINCIPAL
-  ================================================== -->
+      <div class="social-icon facebook-icon">
+        f
+      </div>
 
-  <section id="mainScreen" class="screen hidden">
-
-    <!-- MENÚ SUPERIOR DERECHO -->
-
-    <div class="top-header">
+      <div class="social-info">
+        <strong>Facebook</strong>
+        <span>Soy Sigas</span>
+      </div>
 
       <button
-        class="menu-button"
-        onclick="toggleTopMenu()"
-        aria-label="Abrir menú">
-        ☰
+        id="button-facebook"
+        class="social-button"
+        onclick="openSocial(
+          'facebook',
+          'https://www.facebook.com/profile.php?id=61593805138979'
+        )">
+
+        ABRIR
+
       </button>
+
+    </div>
+
+
+    <div id="social-whatsapp" class="social-item">
+
+      <div class="social-icon whatsapp">
+        ☎
+      </div>
+
+      <div class="social-info">
+        <strong>WhatsApp</strong>
+        <span>Canal Soy Sigas</span>
+      </div>
+
+      <button
+        id="button-whatsapp"
+        class="social-button"
+        onclick="openSocial(
+          'whatsapp',
+          'https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g'
+        )">
+
+        ABRIR
+
+      </button>
+
+    </div>
+
+
+    <div class="completed-count">
+
+      Redes completadas:
+      <strong id="socialCount">0 / 3</strong>
+
+    </div>
+
+
+    <button
+      id="continueButton"
+      class="continue-button">
+
+      🔒 CONTINUAR
+
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     PÁGINA PRINCIPAL
+===================================================== -->
+
+<section id="mainScreen" class="screen hidden">
+
+  <div class="top-header">
+
+    <button
+      class="menu-button"
+      onclick="toggleTopMenu()">
+
+      ☰
+
+    </button>
+
+
+    <div
+      id="topMenu"
+      class="menu-panel hidden">
+
+      <div class="menu-title">
+        MENÚ PRINCIPAL
+      </div>
+
+      <button
+        class="menu-option"
+        onclick="showPage('roulettePage')">
+
+        🎡 Ruleta del sorteo
+
+      </button>
+
+
+      <button
+        class="menu-option"
+        onclick="showPage('statsPage')">
+
+        📊 Estadísticas
+
+      </button>
+
+
+      <button
+        class="menu-option"
+        onclick="showPage('winnersPage')">
+
+        🏆 Ganadores
+
+      </button>
+
+
+      <button
+        class="menu-option admin"
+        onclick="openAdmin()">
+
+        👑 Administración
+        <span class="menu-lock">🔒</span>
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="welcome">
+
+    <div class="crown">👑</div>
+
+    <h2>Diamantes-FFSorteos</h2>
+
+    <p>
+      Bienvenido a la familia Soy Sigas.
+    </p>
+
+  </div>
+
+
+  <div class="card">
+
+
+    <div class="draw-card">
+
+      <h3>🎡 PRÓXIMO SORTEO</h3>
 
       <div
-        id="topMenu"
-        class="menu-panel hidden">
+        id="drawDate"
+        class="draw-date">
+        Cargando...
+      </div>
 
-        <div class="menu-title">
-          MENÚ PRINCIPAL
+      <div class="draw-time">
+
+        Sorteo:
+        <strong>9:30 PM</strong>
+        — Puerto Rico
+
+      </div>
+
+      <div
+        id="registrationStatus"
+        class="registration-status">
+
+        Cargando...
+
+      </div>
+
+    </div>
+
+
+    <div class="countdown-box">
+
+      <div
+        id="countdownTitle"
+        class="countdown-title">
+
+        Cargando...
+
+      </div>
+
+      <div
+        id="countdown"
+        class="countdown">
+
+        --
+
+      </div>
+
+    </div>
+
+
+    <div class="slots">
+
+      <div
+        id="slotsNumber"
+        class="slots-number">
+
+        50
+
+      </div>
+
+      <div class="slots-label">
+        CUPOS DISPONIBLES
+      </div>
+
+      <div class="progress">
+
+        <div
+          id="progressBar"
+          class="progress-bar">
         </div>
 
-        <button
-          class="menu-option"
-          onclick="showPage('roulettePage')">
-          🎡 Ruleta del sorteo
-        </button>
+      </div>
 
-        <button
-          class="menu-option"
-          onclick="showPage('statsPage')">
-          📊 Estadísticas
-        </button>
+      <p
+        id="slotsMessage"
+        style="
+          margin-top:10px;
+          color:#aaa;
+          font-size:12px;
+        ">
 
-        <button
-          class="menu-option"
-          onclick="showPage('winnersPage')">
-          🏆 Ganadores
-        </button>
+        ¡Regístrate antes de que se acaben!
 
-       
+      </p>
+
+    </div>
+
+
+    <div class="stats">
+
+      <div class="stat">
+
+        <span
+          id="participantCount"
+          class="stat-number">
+
+          0/50
+
+        </span>
+
+        <span class="stat-label">
+          PARTICIPANTES
+        </span>
+
+      </div>
+
+
+      <div class="stat">
+
+        <span
+          id="totalParticipants"
+          class="stat-number">
+
+          0
+
+        </span>
+
+        <span class="stat-label">
+          TOTAL DE PARTICIPANTES
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="participants">
+
+      <h3>👥 PARTICIPANTES</h3>
+
+      <div
+        id="participantList"
+        class="participant-list">
+
+        <div class="participant">
+          Aún no hay participantes.
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="roulette-section">
+
+      <h3>🎡 RULETA DEL SORTEO</h3>
+
+      <div class="roulette-wrap">
+
+        <div class="needle"></div>
+
+        <div
+          id="roulette"
+          class="roulette">
+
+          <div class="roulette-center"></div>
+
+        </div>
+
+      </div>
+
+      <p
+        style="
+          color:#999;
+          font-size:11px;
+          line-height:1.5;
+          margin-top:10px;
+        ">
+
+        La ruleta será pública y mostrará
+        únicamente los nombres.
+
+      </p>
+
+    </div>
+
+
+    <div class="notice">
+
+      El sorteo solamente se realizará si hay
+      entre <strong>25 y 50 participantes</strong>.
+
+      <br><br>
+
+      Con menos de 25 participantes,
+      el sorteo quedará cerrado y será anunciado públicamente.
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     RULETA
+===================================================== -->
+
+<section
+  id="roulettePage"
+  class="screen hidden">
+
+  <div class="card">
+
+    <div class="subpage-header">
+
+      <button
+        class="back-button"
+        onclick="backToMain()">
+
+        ←
+
+      </button>
+
+      <div class="subpage-title">
+        🎡 Ruleta del sorteo
+      </div>
+
+    </div>
+
+
+    <div class="roulette-section">
+
+      <div class="roulette-wrap">
+
+        <div class="needle"></div>
+
+        <div
+          id="rouletteLarge"
+          class="roulette">
+
+          <div class="roulette-center"></div>
+
+        </div>
+
+      </div>
+
+      <p
+        style="
+          color:#999;
+          font-size:11px;
+          line-height:1.5;
+          margin-top:10px;
+        ">
+
+        La ruleta se utilizará durante
+        el sorteo público.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     ESTADÍSTICAS
+===================================================== -->
+
+<section
+  id="statsPage"
+  class="screen hidden">
+
+  <div class="card">
+
+    <div class="subpage-header">
+
+      <button
+        class="back-button"
+        onclick="backToMain()">
+
+        ←
+
+      </button>
+
+      <div class="subpage-title">
+        📊 Estadísticas
+      </div>
+
+    </div>
+
+
+    <div class="stats">
+
+      <div class="stat">
+
+        <span
+          id="statsCurrent"
+          class="stat-number">
+
+          0
+
+        </span>
+
+        <span class="stat-label">
+          PARTICIPANTES ACTUALES
+        </span>
+
+      </div>
+
+
+      <div class="stat">
+
+        <span
+          id="statsTotal"
+          class="stat-number">
+
+          0
+
+        </span>
+
+        <span class="stat-label">
+          TOTAL HISTÓRICO
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="admin-section">
+
+      <h3>🎟️ Capacidad</h3>
+
+      <div class="admin-result">
+
+        Máximo por sorteo:
+        <strong>50</strong>
+
+        <br>
+
+        Mínimo para realizarlo:
+        <strong>25</strong>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     GANADORES
+===================================================== -->
+
+<section
+  id="winnersPage"
+  class="screen hidden">
+
+  <div class="card">
+
+    <div class="subpage-header">
+
+      <button
+        class="back-button"
+        onclick="backToMain()">
+
+        ←
+
+      </button>
+
+      <div class="subpage-title">
+        🏆 Ganadores
+      </div>
+
+    </div>
+
+
+    <div id="winnerHistory">
+
+      <div class="notice">
+        Todavía no hay ganadores registrados.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     ADMINISTRACIÓN
+===================================================== -->
+
+<section
+  id="adminPage"
+  class="screen hidden">
+
+  <div class="card">
+
+    <div class="subpage-header">
+
+      <button
+        class="back-button"
+        onclick="backToMain()">
+
+        ←
+
+      </button>
+
+      <div class="subpage-title">
+        👑 Administración
+      </div>
+
+    </div>
+
+
+    <div class="admin-warning">
+
+      🔒 <strong>Área privada.</strong>
+
+      <br><br>
+
+      Aquí estarán los datos privados
+      de los participantes.
+
+      <br><br>
+
+      El nombre y el ID completo de cada participante
+      solamente estarán disponibles para el administrador.
+
+    </div>
+
+
+    <div class="admin-section">
+
+      <h3>
+        👥 Datos de participantes
+      </h3>
+
+      <p class="admin-result">
+
+        Ver participantes separados por sorteo,
+        incluyendo sus nombres e ID.
+
+      </p>
+
+      <button
+        class="admin-button"
+        onclick="showAdminMessage('datos')">
+
+        📋 Ver datos de participantes
+
+      </button>
+
+    </div>
+
+
+    <div class="admin-section">
+
+      <h3>
+        🎯 Selección privada del ganador
+      </h3>
+
+      <p class="admin-result">
+
+        Área privada para seleccionar el ganador
+        antes del día del sorteo.
+
+      </p>
+
+      <button
+        class="admin-button"
+        onclick="showAdminMessage('ganador')">
+
+        🏆 Seleccionar ganador
+
+      </button>
+
+    </div>
+
+
+    <div class="admin-section">
+
+      <h3>
+        🎡 Control de ruleta
+      </h3>
+
+      <p class="admin-result">
+
+        Configuración y control de la ruleta.
+
+      </p>
+
+      <button
+        class="admin-button"
+        onclick="showAdminMessage('ruleta')">
+
+        🎡 Configurar ruleta
+
+      </button>
+
+    </div>
+
+
+    <div class="admin-section">
+
+      <h3>
+        📅 Gestión de sorteos
+      </h3>
+
+      <p class="admin-result">
+
+        Administración de los sorteos
+        de los días 15 y 30.
+
+      </p>
+
+      <button
+        class="admin-button"
+        onclick="showAdminMessage('sorteos')">
+
+        📅 Gestionar sorteos
+
+      </button>
+
+    </div>
+
+
+    <div
+      id="adminResult"
+      class="admin-result">
+    </div>
+
+  </div>
+
+</section>
+
+</div>
+
+
+<!-- =====================================================
+     BOTÓN FLOTANTE DE REDES
+===================================================== -->
+
+<button
+  class="floating-social"
+  onclick="toggleSocialMenu()">
+
+  🔗
+
+</button>
+
+
+<div
+  id="floatingMenu"
+  class="floating-menu">
+
+  <a
+    href="https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    ▶️ YouTube — Soy Sigas
+
+  </a>
+
+
+  <a
+    href="https://www.facebook.com/profile.php?id=61593805138979"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    🔵 Facebook — Soy Sigas
+
+  </a>
+
+
+  <a
+    href="https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    🟢 WhatsApp — Canal Soy Sigas
+
+  </a>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CONFIGURACIÓN
+===================================================== */
+
+const REQUIRED_SOCIAL_TIME = 25000;
+
+const MAX_PARTICIPANTS = 50;
+
+const MIN_PARTICIPANTS = 25;
+
+
+/*
+  PARTICIPANTES DE PRUEBA.
+
+  Posteriormente serán sustituidos por Firebase/
+  base de datos real.
+*/
+
+let participants = [];
+
+let totalHistoricalParticipants = 0;
+
+
+/*
+  Información temporal del participante
+  que está realizando el registro.
+*/
+
+let pendingParticipant = null;
+
+
+/* =====================================================
+   REGISTRO
+===================================================== */
+
+function startRegistration(){
+
+  const nameInput =
+    document.getElementById("playerName");
+
+  const idInput =
+    document.getElementById("playerId");
+
+  const error =
+    document.getElementById("registerError");
+
+
+  const name =
+    nameInput.value.trim();
+
+  const playerId =
+    idInput.value.trim();
+
+
+  error.style.display = "none";
+
+  error.textContent = "";
+
+
+  /*
+    VALIDAR NOMBRE
+  */
+
+  if(name.length < 2){
+
+    showRegisterError(
+      "Escribe un nombre válido."
+    );
+
+    return;
+  }
+
+
+  /*
+    No permitir nombres claramente usados
+    como apodos o cadenas extrañas.
+    La validación definitiva puede hacerse
+    también en el backend.
+  */
+
+  if(!/^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s'-]+$/.test(name)){
+
+    showRegisterError(
+      "El nombre debe contener solamente letras."
+    );
+
+    return;
+  }
+
+
+  /*
+    VALIDAR ID
+  */
+
+  if(!/^\d{8,11}$/.test(playerId)){
+
+    showRegisterError(
+      "El ID debe tener entre 8 y 11 cifras."
+    );
+
+    return;
+  }
+
+
+  /*
+    COMPROBAR 50 CUPOS
+  */
+
+  if(participants.length >= MAX_PARTICIPANTS){
+
+    showRegisterError(
+      "Los 50 cupos de este sorteo ya están ocupados."
+    );
+
+    return;
+  }
+
+
+  /*
+    COMPROBAR ID EN EL SORTEO ACTUAL
+  */
+
+  const alreadyRegistered =
+    participants.some(
+      participant =>
+        participant.id === playerId
+    );
+
+
+  if(alreadyRegistered){
+
+    showRegisterError(
+      "Este ID ya está registrado en este sorteo."
+    );
+
+    return;
+  }
+
+
+  /*
+    COMPROBAR NAVEGADOR
+  */
+
+  const currentDrawKey =
+    getDrawKey();
+
+
+  const browserRegistration =
+    localStorage.getItem(
+      "soysigas_registration_" +
+      currentDrawKey
+    );
+
+
+  if(browserRegistration){
+
+    showRegisterError(
+      "Este navegador ya tiene una participación registrada en este sorteo."
+    );
+
+    return;
+  }
+
+
+  /*
+    GUARDAR PARTICIPANTE PENDIENTE
+  */
+
+  pendingParticipant = {
+
+    name:name,
+
+    id:playerId
+
+  };
+
+
+  /*
+    PASAR A REDES
+  */
+
+  document
+    .getElementById("registerScreen")
+    .classList.add("hidden");
+
+
+  document
+    .getElementById("socialScreen")
+    .classList.remove("hidden");
+
+}
+
+
+/* =====================================================
+   ERROR DE REGISTRO
+===================================================== */
+
+function showRegisterError(message){
+
+  const error =
+    document.getElementById(
+      "registerError"
+    );
+
+  error.textContent = message;
+
+  error.style.display = "block";
+
+}
+
+
+/* =====================================================
+   ESTADO DE REDES
+===================================================== */
+
+const socialState = {
+
+  youtube:{
+    openedAt:null,
+    completed:false
+  },
+
+  facebook:{
+    openedAt:null,
+    completed:false
+  },
+
+  whatsapp:{
+    openedAt:null,
+    completed:false
+  }
+
+};
+
+
+/* =====================================================
+   ABRIR RED SOCIAL
+===================================================== */
+
+function openSocial(network,url){
+
+  if(
+    socialState[network].completed
+  ){
+
+    return;
+  }
+
+
+  /*
+    Comenzamos el período requerido
+    de 25 segundos.
+  */
+
+  socialState[network].openedAt =
+    Date.now();
+
+
+  window.open(
+    url,
+    "_blank",
+    "noopener,noreferrer"
+  );
+
+}
+
+
+/* =====================================================
+   COMPROBAR LOS 25 SEGUNDOS
+===================================================== */
+
+function checkSocialTime(){
+
+  let changed = false;
+
+
+  Object.keys(socialState)
+    .forEach(network => {
+
+      const state =
+        socialState[network];
+
+
+      if(
+        state.openedAt === null ||
+        state.completed
+      ){
+
+        return;
+
+      }
+
+
+      if(
+        Date.now() -
+        state.openedAt >=
+        REQUIRED_SOCIAL_TIME
+      ){
+
+        state.completed = true;
+
+        state.openedAt = null;
+
+        markSocialCompleted(
+          network
+        );
+
+        changed = true;
+
+      }
+
+    });
+
+
+  if(changed){
+
+    updateSocialProgress();
+
+  }
+
+}
+
+
+/* =====================================================
+   MARCAR RED COMPLETADA
+===================================================== */
+
+function markSocialCompleted(network){
+
+  const item =
+    document.getElementById(
+      "social-" + network
+    );
+
+
+  const button =
+    document.getElementById(
+      "button-" + network
+    );
+
+
+  item.classList.add(
+    "completed"
+  );
+
+
+  button.classList.add(
+    "completed"
+  );
+
+
+  button.textContent =
+    "✓ COMPLETADO";
+
+}
+
+
+/* =====================================================
+   ACTUALIZAR PROGRESO REDES
+===================================================== */
+
+function updateSocialProgress(){
+
+  const completed =
+    Object.values(
+      socialState
+    ).filter(
+      item => item.completed
+    ).length;
+
+
+  document
+    .getElementById("socialCount")
+    .textContent =
+    completed + " / 3";
+
+
+  const continueButton =
+    document.getElementById(
+      "continueButton"
+    );
+
+
+  if(completed === 3){
+
+    continueButton.classList.add(
+      "active"
+    );
+
+    continueButton.textContent =
+      "✅ FINALIZAR REGISTRO";
+
+    continueButton.onclick =
+      finishRegistration;
+
+  }
+
+}
+
+
+/* =====================================================
+   FINALIZAR REGISTRO
+===================================================== */
+
+function finishRegistration(){
+
+  if(!pendingParticipant){
+
+    return;
+  }
+
+
+  const currentDrawKey =
+    getDrawKey();
+
+
+  /*
+    SEGUNDA COMPROBACIÓN
+  */
+
+  if(participants.length >= MAX_PARTICIPANTS){
+
+    alert(
+      "Los 50 cupos ya están ocupados."
+    );
+
+    return;
+  }
+
+
+  const alreadyRegistered =
+    participants.some(
+      participant =>
+        participant.id ===
+        pendingParticipant.id
+    );
+
+
+  if(alreadyRegistered){
+
+    alert(
+      "Este ID ya está registrado."
+    );
+
+    return;
+  }
+
+
+  /*
+    AGREGAR PARTICIPANTE
+
+    El ID permanece dentro del objeto
+    para administración.
+
+    La función pública solamente muestra
+    el nombre.
+  */
+
+  participants.push({
+
+    name:
+      pendingParticipant.name,
+
+    id:
+      pendingParticipant.id
+
+  });
+
+
+  /*
+    Guardar registro del navegador.
+  */
+
+  localStorage.setItem(
+    "soysigas_registration_" +
+    currentDrawKey,
+
+    JSON.stringify({
+      registered:true,
+      name:pendingParticipant.name
+    })
+  );
+
+
+  /*
+    Actualizar total histórico.
+    En la versión con base de datos,
+    este valor vendrá del servidor.
+  */
+
+  totalHistoricalParticipants++;
+
+
+  pendingParticipant = null;
+
+
+  goToMain();
+
+}
+
+
+/* =====================================================
+   DETECTAR PESTAÑA ACTIVA
+===================================================== */
+
+document.addEventListener(
+  "visibilitychange",
+  () => {
+
+    if(
+      document.visibilityState ===
+      "visible"
+    ){
+
+      checkSocialTime();
+
+    }
+
+  }
+);
+
+
+window.addEventListener(
+  "focus",
+  checkSocialTime
+);
+
+
+setInterval(
+  checkSocialTime,
+  1000
+);
+
+
+/* =====================================================
+   PÁGINAS
+===================================================== */
+
+function hideAllPages(){
+
+  const pages = [
+
+    "mainScreen",
+
+    "roulettePage",
+
+    "statsPage",
+
+    "winnersPage",
+
+    "adminPage"
+
+  ];
+
+
+  pages.forEach(id => {
+
+    document
+      .getElementById(id)
+      .classList.add("hidden");
+
+  });
+
+}
+
+
+function goToMain(){
+
+  hideAllPages();
+
+
+  document
+    .getElementById("mainScreen")
+    .classList.remove("hidden");
+
+
+  updateDrawInformation();
+
+}
+
+
+function showPage(pageId){
+
+  document
+    .getElementById("topMenu")
+    .classList.add("hidden");
+
+
+  hideAllPages();
+
+
+  document
+    .getElementById(pageId)
+    .classList.remove("hidden");
+
+
+  if(pageId === "statsPage"){
+
+    updateStatsPage();
+
+  }
+
+}
+
+
+function backToMain(){
+
+  hideAllPages();
+
+
+  document
+    .getElementById("mainScreen")
+    .classList.remove("hidden");
+
+}
+
+
+/* =====================================================
+   MENÚ
+===================================================== */
+
+function toggleTopMenu(){
+
+  document
+    .getElementById("topMenu")
+    .classList.toggle(
+      "hidden"
+    );
+
+}
+
+
+/* =====================================================
+   ADMINISTRACIÓN
+===================================================== */
+
+function openAdmin(){
+
+  document
+    .getElementById("topMenu")
+    .classList.add("hidden");
+
+
+  /*
+    IMPORTANTE:
+
+    Esta versión muestra la interfaz.
+
+    Cuando conectemos Firebase,
+    aquí se comprobará el UID real
+    del administrador.
+
+    Un visitante normal NO tendrá
+    acceso a los datos privados.
+  */
+
+  hideAllPages();
+
+
+  document
+    .getElementById("adminPage")
+    .classList.remove("hidden");
+
+}
+
+
+function showAdminMessage(type){
+
+  const result =
+    document.getElementById(
+      "adminResult"
+    );
+
+
+  const messages = {
+
+    datos:
+      "Aquí aparecerán los nombres e ID privados de los participantes, separados por cada sorteo.",
+
+    ganador:
+      "Aquí estará la selección privada del ganador.",
+
+    ruleta:
+      "Aquí se configurará la animación de la ruleta.",
+
+    sorteos:
+      "Aquí podrás administrar los sorteos de los días 15 y 30."
+
+  };
+
+
+  result.textContent =
+    messages[type] || "";
+
+}
+
+
+/* =====================================================
+   FECHA DEL PRÓXIMO SORTEO
+===================================================== */
+
+function getNextDraw(){
+
+  const now =
+    new Date();
+
+
+  let year =
+    now.getFullYear();
+
+  let month =
+    now.getMonth();
+
+
+  const days = [
+    15,
+    30
+  ];
+
+
+  for(
+    const day of days
+  ){
+
+    const candidate =
+      new Date(
+        year,
+        month,
+        day,
+        21,
+        30,
+        0,
+        0
+      );
+
+
+    if(
+      candidate > now
+    ){
+
+      return candidate;
+
+    }
+
+  }
+
+
+  month++;
+
+
+  return new Date(
+    year,
+    month,
+    15,
+    21,
+    30,
+    0,
+    0
+  );
+
+}
+
+
+/* =====================================================
+   INICIO DE INSCRIPCIONES
+   10 DÍAS ANTES
+===================================================== */
+
+function getRegistrationStart(drawDate){
+
+  const date =
+    new Date(
+      drawDate.getTime()
+    );
+
+
+  date.setDate(
+    date.getDate() - 10
+  );
+
+
+  return date;
+
+}
+
+
+/* =====================================================
+   CLAVE DEL SORTEO
+===================================================== */
+
+function getDrawKey(){
+
+  const draw =
+    getNextDraw();
+
+
+  return [
+
+    draw.getFullYear(),
+
+    String(
+      draw.getMonth()+1
+    ).padStart(2,"0"),
+
+    String(
+      draw.getDate()
+    ).padStart(2,"0")
+
+  ].join("-");
+
+}
+
+
+/* =====================================================
+   FORMATO DE FECHA
+===================================================== */
+
+function formatDate(date){
+
+  return date.toLocaleDateString(
+    "es-PR",
+    {
+      day:"numeric",
+      month:"long",
+      year:"numeric"
+    }
+  );
+
+}
+
+
+/* =====================================================
+   INFORMACIÓN DEL SORTEO
+===================================================== */
+
+function updateDrawInformation(){
+
+  const drawDate =
+    getNextDraw();
+
+
+  const registrationStart =
+    getRegistrationStart(
+      drawDate
+    );
+
+
+  const now =
+    new Date();
+
+
+  document
+    .getElementById("drawDate")
+    .textContent =
+    formatDate(
+      drawDate
+    );
+
+
+  const status =
+    document.getElementById(
+      "registrationStatus"
+    );
+
+
+  if(
+    now <
+    registrationStart
+  ){
+
+    status.className =
+      "registration-status";
+
+    status.textContent =
+      "PRÓXIMAMENTE";
+
+  }
+
+  else if(
+    participants.length <
+    MAX_PARTICIPANTS
+  ){
+
+    status.className =
+      "registration-status open";
+
+    status.textContent =
+      "🟢 INSCRIPCIONES ABIERTAS";
+
+  }
+
+  else{
+
+    status.className =
+      "registration-status full";
+
+    status.textContent =
+      "🔴 CUPOS AGOTADOS";
+
+  }
+
+
+  updateCountdown(
+    drawDate,
+    registrationStart
+  );
+
+
+  updateParticipantDisplay();
+
+}
+
+
+/* =====================================================
+   CUENTA REGRESIVA
+===================================================== */
+
+function updateCountdown(
+  drawDate,
+  registrationStart
+){
+
+  const now =
+    new Date();
+
+
+  const title =
+    document.getElementById(
+      "countdownTitle"
+    );
+
+
+  const countdown =
+    document.getElementById(
+      "countdown"
+    );
+
+
+  if(
+    now <
+    registrationStart
+  ){
+
+    title.textContent =
+      "🔥 Faltan para poder participar";
+
+
+    countdown.textContent =
+      formatCountdown(
+        registrationStart - now
+      );
+
+
+    return;
+
+  }
+
+
+  if(
+    now <
+    drawDate
+  ){
+
+    title.textContent =
+      "🟢 TIEMPO RESTANTE PARA EL SORTEO";
+
+
+    countdown.textContent =
+      formatCountdown(
+        drawDate - now
+      );
+
+
+    return;
+
+  }
+
+
+  title.textContent =
+    "🎡 SORTEO EN CURSO";
+
+
+  countdown.textContent =
+    "9:30 PM";
+
+}
+
+
+/* =====================================================
+   FORMATO CUENTA REGRESIVA
+===================================================== */
+
+function formatCountdown(milliseconds){
+
+  if(
+    milliseconds <= 0
+  ){
+
+    return "0 minutos";
+
+  }
+
+
+  const totalSeconds =
+    Math.floor(
+      milliseconds / 1000
+    );
+
+
+  const days =
+    Math.floor(
+      totalSeconds / 86400
+    );
+
+
+  const hours =
+    Math.floor(
+      (totalSeconds % 86400) /
+      3600
+    );
+
+
+  const minutes =
+    Math.floor(
+      (totalSeconds % 3600) /
+      60
+    );
+
+
+  if(days > 0){
+
+    return (
+
+      days +
+
+      (days === 1
+        ? " día "
+        : " días ") +
+
+      hours +
+
+      (hours === 1
+        ? " hora"
+        : " horas")
+
+    );
+
+  }
+
+
+  if(hours > 0){
+
+    return (
+
+      hours +
+
+      (hours === 1
+        ? " hora "
+        : " horas ") +
+
+      minutes +
+
+      (minutes === 1
+        ? " minuto"
+        : " minutos")
+
+    );
+
+  }
+
+
+  return (
+
+    minutes +
+
+    (minutes === 1
+      ? " minuto"
+      : " minutos")
+
+  );
+
+}
+
+
+/* =====================================================
+   MOSTRAR PARTICIPANTES
+===================================================== */
+
+function updateParticipantDisplay(){
+
+  const count =
+    participants.length;
+
+
+  const available =
+    Math.max(
+      MAX_PARTICIPANTS -
+      count,
+      0
+    );
+
+
+  document
+    .getElementById("slotsNumber")
+    .textContent =
+    available;
+
+
+  document
+    .getElementById("participantCount")
+    .textContent =
+    count +
+    "/" +
+    MAX_PARTICIPANTS;
+
+
+  document
+    .getElementById("totalParticipants")
+    .textContent =
+    totalHistoricalParticipants;
+
+
+  document
+    .getElementById("progressBar")
+    .style.width =
+    (
+      count /
+      MAX_PARTICIPANTS *
+      100
+    ) +
+    "%";
+
+
+  const message =
+    document.getElementById(
+      "slotsMessage"
+    );
+
+
+  if(
+    available === 0
+  ){
+
+    message.textContent =
+      "🔴 ¡CUPOS AGOTADOS!";
+
+  }
+  else{
+
+    message.textContent =
+      "¡Regístrate antes de que se acaben!";
+
+  }
+
+
+  const list =
+    document.getElementById(
+      "participantList"
+    );
+
+
+  list.innerHTML = "";
+
+
+  if(
+    participants.length === 0
+  ){
+
+    const empty =
+      document.createElement(
+        "div"
+      );
+
+    empty.className =
+      "participant";
+
+    empty.textContent =
+      "Aún no hay participantes.";
+
+    list.appendChild(
+      empty
+    );
+
+    return;
+
+  }
+
+
+  /*
+    IMPORTANTE:
+
+    SOLAMENTE se muestra el nombre.
+
+    El ID nunca se imprime en
+    la lista pública.
+  */
+
+  participants.forEach(
+    (participant,index) => {
+
+      const item =
+        document.createElement(
+          "div"
+        );
+
+
+      item.className =
+        "participant";
+
+
+      item.textContent =
+        (index+1) +
+        ". " +
+        participant.name;
+
+
+      list.appendChild(
+        item
+      );
+
+    }
+  );
+
+}
+
+
+/* =====================================================
+   ESTADÍSTICAS
+===================================================== */
+
+function updateStatsPage(){
+
+  document
+    .getElementById("statsCurrent")
+    .textContent =
+    participants.length;
+
+
+  document
+    .getElementById("statsTotal")
+    .textContent =
+    totalHistoricalParticipants;
+
+}
+
+
+/* =====================================================
+   BOTÓN FLOTANTE DE REDES
+===================================================== */
+
+function toggleSocialMenu(){
+
+  document
+    .getElementById("floatingMenu")
+    .classList.toggle(
+      "show"
+    );
+
+}
+
+
+/* =====================================================
+   ACTUALIZACIÓN
+===================================================== */
+
+setInterval(
+  () => {
+
+    const main =
+      document.getElementById(
+        "mainScreen"
+      );
+
+
+    if(
+      !main.classList.contains(
+        "hidden"
+      )
+    ){
+
+      updateDrawInformation();
+
+    }
+
+  },
+  1000
+);
+
+
+/* =====================================================
+   INICIO
+===================================================== */
+
+updateDrawInformation();
+
+</script>
+
+</body>
+</html>
