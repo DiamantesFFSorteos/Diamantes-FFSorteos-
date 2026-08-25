@@ -11,9 +11,9 @@ body{
   background:radial-gradient(circle at top,#3b2a00 0%,#090909 35%,#000 100%);
   color:#fff;min-height:100vh;overflow-x:hidden
 }
-button,input{font-family:inherit} button{cursor:pointer}.hidden{display:none!important}
+button,input{font-family:inherit}button{cursor:pointer}.hidden{display:none!important}
 .app{min-height:100vh;display:flex;justify-content:center;padding:15px}
-.screen{width:100%;max-width:520px;padding-bottom:100px}
+.screen{width:100%;max-width:520px;padding-bottom:90px}
 .logo{text-align:center;margin:10px 0 25px}.crown{font-size:48px;filter:drop-shadow(0 0 12px #ffd000)}
 .logo h1{color:#ffd000;font-size:37px;font-weight:900;letter-spacing:3px;text-shadow:0 0 8px #ffb300,0 0 22px rgba(255,193,7,.5)}
 .logo p{color:#aaa;font-size:11px;letter-spacing:2px;margin-top:5px}
@@ -23,7 +23,7 @@ button,input{font-family:inherit} button{cursor:pointer}.hidden{display:none!imp
 .input-group{margin-bottom:14px}.input-group label{display:block;color:#ddd;font-size:12px;font-weight:800;margin-bottom:7px}
 .input-group input{width:100%;background:#151515;border:1px solid #393939;border-radius:12px;padding:14px;color:#fff;outline:none;font-size:14px}
 .input-group input:focus{border-color:#ffd000;box-shadow:0 0 10px rgba(255,208,0,.15)}
-.register-button,.continue-button{width:100%;border:0;border-radius:13px;padding:15px;margin-top:5px;background:linear-gradient(135deg,#ffd000,#ff9800);color:#000;font-size:15px;font-weight:900}
+.register-button,.continue-button,.primary-button{width:100%;border:0;border-radius:13px;padding:15px;margin-top:5px;background:linear-gradient(135deg,#ffd000,#ff9800);color:#000;font-size:15px;font-weight:900}
 .error-message{display:none;margin-top:10px;background:rgba(255,60,60,.1);border:1px solid rgba(255,60,60,.4);border-radius:10px;color:#ff7070;padding:10px;font-size:11px;text-align:center}
 .notice{margin-top:16px;padding:13px;border-radius:13px;text-align:center;font-size:11px;color:#999;background:#111;border:1px solid #292929;line-height:1.5}
 .social-item{display:flex;align-items:center;gap:9px;background:#111;border:1px solid #303030;border-radius:15px;padding:12px;margin:11px 0;transition:.25s}
@@ -37,10 +37,12 @@ button,input{font-family:inherit} button{cursor:pointer}.hidden{display:none!imp
 .continue-button{background:#333;color:#777;cursor:not-allowed}.continue-button.active{background:linear-gradient(135deg,#ffd000,#ff9800);color:#000;cursor:pointer}
 .top-header{position:relative;z-index:900;display:flex;justify-content:flex-end;margin-bottom:8px}
 .menu-button{width:48px;height:48px;border-radius:14px;border:1px solid #ffd000;background:rgba(12,12,12,.97);color:#ffd000;font-size:25px}
-.menu-panel{position:absolute;top:57px;right:0;width:245px;background:#0d0d0d;border:1px solid rgba(255,208,0,.55);border-radius:17px;padding:9px;box-shadow:0 15px 35px rgba(0,0,0,.75)}
+.menu-panel{position:absolute;top:57px;right:0;width:260px;background:#0d0d0d;border:1px solid rgba(255,208,0,.55);border-radius:17px;padding:9px;box-shadow:0 15px 35px rgba(0,0,0,.75)}
 .menu-title{color:#ffd000;font-size:12px;font-weight:900;padding:9px 10px;letter-spacing:1px}
 .menu-option{width:100%;border:0;border-radius:10px;background:#171717;color:#fff;text-align:left;padding:12px;margin:3px 0;font-size:13px;font-weight:700}
-.menu-option:hover{background:#242424;color:#ffd000}.menu-option.admin{border:1px solid rgba(255,208,0,.35);color:#ffd000}.menu-lock{float:right;color:#888}
+.menu-option:hover{background:#242424;color:#ffd000}
+.menu-option.admin{border:1px solid rgba(255,208,0,.35);color:#ffd000}
+.menu-lock{float:right;color:#888}
 .welcome{text-align:center;margin-bottom:18px}.welcome h2{color:#ffd000;font-size:27px;margin-bottom:7px}.welcome p{color:#aaa;font-size:13px}
 .draw-card{text-align:center;background:linear-gradient(145deg,rgba(255,208,0,.12),rgba(255,145,0,.03));border:1px solid rgba(255,208,0,.35);border-radius:19px;padding:22px 14px}
 .draw-card h3{color:#ffd000;font-size:14px;letter-spacing:1px;margin-bottom:12px}.draw-date{font-size:27px;font-weight:900;margin-bottom:8px}
@@ -55,40 +57,33 @@ button,input{font-family:inherit} button{cursor:pointer}.hidden{display:none!imp
 .stat-number{display:block;color:#ffd000;font-size:24px;font-weight:900}.stat-label{display:block;color:#888;font-size:10px;margin-top:4px}
 .participants{margin-top:20px}.participants h3{color:#ffd000;text-align:center;margin-bottom:12px;font-size:17px}.participant-list{display:grid;gap:7px;max-height:280px;overflow-y:auto}
 .participant{background:#151515;border:1px solid #292929;border-radius:9px;padding:10px;font-size:13px}
-.roulette-section{margin-top:23px;text-align:center}.roulette-section h3{color:#ffd000;margin-bottom:15px}
-.roulette-wrap{position:relative;width:min(90vw,390px);height:min(90vw,390px);margin:auto}
-.roulette{
-  width:100%;height:100%;border-radius:50%;border:8px solid #ffd000;
-  position:relative;overflow:hidden;
-  background:#151515;
-  box-shadow:0 0 30px rgba(255,208,0,.25),inset 0 0 25px rgba(0,0,0,.55);
-  transform:rotate(0deg);
-  transition:transform 6s cubic-bezier(.08,.75,.12,1);
-}
-.roulette-sector{
-  position:absolute;left:50%;top:50%;width:50%;height:50%;
-  transform-origin:0% 0%;overflow:hidden;
-  border-left:1px solid rgba(255,255,255,.75);
-  border-top:1px solid rgba(255,255,255,.75);
-}
-.roulette-sector-label{
-  position:absolute;left:10%;top:10%;width:80%;height:80%;
-  display:flex;align-items:center;justify-content:center;
-  text-align:center;color:#fff;font-weight:900;font-size:clamp(8px,2.5vw,14px);
-  text-shadow:0 1px 3px #000;transform:rotate(45deg);
-  white-space:nowrap;overflow:hidden;
-}
-.needle{position:absolute;z-index:10;top:-4px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:38px solid #fff;filter:drop-shadow(0 0 5px #000)}
-.roulette-center{position:absolute;width:48px;height:48px;border-radius:50%;background:#111;border:4px solid #ffd000;top:50%;left:50%;transform:translate(-50%,-50%);z-index:5}
 .subpage-header{display:flex;align-items:center;gap:10px;margin-bottom:17px}.back-button{width:42px;height:42px;border-radius:11px;border:1px solid #444;background:#151515;color:#fff;font-size:19px}
-.subpage-title{color:#ffd000;font-size:21px;font-weight:900}.admin-warning{background:rgba(255,208,0,.07);border:1px solid rgba(255,208,0,.3);border-radius:14px;padding:13px;color:#bbb;font-size:12px;line-height:1.5;margin-bottom:15px}
+.subpage-title{color:#ffd000;font-size:21px;font-weight:900}
+.subpage-subtitle{text-align:center;color:#999;font-size:12px;line-height:1.5;margin:-5px 0 17px}
+.admin-warning{background:rgba(255,208,0,.07);border:1px solid rgba(255,208,0,.3);border-radius:14px;padding:13px;color:#bbb;font-size:12px;line-height:1.5;margin-bottom:15px}
 .admin-section{background:#111;border:1px solid #303030;border-radius:15px;padding:15px;margin-top:12px}.admin-section h3{color:#ffd000;font-size:15px;margin-bottom:8px}
 .admin-button{width:100%;border:0;border-radius:10px;padding:12px;background:#222;color:#fff;margin-top:8px;font-weight:800;text-align:left}.admin-result{color:#aaa;font-size:12px;margin-top:10px;line-height:1.5}
 .winner-box{text-align:center;padding:25px 15px;background:radial-gradient(circle,rgba(255,208,0,.14),#101010 70%);border:1px solid rgba(255,208,0,.4);border-radius:18px}
 .winner-trophy{font-size:55px}.winner-box h2{color:#ffd000;margin:10px 0}.winner-name{font-size:27px;font-weight:900;margin:12px 0}.winner-id{color:#ffd000;font-size:22px;font-weight:900}
-.floating-social{position:fixed;right:17px;bottom:17px;z-index:1000;width:57px;height:57px;border-radius:50%;border:2px solid #ffd000;background:#111;color:#ffd000;font-size:23px;box-shadow:0 0 18px rgba(255,208,0,.35)}
-.floating-menu{display:none;position:fixed;right:17px;bottom:85px;width:215px;background:#101010;border:1px solid #ffd000;border-radius:15px;padding:9px;z-index:999}
-.floating-menu.show{display:block}.floating-menu a{display:block;text-decoration:none;color:#fff;background:#181818;border-radius:9px;padding:11px;margin:4px 0;font-size:12px}
+.full-roulette{display:flex;flex-direction:column;align-items:center}
+.roulette-wrap{position:relative;width:min(90vw,430px);height:min(90vw,430px);margin:12px auto}
+.roulette{width:100%;height:100%;border-radius:50%;border:8px solid #ffd000;position:relative;overflow:hidden;background:#151515;box-shadow:0 0 30px rgba(255,208,0,.25),inset 0 0 25px rgba(0,0,0,.55);transform:rotate(0deg);transition:transform 6s cubic-bezier(.08,.75,.12,1)}
+.roulette-sector{position:absolute;left:50%;top:50%;width:50%;height:50%;transform-origin:0% 0%;overflow:hidden;border-left:1px solid rgba(255,255,255,.75);border-top:1px solid rgba(255,255,255,.75)}
+.roulette-sector-label{position:absolute;left:10%;top:10%;width:80%;height:80%;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;font-weight:900;font-size:clamp(8px,2.5vw,14px);text-shadow:0 1px 3px #000;transform:rotate(45deg);white-space:nowrap;overflow:hidden}
+.needle{position:absolute;z-index:10;top:-4px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:38px solid #fff;filter:drop-shadow(0 0 5px #000)}
+.roulette-center{position:absolute;width:48px;height:48px;border-radius:50%;background:#111;border:4px solid #ffd000;top:50%;left:50%;transform:translate(-50%,-50%);z-index:5}
+.roulette-status{min-height:24px;text-align:center;color:#ffd000;font-weight:900;font-size:14px;margin:4px 0 10px}
+.social-page-item{display:flex;align-items:center;gap:12px;background:#111;border:1px solid #303030;border-radius:15px;padding:14px;margin:10px 0}
+.social-page-item .social-icon{width:48px;height:48px}
+.social-page-item .social-info{flex:1}.social-page-item strong{display:block;font-size:14px}.social-page-item span{display:block;color:#999;font-size:11px;margin-top:4px}
+.social-page-item a{background:#ffd000;color:#000;text-decoration:none;border-radius:9px;padding:10px;font-size:10px;font-weight:900}
+.info-row{background:#111;border:1px solid #303030;border-radius:14px;padding:14px;margin:10px 0}
+.info-row h3{color:#ffd000;font-size:14px;margin-bottom:6px}.info-row p{color:#aaa;font-size:12px;line-height:1.6}
+.success-modal{position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:3000;display:flex;align-items:center;justify-content:center;padding:20px}
+.success-box{width:min(440px,100%);background:#101010;border:1px solid #ffd000;border-radius:22px;padding:28px 18px;text-align:center;box-shadow:0 0 40px rgba(255,208,0,.25);animation:pop .35s ease}
+.success-icon{font-size:58px}.success-box h2{color:#ffd000;font-size:25px;margin:10px 0}.success-box p{color:#bbb;font-size:13px;line-height:1.5;margin-bottom:17px}
+.success-box button{border:0;border-radius:12px;padding:13px 18px;background:linear-gradient(135deg,#ffd000,#ff9800);font-weight:900;color:#000;width:100%}
+@keyframes pop{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
 @media(max-width:400px){.logo h1{font-size:32px}.card{padding:20px 14px}.social-button{padding:8px}}
 </style>
 </head>
@@ -112,23 +107,10 @@ button,input{font-family:inherit} button{cursor:pointer}.hidden{display:none!imp
   <div class="logo"><div class="crown">👑</div><h1>SOY SIGAS</h1><p>SÍGUEME EN MIS REDES</p></div>
   <div class="card">
     <h2>🔥 Mis redes oficiales</h2>
-    <p class="description">Visita las tres redes oficiales. No se muestra ningún contador de espera; cada botón se marca cuando se completa el tiempo requerido.</p>
-
-    <div id="social-youtube" class="social-item">
-      <div class="social-icon youtube">▶</div><div class="social-info"><strong>YouTube</strong><span>Soy Sigas Official</span></div>
-      <button id="button-youtube" class="social-button" onclick="openSocial('youtube','https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b')">ABRIR</button>
-    </div>
-
-    <div id="social-facebook" class="social-item">
-      <div class="social-icon facebook-icon">f</div><div class="social-info"><strong>Facebook</strong><span>Soy Sigas</span></div>
-      <button id="button-facebook" class="social-button" onclick="openSocial('facebook','https://www.facebook.com/profile.php?id=61593805138979')">ABRIR</button>
-    </div>
-
-    <div id="social-whatsapp" class="social-item">
-      <div class="social-icon whatsapp">☎</div><div class="social-info"><strong>WhatsApp</strong><span>Canal Soy Sigas</span></div>
-      <button id="button-whatsapp" class="social-button" onclick="openSocial('whatsapp','https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g')">ABRIR</button>
-    </div>
-
+    <p class="description">Abre las tres redes oficiales. Después del tiempo requerido, cada una se marcará como completada.</p>
+    <div id="social-youtube" class="social-item"><div class="social-icon youtube">▶</div><div class="social-info"><strong>YouTube</strong><span>Soy Sigas Official</span></div><button id="button-youtube" class="social-button" onclick="openSocial('youtube','https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b')">ABRIR</button></div>
+    <div id="social-facebook" class="social-item"><div class="social-icon facebook-icon">f</div><div class="social-info"><strong>Facebook</strong><span>Soy Sigas</span></div><button id="button-facebook" class="social-button" onclick="openSocial('facebook','https://www.facebook.com/profile.php?id=61593805138979')">ABRIR</button></div>
+    <div id="social-whatsapp" class="social-item"><div class="social-icon whatsapp">☎</div><div class="social-info"><strong>WhatsApp</strong><span>Canal Soy Sigas</span></div><button id="button-whatsapp" class="social-button" onclick="openSocial('whatsapp','https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g')">ABRIR</button></div>
     <div class="completed-count">Redes completadas: <strong id="socialCount">0 / 3</strong></div>
     <button id="continueButton" class="continue-button">🔒 CONTINUAR</button>
   </div>
@@ -139,55 +121,92 @@ button,input{font-family:inherit} button{cursor:pointer}.hidden{display:none!imp
     <button class="menu-button" onclick="toggleTopMenu()">☰</button>
     <div id="topMenu" class="menu-panel hidden">
       <div class="menu-title">MENÚ PRINCIPAL</div>
-      <button class="menu-option" onclick="showPage('roulettePage')">🎡 Ruleta del sorteo</button>
+      <button class="menu-option" onclick="showPage('mainScreen')">🎟️ Sorteo</button>
+      <button class="menu-option" onclick="showPage('roulettePage')">🎡 Ruleta de la suerte</button>
+      <button class="menu-option" onclick="showPage('participantsPage')">👥 Participantes</button>
       <button class="menu-option" onclick="showPage('statsPage')">📊 Estadísticas</button>
       <button class="menu-option" onclick="showPage('winnersPage')">🏆 Ganadores</button>
+      <button class="menu-option" onclick="showPage('socialPage')">📱 Mis redes</button>
+      <button class="menu-option" onclick="showPage('infoPage')">📜 Información</button>
       <button class="menu-option admin" onclick="openAdmin()">👑 Administración <span class="menu-lock">🔒</span></button>
     </div>
   </div>
 
   <div class="welcome"><div class="crown">👑</div><h2>Diamantes-FFSorteos</h2><p>Bienvenido a la familia Soy Sigas.</p></div>
-
   <div class="card">
-    <div class="draw-card"><h3>🎡 PRÓXIMO SORTEO</h3><div id="drawDate" class="draw-date">Cargando...</div><div class="draw-time">Sorteo: <strong>9:30 PM</strong></div><div id="registrationStatus" class="registration-status">Cargando...</div></div>
+    <div class="draw-card"><h3>🎟️ PRÓXIMO SORTEO</h3><div id="drawDate" class="draw-date">Cargando...</div><div class="draw-time">Sorteo: <strong>9:30 PM</strong></div><div id="registrationStatus" class="registration-status">Cargando...</div></div>
     <div class="countdown-box"><div id="countdownTitle" class="countdown-title">Cargando...</div><div id="countdown" class="countdown">--</div></div>
-
     <div class="slots"><div id="slotsNumber" class="slots-number">50</div><div class="slots-label">CUPOS DISPONIBLES</div><div class="progress"><div id="progressBar" class="progress-bar"></div></div><p id="slotsMessage" style="margin-top:10px;color:#aaa;font-size:12px">¡Regístrate antes de que se acaben!</p></div>
-
     <div class="stats">
       <div class="stat"><span id="participantCount" class="stat-number">0/50</span><span class="stat-label">PARTICIPANTES</span></div>
-      <div class="stat"><span id="totalParticipants" class="stat-number">0</span><span class="stat-label">TOTAL DE PARTICIPANTES</span></div>
+      <div class="stat"><span id="totalParticipants" class="stat-number">0</span><span class="stat-label">TOTAL HISTÓRICO</span></div>
     </div>
-
-    <div class="participants"><h3>👥 PARTICIPANTES</h3><div id="participantList" class="participant-list"><div class="participant">Aún no hay participantes.</div></div></div>
-
-    <div class="roulette-section"><h3>🎡 RULETA DEL SORTEO</h3><div class="roulette-wrap"><div class="needle"></div><div id="roulette" class="roulette"><div class="roulette-center"></div></div></div><p style="color:#999;font-size:11px;line-height:1.5;margin-top:10px">La ruleta pública muestra únicamente los nombres. El ID se revela únicamente al anunciar al ganador.</p></div>
-
+    <div class="notice">🎉 Tu registro ya fue procesado.<br><br>Consulta el menú superior para ver la <strong>Ruleta de la Suerte</strong>, los participantes, ganadores y toda la información del sorteo.</div>
     <div class="notice">El sorteo solamente se realizará si hay entre <strong>25 y 50 participantes</strong>.<br><br>Con menos de 25 participantes, el sorteo quedará cerrado y será anunciado públicamente.</div>
   </div>
 </section>
 
 <section id="roulettePage" class="screen hidden">
-  <div class="card"><div class="subpage-header"><button class="back-button" onclick="backToMain()">←</button><div class="subpage-title">🎡 Ruleta del sorteo</div></div>
-    <div class="roulette-section"><div class="roulette-wrap"><div class="needle"></div><div id="rouletteLarge" class="roulette"><div class="roulette-center"></div></div></div><p style="color:#999;font-size:11px;margin-top:10px">La ruleta pública está preparada para mostrar los nombres participantes.</p></div>
+  <div class="card">
+    <div class="subpage-header"><button class="back-button" onclick="backToMain()">←</button><div class="subpage-title">🎡 Ruleta de la suerte</div></div>
+    <p class="subpage-subtitle">Aquí la ruleta ocupa toda la pantalla disponible para que sea más fácil ver a los participantes y al ganador.</p>
+    <div class="full-roulette">
+      <div class="roulette-wrap"><div class="needle"></div><div id="rouletteLarge" class="roulette"><div class="roulette-center"></div></div></div>
+      <div id="rouletteStatus" class="roulette-status">Lista para el sorteo</div>
+      <button class="primary-button" onclick="spinRoulette()">🎡 GIRAR RULETA</button>
+    </div>
+  </div>
+</section>
+
+<section id="participantsPage" class="screen hidden">
+  <div class="card">
+    <div class="subpage-header"><button class="back-button" onclick="backToMain()">←</button><div class="subpage-title">👥 Participantes</div></div>
+    <p class="subpage-subtitle">Aquí se muestran únicamente los nombres públicos. Los ID permanecen privados.</p>
+    <div class="slots"><div id="participantsPageCount" class="slots-number">0/50</div><div class="slots-label">PARTICIPANTES DEL SORTEO</div></div>
+    <div class="participants"><div id="participantListPage" class="participant-list"></div></div>
   </div>
 </section>
 
 <section id="statsPage" class="screen hidden">
-  <div class="card"><div class="subpage-header"><button class="back-button" onclick="backToMain()">←</button><div class="subpage-title">📊 Estadísticas</div></div>
+  <div class="card">
+    <div class="subpage-header"><button class="back-button" onclick="backToMain()">←</button><div class="subpage-title">📊 Estadísticas</div></div>
     <div class="stats"><div class="stat"><span id="statsCurrent" class="stat-number">0</span><span class="stat-label">PARTICIPANTES ACTUALES</span></div><div class="stat"><span id="statsTotal" class="stat-number">0</span><span class="stat-label">TOTAL HISTÓRICO</span></div></div>
     <div class="admin-section"><h3>🎟️ Capacidad</h3><div class="admin-result">Máximo por sorteo: <strong>50</strong><br>Mínimo para realizarlo: <strong>25</strong></div></div>
+    <div class="admin-section"><h3>🕘 Horario</h3><div class="admin-result">Los sorteos están programados para las <strong>9:30 PM</strong>.</div></div>
   </div>
 </section>
 
 <section id="winnersPage" class="screen hidden">
-  <div class="card"><div class="subpage-header"><button class="back-button" onclick="backToMain()">←</button><div class="subpage-title">🏆 Ganadores</div></div>
+  <div class="card">
+    <div class="subpage-header"><button class="back-button" onclick="backToMain()">←</button><div class="subpage-title">🏆 Ganadores</div></div>
     <div id="winnerHistory"><div class="notice">Todavía no hay ganadores registrados.</div></div>
   </div>
 </section>
 
+<section id="socialPage" class="screen hidden">
+  <div class="card">
+    <div class="subpage-header"><button class="back-button" onclick="backToMain()">←</button><div class="subpage-title">📱 Mis redes</div></div>
+    <p class="subpage-subtitle">Encuentra aquí todas las redes oficiales de Soy Sigas.</p>
+    <div class="social-page-item"><div class="social-icon youtube">▶</div><div class="social-info"><strong>YouTube</strong><span>Soy Sigas Official</span></div><a href="https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b" target="_blank" rel="noopener noreferrer">ABRIR</a></div>
+    <div class="social-page-item"><div class="social-icon facebook-icon">f</div><div class="social-info"><strong>Facebook</strong><span>Soy Sigas</span></div><a href="https://www.facebook.com/profile.php?id=61593805138979" target="_blank" rel="noopener noreferrer">ABRIR</a></div>
+    <div class="social-page-item"><div class="social-icon whatsapp">☎</div><div class="social-info"><strong>WhatsApp</strong><span>Canal Soy Sigas</span></div><a href="https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g" target="_blank" rel="noopener noreferrer">ABRIR</a></div>
+  </div>
+</section>
+
+<section id="infoPage" class="screen hidden">
+  <div class="card">
+    <div class="subpage-header"><button class="back-button" onclick="backToMain()">←</button><div class="subpage-title">📜 Información</div></div>
+    <div class="info-row"><h3>🎟️ ¿Cómo participar?</h3><p>Registra tu nombre e ID, completa el proceso de las redes oficiales y luego podrás acceder a la pantalla del sorteo.</p></div>
+    <div class="info-row"><h3>⏱️ Acceso a redes</h3><p>Después de completar el proceso de registro y redes, esta pantalla no vuelve a aparecer hasta que hayan pasado 2 horas.</p></div>
+    <div class="info-row"><h3>🎡 Ruleta</h3><p>La Ruleta de la Suerte está disponible desde el menú superior y se abre en una pantalla independiente para verla con mayor claridad.</p></div>
+    <div class="info-row"><h3>🏆 Condición del sorteo</h3><p>El sorteo solamente se realizará con un mínimo de 25 y un máximo de 50 participantes.</p></div>
+    <div class="info-row"><h3>🔒 Privacidad</h3><p>Los nombres pueden mostrarse públicamente. El ID del jugador está destinado únicamente a la administración.</p></div>
+  </div>
+</section>
+
 <section id="adminPage" class="screen hidden">
-  <div class="card"><div class="subpage-header"><button class="back-button" onclick="backToMain()">←</button><div class="subpage-title">👑 Administración</div></div>
+  <div class="card">
+    <div class="subpage-header"><button class="back-button" onclick="backToMain()">←</button><div class="subpage-title">👑 Administración</div></div>
     <div class="admin-warning">🔒 <strong>Área privada.</strong><br><br>Esta interfaz es solamente una maqueta local. La protección real de datos y del administrador debe hacerse en el backend.</div>
     <div class="admin-section"><h3>👥 Datos de participantes</h3><p class="admin-result">Los datos completos (nombre e ID) deben estar protegidos en el servidor.</p><button class="admin-button" onclick="showAdminMessage('datos')">📋 Ver datos de participantes</button></div>
     <div class="admin-section"><h3>🎯 Sorteo justo</h3><p class="admin-result">El ganador se selecciona aleatoriamente entre los participantes válidos.</p><button class="admin-button" onclick="showAdminMessage('ganador')">🏆 Preparar selección aleatoria</button></div>
@@ -199,11 +218,13 @@ button,input{font-family:inherit} button{cursor:pointer}.hidden{display:none!imp
 
 </div>
 
-<button class="floating-social" onclick="toggleSocialMenu()">🔗</button>
-<div id="floatingMenu" class="floating-menu">
-  <a href="https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b" target="_blank" rel="noopener noreferrer">▶️ YouTube — Soy Sigas</a>
-  <a href="https://www.facebook.com/profile.php?id=61593805138979" target="_blank" rel="noopener noreferrer">🔵 Facebook — Soy Sigas</a>
-  <a href="https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g" target="_blank" rel="noopener noreferrer">🟢 WhatsApp — Canal Soy Sigas</a>
+<div id="successModal" class="success-modal hidden">
+  <div class="success-box">
+    <div class="success-icon">🎉</div>
+    <h2>¡REGISTRO COMPLETADO!</h2>
+    <p>Tu participación está lista.<br><br>🍀 <strong>Consulta la Ruleta de la Suerte</strong> para ver a los participantes y conocer al próximo ganador.</p>
+    <button onclick="closeSuccessModal()">🎡 CONSULTAR LA RULETA</button>
+  </div>
 </div>
 
 <script>
@@ -215,6 +236,7 @@ const MIN_PARTICIPANTS = 25;
 let participants = JSON.parse(localStorage.getItem("soysigas_participants_current") || "[]");
 let totalHistoricalParticipants = Number(localStorage.getItem("soysigas_total_historical") || "0");
 let pendingParticipant = null;
+let lastWinner = JSON.parse(localStorage.getItem("soysigas_last_winner") || "null");
 
 const socialState = {
   youtube:{openedAt:null,completed:false},
@@ -224,7 +246,10 @@ const socialState = {
 
 function getBrowserId(){
   let id=localStorage.getItem("soysigas_browser_id");
-  if(!id){id=(crypto.randomUUID?crypto.randomUUID():Date.now()+"-"+Math.random());localStorage.setItem("soysigas_browser_id",id)}
+  if(!id){
+    id=(crypto.randomUUID?crypto.randomUUID():Date.now()+"-"+Math.random());
+    localStorage.setItem("soysigas_browser_id",id);
+  }
   return id;
 }
 const browserId=getBrowserId();
@@ -251,20 +276,12 @@ function formatCountdown(ms){
   if(hours>0)return `${hours}${hours===1?" hora ":" horas "}${mins}${mins===1?" minuto":" minutos"}`;
   return `${mins}${mins===1?" minuto":" minutos"}`;
 }
-
-function hasParticipated(){
-  return localStorage.getItem("soysigas_participation_"+getDrawKey()) === "1";
-}
-
+function hasParticipated(){return localStorage.getItem("soysigas_participation_"+getDrawKey()) === "1"}
 function getLastSocialCompletion(){return Number(localStorage.getItem("soysigas_last_social_completion") || "0")}
 function accessExpired(){
-  const last = getLastSocialCompletion();
-
-  // Si nunca se han completado las redes, NO debemos
-  // reiniciar la pantalla de registro mientras el usuario escribe.
-  if(!last) return false;
-
-  return Date.now()-last >= ACCESS_RENEWAL_TIME;
+  const last=getLastSocialCompletion();
+  if(!last)return false;
+  return Date.now()-last>=ACCESS_RENEWAL_TIME;
 }
 
 function startRegistration(){
@@ -288,26 +305,23 @@ function startRegistration(){
   document.getElementById("registerScreen").classList.add("hidden");
   document.getElementById("socialScreen").classList.remove("hidden");
 }
-
 function showRegisterError(msg){
   const e=document.getElementById("registerError");e.textContent=msg;e.style.display="block";
 }
-
 function resetSocialState(){
-  Object.keys(socialState).forEach(n=>{socialState[n]={openedAt:null,completed:false};
+  Object.keys(socialState).forEach(n=>{
+    socialState[n]={openedAt:null,completed:false};
     const item=document.getElementById("social-"+n),button=document.getElementById("button-"+n);
     item.classList.remove("completed");button.classList.remove("completed");button.textContent="ABRIR";
   });
   document.getElementById("socialCount").textContent="0 / 3";
   const b=document.getElementById("continueButton");b.classList.remove("active");b.textContent="🔒 CONTINUAR";b.onclick=null;
 }
-
 function openSocial(network,url){
   if(socialState[network].completed)return;
   socialState[network].openedAt=Date.now();
   window.open(url,"_blank","noopener,noreferrer");
 }
-
 function checkSocialTime(){
   let changed=false;
   Object.keys(socialState).forEach(n=>{
@@ -339,7 +353,7 @@ function finishSocialProcess(){
     if(participants.length>=MAX_PARTICIPANTS){alert("Los 50 cupos ya están ocupados.");pendingParticipant=null;showMain();return}
     if(participants.some(p=>p.id===pendingParticipant.id)){alert("Este ID ya está registrado en este sorteo.");pendingParticipant=null;showMain();return}
     if(localStorage.getItem("soysigas_registration_"+currentKey)){
-      alert("Este navegador ya tiene una participación registrada en este sorteo.");pendingParticipant=null;showMain();return
+      alert("Este navegador ya tiene una participación registrada en este sorteo.");pendingParticipant=null;showMain();return;
     }
     participants.push({name:pendingParticipant.name,id:pendingParticipant.id,browserId});
     localStorage.setItem("soysigas_participants_current",JSON.stringify(participants));
@@ -347,21 +361,30 @@ function finishSocialProcess(){
     localStorage.setItem("soysigas_participation_"+currentKey,"1");
     totalHistoricalParticipants++;
     localStorage.setItem("soysigas_total_historical",String(totalHistoricalParticipants));
-    alert("🎉 ¡Participación completada!");
   }
+
   pendingParticipant=null;
   showMain();
+  showSuccessModal();
 }
 
 function hidePages(){
-  ["mainScreen","roulettePage","statsPage","winnersPage","adminPage"].forEach(id=>document.getElementById(id).classList.add("hidden"));
+  ["mainScreen","roulettePage","participantsPage","statsPage","winnersPage","socialPage","infoPage","adminPage"].forEach(id=>{
+    document.getElementById(id).classList.add("hidden");
+  });
 }
 function showMain(){hidePages();document.getElementById("mainScreen").classList.remove("hidden");updateDrawInformation()}
 function backToMain(){showMain()}
-function showPage(id){document.getElementById("topMenu").classList.add("hidden");hidePages();document.getElementById(id).classList.remove("hidden");if(id==="statsPage")updateStatsPage()}
+function showPage(id){
+  document.getElementById("topMenu").classList.add("hidden");
+  hidePages();
+  document.getElementById(id).classList.remove("hidden");
+  if(id==="statsPage")updateStatsPage();
+  if(id==="participantsPage")updateParticipantsPage();
+  if(id==="roulettePage")updateRoulettePage();
+  if(id==="winnersPage")updateWinnerPage();
+}
 function toggleTopMenu(){document.getElementById("topMenu").classList.toggle("hidden")}
-function toggleSocialMenu(){document.getElementById("floatingMenu").classList.toggle("show")}
-
 function openAdmin(){
   document.getElementById("topMenu").classList.add("hidden");
   hidePages();document.getElementById("adminPage").classList.remove("hidden");
@@ -376,41 +399,56 @@ function showAdminMessage(type){
   document.getElementById("adminResult").textContent=messages[type]||"";
 }
 
-
-const rouletteColors = [
-  "#ff1744","#ffea00","#00e676","#00b0ff",
-  "#d500f9","#ff6d00","#2979ff","#00bfa5"
-];
+const rouletteColors=["#ff1744","#ffea00","#00e676","#00b0ff","#d500f9","#ff6d00","#2979ff","#00bfa5"];
 
 function buildRoulette(elementId){
   const wheel=document.getElementById(elementId);
   if(!wheel)return;
-
   wheel.innerHTML='<div class="roulette-center"></div>';
-
-  const count=Math.max(1, Math.min(participants.length, MAX_PARTICIPANTS));
+  const count=Math.max(1,Math.min(participants.length,MAX_PARTICIPANTS));
   const slice=360/count;
 
   participants.forEach((p,index)=>{
     const sector=document.createElement("div");
     sector.className="roulette-sector";
-    sector.style.width="50%";
-    sector.style.height="50%";
     sector.style.background=rouletteColors[index%rouletteColors.length];
     sector.style.transform=`rotate(${index*slice}deg) skewY(${-(90-slice)}deg)`;
-
     const label=document.createElement("div");
     label.className="roulette-sector-label";
     label.textContent=p.name;
-
     sector.appendChild(label);
     wheel.appendChild(sector);
   });
 }
-
-function updateAllRoulettes(){
-  buildRoulette("roulette");
+function updateAllRoulettes(){buildRoulette("rouletteLarge")}
+function updateRoulettePage(){
   buildRoulette("rouletteLarge");
+  document.getElementById("rouletteStatus").textContent=participants.length?"Lista para el sorteo":"Aún no hay participantes";
+}
+function spinRoulette(){
+  const status=document.getElementById("rouletteStatus");
+  if(participants.length<MIN_PARTICIPANTS){
+    status.textContent=`Se necesitan al menos ${MIN_PARTICIPANTS} participantes para realizar el sorteo.`;
+    return;
+  }
+  if(participants.length===0)return;
+  const winnerIndex=Math.floor(Math.random()*participants.length);
+  const slice=360/participants.length;
+  const target=360*8 + (360-(winnerIndex*slice + slice/2));
+  const wheel=document.getElementById("rouletteLarge");
+  wheel.style.transition="none";
+  wheel.style.transform="rotate(0deg)";
+  void wheel.offsetWidth;
+  wheel.style.transition="transform 6s cubic-bezier(.08,.75,.12,1)";
+  wheel.style.transform=`rotate(${target}deg)`;
+  status.textContent="🎡 La ruleta está girando...";
+  setTimeout(()=>{
+    const winner=participants[winnerIndex];
+    lastWinner={name:winner.name,id:winner.id,draw:getDrawKey(),date:new Date().toISOString()};
+    localStorage.setItem("soysigas_last_winner",JSON.stringify(lastWinner));
+    status.textContent=`🏆 ¡GANADOR: ${winner.name}!`;
+    updateWinnerPage();
+  },6100);
 }
 
 function updateDrawInformation(){
@@ -434,51 +472,57 @@ function updateParticipantDisplay(){
   document.getElementById("totalParticipants").textContent=totalHistoricalParticipants;
   document.getElementById("progressBar").style.width=(count/MAX_PARTICIPANTS*100)+"%";
   document.getElementById("slotsMessage").textContent=available===0?"🔴 ¡CUPOS AGOTADOS!":"¡Regístrate antes de que se acaben!";
-  const list=document.getElementById("participantList");list.innerHTML="";
-  if(!count){
-    list.innerHTML='<div class="participant">Aún no hay participantes.</div>';
-    updateAllRoulettes();
-    return;
-  }
-  participants.forEach((p,i)=>{const d=document.createElement("div");d.className="participant";d.textContent=(i+1)+". "+p.name;list.appendChild(d)});
-  updateAllRoulettes();
+}
+function updateParticipantsPage(){
+  document.getElementById("participantsPageCount").textContent=participants.length+"/"+MAX_PARTICIPANTS;
+  const list=document.getElementById("participantListPage");list.innerHTML="";
+  if(!participants.length){list.innerHTML='<div class="participant">Aún no hay participantes.</div>';return}
+  participants.forEach((p,i)=>{
+    const d=document.createElement("div");d.className="participant";d.textContent=(i+1)+". "+p.name;list.appendChild(d);
+  });
 }
 function updateStatsPage(){
   document.getElementById("statsCurrent").textContent=participants.length;
   document.getElementById("statsTotal").textContent=totalHistoricalParticipants;
 }
+function updateWinnerPage(){
+  const box=document.getElementById("winnerHistory");
+  if(!lastWinner){box.innerHTML='<div class="notice">Todavía no hay ganadores registrados.</div>';return}
+  box.innerHTML=`<div class="winner-box"><div class="winner-trophy">🏆</div><h2>ÚLTIMO GANADOR</h2><div class="winner-name">${escapeHtml(lastWinner.name)}</div><div class="winner-id">ID: ${escapeHtml(lastWinner.id)}</div></div>`;
+}
+function escapeHtml(value){
+  return String(value).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+}
+
+function showSuccessModal(){document.getElementById("successModal").classList.remove("hidden")}
+function closeSuccessModal(){
+  document.getElementById("successModal").classList.add("hidden");
+  showPage("roulettePage");
+}
 
 function checkTwoHourAccess(){
-  const last = getLastSocialCompletion();
+  const last=getLastSocialCompletion();
+  if(!last)return;
+  if(Date.now()-last<ACCESS_RENEWAL_TIME)return;
 
-  // Nunca ha completado las redes: dejar que escriba
-  // Nombre e ID sin reiniciar el formulario.
-  if(!last) return;
+  const socialVisible=!document.getElementById("socialScreen").classList.contains("hidden");
+  if(socialVisible)return;
 
-  // Todavía está dentro de las 2 horas.
-  if(Date.now()-last < ACCESS_RENEWAL_TIME) return;
-
-  const socialVisible =
-    !document.getElementById("socialScreen").classList.contains("hidden");
-
-  if(socialVisible) return;
-
-  pendingParticipant = null;
-
-  // Solo después de que hayan pasado realmente las 2 horas
-  // se limpia el formulario y se vuelve a pedir Nombre + ID.
+  pendingParticipant=null;
   document.getElementById("playerName").value="";
   document.getElementById("playerId").value="";
-
   hidePages();
+  document.getElementById("socialScreen").classList.add("hidden");
   document.getElementById("registerScreen").classList.remove("hidden");
 }
 
-document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible"){checkSocialTime();checkTwoHourAccess()}});
+document.addEventListener("visibilitychange",()=>{
+  if(document.visibilityState==="visible"){checkSocialTime();checkTwoHourAccess()}
+});
 window.addEventListener("focus",()=>{checkSocialTime();checkTwoHourAccess()});
 setInterval(checkSocialTime,1000);
 setInterval(checkTwoHourAccess,1000);
-updateDrawInformation();
+setInterval(updateDrawInformation,1000);
 
 if(accessExpired()){
   hidePages();
