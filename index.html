@@ -57,9 +57,27 @@ button,input{font-family:inherit} button{cursor:pointer}.hidden{display:none!imp
 .participant{background:#151515;border:1px solid #292929;border-radius:9px;padding:10px;font-size:13px}
 .roulette-section{margin-top:23px;text-align:center}.roulette-section h3{color:#ffd000;margin-bottom:15px}
 .roulette-wrap{position:relative;width:min(90vw,390px);height:min(90vw,390px);margin:auto}
-.roulette{width:100%;height:100%;border-radius:50%;border:8px solid #ffd000;position:relative;overflow:hidden;
-background:conic-gradient(#ff1744 0 30deg,#ffea00 30deg 60deg,#00e676 60deg 90deg,#00b0ff 90deg 120deg,#d500f9 120deg 150deg,#ff6d00 150deg 180deg,#ff1744 180deg 210deg,#ffea00 210deg 240deg,#00e676 240deg 270deg,#00b0ff 270deg 300deg,#d500f9 300deg 330deg,#ff6d00 330deg 360deg);
-box-shadow:0 0 30px rgba(255,208,0,.25),inset 0 0 25px rgba(0,0,0,.55)}
+.roulette{
+  width:100%;height:100%;border-radius:50%;border:8px solid #ffd000;
+  position:relative;overflow:hidden;
+  background:#151515;
+  box-shadow:0 0 30px rgba(255,208,0,.25),inset 0 0 25px rgba(0,0,0,.55);
+  transform:rotate(0deg);
+  transition:transform 6s cubic-bezier(.08,.75,.12,1);
+}
+.roulette-sector{
+  position:absolute;left:50%;top:50%;width:50%;height:50%;
+  transform-origin:0% 0%;overflow:hidden;
+  border-left:1px solid rgba(255,255,255,.75);
+  border-top:1px solid rgba(255,255,255,.75);
+}
+.roulette-sector-label{
+  position:absolute;left:10%;top:10%;width:80%;height:80%;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;color:#fff;font-weight:900;font-size:clamp(8px,2.5vw,14px);
+  text-shadow:0 1px 3px #000;transform:rotate(45deg);
+  white-space:nowrap;overflow:hidden;
+}
 .needle{position:absolute;z-index:10;top:-4px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:38px solid #fff;filter:drop-shadow(0 0 5px #000)}
 .roulette-center{position:absolute;width:48px;height:48px;border-radius:50%;background:#111;border:4px solid #ffd000;top:50%;left:50%;transform:translate(-50%,-50%);z-index:5}
 .subpage-header{display:flex;align-items:center;gap:10px;margin-bottom:17px}.back-button{width:42px;height:42px;border-radius:11px;border:1px solid #444;background:#151515;color:#fff;font-size:19px}
@@ -131,7 +149,7 @@ box-shadow:0 0 30px rgba(255,208,0,.25),inset 0 0 25px rgba(0,0,0,.55)}
   <div class="welcome"><div class="crown">👑</div><h2>Diamantes-FFSorteos</h2><p>Bienvenido a la familia Soy Sigas.</p></div>
 
   <div class="card">
-    <div class="draw-card"><h3>🎡 PRÓXIMO SORTEO</h3><div id="drawDate" class="draw-date">Cargando...</div><div class="draw-time">Sorteo: <strong>9:30 PM</strong> — Puerto Rico</div><div id="registrationStatus" class="registration-status">Cargando...</div></div>
+    <div class="draw-card"><h3>🎡 PRÓXIMO SORTEO</h3><div id="drawDate" class="draw-date">Cargando...</div><div class="draw-time">Sorteo: <strong>9:30 PM</strong></div><div id="registrationStatus" class="registration-status">Cargando...</div></div>
     <div class="countdown-box"><div id="countdownTitle" class="countdown-title">Cargando...</div><div id="countdown" class="countdown">--</div></div>
 
     <div class="slots"><div id="slotsNumber" class="slots-number">50</div><div class="slots-label">CUPOS DISPONIBLES</div><div class="progress"><div id="progressBar" class="progress-bar"></div></div><p id="slotsMessage" style="margin-top:10px;color:#aaa;font-size:12px">¡Regístrate antes de que se acaben!</p></div>
@@ -174,7 +192,7 @@ box-shadow:0 0 30px rgba(255,208,0,.25),inset 0 0 25px rgba(0,0,0,.55)}
     <div class="admin-section"><h3>👥 Datos de participantes</h3><p class="admin-result">Los datos completos (nombre e ID) deben estar protegidos en el servidor.</p><button class="admin-button" onclick="showAdminMessage('datos')">📋 Ver datos de participantes</button></div>
     <div class="admin-section"><h3>🎯 Sorteo justo</h3><p class="admin-result">El ganador se selecciona aleatoriamente entre los participantes válidos.</p><button class="admin-button" onclick="showAdminMessage('ganador')">🏆 Preparar selección aleatoria</button></div>
     <div class="admin-section"><h3>🎡 Control de ruleta</h3><p class="admin-result">La animación pública debe corresponder al resultado aleatorio real.</p><button class="admin-button" onclick="showAdminMessage('ruleta')">🎡 Configuración</button></div>
-    <div class="admin-section"><h3>📅 Gestión de sorteos</h3><p class="admin-result">Sorteos los días 15 y 30 a las 9:30 PM, hora de Puerto Rico.</p><button class="admin-button" onclick="showAdminMessage('sorteos')">📅 Gestionar sorteos</button></div>
+    <div class="admin-section"><h3>📅 Gestión de sorteos</h3><p class="admin-result">Sorteos los días 15 y 30 a las 9:30 PM.</p><button class="admin-button" onclick="showAdminMessage('sorteos')">📅 Gestionar sorteos</button></div>
     <div id="adminResult" class="admin-result"></div>
   </div>
 </section>
@@ -239,7 +257,15 @@ function hasParticipated(){
 }
 
 function getLastSocialCompletion(){return Number(localStorage.getItem("soysigas_last_social_completion") || "0")}
-function accessExpired(){return !getLastSocialCompletion() || Date.now()-getLastSocialCompletion()>=ACCESS_RENEWAL_TIME}
+function accessExpired(){
+  const last = getLastSocialCompletion();
+
+  // Si nunca se han completado las redes, NO debemos
+  // reiniciar la pantalla de registro mientras el usuario escribe.
+  if(!last) return false;
+
+  return Date.now()-last >= ACCESS_RENEWAL_TIME;
+}
 
 function startRegistration(){
   const name=document.getElementById("playerName").value.trim();
@@ -345,9 +371,46 @@ function showAdminMessage(type){
     datos:"Los datos completos deben protegerse en el backend y solo entregarse a una cuenta de administrador autorizada.",
     ganador:"La selección debe ser aleatoria y verificable entre los participantes válidos.",
     ruleta:"La animación pública puede girar rápidamente y terminar en el resultado aleatorio real.",
-    sorteos:"Sorteos los días 15 y 30 a las 9:30 PM, hora de Puerto Rico."
+    sorteos:"Sorteos los días 15 y 30 a las 9:30 PM."
   };
   document.getElementById("adminResult").textContent=messages[type]||"";
+}
+
+
+const rouletteColors = [
+  "#ff1744","#ffea00","#00e676","#00b0ff",
+  "#d500f9","#ff6d00","#2979ff","#00bfa5"
+];
+
+function buildRoulette(elementId){
+  const wheel=document.getElementById(elementId);
+  if(!wheel)return;
+
+  wheel.innerHTML='<div class="roulette-center"></div>';
+
+  const count=Math.max(1, Math.min(participants.length, MAX_PARTICIPANTS));
+  const slice=360/count;
+
+  participants.forEach((p,index)=>{
+    const sector=document.createElement("div");
+    sector.className="roulette-sector";
+    sector.style.width="50%";
+    sector.style.height="50%";
+    sector.style.background=rouletteColors[index%rouletteColors.length];
+    sector.style.transform=`rotate(${index*slice}deg) skewY(${-(90-slice)}deg)`;
+
+    const label=document.createElement("div");
+    label.className="roulette-sector-label";
+    label.textContent=p.name;
+
+    sector.appendChild(label);
+    wheel.appendChild(sector);
+  });
+}
+
+function updateAllRoulettes(){
+  buildRoulette("roulette");
+  buildRoulette("rouletteLarge");
 }
 
 function updateDrawInformation(){
@@ -372,8 +435,13 @@ function updateParticipantDisplay(){
   document.getElementById("progressBar").style.width=(count/MAX_PARTICIPANTS*100)+"%";
   document.getElementById("slotsMessage").textContent=available===0?"🔴 ¡CUPOS AGOTADOS!":"¡Regístrate antes de que se acaben!";
   const list=document.getElementById("participantList");list.innerHTML="";
-  if(!count){list.innerHTML='<div class="participant">Aún no hay participantes.</div>';return}
-  participants.forEach((p,i)=>{const d=document.createElement("div");d.className="participant";d.textContent=(i+1)+". "+p.name;list.appendChild(d)})
+  if(!count){
+    list.innerHTML='<div class="participant">Aún no hay participantes.</div>';
+    updateAllRoulettes();
+    return;
+  }
+  participants.forEach((p,i)=>{const d=document.createElement("div");d.className="participant";d.textContent=(i+1)+". "+p.name;list.appendChild(d)});
+  updateAllRoulettes();
 }
 function updateStatsPage(){
   document.getElementById("statsCurrent").textContent=participants.length;
@@ -381,12 +449,27 @@ function updateStatsPage(){
 }
 
 function checkTwoHourAccess(){
-  if(!accessExpired())return;
-  const socialVisible=!document.getElementById("socialScreen").classList.contains("hidden");
-  if(socialVisible)return;
-  pendingParticipant=null;
+  const last = getLastSocialCompletion();
+
+  // Nunca ha completado las redes: dejar que escriba
+  // Nombre e ID sin reiniciar el formulario.
+  if(!last) return;
+
+  // Todavía está dentro de las 2 horas.
+  if(Date.now()-last < ACCESS_RENEWAL_TIME) return;
+
+  const socialVisible =
+    !document.getElementById("socialScreen").classList.contains("hidden");
+
+  if(socialVisible) return;
+
+  pendingParticipant = null;
+
+  // Solo después de que hayan pasado realmente las 2 horas
+  // se limpia el formulario y se vuelve a pedir Nombre + ID.
   document.getElementById("playerName").value="";
   document.getElementById("playerId").value="";
+
   hidePages();
   document.getElementById("registerScreen").classList.remove("hidden");
 }
