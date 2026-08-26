@@ -1,1169 +1,399 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>FFSORTEOS Diamantes y más | Soy Sigas</title>
-
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{
-  min-height:100%;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#000;
-  color:#fff
-}
-body{overflow-x:hidden}
-button,input{font:inherit}
-button{cursor:pointer}
-.hidden{display:none!important}
-
-body{
-  background:
-    radial-gradient(circle at 50% 0%,#4a3500 0%,#1b1300 20%,#090909 48%,#000 100%);
-}
-
-.app{
-  min-height:100vh;
-  width:100%;
-  display:flex;
-  justify-content:center;
-}
-
-.screen{
-  width:100%;
-  max-width:520px;
-  min-height:100vh;
-  padding:18px 14px 90px;
-}
-
 /* ==========================================================
-   REDES
+   REDES SOCIALES - SISTEMA CORREGIDO
    ========================================================== */
 
-.social-landing{
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-}
+const REQUIRED_SOCIAL_TIME = 25000;
 
-.brand{
-  text-align:center;
-  margin:8px 0 24px;
-}
 
-.crown{
-  font-size:54px;
-  filter:drop-shadow(0 0 13px #ffd000);
-}
+/* ----------------------------------------------------------
+   INICIAR UNA RED
+   ---------------------------------------------------------- */
 
-.brand h1{
-  color:#ffd000;
-  font-size:38px;
-  line-height:1;
-  font-weight:900;
-  letter-spacing:3px;
-  text-shadow:
-    0 0 8px #ffb300,
-    0 0 22px rgba(255,193,7,.55);
-}
+function startSocial(network){
 
-.brand p{
-  color:#aaa;
-  font-size:11px;
-  letter-spacing:3px;
-  margin-top:8px;
-}
-
-.card{
-  background:rgba(9,9,9,.97);
-  border:1px solid rgba(255,208,0,.55);
-  border-radius:24px;
-  padding:22px 16px;
-  box-shadow:
-    0 0 28px rgba(255,193,7,.12),
-    inset 0 0 25px rgba(255,193,7,.025);
-}
-
-.card h2{
-  color:#ffd000;
-  text-align:center;
-  font-size:27px;
-  line-height:1.15;
-  margin-bottom:10px;
-}
-
-.description{
-  color:#aaa;
-  text-align:center;
-  font-size:14px;
-  line-height:1.55;
-  margin-bottom:20px;
-}
-
-.social-item{
-  display:flex;
-  align-items:center;
-  gap:11px;
-  background:#111;
-  border:1px solid #333;
-  border-radius:16px;
-  padding:12px;
-  margin:12px 0;
-  min-height:76px;
-  transition:.25s;
-}
-
-.social-item.completed{
-  border-color:#20d66b;
-  background:rgba(32,214,107,.08);
-}
-
-.social-icon{
-  width:48px;
-  height:48px;
-  flex:0 0 48px;
-  border-radius:13px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  font-size:25px;
-  font-weight:900;
-}
-
-.youtube{background:#ff0000}
-.facebook{background:#1877f2}
-.whatsapp{background:#25d366}
-
-.social-info{
-  flex:1;
-  min-width:0;
-}
-
-.social-info strong{
-  display:block;
-  font-size:16px;
-  margin-bottom:4px;
-}
-
-.social-info span{
-  display:block;
-  color:#999;
-  font-size:12px;
-}
-
-.social-button{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  text-decoration:none;
-  border:0;
-  border-radius:10px;
-  padding:11px 13px;
-  background:#ffd000;
-  color:#000;
-  font-size:12px;
-  font-weight:900;
-  white-space:nowrap;
-}
-
-.social-button.completed{
-  background:#20d66b;
-  color:#fff;
-}
-
-.completed-count{
-  text-align:center;
-  color:#aaa;
-  font-size:14px;
-  margin:17px 0 12px;
-}
-
-.completed-count strong{color:#ffd000}
-
-.continue-button{
-  width:100%;
-  border:0;
-  border-radius:14px;
-  padding:16px;
-  background:#333;
-  color:#777;
-  font-weight:900;
-  font-size:16px;
-  cursor:not-allowed;
-}
-
-.continue-button.active{
-  background:linear-gradient(135deg,#ffd000,#ff9800);
-  color:#000;
-  cursor:pointer;
-}
-
-/* ==========================================================
-   PRINCIPAL
-   ========================================================== */
-
-.main-screen{
-  padding-top:12px;
-}
-
-.top-header{
-  display:flex;
-  justify-content:flex-end;
-  position:relative;
-  z-index:20;
-}
-
-.menu-button{
-  width:54px;
-  height:54px;
-  border-radius:16px;
-  border:1px solid #ffd000;
-  background:#111;
-  color:#ffd000;
-  font-size:28px;
-}
-
-.menu-panel{
-  position:absolute;
-  top:64px;
-  right:0;
-  width:260px;
-  background:#0d0d0d;
-  border:1px solid rgba(255,208,0,.55);
-  border-radius:16px;
-  padding:10px;
-  box-shadow:0 12px 30px rgba(0,0,0,.6);
-}
-
-.menu-title{
-  color:#ffd000;
-  font-weight:900;
-  text-align:center;
-  padding:10px;
-}
-
-.menu-option{
-  width:100%;
-  border:0;
-  background:#181818;
-  color:#fff;
-  border-radius:10px;
-  padding:12px;
-  margin:4px 0;
-  text-align:left;
-}
-
-.welcome{
-  text-align:center;
-  margin:5px 0 24px;
-}
-
-.welcome .crown{font-size:50px}
-
-.welcome h2{
-  color:#ffd000;
-  font-size:32px;
-  margin-top:3px;
-  text-shadow:0 0 10px rgba(255,208,0,.35);
-}
-
-.welcome p{
-  color:#aaa;
-  margin-top:10px;
-  font-size:15px;
-}
-
-.draw-card{
-  background:linear-gradient(145deg,#292200,#111);
-  border:1px solid rgba(255,208,0,.55);
-  border-radius:22px;
-  text-align:center;
-  padding:27px 14px;
-}
-
-.draw-card h3,.section-title{
-  color:#ffd000;
-  font-size:20px;
-  font-weight:900;
-}
-
-.draw-date{
-  color:#fff;
-  font-size:36px;
-  font-weight:900;
-  margin:22px 0 12px;
-}
-
-.draw-time{
-  color:#aaa;
-  font-size:16px;
-}
-
-.registration-status{
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 20px;
-  border-radius:25px;
-  background:#173818;
-  color:#20e46f;
-  font-weight:900;
-}
-
-.participate-button{
-  width:100%;
-  margin-top:20px;
-  border:0;
-  border-radius:15px;
-  padding:17px 12px;
-  background:linear-gradient(135deg,#ffd000,#ff9800);
-  color:#000;
-  font-size:17px;
-  font-weight:900;
-  box-shadow:0 0 18px rgba(255,193,7,.18);
-}
-
-.countdown-box,.slots,.stat,.participants-box,.roulette-box{
-  background:#101010;
-  border:1px solid #303030;
-  border-radius:20px;
-  padding:20px;
-  margin-top:16px;
-}
-
-.countdown-title{
-  text-align:center;
-  color:#ddd;
-  font-weight:900;
-  font-size:16px;
-}
-
-.countdown{
-  text-align:center;
-  color:#ffd000;
-  font-size:30px;
-  font-weight:900;
-  margin-top:12px;
-}
-
-.slots{text-align:center}
-
-.slots-number{
-  color:#ffd000;
-  font-size:50px;
-  font-weight:900;
-}
-
-.slots-label{
-  color:#999;
-  margin-top:4px;
-}
-
-.progress{
-  height:12px;
-  background:#2c2c2c;
-  border-radius:20px;
-  overflow:hidden;
-  margin-top:18px;
-}
-
-.progress-bar{
-  height:100%;
-  width:0%;
-  background:linear-gradient(90deg,#ffd000,#ff9800);
-}
-
-.stats{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-}
-
-.stat{text-align:center}
-
-.stat-number{
-  display:block;
-  color:#ffd000;
-  font-size:28px;
-  font-weight:900;
-}
-
-.stat-label{
-  display:block;
-  color:#999;
-  font-size:12px;
-  margin-top:6px;
-}
-
-.participants-box h3,
-.roulette-box h3{
-  text-align:center;
-  color:#ffd000;
-  font-size:22px;
-  margin-bottom:14px;
-}
-
-.participant{
-  background:#181818;
-  border:1px solid #2d2d2d;
-  border-radius:11px;
-  padding:13px;
-  margin:7px 0;
-  font-size:14px;
-}
-
-.notice{
-  text-align:center;
-  color:#888;
-  font-size:11px;
-  line-height:1.5;
-  margin-top:14px;
-}
-
-/* ==========================================================
-   TEMPORIZADOR DE LA RULETA — AGREGADO
-   ========================================================== */
-
-.roulette-countdown-box{
-  margin-top:18px;
-  padding:16px 10px;
-  border-radius:15px;
-  background:#181818;
-  border:1px solid rgba(255,208,0,.45);
-  text-align:center;
-}
-
-.roulette-countdown-title{
-  color:#aaa;
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:1px;
-}
-
-.roulette-countdown{
-  color:#ffd000;
-  font-size:24px;
-  font-weight:900;
-  margin-top:8px;
-  text-shadow:0 0 8px rgba(255,208,0,.25);
-}
-
-/* ==========================================================
-   FORMULARIO
-   ========================================================== */
-
-.register-card h2{
-  margin-bottom:10px;
-}
-
-.input-group{
-  margin-top:15px;
-}
-
-.input-group label{
-  display:block;
-  color:#ddd;
-  font-weight:900;
-  font-size:14px;
-  margin-bottom:8px;
-}
-
-.input-group input{
-  width:100%;
-  padding:15px;
-  border-radius:13px;
-  border:1px solid #3b3b3b;
-  background:#151515;
-  color:#fff;
-  outline:none;
-  font-size:16px;
-}
-
-.input-group input:focus{
-  border-color:#ffd000;
-  box-shadow:0 0 10px rgba(255,208,0,.15);
-}
-
-.error{
-  display:none;
-  margin-top:12px;
-  padding:11px;
-  border-radius:10px;
-  color:#ff7474;
-  background:rgba(255,50,50,.1);
-  border:1px solid rgba(255,50,50,.35);
-  text-align:center;
-  font-size:12px;
-}
-
-.success{
-  display:none;
-  margin-top:12px;
-  padding:11px;
-  border-radius:10px;
-  color:#20e46f;
-  background:rgba(32,214,107,.1);
-  border:1px solid rgba(32,214,107,.35);
-  text-align:center;
-  font-size:12px;
-}
-
-.confirm-button{
-  width:100%;
-  border:0;
-  border-radius:14px;
-  padding:16px;
-  margin-top:18px;
-  background:linear-gradient(135deg,#ffd000,#ff9800);
-  color:#000;
-  font-weight:900;
-  font-size:16px;
-}
-
-.back-button{
-  border:1px solid #555;
-  background:#171717;
-  color:#fff;
-  width:48px;
-  height:44px;
-  border-radius:12px;
-  font-size:22px;
-  margin-bottom:12px;
-}
-
-/* ==========================================================
-   RULETA
-   ========================================================== */
-
-.roulette-wrap{
-  position:relative;
-  width:min(88vw,430px);
-  aspect-ratio:1;
-  margin:15px auto 0;
-}
-
-.roulette{
-  position:absolute;
-  inset:0;
-  border-radius:50%;
-  border:10px solid #ffd000;
-  background:#151515;
-  overflow:hidden;
-  box-shadow:0 0 30px rgba(255,208,0,.25);
-}
-
-.roulette-center{
-  position:absolute;
-  width:45px;
-  height:45px;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
-  border-radius:50%;
-  background:#ffd000;
-  border:5px solid #111;
-  z-index:10;
-}
-
-.needle{
-  position:absolute;
-  z-index:20;
-  top:-4px;
-  left:50%;
-  transform:translateX(-50%);
-  width:0;
-  height:0;
-  border-left:18px solid transparent;
-  border-right:18px solid transparent;
-  border-top:52px solid #fff;
-  filter:drop-shadow(0 4px 4px #000);
-}
-
-.segment{
-  position:absolute;
-  left:50%;
-  top:50%;
-  width:50%;
-  height:50%;
-  transform-origin:0 0;
-  overflow:visible;
-}
-
-.segment-label{
-  position:absolute;
-  left:14px;
-  top:50%;
-  transform:translateY(-50%);
-  width:calc(100% - 20px);
-  color:#fff;
-  font-weight:900;
-  font-size:11px;
-  text-align:center;
-  text-shadow:1px 1px 2px #000;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-}
-
-/* ==========================================================
-   GANADOR
-   ========================================================== */
-
-.winner-card{
-  text-align:center;
-}
-
-.winner{
-  text-align:center;
-  padding:25px 10px;
-  color:#ffd000;
-  font-size:25px;
-  font-weight:900;
-}
-
-.winner-id{
-  margin-top:12px;
-  color:#fff;
-  font-size:20px;
-  font-weight:900;
-}
-
-.winner-name-permanent{
-  margin-top:18px;
-  padding:18px;
-  border-radius:15px;
-  background:#181818;
-  border:1px solid #ffd000;
-  color:#ffd000;
-  font-size:20px;
-  font-weight:900;
-}
-
-/* ==========================================================
-   PERFIL
-   ========================================================== */
-
-.profile-box{
-  text-align:center;
-}
-
-.profile-avatar{
-  font-size:58px;
-  margin-bottom:10px;
-}
-
-.profile-name{
-  color:#ffd000;
-  font-size:24px;
-  font-weight:900;
-}
-
-.profile-id{
-  margin-top:12px;
-  padding:14px;
-  background:#181818;
-  border-radius:12px;
-  color:#fff;
-  font-weight:900;
-}
-
-/* ==========================================================
-   ADMINISTRACIÓN
-   ========================================================== */
-
-.admin-login{
-  text-align:center;
-}
-
-.admin-lock{
-  font-size:60px;
-  margin-bottom:10px;
-}
-
-.admin-login h2{
-  margin-bottom:8px;
-}
-
-.password-input{
-  width:100%;
-  padding:16px;
-  border-radius:13px;
-  border:1px solid #3b3b3b;
-  background:#151515;
-  color:#fff;
-  outline:none;
-  margin-top:15px;
-  text-align:center;
-  letter-spacing:2px;
-}
-
-.password-input:focus{
-  border-color:#ffd000;
-  box-shadow:0 0 10px rgba(255,208,0,.15);
-}
-
-.admin-button{
-  width:100%;
-  border:0;
-  border-radius:14px;
-  padding:16px;
-  margin-top:15px;
-  background:linear-gradient(135deg,#ffd000,#ff9800);
-  color:#000;
-  font-weight:900;
-}
-
-.admin-error{
-  display:none;
-  color:#ff7474;
-  margin-top:12px;
-  font-size:13px;
-  font-weight:900;
-}
-
-.admin-participant{
-  background:#171717;
-  border:1px solid #333;
-  border-radius:15px;
-  padding:14px;
-  margin:10px 0;
-}
-
-.admin-participant strong{
-  color:#ffd000;
-  display:block;
-  font-size:16px;
-}
-
-.admin-participant span{
-  display:block;
-  color:#aaa;
-  margin-top:6px;
-  font-size:13px;
-}
-
-.choose-winner{
-  width:100%;
-  border:0;
-  border-radius:11px;
-  padding:12px;
-  margin-top:12px;
-  background:#ffd000;
-  color:#000;
-  font-weight:900;
-}
-
-.choose-winner.selected{
-  background:#20d66b;
-  color:#fff;
-}
-
-/* ==========================================================
-   SUBPÁGINAS
-   ========================================================== */
-
-.subpage-title{
-  color:#ffd000;
-  text-align:center;
-  font-size:22px;
-  font-weight:900;
-  margin-bottom:15px;
-}
-
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
-
-@media(max-width:400px){
-  .screen{
-    padding-left:10px;
-    padding-right:10px;
+  if(!socialState[network]){
+    return;
   }
 
-  .brand h1{
-    font-size:31px;
+  if(socialState[network].completed){
+    return;
   }
 
-  .welcome h2{
-    font-size:27px;
-  }
+  const now = Date.now();
 
-  .draw-date{
-    font-size:31px;
-  }
+  socialState[network].openedAt = now;
 
-  .social-button{
-    padding:10px 9px;
-  }
+  /*
+    Guardamos cada red por separado.
+    Así no se pierde el progreso al salir
+    hacia YouTube, Facebook o WhatsApp.
+  */
 
-  .social-info strong{
-    font-size:14px;
-  }
+  localStorage.setItem(
+    "soysigas_social_" + network,
+    String(now)
+  );
+
 }
-</style>
-</head>
 
-<body>
 
-<div class="app">
+/* ----------------------------------------------------------
+   COMPROBAR LAS 3 REDES
+   ---------------------------------------------------------- */
 
-<!-- ========================================================
-     PANTALLA INICIAL: SOLO REDES
-     ======================================================== -->
+function checkSocialTime(){
 
-<section id="socialScreen" class="screen social-landing">
+  const networks = [
+    "youtube",
+    "facebook",
+    "whatsapp"
+  ];
 
-  <div class="brand">
-    <div class="crown">👑</div>
-    <h1>SOY SIGAS</h1>
-    <p>SÍGUEME EN MIS REDES</p>
-  </div>
 
-  <div class="card">
+  networks.forEach(network => {
 
-    <h2>🔥 Mis redes oficiales</h2>
+    /*
+      Si ya está completada no hacemos nada.
+    */
 
-    <p class="description">
-      Completa las tres redes y después podrás entrar al sorteo.
-    </p>
+    if(
+      socialState[network] &&
+      socialState[network].completed
+    ){
+      return;
+    }
 
-    <div id="social-youtube" class="social-item">
 
-      <div class="social-icon youtube">▶</div>
+    const savedTime =
+      localStorage.getItem(
+        "soysigas_social_" + network
+      );
 
-      <div class="social-info">
-        <strong>YouTube</strong>
-        <span>Soy Sigas Official</span>
-      </div>
 
-      <a id="button-youtube"
-         class="social-button"
-         href="https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b"
-         target="_blank"
-         rel="noopener noreferrer"
-         onclick="startSocial('youtube')">
-         SEGUIR
-      </a>
+    if(!savedTime){
+      return;
+    }
 
-    </div>
 
-    <div id="social-facebook" class="social-item">
+    const openedAt =
+      Number(savedTime);
 
-      <div class="social-icon facebook">f</div>
 
-      <div class="social-info">
-        <strong>Facebook</strong>
-        <span>Soy Sigas</span>
-      </div>
+    if(!openedAt){
+      return;
+    }
 
-      <a id="button-facebook"
-         class="social-button"
-         href="https://www.facebook.com/profile.php?id=61593805138979"
-         target="_blank"
-         rel="noopener noreferrer"
-         onclick="startSocial('facebook')">
-         SEGUIR
-      </a>
 
-    </div>
+    const elapsed =
+      Date.now() - openedAt;
 
-    <div id="social-whatsapp" class="social-item">
 
-      <div class="social-icon whatsapp">☎</div>
+    /*
+      Cuando han pasado 25 segundos,
+      se marca automáticamente como completada.
+    */
 
-      <div class="social-info">
-        <strong>WhatsApp</strong>
-        <span>Canal Soy Sigas</span>
-      </div>
+    if(elapsed >= REQUIRED_SOCIAL_TIME){
 
-      <a id="button-whatsapp"
-         class="social-button"
-         href="https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g"
-         target="_blank"
-         rel="noopener noreferrer"
-         onclick="startSocial('whatsapp')">
-         SEGUIR
-      </a>
+      socialState[network].completed =
+        true;
 
-    </div>
+      socialState[network].openedAt =
+        null;
 
-    <div class="completed-count">
-      Completadas:
-      <strong id="socialCount">0 de 3</strong>
-    </div>
 
-    <button id="continueButton"
-            class="continue-button">
-      🔒 CONTINUAR
-    </button>
+      localStorage.setItem(
+        "soysigas_social_completed_" + network,
+        "1"
+      );
 
-  </div>
 
-</section>
+      localStorage.removeItem(
+        "soysigas_social_" + network
+      );
 
 
-<!-- ========================================================
-     PANTALLA PRINCIPAL
-     ======================================================== -->
+      markSocialCompleted(network);
 
-<section id="mainScreen" class="screen main-screen hidden">
+      updateSocialProgress();
 
-  <div class="top-header">
+    }
 
-    <button class="menu-button"
-            onclick="toggleMenu()">
-      ☰
-    </button>
+  });
 
-    <div id="menuPanel" class="menu-panel hidden">
 
-      <div class="menu-title">
-        MENÚ PRINCIPAL
-      </div>
+  /*
+    También recuperamos estados que ya habían
+    sido completados anteriormente.
+  */
 
-      <button class="menu-option"
-              onclick="showSubpage('profilePage')">
-        👤 Mi perfil
-      </button>
+  networks.forEach(network => {
 
-      <button class="menu-option"
-              onclick="showSubpage('roulettePage')">
-        🎡 Ruleta
-      </button>
+    const completed =
+      localStorage.getItem(
+        "soysigas_social_completed_" + network
+      ) === "1";
 
-      <button class="menu-option"
-              onclick="showSubpage('statsPage')">
-        📊 Estadísticas
-      </button>
 
-      <button class="menu-option"
-              onclick="showSubpage('winnersPage')">
-        🏆 Ganadores
-      </button>
+    if(completed){
 
-      <button class="menu-option"
-              onclick="openAdminLogin()">
-        🔐 Administración
-      </button>
+      socialState[network].completed =
+        true;
 
-    </div>
+      socialState[network].openedAt =
+        null;
 
-  </div>
+      markSocialCompleted(network);
 
+    }
 
-  <div class="welcome">
+  });
 
-    <div class="crown">👑</div>
 
-    <h2>
-      FFSORTEOS Diamantes y más
-    </h2>
+  updateSocialProgress();
 
-    <p>
-      Bienvenido a la familia Soy Sigas.
-    </p>
+}
 
-  </div>
 
+/* ----------------------------------------------------------
+   MARCAR RED COMO COMPLETADA
+   ---------------------------------------------------------- */
 
-  <div class="card">
+function markSocialCompleted(network){
 
-    <div class="draw-card">
+  const item =
+    document.getElementById(
+      "social-" + network
+    );
 
-      <h3>🎡 PRÓXIMO SORTEO</h3>
 
-      <div id="drawDate"
-           class="draw-date">
-        Cargando...
-      </div>
+  const button =
+    document.getElementById(
+      "button-" + network
+    );
 
-      <div class="draw-time">
-        Sorteo:
-        <strong>9:30 PM</strong>
-      </div>
 
-      <div id="registrationStatus"
-           class="registration-status">
-        🟢 INSCRIPCIONES ABIERTAS
-      </div>
+  if(!item || !button){
+    return;
+  }
 
-      <button class="participate-button"
-              onclick="openRegistration()">
-        🎟️ PARTICIPAR EN EL SORTEO
-      </button>
 
-    </div>
+  item.classList.add(
+    "completed"
+  );
 
 
-    <div class="countdown-box">
+  button.classList.add(
+    "completed"
+  );
 
-      <div id="countdownTitle"
-           class="countdown-title">
-        TIEMPO RESTANTE PARA EL SORTEO
-      </div>
 
-      <div id="countdown"
-           class="countdown">
-        --
-      </div>
+  button.textContent =
+    "✓ COMPLETADO";
 
-    </div>
 
+  /*
+    Evitamos que vuelva a abrir
+    la red después de completarla.
+  */
 
-    <div class="slots">
+  button.removeAttribute(
+    "href"
+  );
 
-      <div id="slotsNumber"
-           class="slots-number">
-        50
-      </div>
+  button.removeAttribute(
+    "target"
+  );
 
-      <div class="slots-label">
-        CUPOS DISPONIBLES
-      </div>
+  button.removeAttribute(
+    "rel"
+  );
 
-      <div class="progress">
-        <div id="progressBar"
-             class="progress-bar">
-        </div>
-      </div>
 
-      <p id="slotsMessage"
-         class="notice">
-        ¡Regístrate antes de que se acaben!
-      </p>
+  button.onclick =
+    function(event){
 
-    </div>
+      event.preventDefault();
 
+      return false;
 
-    <div class="stats">
+    };
 
-      <div class="stat">
+}
 
-        <span id="participantCount"
-              class="stat-number">
-          0/50
-        </span>
 
-        <span class="stat-label">
-          PARTICIPANTES
-        </span>
+/* ----------------------------------------------------------
+   ACTUALIZAR CONTADOR 0/3, 1/3, 2/3, 3/3
+   ---------------------------------------------------------- */
 
-      </div>
+function updateSocialProgress(){
 
-      <div class="stat">
+  const completed =
+    Object.values(
+      socialState
+    ).filter(
+      network => network.completed
+    ).length;
 
-        <span id="totalParticipants"
-              class="stat-number">
-          0
-        </span>
 
-        <span class="stat-label">
-          TOTAL DE PARTICIPANTES
-        </span>
+  const counter =
+    document.getElementById(
+      "socialCount"
+    );
 
-      </div>
 
-    </div>
+  if(counter){
 
+    counter.textContent =
+      `${completed} de 3`;
 
-    <div class="participants-box">
+  }
 
-      <h3>
-        👥 PARTICIPANTES
-      </h3>
 
-      <div id="participantList">
-        <div class="participant">
-          Aún no hay participantes.
-        </div>
-      </div>
+  const continueButton =
+    document.getElementById(
+      "continueButton"
+    );
 
-    </div>
 
+  if(!continueButton){
+    return;
+  }
 
-    <div class="roulette-box">
 
-      <h3>
-        🎡 RULETA DEL SORTEO
-      </h3>
+  if(completed === 3){
 
-      <div class="roulette-wrap">
+    continueButton.classList.add(
+      "active"
+    );
 
-        <div class="needle"></div>
 
-        <div id="roulette"
-             class="roulette">
+    continueButton.textContent =
+      "✅ CONTINUAR";
 
-          <div class="roulette-center"></div>
 
-        </div>
+    continueButton.onclick =
+      finishSocialStep;
 
-      </div>
 
-      <p class="notice">
-        Cada participante ocupa una partición de la ruleta.
-        El nombre aparece dentro de su partición.
-      </p>
+  }else{
 
-      <!-- TEMPORIZADOR AGREGADO -->
-      <div class="roulette-countdown-box">
+    continueButton.classList.remove(
+      "active"
+    );
 
-        <div class="roulette-countdown-title">
-          ⏳ LA RULETA GIRARÁ EN
-        </div>
 
-        <div id="rouletteCountdown"
-             class="roulette-countdown">
-          Cargando...
-        </div>
+    continueButton.textContent =
+      "🔒 CONTINUAR";
 
-      </div>
 
-    </div>
+    continueButton.onclick =
+      null;
 
-  </div>
+  }
 
-</section>
+}
 
 
-<!-- ========================================================
-     REGISTRO
-     ======================================================== -->
+/* ----------------------------------------------------------
+   RECUPERAR ESTADO AL ABRIR LA WEB
+   ---------------------------------------------------------- */
 
-<section id="registerScreen"
-         class="screen hidden">
+function restoreSocialState(){
 
-  <div class="brand">
+  const networks = [
+    "youtube",
+    "facebook",
+    "whatsapp"
+  ];
 
-    <div class="crown">👑</div>
 
-    <h1>SOY SIGAS</h1>
+  networks.forEach(network => {
 
-    <p>
-      FFSORTEOS DIAMANTES Y MÁS
-    </p>
+    const completed =
+      localStorage.getItem(
+        "soysigas_social_completed_" + network
+      ) === "1";
 
-  </div>
 
+    if(completed){
 
-  <div class="card register-card">
+      socialState[network].completed =
+        true;
 
-    <button class="back-button"
-            onclick="showMain()">
-      ←
-    </button>
+      socialState[network].openedAt =
+        null;
 
-    <h2>
-      🎟️ Participar en el sorteo
-    </h2>
+      markSocialCompleted(network);
 
-    <p class="description">
-      Completa tu nombre y apellidos y tu ID de Free Fire.
-    </p>
+      return;
 
+    }
 
-    <div class="input-group">
 
-      <label for="playerName">
-    
+    const savedTime =
+      localStorage.getItem(
+        "soysigas_social_" + network
+      );
+
+
+    if(savedTime){
+
+      socialState[network].openedAt =
+        Number(savedTime);
+
+    }
+
+  });
+
+
+  /*
+    Comprobamos inmediatamente si ya
+    pasaron los 25 segundos.
+  */
+
+  checkSocialTime();
+
+}
+
+
+/* ----------------------------------------------------------
+   CUANDO EL USUARIO REGRESA DE OTRA RED
+   ---------------------------------------------------------- */
+
+document.addEventListener(
+  "visibilitychange",
+  function(){
+
+    if(!document.hidden){
+
+      restoreSocialState();
+
+    }
+
+  }
+);
+
+
+/* ----------------------------------------------------------
+   CUANDO LA PÁGINA VUELVE A ESTAR ACTIVA
+   ---------------------------------------------------------- */
+
+window.addEventListener(
+  "focus",
+  function(){
+
+    restoreSocialState();
+
+  }
+);
+
+
+window.addEventListener(
+  "pageshow",
+  function(){
+
+    restoreSocialState();
+
+  }
+);
