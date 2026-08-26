@@ -2,1745 +2,935 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>FFSORTEOS Diamantes y más | Soy Sigas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#000000">
+
+<title>Soy Sigas Official</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
 html,body{
+  width:100%;
   min-height:100%;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#000;
-  color:#fff
 }
 
 body{
+  background:#000;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
   overflow-x:hidden;
 }
 
-button,input{
-  font:inherit;
-}
+/* =========================
+   FONDO
+========================= */
 
-button{
-  cursor:pointer;
-}
-
-.hidden{
-  display:none!important;
-}
-
-body{
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
   background:
-    radial-gradient(circle at 50% 0%,#4a3500 0%,#1b1300 20%,#090909 48%,#000 100%);
+    radial-gradient(circle at 50% 25%,rgba(255,180,0,.13),transparent 28%),
+    radial-gradient(circle at 15% 50%,rgba(255,180,0,.05),transparent 25%),
+    radial-gradient(circle at 85% 50%,rgba(255,180,0,.05),transparent 25%),
+    #000;
 }
 
-.app{
-  min-height:100vh;
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background-image:
+    radial-gradient(circle,rgba(255,190,0,.35) 1px,transparent 1px);
+  background-size:70px 70px;
+  opacity:.12;
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.page{
+  width:100%;
+  max-width:900px;
+  margin:0 auto;
+  padding:10px 16px 35px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo-area{
   width:100%;
   display:flex;
   justify-content:center;
+  align-items:center;
+  margin-bottom:0;
 }
 
-.screen{
-  width:100%;
-  max-width:520px;
-  min-height:100vh;
-  padding:18px 14px 90px;
+.logo{
+  width:min(88vw,620px);
+  max-height:550px;
+  object-fit:contain;
+  display:block;
 }
 
-/* ==========================================================
-   REDES
-   ========================================================== */
+/* =========================
+   TITULO
+========================= */
 
-.social-landing{
+.title-wrap{
   display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
+  justify-content:center;
+  align-items:center;
+  gap:18px;
+  margin-top:-5px;
+  margin-bottom:18px;
 }
 
-.brand{
-  text-align:center;
-  margin:8px 0 24px;
+.title-line{
+  height:3px;
+  width:95px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    #ffd000,
+    transparent
+  );
+  box-shadow:0 0 10px #ffd000;
 }
 
-.crown{
-  font-size:54px;
-  filter:drop-shadow(0 0 13px #ffd000);
-}
-
-.brand h1{
+.star{
   color:#ffd000;
-  font-size:38px;
+  font-size:35px;
   line-height:1;
-  font-weight:900;
-  letter-spacing:3px;
   text-shadow:
-    0 0 8px #ffb300,
-    0 0 22px rgba(255,193,7,.55);
+    0 0 7px #ffd000,
+    0 0 18px #ffb300;
 }
 
-.brand p{
-  color:#aaa;
-  font-size:11px;
-  letter-spacing:3px;
-  margin-top:8px;
-}
-
-.card{
-  background:rgba(9,9,9,.97);
-  border:1px solid rgba(255,208,0,.55);
-  border-radius:24px;
-  padding:22px 16px;
-  box-shadow:
-    0 0 28px rgba(255,193,7,.12),
-    inset 0 0 25px rgba(255,193,7,.025);
-}
-
-.card h2{
+.main-title{
   color:#ffd000;
+  font-size:clamp(36px,7vw,65px);
+  font-weight:900;
+  font-style:italic;
+  letter-spacing:1px;
+  text-shadow:
+    0 0 5px #ffd000,
+    0 0 15px rgba(255,180,0,.5);
+}
+
+/* =========================
+   DESCRIPCION
+========================= */
+
+.description-box{
+  width:94%;
+  margin:0 auto 16px;
+  padding:16px 18px;
+  border:1px solid #ffd000;
+  border-radius:15px;
+  background:rgba(0,0,0,.72);
+  box-shadow:
+    0 0 10px rgba(255,200,0,.15),
+    inset 0 0 10px rgba(255,200,0,.04);
   text-align:center;
-  font-size:27px;
-  line-height:1.15;
-  margin-bottom:10px;
 }
 
 .description{
-  color:#aaa;
-  text-align:center;
-  font-size:14px;
-  line-height:1.55;
-  margin-bottom:20px;
+  font-size:clamp(18px,3.7vw,29px);
+  line-height:1.35;
+  color:#fff;
+  font-weight:500;
 }
 
-.social-item{
+.description strong{
+  color:#ffd000;
+}
+
+/* =========================
+   REDES
+========================= */
+
+.social-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.social{
+  width:100%;
+  min-height:120px;
   display:flex;
   align-items:center;
-  gap:11px;
-  background:#111;
-  border:1px solid #333;
-  border-radius:16px;
-  padding:12px;
-  margin:12px 0;
-  min-height:76px;
-  transition:.25s;
+  gap:18px;
+  padding:13px 20px;
+  border-radius:20px;
+  background:rgba(0,0,0,.78);
+  position:relative;
+  overflow:hidden;
+  transition:.25s ease;
 }
 
-.social-item.completed{
-  border-color:#20d66b;
-  background:rgba(32,214,107,.08);
+.social::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(
+    90deg,
+    rgba(255,255,255,.025),
+    transparent 45%,
+    rgba(255,255,255,.025)
+  );
 }
 
 .social-icon{
-  width:48px;
-  height:48px;
-  flex:0 0 48px;
-  border-radius:13px;
+  width:90px;
+  height:90px;
+  min-width:90px;
+  border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  color:#fff;
-  font-size:25px;
-  font-weight:900;
+  overflow:hidden;
+  position:relative;
+  z-index:1;
 }
 
-.youtube{
+.social-icon img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* Iconos de respaldo */
+
+.icon-youtube{
   background:#ff0000;
+  box-shadow:0 0 25px rgba(255,0,0,.6);
 }
 
-.facebook{
+.icon-youtube::after{
+  content:"▶";
+  color:#fff;
+  font-size:42px;
+  margin-left:5px;
+}
+
+.icon-instagram{
+  background:linear-gradient(
+    135deg,
+    #833ab4,
+    #fd1d1d,
+    #fcb045
+  );
+  box-shadow:0 0 25px rgba(255,0,150,.5);
+}
+
+.icon-instagram::after{
+  content:"◎";
+  color:#fff;
+  font-size:62px;
+  font-weight:bold;
+}
+
+.icon-facebook{
   background:#1877f2;
+  box-shadow:0 0 25px rgba(0,110,255,.55);
 }
 
-.whatsapp{
-  background:#25d366;
+.icon-facebook::after{
+  content:"f";
+  color:#fff;
+  font-size:68px;
+  font-weight:bold;
+  font-family:Arial;
 }
+
+.icon-whatsapp{
+  background:#12c947;
+  box-shadow:0 0 25px rgba(0,255,90,.45);
+}
+
+.icon-whatsapp::after{
+  content:"☎";
+  color:#fff;
+  font-size:47px;
+}
+
+/* =========================
+   INFORMACION
+========================= */
 
 .social-info{
   flex:1;
   min-width:0;
+  z-index:1;
 }
 
-.social-info strong{
-  display:block;
-  font-size:16px;
-  margin-bottom:4px;
+.social-name{
+  font-size:clamp(20px,4vw,30px);
+  font-weight:900;
+  margin-bottom:3px;
 }
 
-.social-info span{
-  display:block;
-  color:#999;
-  font-size:12px;
+.social-account{
+  font-size:clamp(17px,3.5vw,25px);
+  font-weight:700;
+  margin-bottom:3px;
 }
 
-.social-button{
+.social-description{
+  font-size:clamp(14px,2.7vw,20px);
+  opacity:.95;
+}
+
+.verified{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  text-decoration:none;
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  font-size:13px;
+  margin-left:5px;
+  color:#fff;
+  vertical-align:middle;
+}
+
+/* =========================
+   BOTON
+========================= */
+
+.social-button{
+  width:180px;
+  min-width:180px;
+  height:62px;
   border:0;
-  border-radius:10px;
-  padding:11px 13px;
-  background:#ffd000;
-  color:#000;
-  font-size:12px;
+  border-radius:12px;
+  color:#fff;
+  font-size:clamp(17px,3vw,24px);
   font-weight:900;
-  white-space:nowrap;
+  cursor:pointer;
+  text-decoration:none;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  position:relative;
+  z-index:2;
+  transition:.2s ease;
+}
+
+.social-button:active{
+  transform:scale(.96);
+}
+
+.social-button.disabled{
+  cursor:not-allowed;
+  filter:grayscale(.4);
+  opacity:.45;
+  pointer-events:none;
 }
 
 .social-button.completed{
-  background:#20d66b;
-  color:#fff;
+  cursor:default;
+  background:#16a34a !important;
+  box-shadow:0 0 18px rgba(0,255,100,.35)!important;
+  pointer-events:none;
 }
 
-.completed-count{
-  text-align:center;
-  color:#aaa;
-  font-size:14px;
-  margin:17px 0 12px;
+.social-button.completed::after{
+  content:" ✓";
 }
 
-.completed-count strong{
-  color:#ffd000;
-}
-
-.continue-button{
-  width:100%;
-  border:0;
-  border-radius:14px;
-  padding:16px;
-  background:#333;
-  color:#777;
-  font-weight:900;
-  font-size:16px;
-  cursor:not-allowed;
-}
-
-.continue-button.active{
-  background:linear-gradient(135deg,#ffd000,#ff9800);
-  color:#000;
-  cursor:pointer;
-}
-
-/* ==========================================================
-   PRINCIPAL
-   ========================================================== */
-
-.main-screen{
-  padding-top:12px;
-}
-
-.top-header{
-  display:flex;
-  justify-content:flex-end;
-  position:relative;
-  z-index:20;
-}
-
-.menu-button{
-  width:54px;
-  height:54px;
-  border-radius:16px;
-  border:1px solid #ffd000;
-  background:#111;
-  color:#ffd000;
-  font-size:28px;
-}
-
-.menu-panel{
-  position:absolute;
-  top:64px;
-  right:0;
-  width:260px;
-  background:#0d0d0d;
-  border:1px solid rgba(255,208,0,.55);
-  border-radius:16px;
-  padding:10px;
-  box-shadow:0 12px 30px rgba(0,0,0,.6);
-}
-
-.menu-title{
-  color:#ffd000;
-  font-weight:900;
-  text-align:center;
-  padding:10px;
-}
-
-.menu-option{
-  width:100%;
-  border:0;
-  background:#181818;
-  color:#fff;
-  border-radius:10px;
-  padding:12px;
-  margin:4px 0;
-  text-align:left;
-}
-
-.welcome{
-  text-align:center;
-  margin:5px 0 24px;
-}
-
-.welcome .crown{
-  font-size:50px;
-}
-
-.welcome h2{
-  color:#ffd000;
-  font-size:32px;
-  margin-top:3px;
-  text-shadow:0 0 10px rgba(255,208,0,.35);
-}
-
-.welcome p{
-  color:#aaa;
-  margin-top:10px;
-  font-size:15px;
-}
-
-.draw-card{
-  background:linear-gradient(145deg,#292200,#111);
-  border:1px solid rgba(255,208,0,.55);
-  border-radius:22px;
-  text-align:center;
-  padding:27px 14px;
-}
-
-.draw-card h3,
-.section-title{
-  color:#ffd000;
-  font-size:20px;
-  font-weight:900;
-}
-
-.draw-date{
-  color:#fff;
-  font-size:36px;
-  font-weight:900;
-  margin:22px 0 12px;
-}
-
-.draw-time{
-  color:#aaa;
-  font-size:16px;
-}
-
-.registration-status{
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 20px;
-  border-radius:25px;
-  background:#173818;
-  color:#20e46f;
-  font-weight:900;
-}
-
-.participate-button{
-  width:100%;
-  margin-top:20px;
-  border:0;
-  border-radius:15px;
-  padding:17px 12px;
-  background:linear-gradient(135deg,#ffd000,#ff9800);
-  color:#000;
-  font-size:17px;
-  font-weight:900;
-  box-shadow:0 0 18px rgba(255,193,7,.18);
-}
-
-.countdown-box,
-.slots,
-.stat,
-.participants-box,
-.roulette-box{
-  background:#101010;
-  border:1px solid #303030;
-  border-radius:20px;
-  padding:20px;
-  margin-top:16px;
-}
-
-.countdown-title{
-  text-align:center;
-  color:#ddd;
-  font-weight:900;
-  font-size:16px;
-}
-
-.countdown{
-  text-align:center;
-  color:#ffd000;
-  font-size:30px;
-  font-weight:900;
-  margin-top:12px;
-}
-
-.slots{
-  text-align:center;
-}
-
-.slots-number{
-  color:#ffd000;
-  font-size:50px;
-  font-weight:900;
-}
-
-.slots-label{
-  color:#999;
-  margin-top:4px;
-}
-
-.progress{
-  height:12px;
-  background:#2c2c2c;
-  border-radius:20px;
-  overflow:hidden;
-  margin-top:18px;
-}
-
-.progress-bar{
-  height:100%;
-  width:0%;
-  background:linear-gradient(90deg,#ffd000,#ff9800);
-}
-
-.stats{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-}
-
-.stat{
-  text-align:center;
-}
-
-.stat-number{
-  display:block;
-  color:#ffd000;
-  font-size:28px;
-  font-weight:900;
-}
-
-.stat-label{
-  display:block;
-  color:#999;
-  font-size:12px;
-  margin-top:6px;
-}
-
-.participants-box h3,
-.roulette-box h3{
-  text-align:center;
-  color:#ffd000;
-  font-size:22px;
-  margin-bottom:14px;
-}
-
-.participant{
-  background:#181818;
-  border:1px solid #2d2d2d;
-  border-radius:11px;
-  padding:13px;
-  margin:7px 0;
-  font-size:14px;
-}
-
-.notice{
-  text-align:center;
-  color:#888;
-  font-size:11px;
-  line-height:1.5;
-  margin-top:14px;
-}
-
-/* ==========================================================
-   FORMULARIO
-   ========================================================== */
-
-.register-card h2{
-  margin-bottom:10px;
-}
+/* Colores */
 
-.input-group{
-  margin-top:15px;
+.youtube{
+  border:1px solid #ff1b1b;
+  box-shadow:0 0 12px rgba(255,0,0,.12);
 }
-
-.input-group label{
-  display:block;
-  color:#ddd;
-  font-weight:900;
-  font-size:14px;
-  margin-bottom:8px;
-}
-
-.input-group input{
-  width:100%;
-  padding:15px;
-  border-radius:13px;
-  border:1px solid #3b3b3b;
-  background:#151515;
-  color:#fff;
-  outline:none;
-  font-size:16px;
-}
-
-.input-group input:focus{
-  border-color:#ffd000;
-  box-shadow:0 0 10px rgba(255,208,0,.15);
-}
-
-.error{
-  display:none;
-  margin-top:12px;
-  padding:11px;
-  border-radius:10px;
-  color:#ff7474;
-  background:rgba(255,50,50,.1);
-  border:1px solid rgba(255,50,50,.35);
-  text-align:center;
-  font-size:12px;
-}
-
-.confirm-button{
-  width:100%;
-  border:0;
-  border-radius:14px;
-  padding:16px;
-  margin-top:18px;
-  background:linear-gradient(135deg,#ffd000,#ff9800);
-  color:#000;
-  font-weight:900;
-  font-size:16px;
-}
-
-.back-button{
-  border:1px solid #555;
-  background:#171717;
-  color:#fff;
-  width:48px;
-  height:44px;
-  border-radius:12px;
-  font-size:22px;
-  margin-bottom:12px;
-}
-
-/* ==========================================================
-   RULETA
-   ========================================================== */
-
-.roulette-wrap{
-  position:relative;
-  width:min(88vw,430px);
-  aspect-ratio:1;
-  margin:15px auto 0;
-}
-
-.roulette{
-  position:absolute;
-  inset:0;
-  border-radius:50%;
-  border:10px solid #ffd000;
-  background:#151515;
-  overflow:hidden;
-  box-shadow:0 0 30px rgba(255,208,0,.25);
-}
-
-.roulette-center{
-  position:absolute;
-  width:45px;
-  height:45px;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
-  border-radius:50%;
-  background:#ffd000;
-  border:5px solid #111;
-  z-index:10;
-}
-
-.needle{
-  position:absolute;
-  z-index:20;
-  top:-4px;
-  left:50%;
-  transform:translateX(-50%);
-  width:0;
-  height:0;
-  border-left:18px solid transparent;
-  border-right:18px solid transparent;
-  border-top:52px solid #fff;
-  filter:drop-shadow(0 4px 4px #000);
-}
-
-.segment{
-  position:absolute;
-  left:50%;
-  top:50%;
-  width:50%;
-  height:50%;
-  transform-origin:0 0;
-  overflow:visible;
-}
-
-.segment-label{
-  position:absolute;
-  left:14px;
-  top:50%;
-  transform:translateY(-50%);
-  width:calc(100% - 20px);
-  color:#fff;
-  font-weight:900;
-  font-size:11px;
-  text-align:center;
-  text-shadow:1px 1px 2px #000;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-}
-
-/* ==========================================================
-   GANADOR
-   ========================================================== */
-
-.winner-card{
-  text-align:center;
-}
-
-.winner{
-  text-align:center;
-  padding:25px 10px;
-  color:#ffd000;
-  font-size:25px;
-  font-weight:900;
-}
-
-.winner-id{
-  margin-top:12px;
-  color:#fff;
-  font-size:20px;
-  font-weight:900;
-}
-
-.winner-name-permanent{
-  margin-top:18px;
-  padding:18px;
-  border-radius:15px;
-  background:#181818;
-  border:1px solid #ffd000;
-  color:#ffd000;
-  font-size:20px;
-  font-weight:900;
-}
-
-/* ==========================================================
-   PERFIL
-   ========================================================== */
-
-.profile-box{
-  text-align:center;
-}
-
-.profile-avatar{
-  font-size:58px;
-  margin-bottom:10px;
-}
-
-.profile-name{
-  color:#ffd000;
-  font-size:24px;
-  font-weight:900;
-}
-
-.profile-id{
-  margin-top:12px;
-  padding:14px;
-  background:#181818;
-  border-radius:12px;
-  color:#fff;
-  font-weight:900;
-}
-
-/* ==========================================================
-   ADMINISTRACIÓN
-   ========================================================== */
-
-.admin-login{
-  text-align:center;
-}
-
-.admin-lock{
-  font-size:60px;
-  margin-bottom:10px;
-}
-
-.admin-login h2{
-  margin-bottom:8px;
-}
-
-.password-input{
-  width:100%;
-  padding:16px;
-  border-radius:13px;
-  border:1px solid #3b3b3b;
-  background:#151515;
-  color:#fff;
-  outline:none;
-  margin-top:15px;
-  text-align:center;
-  letter-spacing:2px;
-}
-
-.password-input:focus{
-  border-color:#ffd000;
-  box-shadow:0 0 10px rgba(255,208,0,.15);
-}
-
-.admin-button{
-  width:100%;
-  border:0;
-  border-radius:14px;
-  padding:16px;
-  margin-top:15px;
-  background:linear-gradient(135deg,#ffd000,#ff9800);
-  color:#000;
-  font-weight:900;
-}
-
-.admin-error{
-  display:none;
-  color:#ff7474;
-  margin-top:12px;
-  font-size:13px;
-  font-weight:900;
-}
-
-.admin-participant{
-  background:#171717;
-  border:1px solid #333;
-  border-radius:15px;
-  padding:14px;
-  margin:10px 0;
-}
-
-.admin-participant strong{
-  color:#ffd000;
-  display:block;
-  font-size:16px;
-}
-
-.admin-participant span{
-  display:block;
-  color:#aaa;
-  margin-top:6px;
-  font-size:13px;
-}
-
-.choose-winner{
-  width:100%;
-  border:0;
-  border-radius:11px;
-  padding:12px;
-  margin-top:12px;
-  background:#ffd000;
-  color:#000;
-  font-weight:900;
-}
-
-.choose-winner.selected{
-  background:#20d66b;
-  color:#fff;
-}
-
-/* ==========================================================
-   SUBPÁGINAS
-   ========================================================== */
-
-.subpage-title{
-  color:#ffd000;
-  text-align:center;
-  font-size:22px;
-  font-weight:900;
-  margin-bottom:15px;
-}
-
-/* ==========================================================
-   BOTÓN FLOTANTE DE REDES
-   ========================================================== */
 
-.floating-social{
-  position:fixed;
-  right:18px;
-  bottom:20px;
-  z-index:9999;
+.youtube .social-button{
+  background:#e50909;
+  box-shadow:0 0 18px rgba(255,0,0,.55);
 }
 
-.floating-social-main{
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  border:2px solid #ffd000;
-  background:linear-gradient(135deg,#181818,#050505);
-  color:#ffd000;
-  font-size:25px;
-  box-shadow:
-    0 0 15px rgba(255,208,0,.35),
-    0 6px 20px rgba(0,0,0,.6);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:.25s;
+.youtube .social-description{
+  color:#ff7777;
 }
 
-.floating-social-main:active{
-  transform:scale(.92);
+.youtube .verified{
+  background:#ff2020;
 }
 
-.floating-social-menu{
-  position:absolute;
-  right:0;
-  bottom:68px;
-  width:210px;
-  background:#0d0d0d;
-  border:1px solid rgba(255,208,0,.6);
-  border-radius:18px;
-  padding:9px;
-  box-shadow:0 12px 30px rgba(0,0,0,.75);
+.instagram{
+  border:1px solid #f0008c;
+  box-shadow:0 0 12px rgba(255,0,150,.12);
 }
 
-.floating-social-menu.hidden{
-  display:none;
+.instagram .social-button{
+  background:#e60072;
+  box-shadow:0 0 18px rgba(255,0,150,.5);
 }
 
-.floating-social-title{
-  color:#ffd000;
-  text-align:center;
-  font-size:13px;
-  font-weight:900;
-  padding:8px 5px 10px;
+.instagram .social-description{
+  color:#ff3ca8;
 }
 
-.floating-social-link{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  width:100%;
-  text-decoration:none;
-  color:#fff;
-  background:#181818;
-  border-radius:11px;
-  padding:11px;
-  margin:5px 0;
-  font-size:13px;
-  font-weight:900;
+.instagram .verified{
+  background:#e60072;
 }
 
-.floating-social-link:active{
-  transform:scale(.98);
+.facebook{
+  border:1px solid #087cff;
+  box-shadow:0 0 12px rgba(0,100,255,.12);
 }
 
-.floating-social-icon{
-  width:34px;
-  height:34px;
-  border-radius:9px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  font-size:17px;
+.facebook .social-button{
+  background:#0866d9;
+  box-shadow:0 0 18px rgba(0,100,255,.5);
 }
 
-.floating-youtube{
-  background:#ff0000;
+.facebook .social-description{
+  color:#1590ff;
 }
 
-.floating-facebook{
+.facebook .verified{
   background:#1877f2;
 }
 
-.floating-whatsapp{
-  background:#25d366;
+.whatsapp{
+  border:1px solid #00dc42;
+  box-shadow:0 0 12px rgba(0,255,80,.12);
 }
 
-/* ==========================================================
+.whatsapp .social-button{
+  background:#08a934;
+  box-shadow:0 0 18px rgba(0,255,80,.45);
+}
+
+.whatsapp .social-description{
+  color:#13e85b;
+}
+
+.whatsapp .verified{
+  background:#0bbf45;
+}
+
+/* =========================
+   AVISO INFERIOR
+========================= */
+
+.bottom-notice{
+  width:94%;
+  margin:10px auto 0;
+  padding:13px 18px;
+  border:1px solid #e8b900;
+  border-radius:15px;
+  background:rgba(0,0,0,.72);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:20px;
+  text-align:center;
+}
+
+.lock{
+  font-size:45px;
+  color:#ffd000;
+  text-shadow:0 0 12px rgba(255,200,0,.6);
+}
+
+.notice-text{
+  font-size:clamp(17px,3.4vw,25px);
+  line-height:1.3;
+}
+
+.notice-text strong{
+  color:#ffd000;
+}
+
+/* =========================
+   CONTINUAR
+   Inicialmente invisible
+========================= */
+
+.download-area{
+  display:none;
+  width:94%;
+  margin:16px auto 0;
+  text-align:center;
+}
+
+.download-area.show{
+  display:block;
+}
+
+.download-button{
+  width:100%;
+  min-height:65px;
+  border:1px solid #ffd000;
+  border-radius:15px;
+  background:linear-gradient(
+    180deg,
+    #ffd000,
+    #d99b00
+  );
+  color:#000;
+  font-size:clamp(19px,4vw,27px);
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:
+    0 0 20px rgba(255,200,0,.45);
+}
+
+.download-button:active{
+  transform:scale(.98);
+}
+
+/* =========================
+   ESTADO COMPLETADO
+========================= */
+
+.completed-label{
+  display:none;
+  font-size:15px;
+  color:#75ff9b;
+  margin-top:3px;
+  font-weight:700;
+}
+
+.completed .completed-label{
+  display:block;
+}
+
+/* =========================
    RESPONSIVE
-   ========================================================== */
+========================= */
 
-@media(max-width:400px){
+@media(max-width:700px){
 
-  .screen{
-    padding-left:10px;
-    padding-right:10px;
+  .page{
+    padding:4px 8px 25px;
   }
 
-  .brand h1{
-    font-size:31px;
+  .logo{
+    width:94vw;
+    max-height:410px;
   }
 
-  .welcome h2{
-    font-size:27px;
+  .title-wrap{
+    gap:8px;
+    margin-top:-4px;
+    margin-bottom:12px;
   }
 
-  .draw-date{
-    font-size:31px;
+  .title-line{
+    width:45px;
+  }
+
+  .star{
+    font-size:25px;
+  }
+
+  .main-title{
+    font-size:38px;
+  }
+
+  .description-box{
+    width:97%;
+    padding:12px 10px;
+    margin-bottom:10px;
+  }
+
+  .description{
+    font-size:18px;
+  }
+
+  .social{
+    min-height:100px;
+    padding:10px;
+    gap:10px;
+    border-radius:16px;
+  }
+
+  .social-icon{
+    width:65px;
+    height:65px;
+    min-width:65px;
+  }
+
+  .icon-youtube::after{
+    font-size:30px;
+  }
+
+  .icon-instagram::after{
+    font-size:45px;
+  }
+
+  .icon-facebook::after{
+    font-size:50px;
+  }
+
+  .icon-whatsapp::after{
+    font-size:35px;
+  }
+
+  .social-name{
+    font-size:18px;
+  }
+
+  .social-account{
+    font-size:16px;
+  }
+
+  .social-description{
+    font-size:12px;
+  }
+
+  .verified{
+    width:16px;
+    height:16px;
+    font-size:9px;
   }
 
   .social-button{
-    padding:10px 9px;
+    width:105px;
+    min-width:105px;
+    height:48px;
+    font-size:14px;
+    border-radius:9px;
   }
 
-  .social-info strong{
+  .bottom-notice{
+    width:97%;
+    padding:10px;
+    gap:10px;
+  }
+
+  .lock{
+    font-size:35px;
+  }
+
+  .notice-text{
+    font-size:16px;
+  }
+}
+
+@media(max-width:390px){
+
+  .social{
+    gap:7px;
+    padding:8px;
+  }
+
+  .social-icon{
+    width:55px;
+    height:55px;
+    min-width:55px;
+  }
+
+  .social-name{
+    font-size:16px;
+  }
+
+  .social-account{
     font-size:14px;
   }
 
-  .floating-social{
-    right:12px;
-    bottom:15px;
+  .social-description{
+    font-size:11px;
   }
 
-  .floating-social-main{
-    width:54px;
-    height:54px;
+  .social-button{
+    width:90px;
+    min-width:90px;
+    height:44px;
+    font-size:12px;
   }
-
-  .floating-social-menu{
-    width:195px;
-  }
-
 }
 </style>
 </head>
 
 <body>
 
-<!-- ========================================================
-     BOTÓN FLOTANTE DE REDES
-     NO APARECE EN LA PANTALLA INICIAL
-     ======================================================== -->
+<div class="page">
 
-<div id="floatingSocial"
-     class="floating-social hidden">
+  <!-- =========================
+       LOGO
+  ========================== -->
 
-  <div id="floatingSocialMenu"
-       class="floating-social-menu hidden">
+  <div class="logo-area">
+    <img
+      src="logo.png"
+      alt="Soy Sigas Official"
+      class="logo"
+    >
+  </div>
 
-    <div class="floating-social-title">
-      👑 MIS REDES OFICIALES
+  <!-- =========================
+       TITULO
+  ========================== -->
+
+  <div class="title-wrap">
+    <div class="title-line"></div>
+
+    <div class="star">★</div>
+
+    <div class="main-title">
+      SÍGUEME
     </div>
 
-    <a class="floating-social-link"
-       href="https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b"
-       target="_blank"
-       rel="noopener noreferrer">
+    <div class="star">★</div>
 
-      <span class="floating-social-icon floating-youtube">
-        ▶
-      </span>
+    <div class="title-line"></div>
+  </div>
 
-      YouTube
-    </a>
+  <!-- =========================
+       DESCRIPCION
+  ========================== -->
 
-    <a class="floating-social-link"
-       href="https://www.facebook.com/profile.php?id=61593805138979"
-       target="_blank"
-       rel="noopener noreferrer">
+  <div class="description-box">
 
-      <span class="floating-social-icon floating-facebook">
-        f
-      </span>
-
-      Facebook
-    </a>
-
-    <a class="floating-social-link"
-       href="https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g"
-       target="_blank"
-       rel="noopener noreferrer">
-
-      <span class="floating-social-icon floating-whatsapp">
-        ☎
-      </span>
-
-      WhatsApp
-    </a>
+    <div class="description">
+      Sígueme en mis redes para continuar
+      <br>
+      y generar tu <strong>enlace de descarga</strong>
+    </div>
 
   </div>
 
-  <button class="floating-social-main"
-          onclick="toggleFloatingSocial()"
-          aria-label="Abrir mis redes">
-    📱
-  </button>
+  <!-- =========================
+       REDES
+  ========================== -->
 
-</div>
+  <div class="social-list">
 
+    <!-- YOUTUBE -->
 
-<div class="app">
+    <div
+      class="social youtube"
+      id="network-youtube"
+    >
 
-<!-- ========================================================
-     PANTALLA INICIAL: SOLO REDES
-     ======================================================== -->
-
-<section id="socialScreen"
-         class="screen social-landing">
-
-  <div class="brand">
-
-    <div class="crown">👑</div>
-
-    <h1>SOY SIGAS</h1>
-
-    <p>SÍGUEME EN MIS REDES</p>
-
-  </div>
-
-
-  <div class="card">
-
-    <h2>🔥 Mis redes oficiales</h2>
-
-    <p class="description">
-      Completa las tres redes y después podrás entrar al sorteo.
-    </p>
-
-
-    <div id="social-youtube"
-         class="social-item">
-
-      <div class="social-icon youtube">
-        ▶
-      </div>
+      <div class="social-icon icon-youtube"></div>
 
       <div class="social-info">
 
-        <strong>YouTube</strong>
+        <div class="social-name">
+          YOUTUBE
+        </div>
 
-        <span>
+        <div class="social-account">
           Soy Sigas Official
-        </span>
+          <span class="verified">✓</span>
+        </div>
+
+        <div class="social-description">
+          Videos, sorteos y directo
+        </div>
+
+        <div class="completed-label">
+          ✓ COMPLETADO
+        </div>
 
       </div>
 
-      <a id="button-youtube"
-         class="social-button"
-         href="https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b"
-         target="_blank"
-         rel="noopener noreferrer"
-         onclick="startSocial('youtube')">
-
-        SEGUIR
-
+      <a
+        href="https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-button"
+        id="button-youtube"
+        onclick="openSocial(event,'youtube')"
+      >
+        SÍGUEME ↗
       </a>
 
     </div>
 
 
-    <div id="social-facebook"
-         class="social-item">
+    <!-- INSTAGRAM -->
 
-      <div class="social-icon facebook">
-        f
-      </div>
+    <div
+      class="social instagram"
+      id="network-instagram"
+    >
+
+      <div class="social-icon icon-instagram"></div>
 
       <div class="social-info">
 
-        <strong>Facebook</strong>
+        <div class="social-name">
+          INSTAGRAM
+        </div>
 
-        <span>
+        <div class="social-account">
+          @soysigasofficial
+          <span class="verified">✓</span>
+        </div>
+
+        <div class="social-description">
+          Fotos, historias y más
+        </div>
+
+        <div class="completed-label">
+          ✓ COMPLETADO
+        </div>
+
+      </div>
+
+      <a
+        href="https://www.instagram.com/soysigasofficial?igsi=MThtNnd6dXc2bjE4Yw=="
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-button disabled"
+        id="button-instagram"
+        onclick="openSocial(event,'instagram')"
+      >
+        SÍGUEME ↗
+      </a>
+
+    </div>
+
+
+    <!-- FACEBOOK -->
+
+    <div
+      class="social facebook"
+      id="network-facebook"
+    >
+
+      <div class="social-icon icon-facebook"></div>
+
+      <div class="social-info">
+
+        <div class="social-name">
+          FACEBOOK
+        </div>
+
+        <div class="social-account">
           Soy Sigas
-        </span>
+          <span class="verified">✓</span>
+        </div>
+
+        <div class="social-description">
+          Noticias y actualizaciones
+        </div>
+
+        <div class="completed-label">
+          ✓ COMPLETADO
+        </div>
 
       </div>
 
-      <a id="button-facebook"
-         class="social-button"
-         href="https://www.facebook.com/profile.php?id=61593805138979"
-         target="_blank"
-         rel="noopener noreferrer"
-         onclick="startSocial('facebook')">
-
-        SEGUIR
-
+      <a
+        href="https://www.facebook.com/profile.php?id=61593805138979"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-button disabled"
+        id="button-facebook"
+        onclick="openSocial(event,'facebook')"
+      >
+        SÍGUEME ↗
       </a>
 
     </div>
 
 
-    <div id="social-whatsapp"
-         class="social-item">
+    <!-- WHATSAPP -->
 
-      <div class="social-icon whatsapp">
-        ☎
-      </div>
+    <div
+      class="social whatsapp"
+      id="network-whatsapp"
+    >
+
+      <div class="social-icon icon-whatsapp"></div>
 
       <div class="social-info">
 
-        <strong>WhatsApp</strong>
+        <div class="social-name">
+          WHATSAPP
+        </div>
 
-        <span>
+        <div class="social-account">
           Canal Soy Sigas
-        </span>
+          <span class="verified">✓</span>
+        </div>
+
+        <div class="social-description">
+          Novedades y avisos importantes
+        </div>
+
+        <div class="completed-label">
+          ✓ COMPLETADO
+        </div>
 
       </div>
 
-      <a id="button-whatsapp"
-         class="social-button"
-         href="https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g"
-         target="_blank"
-         rel="noopener noreferrer"
-         onclick="startSocial('whatsapp')">
-
-        SEGUIR
-
+      <a
+        href="https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-button disabled"
+        id="button-whatsapp"
+        onclick="openSocial(event,'whatsapp')"
+      >
+        SÍGUEME ↗
       </a>
 
     </div>
 
+  </div>
 
-    <div class="completed-count">
 
-      Completadas:
+  <!-- =========================
+       AVISO
+  ========================== -->
 
-      <strong id="socialCount">
-        0 de 3
-      </strong>
+  <div class="bottom-notice">
 
+    <div class="lock">
+      🔒
     </div>
 
+    <div class="notice-text">
+      Debes seguir <strong>todas</strong> las redes
+      <br>
+      para continuar y generar tu enlace de descarga.
+    </div>
 
-    <button id="continueButton"
-            class="continue-button">
+  </div>
 
-      🔒 CONTINUAR
 
+  <!-- =========================
+       ENLACE FINAL
+  ========================== -->
+
+  <div
+    class="download-area"
+    id="downloadArea"
+  >
+
+    <button
+      class="download-button"
+      onclick="generateDownloadLink()"
+    >
+      🔓 CONTINUAR Y GENERAR ENLACE DE DESCARGA
     </button>
 
   </div>
-
-</section>
-
-
-<!-- ========================================================
-     PANTALLA PRINCIPAL
-     ======================================================== -->
-
-<section id="mainScreen"
-         class="screen main-screen hidden">
-
-  <div class="top-header">
-
-    <button class="menu-button"
-            onclick="toggleMenu()">
-
-      ☰
-
-    </button>
-
-
-    <div id="menuPanel"
-         class="menu-panel hidden">
-
-      <div class="menu-title">
-        MENÚ PRINCIPAL
-      </div>
-
-
-      <button class="menu-option"
-              onclick="showSubpage('profilePage')">
-
-        👤 Mi perfil
-
-      </button>
-
-
-      <button class="menu-option"
-              onclick="showSubpage('roulettePage')">
-
-        🎡 Ruleta
-
-      </button>
-
-
-      <button class="menu-option"
-              onclick="showSubpage('statsPage')">
-
-        📊 Estadísticas
-
-      </button>
-
-
-      <button class="menu-option"
-              onclick="showSubpage('winnersPage')">
-
-        🏆 Ganadores
-
-      </button>
-
-
-      <button class="menu-option"
-              onclick="openAdminLogin()">
-
-        🔐 Administración
-
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <div class="welcome">
-
-    <div class="crown">
-      👑
-    </div>
-
-    <h2>
-      FFSORTEOS Diamantes y más
-    </h2>
-
-    <p>
-      Bienvenido a la familia Soy Sigas.
-    </p>
-
-  </div>
-
-
-  <div class="card">
-
-    <div class="draw-card">
-
-      <h3>
-        🎡 PRÓXIMO SORTEO
-      </h3>
-
-      <div id="drawDate"
-           class="draw-date">
-
-        Cargando...
-
-      </div>
-
-      <div class="draw-time">
-
-        Sorteo:
-        <strong>9:30 PM</strong>
-
-      </div>
-
-
-      <div id="registrationStatus"
-           class="registration-status">
-
-        🟢 INSCRIPCIONES ABIERTAS
-
-      </div>
-
-
-      <button class="participate-button"
-              onclick="openRegistration()">
-
-        🎟️ PARTICIPAR EN EL SORTEO
-
-      </button>
-
-    </div>
-
-
-    <div class="countdown-box">
-
-      <div id="countdownTitle"
-           class="countdown-title">
-
-        TIEMPO RESTANTE PARA EL SORTEO
-
-      </div>
-
-
-      <div id="countdown"
-           class="countdown">
-
-        --
-
-      </div>
-
-    </div>
-
-
-    <div class="slots">
-
-      <div id="slotsNumber"
-           class="slots-number">
-
-        50
-
-      </div>
-
-      <div class="slots-label">
-        CUPOS DISPONIBLES
-      </div>
-
-
-      <div class="progress">
-
-        <div id="progressBar"
-             class="progress-bar">
-        </div>
-
-      </div>
-
-
-      <p id="slotsMessage"
-         class="notice">
-
-        ¡Regístrate antes de que se acaben!
-
-      </p>
-
-    </div>
-
-
-    <div class="stats">
-
-      <div class="stat">
-
-        <span id="participantCount"
-              class="stat-number">
-
-          0/50
-
-        </span>
-
-        <span class="stat-label">
-          PARTICIPANTES
-        </span>
-
-      </div>
-
-
-      <div class="stat">
-
-        <span id="totalParticipants"
-              class="stat-number">
-
-          0
-
-        </span>
-
-        <span class="stat-label">
-          TOTAL DE PARTICIPANTES
-        </span>
-
-      </div>
-
-    </div>
-
-
-    <div class="participants-box">
-
-      <h3>
-        👥 PARTICIPANTES
-      </h3>
-
-      <div id="participantList">
-
-        <div class="participant">
-          Aún no hay participantes.
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <div class="roulette-box">
-
-      <h3>
-        🎡 RULETA DEL SORTEO
-      </h3>
-
-
-      <div class="roulette-wrap">
-
-        <div class="needle"></div>
-
-        <div id="roulette"
-             class="roulette">
-
-          <div class="roulette-center"></div>
-
-        </div>
-
-      </div>
-
-
-      <p class="notice">
-
-        Cada participante ocupa una partición de la ruleta.
-        El nombre aparece dentro de su partición.
-
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ========================================================
-     REGISTRO
-     ======================================================== -->
-
-<section id="registerScreen"
-         class="screen hidden">
-
-  <div class="brand">
-
-    <div class="crown">
-      👑
-    </div>
-
-    <h1>
-      SOY SIGAS
-    </h1>
-
-    <p>
-      FFSORTEOS DIAMANTES Y MÁS
-    </p>
-
-  </div>
-
-
-  <div class="card register-card">
-
-    <button class="back-button"
-            onclick="showMain()">
-
-      ←
-
-    </button>
-
-
-    <h2>
-      🎟️ Participar en el sorteo
-    </h2>
-
-
-    <p class="description">
-
-      Completa tu nombre y apellidos y tu ID de Free Fire.
-
-    </p>
-
-
-    <div class="input-group">
-
-      <label for="playerName">
-        👤 NOMBRE Y APELLIDOS
-      </label>
-
-      <input id="playerName"
-             type="text"
-             maxlength="60"
-             autocomplete="name"
-             placeholder="Ej.: Juan Pérez García">
-
-    </div>
-
-
-    <div class="input-group">
-
-      <label for="playerId">
-        🆔 ID DE FREE FIRE
-      </label>
-
-      <input id="playerId"
-             type="text"
-             inputmode="numeric"
-             maxlength="11"
-             placeholder="ID de 8 a 11 cifras">
-
-    </div>
-
-
-    <div id="registerError"
-         class="error">
-    </div>
-
-
-    <button class="confirm-button"
-            onclick="registerParticipant()">
-
-      ✅ CONFIRMAR PARTICIPACIÓN
-
-    </button>
-
-
-    <div class="notice">
-
-      Tu nombre aparecerá públicamente en la lista
-      de participantes.
-
-      <br><br>
-
-      Tu ID no se mostrará públicamente.
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ========================================================
-     PERFIL
-     ======================================================== -->
-
-<section id="profilePage"
-         class="screen hidden">
-
-  <div class="card profile-box">
-
-    <button class="back-button"
-            onclick="showMain()">
-      ←
-    </button>
-
-    <div class="subpage-title">
-      👤 MI PERFIL
-    </div>
-
-    <div class="profile-avatar">
-      👤
-    </div>
-
-    <div id="profileName"
-         class="profile-name">
-      Sin registro
-    </div>
-
-    <div id="profileId"
-         class="profile-id">
-      ID: —
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ========================================================
-     RULETA
-     ======================================================== -->
-
-<section id="roulettePage"
-         class="screen hidden">
-
-  <div class="card">
-
-    <button class="back-button"
-            onclick="showMain()">
-      ←
-    </button>
-
-    <div class="subpage-title">
-      🎡 RULETA DEL SORTEO
-    </div>
-
-    <div class="roulette-wrap">
-
-      <div class="needle"></div>
-
-      <div id="rouletteLarge"
-           class="roulette">
-
-        <div class="roulette-center"></div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ========================================================
-     ESTADÍSTICAS
-     ======================================================== -->
-
-<section id="statsPage"
-         class="screen hidden">
-
-  <div class="card">
-
-    <button class="back-button"
-            onclick="showMain()">
-      ←
-    </button>
-
-    <div class="subpage-title">
-      📊 ESTADÍSTICAS
-    </div>
-
-
-    <div class="stats">
-
-      <div class="stat">
-
-        <span id="statsCurrent"
-              class="stat-number">
-          0
-        </span>
-
-        <span class="stat-label">
-          PARTICIPANTES ACTUALES
-        </span>
-
-      </div>
-
-
-      <div class="stat">
-
-        <span id="statsTotal"
-              class="stat-number">
-          0
-        </span>
-
-        <span class="stat-label">
-          TOTAL HISTÓRICO
-        </span>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ========================================================
-     GANADORES
-     ======================================================== -->
-
-<section id="winnersPage"
-         class="screen hidden">
-
-  <div class="card winner-card">
-
-    <button class="back-button"
-            onclick="showMain()">
-      ←
-    </button>
-
-    <div class="subpage-title">
-      🏆 GANADORES
-    </div>
-
-
-    <div id="winnerContent">
-
-      <div class="winner">
-
-        Los ganadores aparecerán aquí después del sorteo.
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ========================================================
-     LOGIN ADMINISTRACIÓN
-     ======================================================== -->
-
-<section id="adminLoginPage"
-         class="screen hidden">
-
-  <div class="card admin-login">
-
-    <button class="back-button"
-            onclick="showMain()">
-      ←
-    </button>
-
-    <div class="admin-lock">
-      🔐
-    </div>
-
-    <h2>
-      Administración
-    </h2>
-
-    <p class="description">
-      Introduce la contraseña para continuar.
-    </p>
-
-
-    <input id="adminPassword"
-           class="password-input"
-           type="password"
-           autocomplete="off"
-           placeholder="Contraseña">
-
-
-    <div id="adminError"
-         class="admin-error">
-
-      Contraseña incorrecta.
-
-    </div>
-
-
-    <button class="admin-button"
-            onclick="verifyAdminPassword()">
-
-      🔓 ACCEDER
-
-    </button>
-
-  </div>
-
-</section>
-
-
-<!-- ========================================================
-     ADMINISTRACIÓN
-     ======================================================== -->
-
-<section id="adminPage"
-         class="screen hidden">
-
-  <div class="card">
-
-    <button class="back-button"
-            onclick="showMain()">
-      ←
-    </button>
-
-
-    <div class="subpage-title">
-      🔐 ADMINISTRACIÓN
-    </div>
-
-
-    <p class="description">
-      Participantes actuales de este sorteo.
-    </p>
-
-
-    <div id="adminParticipantsList">
-    </div>
-
-  </div>
-
-</section>
 
 </div>
 
@@ -1749,1211 +939,356 @@ body{
 
 /* ==========================================================
    CONFIGURACIÓN
-   ========================================================== */
-
-const REQUIRED_SOCIAL_TIME =
-  25000;
-
-const SOCIAL_ACCESS_TIME =
-  2 * 60 * 60 * 1000;
-
-const MAX_PARTICIPANTS =
-  50;
-
+========================================================== */
 
 /*
-  Hash SHA-256 de la contraseña
-  de Administración.
+   IMPORTANTE:
+
+   Pon aquí el enlace real que quieres abrir después
+   de completar las 4 redes.
+
+   Ejemplo:
+
+   const DOWNLOAD_URL =
+      "https://tusitio.com/descarga.html";
+
 */
 
-const ADMIN_PASSWORD_HASH =
-"5e811585a9cab529da28178719ddc89f18059ed133afaa5634e9d42bf13218a3";
-
-
-const SOCIALS = {
-
-  youtube:
-    "https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b",
-
-  facebook:
-    "https://www.facebook.com/profile.php?id=61593805138979",
-
-  whatsapp:
-    "https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g"
-
-};
-
-
-/* ==========================================================
-   DATOS
-   ========================================================== */
-
-let participants =
-  JSON.parse(
-    localStorage.getItem(
-      "soysigas_participants_current_draw"
-    ) || "[]"
-  );
-
-
-let totalHistoricalParticipants =
-  Number(
-    localStorage.getItem(
-      "soysigas_total_historical"
-    ) || "0"
-  );
-
-
-let selectedWinnerId =
-  localStorage.getItem(
-    "soysigas_selected_winner_id"
-  ) || null;
-
-
-let currentParticipant =
-  JSON.parse(
-    localStorage.getItem(
-      "soysigas_current_participant"
-    ) || "null"
-  );
-
-
-let winners =
-  JSON.parse(
-    localStorage.getItem(
-      "soysigas_winners"
-    ) || "[]"
-  );
-
-
-const socialState = {
-
-  youtube:{
-    openedAt:null,
-    completed:false
-  },
-
-  facebook:{
-    openedAt:null,
-    completed:false
-  },
-
-  whatsapp:{
-    openedAt:null,
-    completed:false
-  }
-
-};
-
-
-/* ==========================================================
-   FECHA DEL SORTEO
-   ========================================================== */
-
-function getDrawDate(){
-
-  const now =
-    new Date();
-
-  const y =
-    now.getFullYear();
-
-  const m =
-    now.getMonth();
-
-
-  for(
-    const day of [15,30]
-  ){
-
-    const d =
-      new Date(
-        y,
-        m,
-        day,
-        21,
-        30,
-        0,
-        0
-      );
-
-
-    if(d > now)
-      return d;
-
-  }
-
-
-  return new Date(
-    y,
-    m + 1,
-    15,
-    21,
-    30,
-    0,
-    0
-  );
-
-}
-
-
-function formatDate(date){
-
-  return date.toLocaleDateString(
-    "es-PR",
-    {
-      day:"numeric",
-      month:"long",
-      year:"numeric"
-    }
-  );
-
-}
-
-
-function formatCountdown(ms){
-
-  if(ms <= 0)
-    return "0 minutos";
-
-
-  const seconds =
-    Math.floor(
-      ms / 1000
-    );
-
-
-  const days =
-    Math.floor(
-      seconds / 86400
-    );
-
-
-  const hours =
-    Math.floor(
-      (seconds % 86400) / 3600
-    );
-
-
-  const mins =
-    Math.floor(
-      (seconds % 3600) / 60
-    );
-
-
-  if(days > 0){
-
-    return `${days}${days===1?" día ":" días "}${hours}${hours===1?" hora":" horas"}`;
-
-  }
-
-
-  if(hours > 0){
-
-    return `${hours}${hours===1?" hora ":" horas "}${mins}${mins===1?" minuto":" minutos"}`;
-
-  }
-
-
-  return `${mins}${mins===1?" minuto":" minutos"}`;
-
-}
+const DOWNLOAD_URL = "#";
 
 
 /* ==========================================================
    REDES
-   ========================================================== */
+========================================================== */
 
-function startSocial(network){
+const networks = [
+  "youtube",
+  "instagram",
+  "facebook",
+  "whatsapp"
+];
 
-  if(
-    !socialState[network] ||
-    socialState[network].completed
-  ){
-    return;
+
+/* ==========================================================
+   ESTADO
+========================================================== */
+
+const state = {
+
+  youtube:{
+    completed:false,
+    startedAt:null
+  },
+
+  instagram:{
+    completed:false,
+    startedAt:null
+  },
+
+  facebook:{
+    completed:false,
+    startedAt:null
+  },
+
+  whatsapp:{
+    completed:false,
+    startedAt:null
   }
 
-
-  const now =
-    Date.now();
+};
 
 
-  socialState[network].openedAt =
-    now;
+/* ==========================================================
+   TIEMPO DE ESPERA
+========================================================== */
 
+const WAIT_TIME = 25 * 1000;
+
+
+/* ==========================================================
+   CARGAR ESTADO GUARDADO
+========================================================== */
+
+function loadState(){
+
+  try{
+
+    const saved =
+      JSON.parse(
+        localStorage.getItem(
+          "soysigas_social_progress"
+        ) || "null"
+      );
+
+    if(!saved){
+      return;
+    }
+
+    networks.forEach(network => {
+
+      if(saved[network]){
+
+        state[network] = saved[network];
+
+      }
+
+    });
+
+  }catch(error){
+
+    console.log(
+      "No se pudo cargar el progreso."
+    );
+
+  }
+
+}
+
+
+/* ==========================================================
+   GUARDAR ESTADO
+========================================================== */
+
+function saveState(){
 
   localStorage.setItem(
-    "soysigas_social_opened",
-    JSON.stringify({
-      network:network,
-      openedAt:now
-    })
+    "soysigas_social_progress",
+    JSON.stringify(state)
   );
 
 }
 
 
-function checkSocialTime(){
+/* ==========================================================
+   ABRIR RED
+========================================================== */
 
-  const saved =
-    localStorage.getItem(
-      "soysigas_social_opened"
-    );
+function openSocial(event,network){
 
+  /*
+    Si la red todavía está bloqueada,
+    no permitimos abrirla.
+  */
 
-  if(!saved)
-    return;
+  const index =
+    networks.indexOf(network);
 
+  if(index > 0){
 
-  try{
+    const previous =
+      networks[index - 1];
 
-    const data =
-      JSON.parse(saved);
+    if(!state[previous].completed){
 
+      event.preventDefault();
 
-    if(
-      data &&
-      socialState[data.network] &&
-      !socialState[data.network].completed
-    ){
-
-      socialState[data.network].openedAt =
-        Number(data.openedAt);
-
-
-      if(
-        Date.now() -
-        socialState[data.network].openedAt
-        >=
-        REQUIRED_SOCIAL_TIME
-      ){
-
-        socialState[data.network].completed =
-          true;
-
-        socialState[data.network].openedAt =
-          null;
-
-
-        markSocialCompleted(
-          data.network
-        );
-
-
-        localStorage.removeItem(
-          "soysigas_social_opened"
-        );
-
-
-        updateSocialProgress();
-
-      }
+      return false;
 
     }
 
-  }catch(e){
+  }
 
-    localStorage.removeItem(
-      "soysigas_social_opened"
-    );
+
+  /*
+    Si ya está completada,
+    no hacemos nada.
+  */
+
+  if(state[network].completed){
+
+    return true;
 
   }
+
+
+  /*
+    Registrar momento exacto
+    en que se abrió la red.
+  */
+
+  state[network].startedAt =
+    Date.now();
+
+  saveState();
+
+
+  /*
+    El enlace se abre normalmente
+    en otra pestaña gracias a target="_blank".
+  */
+
+  /*
+    El contador comienza de forma
+    completamente invisible.
+  */
+
+  setTimeout(
+    () => completeNetwork(network),
+    WAIT_TIME
+  );
 
 }
 
 
-function markSocialCompleted(network){
+/* ==========================================================
+   COMPLETAR RED
+========================================================== */
 
-  const item =
-    document.getElementById(
-      "social-" + network
+function completeNetwork(network){
+
+  if(state[network].completed){
+
+    return;
+
+  }
+
+
+  /*
+    Comprobar cuánto tiempo realmente
+    ha pasado.
+  */
+
+  if(!state[network].startedAt){
+
+    return;
+
+  }
+
+
+  const elapsed =
+    Date.now() -
+    state[network].startedAt;
+
+
+  /*
+    Si todavía no han pasado 25 segundos,
+    esperamos lo que falta.
+  */
+
+  if(elapsed < WAIT_TIME){
+
+    setTimeout(
+      () => completeNetwork(network),
+      WAIT_TIME - elapsed
     );
 
+    return;
+
+  }
+
+
+  /*
+    Marcar como completada.
+  */
+
+  state[network].completed = true;
+
+  state[network].startedAt = null;
+
+  saveState();
+
+
+  /*
+    Actualizar visualmente.
+  */
+
+  markCompleted(network);
+
+
+  /*
+    Desbloquear la siguiente red.
+  */
+
+  unlockNext(network);
+
+
+  /*
+    Comprobar si terminó todo.
+  */
+
+  checkAllCompleted();
+
+}
+
+
+/* ==========================================================
+   MARCAR COMPLETADA
+========================================================== */
+
+function markCompleted(network){
 
   const button =
     document.getElementById(
       "button-" + network
     );
 
+  const box =
+    document.getElementById(
+      "network-" + network
+    );
 
-  if(!item || !button)
+
+  if(!button || !box){
+
     return;
 
+  }
 
-  item.classList.add(
-    "completed"
+
+  button.classList.remove(
+    "disabled"
   );
-
 
   button.classList.add(
     "completed"
   );
 
-
   button.textContent =
-    "✓ COMPLETADO";
+    "COMPLETADO";
 
 
-  button.removeAttribute(
-    "href"
+  box.classList.add(
+    "completed"
   );
-
-
-  button.removeAttribute(
-    "target"
-  );
-
-
-  button.removeAttribute(
-    "rel"
-  );
-
-
-  button.onclick =
-    function(event){
-
-      event.preventDefault();
-
-    };
-
-}
-
-
-function updateSocialProgress(){
-
-  const completed =
-    Object.values(
-      socialState
-    ).filter(
-      x => x.completed
-    ).length;
-
-
-  document.getElementById(
-    "socialCount"
-  ).textContent =
-    `${completed} de 3`;
-
-
-  const button =
-    document.getElementById(
-      "continueButton"
-    );
-
-
-  if(completed === 3){
-
-    button.classList.add(
-      "active"
-    );
-
-
-    button.textContent =
-      "✅ CONTINUAR";
-
-
-    button.onclick =
-      finishSocialStep;
-
-  }
-
-}
-
-
-function finishSocialStep(){
-
-  const completed =
-    Object.values(
-      socialState
-    ).filter(
-      x => x.completed
-    ).length;
-
-
-  if(completed !== 3)
-    return;
-
-
-  localStorage.setItem(
-    "soysigas_social_completed",
-    "1"
-  );
-
-
-  localStorage.setItem(
-    "soysigas_social_completed_at",
-    String(Date.now())
-  );
-
-
-  hideAllScreens();
-
-
-  document.getElementById(
-    "mainScreen"
-  ).classList.remove(
-    "hidden"
-  );
-
-
-  updateMain();
 
 }
 
 
 /* ==========================================================
-   CONTROL DE LAS 2 HORAS
-   ========================================================== */
+   DESBLOQUEAR SIGUIENTE
+========================================================== */
 
-function checkSocialExpiration(){
+function unlockNext(network){
 
-  const completed =
-    localStorage.getItem(
-      "soysigas_social_completed"
-    ) === "1";
+  const index =
+    networks.indexOf(network);
 
+  const next =
+    networks[index + 1];
 
-  if(!completed)
-    return false;
 
-
-  const completedAt =
-    Number(
-      localStorage.getItem(
-        "soysigas_social_completed_at"
-      ) || "0"
-    );
-
-
-  if(!completedAt)
-    return false;
-
-
-  if(
-    Date.now() - completedAt
-    >=
-    SOCIAL_ACCESS_TIME
-  ){
-
-    localStorage.removeItem(
-      "soysigas_social_completed"
-    );
-
-
-    localStorage.removeItem(
-      "soysigas_social_completed_at"
-    );
-
-
-    resetSocialState();
-
-
-    return false;
-
-  }
-
-
-  return true;
-
-}
-
-
-function resetSocialState(){
-
-  socialState.youtube = {
-    openedAt:null,
-    completed:false
-  };
-
-
-  socialState.facebook = {
-    openedAt:null,
-    completed:false
-  };
-
-
-  socialState.whatsapp = {
-    openedAt:null,
-    completed:false
-  };
-
-
-  localStorage.removeItem(
-    "soysigas_social_opened"
-  );
-
-
-  [
-    "youtube",
-    "facebook",
-    "whatsapp"
-  ].forEach(
-    network=>{
-
-      const item =
-        document.getElementById(
-          "social-" + network
-        );
-
-
-      const button =
-        document.getElementById(
-          "button-" + network
-        );
-
-
-      if(item)
-        item.classList.remove(
-          "completed"
-        );
-
-
-      if(button){
-
-        button.classList.remove(
-          "completed"
-        );
-
-
-        button.textContent =
-          "SEGUIR";
-
-
-        button.href =
-          SOCIALS[network];
-
-
-        button.target =
-          "_blank";
-
-
-        button.rel =
-          "noopener noreferrer";
-
-
-        button.onclick =
-          function(){
-
-            startSocial(network);
-
-          };
-
-      }
-
-    }
-  );
-
-
-  document.getElementById(
-    "socialCount"
-  ).textContent =
-    "0 de 3";
-
-
-  const continueButton =
-    document.getElementById(
-      "continueButton"
-    );
-
-
-  continueButton.classList.remove(
-    "active"
-  );
-
-
-  continueButton.textContent =
-    "🔒 CONTINUAR";
-
-
-  continueButton.onclick =
-    null;
-
-}
-
-
-/* ==========================================================
-   REGISTRO
-   ========================================================== */
-
-function openRegistration(){
-
-  if(
-    participants.length >=
-    MAX_PARTICIPANTS
-  ){
-
-    alert(
-      "🔴 Los 50 cupos ya están ocupados."
-    );
+  if(!next){
 
     return;
 
   }
 
 
-  const alreadyRegistered =
-    localStorage.getItem(
-      "soysigas_registered_current_draw"
-    ) === "1";
+  /*
+    Solo desbloqueamos la siguiente
+    después de completar la actual.
+  */
 
-
-  if(alreadyRegistered){
-
-    alert(
-      "⚠️ Este navegador ya tiene una participación registrada en este sorteo."
-    );
-
-    return;
-
-  }
-
-
-  hideAllScreens();
-
-
-  document.getElementById(
-    "registerScreen"
-  ).classList.remove(
-    "hidden"
-  );
-
-
-  setTimeout(
-    ()=>{
-
-      document.getElementById(
-        "playerName"
-      ).focus();
-
-    },
-    100
-  );
-
-}
-
-
-function isValidFullName(name){
-
-  const clean =
-    name
-      .replace(/\s+/g," ")
-      .trim();
-
-
-  if(
-    !/^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s'-]+$/
-      .test(clean)
-  ){
-
-    return false;
-
-  }
-
-
-  const words =
-    clean
-      .split(" ")
-      .filter(Boolean);
-
-
-  return (
-    words.length >= 2 &&
-    words.every(
-      word =>
-        word.length >= 2
-    )
-  );
-
-}
-
-
-function registerParticipant(){
-
-  const nameInput =
+  const nextButton =
     document.getElementById(
-      "playerName"
+      "button-" + next
     );
 
+  if(nextButton){
 
-  const idInput =
-    document.getElementById(
-      "playerId"
+    nextButton.classList.remove(
+      "disabled"
     );
-
-
-  const error =
-    document.getElementById(
-      "registerError"
-    );
-
-
-  error.style.display =
-    "none";
-
-
-  const name =
-    nameInput.value
-      .replace(/\s+/g," ")
-      .trim();
-
-
-  const id =
-    idInput.value.trim();
-
-
-  if(
-    !isValidFullName(name)
-  ){
-
-    showError(
-      "Escribe obligatoriamente tu nombre y apellidos."
-    );
-
-    return;
-
-  }
-
-
-  if(
-    !/^\d{8,11}$/.test(id)
-  ){
-
-    showError(
-      "El ID debe tener entre 8 y 11 cifras."
-    );
-
-    return;
-
-  }
-
-
-  if(
-    participants.length >=
-    MAX_PARTICIPANTS
-  ){
-
-    showError(
-      "Los 50 cupos ya están ocupados."
-    );
-
-    return;
-
-  }
-
-
-  if(
-    participants.some(
-      p => p.id === id
-    )
-  ){
-
-    showError(
-      "Este ID ya está registrado en este sorteo."
-    );
-
-    return;
-
-  }
-
-
-  if(
-    localStorage.getItem(
-      "soysigas_registered_current_draw"
-    ) === "1"
-  ){
-
-    showError(
-      "Este navegador ya tiene una participación registrada."
-    );
-
-    return;
-
-  }
-
-
-  const participant = {
-
-    name:name,
-    id:id,
-    browserRegistered:true
-
-  };
-
-
-  participants.push(
-    participant
-  );
-
-
-  localStorage.setItem(
-    "soysigas_participants_current_draw",
-    JSON.stringify(
-      participants
-    )
-  );
-
-
-  localStorage.setItem(
-    "soysigas_registered_current_draw",
-    "1"
-  );
-
-
-  localStorage.setItem(
-    "soysigas_current_participant",
-    JSON.stringify(
-      participant
-    )
-  );
-
-
-  currentParticipant =
-    participant;
-
-
-  totalHistoricalParticipants++;
-
-
-  localStorage.setItem(
-    "soysigas_total_historical",
-    String(
-      totalHistoricalParticipants
-    )
-  );
-
-
-  nameInput.value =
-    "";
-
-
-  idInput.value =
-    "";
-
-
-  alert(
-    "🎉 ¡Participación registrada correctamente!"
-  );
-
-
-  hideAllScreens();
-
-
-  document.getElementById(
-    "mainScreen"
-  ).classList.remove(
-    "hidden"
-  );
-
-
-  updateMain();
-
-}
-
-
-/* ==========================================================
-   ERRORES
-   ========================================================== */
-
-function showError(message){
-
-  const error =
-    document.getElementById(
-      "registerError"
-    );
-
-
-  error.textContent =
-    message;
-
-
-  error.style.display =
-    "block";
-
-}
-
-
-/* ==========================================================
-   PRINCIPAL
-   ========================================================== */
-
-function updateMain(){
-
-  const draw =
-    getDrawDate();
-
-
-  const now =
-    new Date();
-
-
-  document.getElementById(
-    "drawDate"
-  ).textContent =
-    formatDate(draw);
-
-
-  const countdown =
-    document.getElementById(
-      "countdown"
-    );
-
-
-  const title =
-    document.getElementById(
-      "countdownTitle"
-    );
-
-
-  if(now >= draw){
-
-    title.textContent =
-      "🎡 SORTEO EN CURSO";
-
-
-    countdown.textContent =
-      "9:30 PM";
-
-  }else{
-
-    title.textContent =
-      "🟢 TIEMPO RESTANTE PARA EL SORTEO";
-
-
-    countdown.textContent =
-      formatCountdown(
-        draw - now
-      );
-
-  }
-
-
-  updateParticipants();
-
-  updateProfile();
-
-}
-
-
-/* ==========================================================
-   PARTICIPANTES
-   ========================================================== */
-
-function updateParticipants(){
-
-  const count =
-    participants.length;
-
-
-  const available =
-    Math.max(
-      MAX_PARTICIPANTS - count,
-      0
-    );
-
-
-  document.getElementById(
-    "slotsNumber"
-  ).textContent =
-    available;
-
-
-  document.getElementById(
-    "participantCount"
-  ).textContent =
-    `${count}/${MAX_PARTICIPANTS}`;
-
-
-  document.getElementById(
-    "totalParticipants"
-  ).textContent =
-    totalHistoricalParticipants;
-
-
-  document.getElementById(
-    "progressBar"
-  ).style.width =
-    `${(count/MAX_PARTICIPANTS)*100}%`;
-
-
-  document.getElementById(
-    "slotsMessage"
-  ).textContent =
-    available === 0
-      ? "🔴 ¡CUPOS AGOTADOS!"
-      : "¡Regístrate antes de que se acaben!";
-
-
-  const status =
-    document.getElementById(
-      "registrationStatus"
-    );
-
-
-  const registerButton =
-    document.querySelector(
-      ".participate-button"
-    );
-
-
-  const browserRegistered =
-    localStorage.getItem(
-      "soysigas_registered_current_draw"
-    ) === "1";
-
-
-  if(available === 0){
-
-    status.textContent =
-      "🔴 CUPOS AGOTADOS";
-
-
-    status.style.color =
-      "#ff5555";
-
-
-    status.style.background =
-      "#321515";
-
-
-    registerButton.disabled =
-      true;
-
-
-    registerButton.style.opacity =
-      ".5";
-
-  }else{
-
-    status.textContent =
-      browserRegistered
-        ? "🟢 PARTICIPACIÓN REGISTRADA"
-        : "🟢 INSCRIPCIONES ABIERTAS";
-
-
-    status.style.color =
-      "#20e46f";
-
-
-    status.style.background =
-      "#173818";
-
-
-    registerButton.disabled =
-      browserRegistered;
-
-
-    registerButton.style.opacity =
-      browserRegistered
-        ? ".5"
-        : "1";
-
-  }
-
-
-  const list =
-    document.getElementById(
-      "participantList"
-    );
-
-
-  list.innerHTML =
-    "";
-
-
-  if(count === 0){
-
-    list.innerHTML =
-      '<div class="participant">Aún no hay participantes.</div>';
-
-  }else{
-
-    participants.forEach(
-      (p,index)=>{
-
-        const item =
-          document.createElement(
-            "div"
-          );
-
-
-        item.className =
-          "participant";
-
-
-        item.textContent =
-          `${index+1}. ${p.name}`;
-
-
-        list.appendChild(
-          item
-        );
-
-      }
-    );
-
-  }
-
-
-  updateRoulette(
-    "roulette"
-  );
-
-
-  updateRoulette(
-    "rouletteLarge"
-  );
-
-
-  document.getElementById(
-    "statsCurrent"
-  ).textContent =
-    count;
-
-
-  document.getElementById(
-    "statsTotal"
-  ).textContent =
-    totalHistoricalParticipants;
-
-}
-
-
-/* ==========================================================
-   PERFIL
-   ========================================================== */
-
-function updateProfile(){
-
-  const name =
-    document.getElementById(
-      "profileName"
-    );
-
-
-  const id =
-    document.getElementById(
-      "profileId"
-    );
-
-
-  if(currentParticipant){
-
-    name.textContent =
-      currentParticipant.name;
-
-
-    id.textContent =
-      "ID: " +
-      currentParticipant.id;
-
-  }else{
-
-    name.textContent =
-      "Sin registro";
-
-
-    id.textContent =
-      "ID: —";
 
   }
 
@@ -2961,899 +1296,197 @@ function updateProfile(){
 
 
 /* ==========================================================
-   RULETA
-   ========================================================== */
+   COMPROBAR TODAS
+========================================================== */
 
-function updateRoulette(elementId){
+function checkAllCompleted(){
 
-  const roulette =
-    document.getElementById(
-      elementId
+  const allCompleted =
+    networks.every(
+      network =>
+        state[network].completed
     );
 
 
-  if(!roulette)
-    return;
+  if(allCompleted){
 
-
-  roulette.innerHTML =
-    '<div class="roulette-center"></div>';
-
-
-  const count =
-    participants.length;
-
-
-  if(count === 0)
-    return;
-
-
-  const colors = [
-
-    "#ffd000",
-    "#ff9800",
-    "#e91e63",
-    "#9c27b0",
-    "#3f51b5",
-    "#03a9f4",
-    "#00bcd4",
-    "#20d66b"
-
-  ];
-
-
-  const slice =
-    360 / count;
-
-
-  participants.forEach(
-    (participant,index)=>{
-
-      const segment =
-        document.createElement(
-          "div"
-        );
-
-
-      segment.className =
-        "segment";
-
-
-      const angle =
-        index * slice;
-
-
-      segment.style.transform =
-        `rotate(${angle}deg) skewY(${-(90-slice)}deg)`;
-
-
-      segment.style.background =
-        colors[
-          index % colors.length
-        ];
-
-
-      const label =
-        document.createElement(
-          "div"
-        );
-
-
-      label.className =
-        "segment-label";
-
-
-      const fontSize =
-        count >= 40
-          ? 7
-          : count >= 30
-          ? 8
-          : count >= 20
-          ? 9
-          : 11;
-
-
-      label.style.fontSize =
-        fontSize + "px";
-
-
-      label.textContent =
-        participant.name;
-
-
-      segment.appendChild(
-        label
-      );
-
-
-      roulette.appendChild(
-        segment
-      );
-
-    }
-  );
-
-}
-
-
-/* ==========================================================
-   ADMINISTRACIÓN
-   ========================================================== */
-
-async function sha256(text){
-
-  const encoder =
-    new TextEncoder();
-
-
-  const data =
-    encoder.encode(text);
-
-
-  const hashBuffer =
-    await crypto.subtle.digest(
-      "SHA-256",
-      data
-    );
-
-
-  const hashArray =
-    Array.from(
-      new Uint8Array(
-        hashBuffer
+    document
+      .getElementById(
+        "downloadArea"
       )
-    );
-
-
-  return hashArray
-    .map(
-      b =>
-        b.toString(16)
-         .padStart(2,"0")
-    )
-    .join("");
-
-}
-
-
-function openAdminLogin(){
-
-  hideAllScreens();
-
-
-  document.getElementById(
-    "adminLoginPage"
-  ).classList.remove(
-    "hidden"
-  );
-
-
-  document.getElementById(
-    "adminPassword"
-  ).value =
-    "";
-
-
-  document.getElementById(
-    "adminError"
-  ).style.display =
-    "none";
-
-
-  setTimeout(
-    ()=>{
-
-      document.getElementById(
-        "adminPassword"
-      ).focus();
-
-    },
-    100
-  );
-
-}
-
-
-async function verifyAdminPassword(){
-
-  const input =
-    document.getElementById(
-      "adminPassword"
-    );
-
-
-  const error =
-    document.getElementById(
-      "adminError"
-    );
-
-
-  const entered =
-    input.value;
-
-
-  if(!entered){
-
-    error.textContent =
-      "Introduce la contraseña.";
-
-
-    error.style.display =
-      "block";
-
-
-    return;
-
-  }
-
-
-  try{
-
-    const hash =
-      await sha256(
-        entered
+      .classList.add(
+        "show"
       );
 
-
-    if(
-      hash ===
-      ADMIN_PASSWORD_HASH
-    ){
-
-      error.style.display =
-        "none";
-
-
-      showAdmin();
-
-    }else{
-
-      error.textContent =
-        "Contraseña incorrecta.";
-
-
-      error.style.display =
-        "block";
-
-
-      input.value =
-        "";
-
-
-      input.focus();
-
-    }
-
-  }catch(e){
-
-    error.textContent =
-      "No fue posible verificar la contraseña.";
-
-
-    error.style.display =
-      "block";
-
   }
 
 }
 
 
-function showAdmin(){
+/* ==========================================================
+   RECONSTRUIR PANTALLA
+========================================================== */
 
-  hideAllScreens();
+function restoreInterface(){
 
-
-  document.getElementById(
-    "adminPage"
-  ).classList.remove(
-    "hidden"
-  );
-
-
-  updateAdminParticipants();
-
-}
-
-
-function updateAdminParticipants(){
-
-  const container =
-    document.getElementById(
-      "adminParticipantsList"
-    );
-
-
-  container.innerHTML =
-    "";
-
-
-  if(
-    participants.length === 0
-  ){
-
-    container.innerHTML =
-      '<div class="participant">No hay participantes registrados.</div>';
-
-
-    return;
-
-  }
-
-
-  participants.forEach(
-    (participant,index)=>{
-
-      const box =
-        document.createElement(
-          "div"
-        );
-
-
-      box.className =
-        "admin-participant";
-
-
-      const strong =
-        document.createElement(
-          "strong"
-        );
-
-
-      strong.textContent =
-        `${index+1}. ${participant.name}`;
-
-
-      const id =
-        document.createElement(
-          "span"
-        );
-
-
-      id.textContent =
-        "ID: " +
-        participant.id;
-
-
-      const button =
-        document.createElement(
-          "button"
-        );
-
-
-      button.className =
-        "choose-winner";
-
+  networks.forEach(
+    (network,index) => {
 
       if(
-        selectedWinnerId ===
-        participant.id
+        state[network].completed
       ){
 
-        button.classList.add(
-          "selected"
-        );
-
-
-        button.textContent =
-          "✓ GANADOR SELECCIONADO";
+        markCompleted(network);
 
       }else{
 
-        button.textContent =
-          "🏆 ELEGIR GANADOR";
+        const button =
+          document.getElementById(
+            "button-" + network
+          );
+
+        /*
+          Primera red siempre disponible.
+        */
+
+        if(index === 0){
+
+          button.classList.remove(
+            "disabled"
+          );
+
+        }
+
+        /*
+          Las demás solamente se
+          habilitan si la anterior
+          ya está completada.
+        */
+
+        if(
+          index > 0 &&
+          state[
+            networks[index - 1]
+          ].completed
+        ){
+
+          button.classList.remove(
+            "disabled"
+          );
+
+        }
 
       }
 
+    }
+  );
 
-      button.onclick =
-        function(){
 
-          chooseWinner(
-            participant.id
+  /*
+    Si había una red abierta antes
+    de cerrar o recargar la página,
+    continuamos el tiempo pendiente
+    sin mostrar ningún contador.
+  */
+
+  networks.forEach(
+    network => {
+
+      if(
+        state[network].startedAt &&
+        !state[network].completed
+      ){
+
+        const elapsed =
+          Date.now() -
+          state[network].startedAt;
+
+        if(elapsed >= WAIT_TIME){
+
+          completeNetwork(network);
+
+        }else{
+
+          setTimeout(
+            () => completeNetwork(network),
+            WAIT_TIME - elapsed
           );
 
-        };
+        }
 
-
-      box.appendChild(
-        strong
-      );
-
-
-      box.appendChild(
-        id
-      );
-
-
-      box.appendChild(
-        button
-      );
-
-
-      container.appendChild(
-        box
-      );
-
-    }
-  );
-
-}
-
-
-function chooseWinner(id){
-
-  const participant =
-    participants.find(
-      p => p.id === id
-    );
-
-
-  if(!participant)
-    return;
-
-
-  selectedWinnerId =
-    participant.id;
-
-
-  localStorage.setItem(
-    "soysigas_selected_winner_id",
-    selectedWinnerId
-  );
-
-
-  updateAdminParticipants();
-
-
-  alert(
-    "🏆 Ganador seleccionado para este sorteo."
-  );
-
-}
-
-
-/* ==========================================================
-   NAVEGACIÓN
-   ========================================================== */
-
-function hideAllScreens(){
-
-  [
-
-    "socialScreen",
-    "mainScreen",
-    "registerScreen",
-    "profilePage",
-    "roulettePage",
-    "statsPage",
-    "winnersPage",
-    "adminLoginPage",
-    "adminPage"
-
-  ].forEach(
-    id=>{
-
-      document
-        .getElementById(id)
-        .classList.add(
-          "hidden"
-        );
+      }
 
     }
   );
 
 
-  const menu =
-    document.getElementById(
-      "menuPanel"
-    );
-
-
-  if(menu)
-    menu.classList.add(
-      "hidden"
-    );
-
-
-  const floatingMenu =
-    document.getElementById(
-      "floatingSocialMenu"
-    );
-
-
-  if(floatingMenu)
-    floatingMenu.classList.add(
-      "hidden"
-    );
-
-
-  updateFloatingSocial();
-
-}
-
-
-function showMain(){
-
-  hideAllScreens();
-
-
-  document.getElementById(
-    "mainScreen"
-  ).classList.remove(
-    "hidden"
-  );
-
-
-  updateMain();
-
-}
-
-
-function showSubpage(pageId){
-
-  hideAllScreens();
-
-
-  document.getElementById(
-    pageId
-  ).classList.remove(
-    "hidden"
-  );
-
-
-  if(
-    pageId ===
-    "roulettePage"
-  ){
-
-    updateRoulette(
-      "rouletteLarge"
-    );
-
-  }
-
-
-  if(
-    pageId ===
-    "profilePage"
-  ){
-
-    updateProfile();
-
-  }
-
-
-  if(
-    pageId ===
-    "winnersPage"
-  ){
-
-    updateWinners();
-
-  }
-
-}
-
-
-function toggleMenu(){
-
-  document.getElementById(
-    "menuPanel"
-  ).classList.toggle(
-    "hidden"
-  );
+  checkAllCompleted();
 
 }
 
 
 /* ==========================================================
-   GANADORES
-   ========================================================== */
+   GENERAR ENLACE
+========================================================== */
 
-function updateWinners(){
+function generateDownloadLink(){
 
-  const container =
-    document.getElementById(
-      "winnerContent"
+  /*
+    Seguridad básica:
+    solo permitimos continuar
+    si las 4 redes están completadas.
+  */
+
+  const allCompleted =
+    networks.every(
+      network =>
+        state[network].completed
     );
 
 
-  container.innerHTML =
-    "";
-
-
-  if(
-    winners.length === 0
-  ){
-
-    container.innerHTML =
-      '<div class="winner">Los ganadores aparecerán aquí después del sorteo.</div>';
-
+  if(!allCompleted){
 
     return;
 
   }
-
-
-  winners.forEach(
-    winner=>{
-
-      const box =
-        document.createElement(
-          "div"
-        );
-
-
-      box.className =
-        "winner-name-permanent";
-
-
-      box.textContent =
-        "🏆 " +
-        winner.name;
-
-
-      container.appendChild(
-        box
-      );
-
-    }
-  );
-
-}
-
-
-/* ==========================================================
-   BOTÓN FLOTANTE DE REDES
-   ========================================================== */
-
-function toggleFloatingSocial(){
-
-  const menu =
-    document.getElementById(
-      "floatingSocialMenu"
-    );
-
-
-  if(!menu)
-    return;
-
-
-  menu.classList.toggle(
-    "hidden"
-  );
-
-}
-
-
-function updateFloatingSocial(){
-
-  const floating =
-    document.getElementById(
-      "floatingSocial"
-    );
-
-
-  if(!floating)
-    return;
 
 
   /*
-    La pantalla inicial de redes
-    NO muestra el botón flotante.
+    Si todavía no has puesto el enlace
+    real, mostramos un aviso.
   */
-
-  const socialVisible =
-    !document
-      .getElementById(
-        "socialScreen"
-      )
-      .classList
-      .contains(
-        "hidden"
-      );
-
-
-  if(socialVisible){
-
-    floating.classList.add(
-      "hidden"
-    );
-
-  }else{
-
-    floating.classList.remove(
-      "hidden"
-    );
-
-  }
-
-}
-
-
-/* ==========================================================
-   INICIO
-   ========================================================== */
-
-function startSite(){
-
-  /*
-    Al abrir la web:
-
-    1. Comprueba el acceso de redes.
-    2. Si expiró, muestra nuevamente redes.
-    3. Si sigue activo, muestra principal.
-  */
-
 
   if(
-    checkSocialExpiration()
+    !DOWNLOAD_URL ||
+    DOWNLOAD_URL === "#"
   ){
 
-    hideAllScreens();
-
-
-    document.getElementById(
-      "mainScreen"
-    ).classList.remove(
-      "hidden"
+    alert(
+      "Las 4 redes están completadas. Ahora debes colocar tu enlace de descarga en DOWNLOAD_URL."
     );
 
-
-    updateMain();
-
-
-  }else{
-
-    hideAllScreens();
-
-
-    document.getElementById(
-      "socialScreen"
-    ).classList.remove(
-      "hidden"
-    );
-
-
-    updateFloatingSocial();
-
-
-    checkSocialTime();
-
-
-    updateSocialProgress();
+    return;
 
   }
+
+
+  /*
+    Abrir enlace final.
+  */
+
+  window.location.href =
+    DOWNLOAD_URL;
 
 }
 
 
 /* ==========================================================
-   ACTUALIZACIÓN AUTOMÁTICA
-   ========================================================== */
+   INICIALIZACIÓN
+========================================================== */
 
-setInterval(
-  ()=>{
+loadState();
 
-    checkSocialTime();
-
-
-    const socialVisible =
-      !document
-        .getElementById(
-          "socialScreen"
-        )
-        .classList
-        .contains(
-          "hidden"
-        );
-
-
-    if(socialVisible){
-
-      updateSocialProgress();
-
-    }
-
-
-    const mainVisible =
-      !document
-        .getElementById(
-          "mainScreen"
-        )
-        .classList
-        .contains(
-          "hidden"
-        );
-
-
-    if(mainVisible){
-
-      updateMain();
-
-    }
-
-
-    checkSocialExpiration();
-
-
-    updateFloatingSocial();
-
-  },
-  1000
-);
-
-
-/* ==========================================================
-   REGRESO DESDE REDES
-   ========================================================== */
-
-document.addEventListener(
-  "visibilitychange",
-  ()=>{
-
-    if(!document.hidden){
-
-      checkSocialTime();
-
-      updateSocialProgress();
-
-      updateFloatingSocial();
-
-    }
-
-  }
-);
-
-
-window.addEventListener(
-  "pageshow",
-  ()=>{
-
-    checkSocialTime();
-
-    updateSocialProgress();
-
-    updateFloatingSocial();
-
-  }
-);
-
-
-/* ==========================================================
-   ENTER EN CONTRASEÑA ADMIN
-   ========================================================== */
-
-document.addEventListener(
-  "keydown",
-  event=>{
-
-    const adminLogin =
-      document.getElementById(
-        "adminLoginPage"
-      );
-
-
-    if(
-      !adminLogin.classList.contains(
-        "hidden"
-      ) &&
-      event.key === "Enter"
-    ){
-
-      verifyAdminPassword();
-
-    }
-
-  }
-);
-
-
-/* ==========================================================
-   INICIAR
-   ========================================================== */
-
-startSite();
+restoreInterface();
 
 </script>
 
