@@ -3,16 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
 <title>FFSORTEOS Diamantes y más | Soy Sigas</title>
 
 <style>
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 html,body{
   min-height:100%;
@@ -23,27 +17,23 @@ html,body{
 
 body{
   overflow-x:hidden;
-
-  background:
-    radial-gradient(
-      circle at 50% 0%,
-      #4a3500 0%,
-      #1b1300 20%,
-      #090909 48%,
-      #000 100%
-    );
 }
 
 button,input{
-  font:inherit
+  font:inherit;
 }
 
 button{
-  cursor:pointer
+  cursor:pointer;
 }
 
 .hidden{
-  display:none!important
+  display:none!important;
+}
+
+body{
+  background:
+    radial-gradient(circle at 50% 0%,#4a3500 0%,#1b1300 20%,#090909 48%,#000 100%);
 }
 
 .app{
@@ -59,7 +49,6 @@ button{
   min-height:100vh;
   padding:18px 14px 90px;
 }
-
 
 /* ==========================================================
    REDES
@@ -87,7 +76,6 @@ button{
   line-height:1;
   font-weight:900;
   letter-spacing:3px;
-
   text-shadow:
     0 0 8px #ffb300,
     0 0 22px rgba(255,193,7,.55);
@@ -105,7 +93,6 @@ button{
   border:1px solid rgba(255,208,0,.55);
   border-radius:24px;
   padding:22px 16px;
-
   box-shadow:
     0 0 28px rgba(255,193,7,.12),
     inset 0 0 25px rgba(255,193,7,.025);
@@ -131,15 +118,12 @@ button{
   display:flex;
   align-items:center;
   gap:11px;
-
   background:#111;
   border:1px solid #333;
   border-radius:16px;
-
   padding:12px;
   margin:12px 0;
   min-height:76px;
-
   transition:.25s;
 }
 
@@ -152,28 +136,25 @@ button{
   width:48px;
   height:48px;
   flex:0 0 48px;
-
   border-radius:13px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   color:#fff;
   font-size:25px;
   font-weight:900;
 }
 
 .youtube{
-  background:#ff0000
+  background:#ff0000;
 }
 
 .facebook{
-  background:#1877f2
+  background:#1877f2;
 }
 
 .whatsapp{
-  background:#25d366
+  background:#25d366;
 }
 
 .social-info{
@@ -197,20 +178,14 @@ button{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-
   text-decoration:none;
-
   border:0;
   border-radius:10px;
-
   padding:11px 13px;
-
   background:#ffd000;
   color:#000;
-
   font-size:12px;
   font-weight:900;
-
   white-space:nowrap;
 }
 
@@ -227,38 +202,26 @@ button{
 }
 
 .completed-count strong{
-  color:#ffd000
+  color:#ffd000;
 }
 
 .continue-button{
   width:100%;
-
   border:0;
   border-radius:14px;
-
   padding:16px;
-
   background:#333;
   color:#777;
-
   font-weight:900;
   font-size:16px;
-
   cursor:not-allowed;
 }
 
 .continue-button.active{
-  background:
-    linear-gradient(
-      135deg,
-      #ffd000,
-      #ff9800
-    );
-
+  background:linear-gradient(135deg,#ffd000,#ff9800);
   color:#000;
   cursor:pointer;
 }
-
 
 /* ==========================================================
    PRINCIPAL
@@ -278,33 +241,23 @@ button{
 .menu-button{
   width:54px;
   height:54px;
-
   border-radius:16px;
   border:1px solid #ffd000;
-
   background:#111;
   color:#ffd000;
-
   font-size:28px;
 }
 
 .menu-panel{
   position:absolute;
-
   top:64px;
   right:0;
-
   width:260px;
-
   background:#0d0d0d;
-
   border:1px solid rgba(255,208,0,.55);
   border-radius:16px;
-
   padding:10px;
-
-  box-shadow:
-    0 12px 30px rgba(0,0,0,.6);
+  box-shadow:0 12px 30px rgba(0,0,0,.6);
 }
 
 .menu-title{
@@ -316,16 +269,12 @@ button{
 
 .menu-option{
   width:100%;
-
   border:0;
   background:#181818;
   color:#fff;
-
   border-radius:10px;
-
   padding:12px;
   margin:4px 0;
-
   text-align:left;
 }
 
@@ -335,16 +284,14 @@ button{
 }
 
 .welcome .crown{
-  font-size:50px
+  font-size:50px;
 }
 
 .welcome h2{
   color:#ffd000;
   font-size:32px;
   margin-top:3px;
-
-  text-shadow:
-    0 0 10px rgba(255,208,0,.35);
+  text-shadow:0 0 10px rgba(255,208,0,.35);
 }
 
 .welcome p{
@@ -354,19 +301,10 @@ button{
 }
 
 .draw-card{
-  background:
-    linear-gradient(
-      145deg,
-      #292200,
-      #111
-    );
-
+  background:linear-gradient(145deg,#292200,#111);
   border:1px solid rgba(255,208,0,.55);
-
   border-radius:22px;
-
   text-align:center;
-
   padding:27px 14px;
 }
 
@@ -391,43 +329,25 @@ button{
 
 .registration-status{
   display:inline-block;
-
   margin-top:20px;
-
   padding:12px 20px;
-
   border-radius:25px;
-
   background:#173818;
   color:#20e46f;
-
   font-weight:900;
 }
 
 .participate-button{
   width:100%;
-
   margin-top:20px;
-
   border:0;
   border-radius:15px;
-
   padding:17px 12px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ffd000,
-      #ff9800
-    );
-
+  background:linear-gradient(135deg,#ffd000,#ff9800);
   color:#000;
-
   font-size:17px;
   font-weight:900;
-
-  box-shadow:
-    0 0 18px rgba(255,193,7,.18);
+  box-shadow:0 0 18px rgba(255,193,7,.18);
 }
 
 .countdown-box,
@@ -436,38 +356,29 @@ button{
 .participants-box,
 .roulette-box{
   background:#101010;
-
   border:1px solid #303030;
-
   border-radius:20px;
-
   padding:20px;
-
   margin-top:16px;
 }
 
 .countdown-title{
   text-align:center;
-
   color:#ddd;
-
   font-weight:900;
   font-size:16px;
 }
 
 .countdown{
   text-align:center;
-
   color:#ffd000;
-
   font-size:30px;
   font-weight:900;
-
   margin-top:12px;
 }
 
 .slots{
-  text-align:center
+  text-align:center;
 }
 
 .slots-number{
@@ -483,96 +394,66 @@ button{
 
 .progress{
   height:12px;
-
   background:#2c2c2c;
-
   border-radius:20px;
-
   overflow:hidden;
-
   margin-top:18px;
 }
 
 .progress-bar{
   height:100%;
   width:0%;
-
-  background:
-    linear-gradient(
-      90deg,
-      #ffd000,
-      #ff9800
-    );
+  background:linear-gradient(90deg,#ffd000,#ff9800);
 }
 
 .stats{
   display:grid;
-
   grid-template-columns:1fr 1fr;
-
   gap:14px;
 }
 
 .stat{
-  text-align:center
+  text-align:center;
 }
 
 .stat-number{
   display:block;
-
   color:#ffd000;
-
   font-size:28px;
   font-weight:900;
 }
 
 .stat-label{
   display:block;
-
   color:#999;
-
   font-size:12px;
-
   margin-top:6px;
 }
 
 .participants-box h3,
 .roulette-box h3{
   text-align:center;
-
   color:#ffd000;
-
   font-size:22px;
-
   margin-bottom:14px;
 }
 
 .participant{
   background:#181818;
-
   border:1px solid #2d2d2d;
-
   border-radius:11px;
-
   padding:13px;
-
   margin:7px 0;
-
   font-size:14px;
 }
 
 .notice{
   text-align:center;
-
   color:#888;
-
   font-size:11px;
-
   line-height:1.5;
-
   margin-top:14px;
 }
-
 
 /* ==========================================================
    FORMULARIO
@@ -588,105 +469,62 @@ button{
 
 .input-group label{
   display:block;
-
   color:#ddd;
-
   font-weight:900;
-
   font-size:14px;
-
   margin-bottom:8px;
 }
 
 .input-group input{
   width:100%;
-
   padding:15px;
-
   border-radius:13px;
-
   border:1px solid #3b3b3b;
-
   background:#151515;
-
   color:#fff;
-
   outline:none;
-
   font-size:16px;
 }
 
 .input-group input:focus{
   border-color:#ffd000;
-
-  box-shadow:
-    0 0 10px rgba(255,208,0,.15);
+  box-shadow:0 0 10px rgba(255,208,0,.15);
 }
 
 .error{
   display:none;
-
   margin-top:12px;
-
   padding:11px;
-
   border-radius:10px;
-
   color:#ff7474;
-
-  background:
-    rgba(255,50,50,.1);
-
-  border:
-    1px solid rgba(255,50,50,.35);
-
+  background:rgba(255,50,50,.1);
+  border:1px solid rgba(255,50,50,.35);
   text-align:center;
-
   font-size:12px;
 }
 
 .confirm-button{
   width:100%;
-
   border:0;
-
   border-radius:14px;
-
   padding:16px;
-
   margin-top:18px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ffd000,
-      #ff9800
-    );
-
+  background:linear-gradient(135deg,#ffd000,#ff9800);
   color:#000;
-
   font-weight:900;
-
   font-size:16px;
 }
 
 .back-button{
   border:1px solid #555;
-
   background:#171717;
-
   color:#fff;
-
   width:48px;
   height:44px;
-
   border-radius:12px;
-
   font-size:22px;
-
   margin-bottom:12px;
 }
-
 
 /* ==========================================================
    RULETA
@@ -694,151 +532,73 @@ button{
 
 .roulette-wrap{
   position:relative;
-
   width:min(88vw,430px);
-
   aspect-ratio:1;
-
   margin:15px auto 0;
 }
 
 .roulette{
   position:absolute;
-
   inset:0;
-
   border-radius:50%;
-
   border:10px solid #ffd000;
-
   background:#151515;
-
   overflow:hidden;
-
-  box-shadow:
-    0 0 30px rgba(255,208,0,.25);
+  box-shadow:0 0 30px rgba(255,208,0,.25);
 }
 
 .roulette-center{
   position:absolute;
-
   width:45px;
   height:45px;
-
   left:50%;
   top:50%;
-
-  transform:
-    translate(-50%,-50%);
-
+  transform:translate(-50%,-50%);
   border-radius:50%;
-
   background:#ffd000;
-
   border:5px solid #111;
-
   z-index:10;
 }
 
 .needle{
   position:absolute;
-
   z-index:20;
-
   top:-4px;
   left:50%;
-
-  transform:
-    translateX(-50%);
-
+  transform:translateX(-50%);
   width:0;
   height:0;
-
   border-left:18px solid transparent;
   border-right:18px solid transparent;
   border-top:52px solid #fff;
-
-  filter:
-    drop-shadow(
-      0 4px 4px #000
-    );
+  filter:drop-shadow(0 4px 4px #000);
 }
 
 .segment{
   position:absolute;
-
   left:50%;
   top:50%;
-
   width:50%;
   height:50%;
-
   transform-origin:0 0;
-
   overflow:visible;
 }
 
 .segment-label{
   position:absolute;
-
   left:14px;
   top:50%;
-
-  transform:
-    translateY(-50%);
-
-  width:
-    calc(100% - 20px);
-
+  transform:translateY(-50%);
+  width:calc(100% - 20px);
   color:#fff;
-
   font-weight:900;
-
   font-size:11px;
-
   text-align:center;
-
-  text-shadow:
-    1px 1px 2px #000;
-
+  text-shadow:1px 1px 2px #000;
   white-space:nowrap;
-
   overflow:hidden;
-
   text-overflow:ellipsis;
 }
-
-
-/* ==========================================================
-   TEMPORIZADOR DE LA RULETA
-   ========================================================== */
-
-.roulette-timer-title{
-  text-align:center;
-
-  color:#aaa;
-
-  font-size:13px;
-
-  font-weight:900;
-
-  margin-top:18px;
-}
-
-.roulette-timer{
-  text-align:center;
-
-  color:#ffd000;
-
-  font-size:25px;
-
-  font-weight:900;
-
-  margin-top:7px;
-
-  letter-spacing:1px;
-}
-
 
 /* ==========================================================
    GANADOR
@@ -850,44 +610,29 @@ button{
 
 .winner{
   text-align:center;
-
   padding:25px 10px;
-
   color:#ffd000;
-
   font-size:25px;
-
   font-weight:900;
 }
 
 .winner-id{
   margin-top:12px;
-
   color:#fff;
-
   font-size:20px;
-
   font-weight:900;
 }
 
 .winner-name-permanent{
   margin-top:18px;
-
   padding:18px;
-
   border-radius:15px;
-
   background:#181818;
-
   border:1px solid #ffd000;
-
   color:#ffd000;
-
   font-size:20px;
-
   font-weight:900;
 }
-
 
 /* ==========================================================
    PERFIL
@@ -899,32 +644,23 @@ button{
 
 .profile-avatar{
   font-size:58px;
-
   margin-bottom:10px;
 }
 
 .profile-name{
   color:#ffd000;
-
   font-size:24px;
-
   font-weight:900;
 }
 
 .profile-id{
   margin-top:12px;
-
   padding:14px;
-
   background:#181818;
-
   border-radius:12px;
-
   color:#fff;
-
   font-weight:900;
 }
-
 
 /* ==========================================================
    ADMINISTRACIÓN
@@ -936,7 +672,6 @@ button{
 
 .admin-lock{
   font-size:60px;
-
   margin-bottom:10px;
 }
 
@@ -946,122 +681,77 @@ button{
 
 .password-input{
   width:100%;
-
   padding:16px;
-
   border-radius:13px;
-
   border:1px solid #3b3b3b;
-
   background:#151515;
-
   color:#fff;
-
   outline:none;
-
   margin-top:15px;
-
   text-align:center;
-
   letter-spacing:2px;
 }
 
 .password-input:focus{
   border-color:#ffd000;
-
-  box-shadow:
-    0 0 10px rgba(255,208,0,.15);
+  box-shadow:0 0 10px rgba(255,208,0,.15);
 }
 
 .admin-button{
   width:100%;
-
   border:0;
-
   border-radius:14px;
-
   padding:16px;
-
   margin-top:15px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ffd000,
-      #ff9800
-    );
-
+  background:linear-gradient(135deg,#ffd000,#ff9800);
   color:#000;
-
   font-weight:900;
 }
 
 .admin-error{
   display:none;
-
   color:#ff7474;
-
   margin-top:12px;
-
   font-size:13px;
-
   font-weight:900;
 }
 
 .admin-participant{
   background:#171717;
-
   border:1px solid #333;
-
   border-radius:15px;
-
   padding:14px;
-
   margin:10px 0;
 }
 
 .admin-participant strong{
   color:#ffd000;
-
   display:block;
-
   font-size:16px;
 }
 
 .admin-participant span{
   display:block;
-
   color:#aaa;
-
   margin-top:6px;
-
   font-size:13px;
 }
 
 .choose-winner{
   width:100%;
-
   border:0;
-
   border-radius:11px;
-
   padding:12px;
-
   margin-top:12px;
-
   background:#ffd000;
-
   color:#000;
-
   font-weight:900;
 }
 
 .choose-winner.selected{
   background:#20d66b;
-
   color:#fff;
 }
-
 
 /* ==========================================================
    SUBPÁGINAS
@@ -1069,16 +759,109 @@ button{
 
 .subpage-title{
   color:#ffd000;
-
   text-align:center;
-
   font-size:22px;
-
   font-weight:900;
-
   margin-bottom:15px;
 }
 
+/* ==========================================================
+   BOTÓN FLOTANTE DE REDES
+   ========================================================== */
+
+.floating-social{
+  position:fixed;
+  right:18px;
+  bottom:20px;
+  z-index:9999;
+}
+
+.floating-social-main{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  border:2px solid #ffd000;
+  background:linear-gradient(135deg,#181818,#050505);
+  color:#ffd000;
+  font-size:25px;
+  box-shadow:
+    0 0 15px rgba(255,208,0,.35),
+    0 6px 20px rgba(0,0,0,.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.25s;
+}
+
+.floating-social-main:active{
+  transform:scale(.92);
+}
+
+.floating-social-menu{
+  position:absolute;
+  right:0;
+  bottom:68px;
+  width:210px;
+  background:#0d0d0d;
+  border:1px solid rgba(255,208,0,.6);
+  border-radius:18px;
+  padding:9px;
+  box-shadow:0 12px 30px rgba(0,0,0,.75);
+}
+
+.floating-social-menu.hidden{
+  display:none;
+}
+
+.floating-social-title{
+  color:#ffd000;
+  text-align:center;
+  font-size:13px;
+  font-weight:900;
+  padding:8px 5px 10px;
+}
+
+.floating-social-link{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  width:100%;
+  text-decoration:none;
+  color:#fff;
+  background:#181818;
+  border-radius:11px;
+  padding:11px;
+  margin:5px 0;
+  font-size:13px;
+  font-weight:900;
+}
+
+.floating-social-link:active{
+  transform:scale(.98);
+}
+
+.floating-social-icon{
+  width:34px;
+  height:34px;
+  border-radius:9px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:17px;
+}
+
+.floating-youtube{
+  background:#ff0000;
+}
+
+.floating-facebook{
+  background:#1877f2;
+}
+
+.floating-whatsapp{
+  background:#25d366;
+}
 
 /* ==========================================================
    RESPONSIVE
@@ -1111,60 +894,119 @@ button{
     font-size:14px;
   }
 
-}
+  .floating-social{
+    right:12px;
+    bottom:15px;
+  }
 
+  .floating-social-main{
+    width:54px;
+    height:54px;
+  }
+
+  .floating-social-menu{
+    width:195px;
+  }
+
+}
 </style>
 </head>
 
-
 <body>
 
-<div class="app">
+<!-- ========================================================
+     BOTÓN FLOTANTE DE REDES
+     NO APARECE EN LA PANTALLA INICIAL
+     ======================================================== -->
 
+<div id="floatingSocial"
+     class="floating-social hidden">
+
+  <div id="floatingSocialMenu"
+       class="floating-social-menu hidden">
+
+    <div class="floating-social-title">
+      👑 MIS REDES OFICIALES
+    </div>
+
+    <a class="floating-social-link"
+       href="https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b"
+       target="_blank"
+       rel="noopener noreferrer">
+
+      <span class="floating-social-icon floating-youtube">
+        ▶
+      </span>
+
+      YouTube
+    </a>
+
+    <a class="floating-social-link"
+       href="https://www.facebook.com/profile.php?id=61593805138979"
+       target="_blank"
+       rel="noopener noreferrer">
+
+      <span class="floating-social-icon floating-facebook">
+        f
+      </span>
+
+      Facebook
+    </a>
+
+    <a class="floating-social-link"
+       href="https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g"
+       target="_blank"
+       rel="noopener noreferrer">
+
+      <span class="floating-social-icon floating-whatsapp">
+        ☎
+      </span>
+
+      WhatsApp
+    </a>
+
+  </div>
+
+  <button class="floating-social-main"
+          onclick="toggleFloatingSocial()"
+          aria-label="Abrir mis redes">
+    📱
+  </button>
+
+</div>
+
+
+<div class="app">
 
 <!-- ========================================================
      PANTALLA INICIAL: SOLO REDES
      ======================================================== -->
 
-<section
-  id="socialScreen"
-  class="screen social-landing"
->
+<section id="socialScreen"
+         class="screen social-landing">
 
   <div class="brand">
 
-    <div class="crown">
-      👑
-    </div>
+    <div class="crown">👑</div>
 
-    <h1>
-      SOY SIGAS
-    </h1>
+    <h1>SOY SIGAS</h1>
 
-    <p>
-      SÍGUEME EN MIS REDES
-    </p>
+    <p>SÍGUEME EN MIS REDES</p>
 
   </div>
 
 
   <div class="card">
 
-    <h2>
-      🔥 Mis redes oficiales
-    </h2>
+    <h2>🔥 Mis redes oficiales</h2>
 
     <p class="description">
       Completa las tres redes y después podrás entrar al sorteo.
     </p>
 
 
-    <!-- YOUTUBE -->
-
-    <div
-      id="social-youtube"
-      class="social-item"
-    >
+    <div id="social-youtube"
+         class="social-item">
 
       <div class="social-icon youtube">
         ▶
@@ -1172,9 +1014,7 @@ button{
 
       <div class="social-info">
 
-        <strong>
-          YouTube
-        </strong>
+        <strong>YouTube</strong>
 
         <span>
           Soy Sigas Official
@@ -1182,26 +1022,22 @@ button{
 
       </div>
 
-      <a
-        id="button-youtube"
-        class="social-button"
-        href="https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b"
-        target="_blank"
-        rel="noopener noreferrer"
-        onclick="startSocial('youtube')"
-      >
+      <a id="button-youtube"
+         class="social-button"
+         href="https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b"
+         target="_blank"
+         rel="noopener noreferrer"
+         onclick="startSocial('youtube')">
+
         SEGUIR
+
       </a>
 
     </div>
 
 
-    <!-- FACEBOOK -->
-
-    <div
-      id="social-facebook"
-      class="social-item"
-    >
+    <div id="social-facebook"
+         class="social-item">
 
       <div class="social-icon facebook">
         f
@@ -1209,9 +1045,7 @@ button{
 
       <div class="social-info">
 
-        <strong>
-          Facebook
-        </strong>
+        <strong>Facebook</strong>
 
         <span>
           Soy Sigas
@@ -1219,26 +1053,22 @@ button{
 
       </div>
 
-      <a
-        id="button-facebook"
-        class="social-button"
-        href="https://www.facebook.com/profile.php?id=61593805138979"
-        target="_blank"
-        rel="noopener noreferrer"
-        onclick="startSocial('facebook')"
-      >
+      <a id="button-facebook"
+         class="social-button"
+         href="https://www.facebook.com/profile.php?id=61593805138979"
+         target="_blank"
+         rel="noopener noreferrer"
+         onclick="startSocial('facebook')">
+
         SEGUIR
+
       </a>
 
     </div>
 
 
-    <!-- WHATSAPP -->
-
-    <div
-      id="social-whatsapp"
-      class="social-item"
-    >
+    <div id="social-whatsapp"
+         class="social-item">
 
       <div class="social-icon whatsapp">
         ☎
@@ -1246,9 +1076,7 @@ button{
 
       <div class="social-info">
 
-        <strong>
-          WhatsApp
-        </strong>
+        <strong>WhatsApp</strong>
 
         <span>
           Canal Soy Sigas
@@ -1256,15 +1084,15 @@ button{
 
       </div>
 
-      <a
-        id="button-whatsapp"
-        class="social-button"
-        href="https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g"
-        target="_blank"
-        rel="noopener noreferrer"
-        onclick="startSocial('whatsapp')"
-      >
+      <a id="button-whatsapp"
+         class="social-button"
+         href="https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g"
+         target="_blank"
+         rel="noopener noreferrer"
+         onclick="startSocial('whatsapp')">
+
         SEGUIR
+
       </a>
 
     </div>
@@ -1281,11 +1109,11 @@ button{
     </div>
 
 
-    <button
-      id="continueButton"
-      class="continue-button"
-    >
+    <button id="continueButton"
+            class="continue-button">
+
       🔒 CONTINUAR
+
     </button>
 
   </div>
@@ -1297,63 +1125,64 @@ button{
      PANTALLA PRINCIPAL
      ======================================================== -->
 
-<section
-  id="mainScreen"
-  class="screen main-screen hidden"
->
+<section id="mainScreen"
+         class="screen main-screen hidden">
 
   <div class="top-header">
 
-    <button
-      class="menu-button"
-      onclick="toggleMenu()"
-    >
+    <button class="menu-button"
+            onclick="toggleMenu()">
+
       ☰
+
     </button>
 
 
-    <div
-      id="menuPanel"
-      class="menu-panel hidden"
-    >
+    <div id="menuPanel"
+         class="menu-panel hidden">
 
       <div class="menu-title">
         MENÚ PRINCIPAL
       </div>
 
-      <button
-        class="menu-option"
-        onclick="showSubpage('profilePage')"
-      >
+
+      <button class="menu-option"
+              onclick="showSubpage('profilePage')">
+
         👤 Mi perfil
+
       </button>
 
-      <button
-        class="menu-option"
-        onclick="showSubpage('roulettePage')"
-      >
+
+      <button class="menu-option"
+              onclick="showSubpage('roulettePage')">
+
         🎡 Ruleta
+
       </button>
 
-      <button
-        class="menu-option"
-        onclick="showSubpage('statsPage')"
-      >
+
+      <button class="menu-option"
+              onclick="showSubpage('statsPage')">
+
         📊 Estadísticas
+
       </button>
 
-      <button
-        class="menu-option"
-        onclick="showSubpage('winnersPage')"
-      >
+
+      <button class="menu-option"
+              onclick="showSubpage('winnersPage')">
+
         🏆 Ganadores
+
       </button>
 
-      <button
-        class="menu-option"
-        onclick="openAdminLogin()"
-      >
+
+      <button class="menu-option"
+              onclick="openAdminLogin()">
+
         🔐 Administración
+
       </button>
 
     </div>
@@ -1386,36 +1215,34 @@ button{
         🎡 PRÓXIMO SORTEO
       </h3>
 
-      <div
-        id="drawDate"
-        class="draw-date"
-      >
+      <div id="drawDate"
+           class="draw-date">
+
         Cargando...
+
       </div>
 
       <div class="draw-time">
 
         Sorteo:
-        <strong>
-          9:30 PM
-        </strong>
+        <strong>9:30 PM</strong>
 
       </div>
 
 
-      <div
-        id="registrationStatus"
-        class="registration-status"
-      >
+      <div id="registrationStatus"
+           class="registration-status">
+
         🟢 INSCRIPCIONES ABIERTAS
+
       </div>
 
 
-      <button
-        class="participate-button"
-        onclick="openRegistration()"
-      >
+      <button class="participate-button"
+              onclick="openRegistration()">
+
         🎟️ PARTICIPAR EN EL SORTEO
+
       </button>
 
     </div>
@@ -1423,18 +1250,19 @@ button{
 
     <div class="countdown-box">
 
-      <div
-        id="countdownTitle"
-        class="countdown-title"
-      >
+      <div id="countdownTitle"
+           class="countdown-title">
+
         TIEMPO RESTANTE PARA EL SORTEO
+
       </div>
 
-      <div
-        id="countdown"
-        class="countdown"
-      >
+
+      <div id="countdown"
+           class="countdown">
+
         --
+
       </div>
 
     </div>
@@ -1442,31 +1270,32 @@ button{
 
     <div class="slots">
 
-      <div
-        id="slotsNumber"
-        class="slots-number"
-      >
+      <div id="slotsNumber"
+           class="slots-number">
+
         50
+
       </div>
 
       <div class="slots-label">
         CUPOS DISPONIBLES
       </div>
 
+
       <div class="progress">
 
-        <div
-          id="progressBar"
-          class="progress-bar"
-        ></div>
+        <div id="progressBar"
+             class="progress-bar">
+        </div>
 
       </div>
 
-      <p
-        id="slotsMessage"
-        class="notice"
-      >
+
+      <p id="slotsMessage"
+         class="notice">
+
         ¡Regístrate antes de que se acaben!
+
       </p>
 
     </div>
@@ -1476,11 +1305,11 @@ button{
 
       <div class="stat">
 
-        <span
-          id="participantCount"
-          class="stat-number"
-        >
+        <span id="participantCount"
+              class="stat-number">
+
           0/50
+
         </span>
 
         <span class="stat-label">
@@ -1492,11 +1321,11 @@ button{
 
       <div class="stat">
 
-        <span
-          id="totalParticipants"
-          class="stat-number"
-        >
+        <span id="totalParticipants"
+              class="stat-number">
+
           0
+
         </span>
 
         <span class="stat-label">
@@ -1536,10 +1365,8 @@ button{
 
         <div class="needle"></div>
 
-        <div
-          id="roulette"
-          class="roulette"
-        >
+        <div id="roulette"
+             class="roulette">
 
           <div class="roulette-center"></div>
 
@@ -1548,25 +1375,10 @@ button{
       </div>
 
 
-      <!-- TEMPORIZADOR DE LA RULETA -->
-
-      <div class="roulette-timer-title">
-        ⏳ TIEMPO PARA EL SORTEO
-      </div>
-
-      <div
-        id="rouletteTimer"
-        class="roulette-timer"
-      >
-        0d 0h 0m 0s
-      </div>
-
-
       <p class="notice">
 
-        Cada participante ocupa una partición
-        de la ruleta. El nombre aparece dentro
-        de su partición.
+        Cada participante ocupa una partición de la ruleta.
+        El nombre aparece dentro de su partición.
 
       </p>
 
@@ -1581,10 +1393,8 @@ button{
      REGISTRO
      ======================================================== -->
 
-<section
-  id="registerScreen"
-  class="screen hidden"
->
+<section id="registerScreen"
+         class="screen hidden">
 
   <div class="brand">
 
@@ -1605,11 +1415,11 @@ button{
 
   <div class="card register-card">
 
-    <button
-      class="back-button"
-      onclick="showMain()"
-    >
+    <button class="back-button"
+            onclick="showMain()">
+
       ←
+
     </button>
 
 
@@ -1619,7 +1429,9 @@ button{
 
 
     <p class="description">
+
       Completa tu nombre y apellidos y tu ID de Free Fire.
+
     </p>
 
 
@@ -1629,13 +1441,11 @@ button{
         👤 NOMBRE Y APELLIDOS
       </label>
 
-      <input
-        id="playerName"
-        type="text"
-        maxlength="60"
-        autocomplete="name"
-        placeholder="Ej.: Juan Pérez García"
-      >
+      <input id="playerName"
+             type="text"
+             maxlength="60"
+             autocomplete="name"
+             placeholder="Ej.: Juan Pérez García">
 
     </div>
 
@@ -1646,35 +1456,32 @@ button{
         🆔 ID DE FREE FIRE
       </label>
 
-      <input
-        id="playerId"
-        type="text"
-        inputmode="numeric"
-        maxlength="11"
-        placeholder="ID de 8 a 11 cifras"
-      >
+      <input id="playerId"
+             type="text"
+             inputmode="numeric"
+             maxlength="11"
+             placeholder="ID de 8 a 11 cifras">
 
     </div>
 
 
-    <div
-      id="registerError"
-      class="error"
-    ></div>
+    <div id="registerError"
+         class="error">
+    </div>
 
 
-    <button
-      class="confirm-button"
-      onclick="registerParticipant()"
-    >
+    <button class="confirm-button"
+            onclick="registerParticipant()">
+
       ✅ CONFIRMAR PARTICIPACIÓN
+
     </button>
 
 
     <div class="notice">
 
-      Tu nombre aparecerá públicamente
-      en la lista de participantes.
+      Tu nombre aparecerá públicamente en la lista
+      de participantes.
 
       <br><br>
 
@@ -1691,17 +1498,13 @@ button{
      PERFIL
      ======================================================== -->
 
-<section
-  id="profilePage"
-  class="screen hidden"
->
+<section id="profilePage"
+         class="screen hidden">
 
   <div class="card profile-box">
 
-    <button
-      class="back-button"
-      onclick="showMain()"
-    >
+    <button class="back-button"
+            onclick="showMain()">
       ←
     </button>
 
@@ -1713,17 +1516,13 @@ button{
       👤
     </div>
 
-    <div
-      id="profileName"
-      class="profile-name"
-    >
+    <div id="profileName"
+         class="profile-name">
       Sin registro
     </div>
 
-    <div
-      id="profileId"
-      class="profile-id"
-    >
+    <div id="profileId"
+         class="profile-id">
       ID: —
     </div>
 
@@ -1736,51 +1535,31 @@ button{
      RULETA
      ======================================================== -->
 
-<section
-  id="roulettePage"
-  class="screen hidden"
->
+<section id="roulettePage"
+         class="screen hidden">
 
   <div class="card">
 
-    <button
-      class="back-button"
-      onclick="showMain()"
-    >
+    <button class="back-button"
+            onclick="showMain()">
       ←
     </button>
-
 
     <div class="subpage-title">
       🎡 RULETA DEL SORTEO
     </div>
 
-
     <div class="roulette-wrap">
 
       <div class="needle"></div>
 
-      <div
-        id="rouletteLarge"
-        class="roulette"
-      >
+      <div id="rouletteLarge"
+           class="roulette">
 
         <div class="roulette-center"></div>
 
       </div>
 
-    </div>
-
-
-    <div class="roulette-timer-title">
-      ⏳ TIEMPO PARA EL SORTEO
-    </div>
-
-    <div
-      id="rouletteTimerLarge"
-      class="roulette-timer"
-    >
-      0d 0h 0m 0s
     </div>
 
   </div>
@@ -1792,17 +1571,13 @@ button{
      ESTADÍSTICAS
      ======================================================== -->
 
-<section
-  id="statsPage"
-  class="screen hidden"
->
+<section id="statsPage"
+         class="screen hidden">
 
   <div class="card">
 
-    <button
-      class="back-button"
-      onclick="showMain()"
-    >
+    <button class="back-button"
+            onclick="showMain()">
       ←
     </button>
 
@@ -1815,10 +1590,8 @@ button{
 
       <div class="stat">
 
-        <span
-          id="statsCurrent"
-          class="stat-number"
-        >
+        <span id="statsCurrent"
+              class="stat-number">
           0
         </span>
 
@@ -1831,10 +1604,8 @@ button{
 
       <div class="stat">
 
-        <span
-          id="statsTotal"
-          class="stat-number"
-        >
+        <span id="statsTotal"
+              class="stat-number">
           0
         </span>
 
@@ -1855,17 +1626,13 @@ button{
      GANADORES
      ======================================================== -->
 
-<section
-  id="winnersPage"
-  class="screen hidden"
->
+<section id="winnersPage"
+         class="screen hidden">
 
   <div class="card winner-card">
 
-    <button
-      class="back-button"
-      onclick="showMain()"
-    >
+    <button class="back-button"
+            onclick="showMain()">
       ←
     </button>
 
@@ -1877,7 +1644,9 @@ button{
     <div id="winnerContent">
 
       <div class="winner">
+
         Los ganadores aparecerán aquí después del sorteo.
+
       </div>
 
     </div>
@@ -1891,58 +1660,49 @@ button{
      LOGIN ADMINISTRACIÓN
      ======================================================== -->
 
-<section
-  id="adminLoginPage"
-  class="screen hidden"
->
+<section id="adminLoginPage"
+         class="screen hidden">
 
   <div class="card admin-login">
 
-    <button
-      class="back-button"
-      onclick="showMain()"
-    >
+    <button class="back-button"
+            onclick="showMain()">
       ←
     </button>
-
 
     <div class="admin-lock">
       🔐
     </div>
 
-
     <h2>
       Administración
     </h2>
-
 
     <p class="description">
       Introduce la contraseña para continuar.
     </p>
 
 
-    <input
-      id="adminPassword"
-      class="password-input"
-      type="password"
-      autocomplete="off"
-      placeholder="Contraseña"
-    >
+    <input id="adminPassword"
+           class="password-input"
+           type="password"
+           autocomplete="off"
+           placeholder="Contraseña">
 
 
-    <div
-      id="adminError"
-      class="admin-error"
-    >
+    <div id="adminError"
+         class="admin-error">
+
       Contraseña incorrecta.
+
     </div>
 
 
-    <button
-      class="admin-button"
-      onclick="verifyAdminPassword()"
-    >
+    <button class="admin-button"
+            onclick="verifyAdminPassword()">
+
       🔓 ACCEDER
+
     </button>
 
   </div>
@@ -1954,17 +1714,13 @@ button{
      ADMINISTRACIÓN
      ======================================================== -->
 
-<section
-  id="adminPage"
-  class="screen hidden"
->
+<section id="adminPage"
+         class="screen hidden">
 
   <div class="card">
 
-    <button
-      class="back-button"
-      onclick="showMain()"
-    >
+    <button class="back-button"
+            onclick="showMain()">
       ←
     </button>
 
@@ -1979,12 +1735,12 @@ button{
     </p>
 
 
-    <div id="adminParticipantsList"></div>
+    <div id="adminParticipantsList">
+    </div>
 
   </div>
 
 </section>
-
 
 </div>
 
@@ -2006,7 +1762,8 @@ const MAX_PARTICIPANTS =
 
 
 /*
-  SHA-256 de la contraseña de administración.
+  Hash SHA-256 de la contraseña
+  de Administración.
 */
 
 const ADMIN_PASSWORD_HASH =
@@ -2034,7 +1791,7 @@ const SOCIALS = {
 let participants =
   JSON.parse(
     localStorage.getItem(
-      "soysigas_participants_current"
+      "soysigas_participants_current_draw"
     ) || "[]"
   );
 
@@ -2069,11 +1826,7 @@ let winners =
   );
 
 
-/* ==========================================================
-   ESTADO DE LAS REDES
-   ========================================================== */
-
-let socialState = {
+const socialState = {
 
   youtube:{
     openedAt:null,
@@ -2095,7 +1848,6 @@ let socialState = {
 
 /* ==========================================================
    FECHA DEL SORTEO
-   DÍAS 15 Y 30 A LAS 9:30 PM
    ========================================================== */
 
 function getDrawDate(){
@@ -2159,65 +1911,6 @@ function formatDate(date){
 }
 
 
-/* ==========================================================
-   TEMPORIZADOR GENERAL
-   ========================================================== */
-
-function formatFullCountdown(ms){
-
-  if(ms <= 0){
-
-    return "0d 0h 0m 0s";
-
-  }
-
-
-  let totalSeconds =
-    Math.floor(
-      ms / 1000
-    );
-
-
-  const days =
-    Math.floor(
-      totalSeconds / 86400
-    );
-
-
-  totalSeconds %=
-    86400;
-
-
-  const hours =
-    Math.floor(
-      totalSeconds / 3600
-    );
-
-
-  totalSeconds %=
-    3600;
-
-
-  const minutes =
-    Math.floor(
-      totalSeconds / 60
-    );
-
-
-  const seconds =
-    totalSeconds % 60;
-
-
-  return (
-    days + "d " +
-    hours + "h " +
-    minutes + "m " +
-    seconds + "s"
-  );
-
-}
-
-
 function formatCountdown(ms){
 
   if(ms <= 0)
@@ -2238,15 +1931,13 @@ function formatCountdown(ms){
 
   const hours =
     Math.floor(
-      (seconds % 86400) /
-      3600
+      (seconds % 86400) / 3600
     );
 
 
   const mins =
     Math.floor(
-      (seconds % 3600) /
-      60
+      (seconds % 3600) / 60
     );
 
 
@@ -2270,302 +1961,118 @@ function formatCountdown(ms){
 
 
 /* ==========================================================
-   TEMPORIZADOR DE RULETA
-   ========================================================== */
-
-function updateRouletteTimer(){
-
-  const draw =
-    getDrawDate();
-
-  const now =
-    new Date();
-
-  const remaining =
-    draw - now;
-
-
-  const text =
-    formatFullCountdown(
-      remaining
-    );
-
-
-  const timer =
-    document.getElementById(
-      "rouletteTimer"
-    );
-
-
-  const timerLarge =
-    document.getElementById(
-      "rouletteTimerLarge"
-    );
-
-
-  if(timer){
-
-    timer.textContent =
-      text;
-
-  }
-
-
-  if(timerLarge){
-
-    timerLarge.textContent =
-      text;
-
-  }
-
-}
-
-
-/* ==========================================================
-   REDES SOCIALES
-   ========================================================== */
-
-function saveSocialState(network){
-
-  if(!socialState[network])
-    return;
-
-
-  localStorage.setItem(
-
-    "soysigas_social_" +
-    network,
-
-    JSON.stringify({
-
-      openedAt:
-        socialState[network].openedAt,
-
-      completed:
-        socialState[network].completed
-
-    })
-
-  );
-
-}
-
-
-/* ==========================================================
-   RESTAURAR REDES
-   ========================================================== */
-
-function restoreSocialState(){
-
-  const networks = [
-
-    "youtube",
-    "facebook",
-    "whatsapp"
-
-  ];
-
-
-  networks.forEach(
-    network=>{
-
-      const saved =
-        localStorage.getItem(
-          "soysigas_social_" +
-          network
-        );
-
-
-      if(!saved)
-        return;
-
-
-      try{
-
-        const data =
-          JSON.parse(
-            saved
-          );
-
-
-        if(
-          !socialState[network]
-        )
-          return;
-
-
-        socialState[network].openedAt =
-          data.openedAt || null;
-
-
-        socialState[network].completed =
-          data.completed === true;
-
-      }catch(error){
-
-        localStorage.removeItem(
-          "soysigas_social_" +
-          network
-        );
-
-      }
-
-    }
-  );
-
-}
-
-
-/* ==========================================================
-   COMENZAR UNA RED
+   REDES
    ========================================================== */
 
 function startSocial(network){
 
-  if(!socialState[network])
-    return;
-
-
-  /*
-    Si ya está completada,
-    no vuelve a comenzar.
-  */
-
   if(
+    !socialState[network] ||
     socialState[network].completed
   ){
-
     return;
-
   }
 
 
-  /*
-    Guardamos el momento exacto
-    en que el usuario tocó SEGUIR.
-  */
-
-  socialState[network].openedAt =
+  const now =
     Date.now();
 
 
-  saveSocialState(
-    network
-  );
+  socialState[network].openedAt =
+    now;
 
 
-  /*
-    NO SE MUESTRA NINGÚN CONTADOR.
-  */
-
-
-  setTimeout(
-    function(){
-
-      checkSingleSocial(
-        network
-      );
-
-    },
-    REQUIRED_SOCIAL_TIME + 100
+  localStorage.setItem(
+    "soysigas_social_opened",
+    JSON.stringify({
+      network:network,
+      openedAt:now
+    })
   );
 
 }
 
 
-/* ==========================================================
-   COMPROBAR UNA RED
-   ========================================================== */
+function checkSocialTime(){
 
-function checkSingleSocial(network){
-
-  if(!socialState[network])
-    return;
-
-
-  if(
-    socialState[network].completed
-  ){
-
-    return;
-
-  }
-
-
-  const openedAt =
-    Number(
-      socialState[network].openedAt
+  const saved =
+    localStorage.getItem(
+      "soysigas_social_opened"
     );
 
 
-  if(!openedAt)
+  if(!saved)
     return;
 
 
-  const elapsed =
-    Date.now() -
-    openedAt;
+  try{
+
+    const data =
+      JSON.parse(saved);
 
 
-  /*
-    Aún no han pasado los 25 segundos.
-    No se muestra nada.
-  */
+    if(
+      data &&
+      socialState[data.network] &&
+      !socialState[data.network].completed
+    ){
 
-  if(
-    elapsed <
-    REQUIRED_SOCIAL_TIME
-  ){
+      socialState[data.network].openedAt =
+        Number(data.openedAt);
 
-    return;
+
+      if(
+        Date.now() -
+        socialState[data.network].openedAt
+        >=
+        REQUIRED_SOCIAL_TIME
+      ){
+
+        socialState[data.network].completed =
+          true;
+
+        socialState[data.network].openedAt =
+          null;
+
+
+        markSocialCompleted(
+          data.network
+        );
+
+
+        localStorage.removeItem(
+          "soysigas_social_opened"
+        );
+
+
+        updateSocialProgress();
+
+      }
+
+    }
+
+  }catch(e){
+
+    localStorage.removeItem(
+      "soysigas_social_opened"
+    );
 
   }
 
-
-  /*
-    YA COMPLETÓ LOS 25 SEGUNDOS.
-  */
-
-  socialState[network].completed =
-    true;
-
-
-  socialState[network].openedAt =
-    null;
-
-
-  saveSocialState(
-    network
-  );
-
-
-  markSocialCompleted(
-    network
-  );
-
-
-  updateSocialProgress();
-
 }
 
-
-/* ==========================================================
-   MARCAR COMO COMPLETADA
-   ========================================================== */
 
 function markSocialCompleted(network){
 
   const item =
     document.getElementById(
-      "social-" +
-      network
+      "social-" + network
     );
 
 
   const button =
     document.getElementById(
-      "button-" +
-      network
+      "button-" + network
     );
 
 
@@ -2607,16 +2114,10 @@ function markSocialCompleted(network){
 
       event.preventDefault();
 
-      return false;
-
     };
 
 }
 
-
-/* ==========================================================
-   ACTUALIZAR PROGRESO DE REDES
-   ========================================================== */
 
 function updateSocialProgress(){
 
@@ -2624,105 +2125,40 @@ function updateSocialProgress(){
     Object.values(
       socialState
     ).filter(
-      network =>
-        network.completed
+      x => x.completed
     ).length;
 
 
-  const counter =
-    document.getElementById(
-      "socialCount"
-    );
+  document.getElementById(
+    "socialCount"
+  ).textContent =
+    `${completed} de 3`;
 
 
-  if(counter){
-
-    counter.textContent =
-      completed +
-      " de 3";
-
-  }
-
-
-  const continueButton =
+  const button =
     document.getElementById(
       "continueButton"
     );
 
 
-  if(!continueButton)
-    return;
+  if(completed === 3){
 
-
-  if(
-    completed === 3
-  ){
-
-    continueButton.classList.add(
+    button.classList.add(
       "active"
     );
 
 
-    continueButton.textContent =
+    button.textContent =
       "✅ CONTINUAR";
 
 
-    continueButton.onclick =
+    button.onclick =
       finishSocialStep;
-
-  }else{
-
-    continueButton.classList.remove(
-      "active"
-    );
-
-
-    continueButton.textContent =
-      "🔒 CONTINUAR";
-
-
-    continueButton.onclick =
-      null;
 
   }
 
 }
 
-
-/* ==========================================================
-   COMPROBAR TODAS LAS REDES
-   ========================================================== */
-
-function checkAllSocials(){
-
-  const networks = [
-
-    "youtube",
-    "facebook",
-    "whatsapp"
-
-  ];
-
-
-  networks.forEach(
-    network=>{
-
-      checkSingleSocial(
-        network
-      );
-
-    }
-  );
-
-
-  updateSocialProgress();
-
-}
-
-
-/* ==========================================================
-   FINALIZAR PASO DE REDES
-   ========================================================== */
 
 function finishSocialStep(){
 
@@ -2730,18 +2166,12 @@ function finishSocialStep(){
     Object.values(
       socialState
     ).filter(
-      network =>
-        network.completed
+      x => x.completed
     ).length;
 
 
-  if(
-    completed !== 3
-  ){
-
+  if(completed !== 3)
     return;
-
-  }
 
 
   localStorage.setItem(
@@ -2752,23 +2182,18 @@ function finishSocialStep(){
 
   localStorage.setItem(
     "soysigas_social_completed_at",
-    String(
-      Date.now()
-    )
+    String(Date.now())
   );
 
 
   hideAllScreens();
 
 
-  document
-    .getElementById(
-      "mainScreen"
-    )
-    .classList
-    .remove(
-      "hidden"
-    );
+  document.getElementById(
+    "mainScreen"
+  ).classList.remove(
+    "hidden"
+  );
 
 
   updateMain();
@@ -2777,7 +2202,7 @@ function finishSocialStep(){
 
 
 /* ==========================================================
-   EXPIRACIÓN DE 2 HORAS
+   CONTROL DE LAS 2 HORAS
    ========================================================== */
 
 function checkSocialExpiration(){
@@ -2804,13 +2229,9 @@ function checkSocialExpiration(){
     return false;
 
 
-  const elapsed =
-    Date.now() -
-    completedAt;
-
-
   if(
-    elapsed >=
+    Date.now() - completedAt
+    >=
     SOCIAL_ACCESS_TIME
   ){
 
@@ -2827,28 +2248,6 @@ function checkSocialExpiration(){
     resetSocialState();
 
 
-    /*
-      Al cumplirse las 2 horas,
-      volvemos automáticamente
-      a la pantalla de redes.
-    */
-
-    hideAllScreens();
-
-
-    document
-      .getElementById(
-        "socialScreen"
-      )
-      .classList
-      .remove(
-        "hidden"
-      );
-
-
-    updateSocialProgress();
-
-
     return false;
 
   }
@@ -2859,60 +2258,54 @@ function checkSocialExpiration(){
 }
 
 
-/* ==========================================================
-   REINICIAR REDES
-   ========================================================== */
-
 function resetSocialState(){
 
-  const networks = [
+  socialState.youtube = {
+    openedAt:null,
+    completed:false
+  };
 
+
+  socialState.facebook = {
+    openedAt:null,
+    completed:false
+  };
+
+
+  socialState.whatsapp = {
+    openedAt:null,
+    completed:false
+  };
+
+
+  localStorage.removeItem(
+    "soysigas_social_opened"
+  );
+
+
+  [
     "youtube",
     "facebook",
     "whatsapp"
-
-  ];
-
-
-  networks.forEach(
+  ].forEach(
     network=>{
-
-      socialState[network] = {
-
-        openedAt:null,
-
-        completed:false
-
-      };
-
-
-      localStorage.removeItem(
-        "soysigas_social_" +
-        network
-      );
-
 
       const item =
         document.getElementById(
-          "social-" +
-          network
+          "social-" + network
         );
 
 
       const button =
         document.getElementById(
-          "button-" +
-          network
+          "button-" + network
         );
 
 
-      if(item){
-
+      if(item)
         item.classList.remove(
           "completed"
         );
-
-      }
 
 
       if(button){
@@ -2941,9 +2334,7 @@ function resetSocialState(){
         button.onclick =
           function(){
 
-            startSocial(
-              network
-            );
+            startSocial(network);
 
           };
 
@@ -2953,18 +2344,10 @@ function resetSocialState(){
   );
 
 
-  const counter =
-    document.getElementById(
-      "socialCount"
-    );
-
-
-  if(counter){
-
-    counter.textContent =
-      "0 de 3";
-
-  }
+  document.getElementById(
+    "socialCount"
+  ).textContent =
+    "0 de 3";
 
 
   const continueButton =
@@ -2973,21 +2356,17 @@ function resetSocialState(){
     );
 
 
-  if(continueButton){
-
-    continueButton.classList.remove(
-      "active"
-    );
+  continueButton.classList.remove(
+    "active"
+  );
 
 
-    continueButton.textContent =
-      "🔒 CONTINUAR";
+  continueButton.textContent =
+    "🔒 CONTINUAR";
 
 
-    continueButton.onclick =
-      null;
-
-  }
+  continueButton.onclick =
+    null;
 
 }
 
@@ -3032,24 +2411,19 @@ function openRegistration(){
   hideAllScreens();
 
 
-  document
-    .getElementById(
-      "registerScreen"
-    )
-    .classList
-    .remove(
-      "hidden"
-    );
+  document.getElementById(
+    "registerScreen"
+  ).classList.remove(
+    "hidden"
+  );
 
 
   setTimeout(
-    function(){
+    ()=>{
 
-      document
-        .getElementById(
-          "playerName"
-        )
-        .focus();
+      document.getElementById(
+        "playerName"
+      ).focus();
 
     },
     100
@@ -3057,10 +2431,6 @@ function openRegistration(){
 
 }
 
-
-/* ==========================================================
-   VALIDAR NOMBRE
-   ========================================================== */
 
 function isValidFullName(name){
 
@@ -3086,7 +2456,7 @@ function isValidFullName(name){
       .filter(Boolean);
 
 
-  return(
+  return (
     words.length >= 2 &&
     words.every(
       word =>
@@ -3096,10 +2466,6 @@ function isValidFullName(name){
 
 }
 
-
-/* ==========================================================
-   REGISTRAR PARTICIPANTE
-   ========================================================== */
 
 function registerParticipant(){
 
@@ -3177,8 +2543,7 @@ function registerParticipant(){
 
   if(
     participants.some(
-      p =>
-        p.id === id
+      p => p.id === id
     )
   ){
 
@@ -3209,9 +2574,7 @@ function registerParticipant(){
   const participant = {
 
     name:name,
-
     id:id,
-
     browserRegistered:true
 
   };
@@ -3223,7 +2586,7 @@ function registerParticipant(){
 
 
   localStorage.setItem(
-    "soysigas_participants_current",
+    "soysigas_participants_current_draw",
     JSON.stringify(
       participants
     )
@@ -3275,14 +2638,11 @@ function registerParticipant(){
   hideAllScreens();
 
 
-  document
-    .getElementById(
-      "mainScreen"
-    )
-    .classList
-    .remove(
-      "hidden"
-    );
+  document.getElementById(
+    "mainScreen"
+  ).classList.remove(
+    "hidden"
+  );
 
 
   updateMain();
@@ -3291,7 +2651,7 @@ function registerParticipant(){
 
 
 /* ==========================================================
-   ERROR
+   ERRORES
    ========================================================== */
 
 function showError(message){
@@ -3326,11 +2686,9 @@ function updateMain(){
     new Date();
 
 
-  document
-    .getElementById(
-      "drawDate"
-    )
-    .textContent =
+  document.getElementById(
+    "drawDate"
+  ).textContent =
     formatDate(draw);
 
 
@@ -3346,9 +2704,7 @@ function updateMain(){
     );
 
 
-  if(
-    now >= draw
-  ){
+  if(now >= draw){
 
     title.textContent =
       "🎡 SORTEO EN CURSO";
@@ -3375,8 +2731,6 @@ function updateMain(){
 
   updateProfile();
 
-  updateRouletteTimer();
-
 }
 
 
@@ -3392,55 +2746,40 @@ function updateParticipants(){
 
   const available =
     Math.max(
-      MAX_PARTICIPANTS -
-      count,
+      MAX_PARTICIPANTS - count,
       0
     );
 
 
-  document
-    .getElementById(
-      "slotsNumber"
-    )
-    .textContent =
+  document.getElementById(
+    "slotsNumber"
+  ).textContent =
     available;
 
 
-  document
-    .getElementById(
-      "participantCount"
-    )
-    .textContent =
+  document.getElementById(
+    "participantCount"
+  ).textContent =
     `${count}/${MAX_PARTICIPANTS}`;
 
 
-  document
-    .getElementById(
-      "totalParticipants"
-    )
-    .textContent =
+  document.getElementById(
+    "totalParticipants"
+  ).textContent =
     totalHistoricalParticipants;
 
 
-  document
-    .getElementById(
-      "progressBar"
-    )
-    .style
-    .width =
+  document.getElementById(
+    "progressBar"
+  ).style.width =
     `${(count/MAX_PARTICIPANTS)*100}%`;
 
 
-  document
-    .getElementById(
-      "slotsMessage"
-    )
-    .textContent =
-
+  document.getElementById(
+    "slotsMessage"
+  ).textContent =
     available === 0
-
       ? "🔴 ¡CUPOS AGOTADOS!"
-
       : "¡Regístrate antes de que se acaben!";
 
 
@@ -3462,9 +2801,7 @@ function updateParticipants(){
     ) === "1";
 
 
-  if(
-    available === 0
-  ){
+  if(available === 0){
 
     status.textContent =
       "🔴 CUPOS AGOTADOS";
@@ -3488,11 +2825,8 @@ function updateParticipants(){
   }else{
 
     status.textContent =
-
       browserRegistered
-
         ? "🟢 PARTICIPACIÓN REGISTRADA"
-
         : "🟢 INSCRIPCIONES ABIERTAS";
 
 
@@ -3509,11 +2843,8 @@ function updateParticipants(){
 
 
     registerButton.style.opacity =
-
       browserRegistered
-
         ? ".5"
-
         : "1";
 
   }
@@ -3529,9 +2860,7 @@ function updateParticipants(){
     "";
 
 
-  if(
-    count === 0
-  ){
+  if(count === 0){
 
     list.innerHTML =
       '<div class="participant">Aún no hay participantes.</div>';
@@ -3575,19 +2904,15 @@ function updateParticipants(){
   );
 
 
-  document
-    .getElementById(
-      "statsCurrent"
-    )
-    .textContent =
+  document.getElementById(
+    "statsCurrent"
+  ).textContent =
     count;
 
 
-  document
-    .getElementById(
-      "statsTotal"
-    )
-    .textContent =
+  document.getElementById(
+    "statsTotal"
+  ).textContent =
     totalHistoricalParticipants;
 
 }
@@ -3611,9 +2936,7 @@ function updateProfile(){
     );
 
 
-  if(
-    currentParticipant
-  ){
+  if(currentParticipant){
 
     name.textContent =
       currentParticipant.name;
@@ -3706,8 +3029,7 @@ function updateRoulette(elementId){
 
       segment.style.background =
         colors[
-          index %
-          colors.length
+          index % colors.length
         ];
 
 
@@ -3722,19 +3044,12 @@ function updateRoulette(elementId){
 
 
       const fontSize =
-
         count >= 40
-
           ? 7
-
           : count >= 30
-
           ? 8
-
           : count >= 20
-
           ? 9
-
           : 11;
 
 
@@ -3772,9 +3087,7 @@ async function sha256(text){
 
 
   const data =
-    encoder.encode(
-      text
-    );
+    encoder.encode(text);
 
 
   const hashBuffer =
@@ -3795,12 +3108,8 @@ async function sha256(text){
   return hashArray
     .map(
       b =>
-        b
-          .toString(16)
-          .padStart(
-            2,
-            "0"
-          )
+        b.toString(16)
+         .padStart(2,"0")
     )
     .join("");
 
@@ -3812,41 +3121,31 @@ function openAdminLogin(){
   hideAllScreens();
 
 
-  document
-    .getElementById(
-      "adminLoginPage"
-    )
-    .classList
-    .remove(
-      "hidden"
-    );
+  document.getElementById(
+    "adminLoginPage"
+  ).classList.remove(
+    "hidden"
+  );
 
 
-  document
-    .getElementById(
-      "adminPassword"
-    )
-    .value =
+  document.getElementById(
+    "adminPassword"
+  ).value =
     "";
 
 
-  document
-    .getElementById(
-      "adminError"
-    )
-    .style
-    .display =
+  document.getElementById(
+    "adminError"
+  ).style.display =
     "none";
 
 
   setTimeout(
-    function(){
+    ()=>{
 
-      document
-        .getElementById(
-          "adminPassword"
-        )
-        .focus();
+      document.getElementById(
+        "adminPassword"
+      ).focus();
 
     },
     100
@@ -3944,14 +3243,11 @@ function showAdmin(){
   hideAllScreens();
 
 
-  document
-    .getElementById(
-      "adminPage"
-    )
-    .classList
-    .remove(
-      "hidden"
-    );
+  document.getElementById(
+    "adminPage"
+  ).classList.remove(
+    "hidden"
+  );
 
 
   updateAdminParticipants();
@@ -4088,8 +3384,7 @@ function chooseWinner(id){
 
   const participant =
     participants.find(
-      p =>
-        p.id === id
+      p => p.id === id
     );
 
 
@@ -4138,19 +3433,11 @@ function hideAllScreens(){
   ].forEach(
     id=>{
 
-      const element =
-        document.getElementById(
-          id
-        );
-
-
-      if(element){
-
-        element.classList.add(
+      document
+        .getElementById(id)
+        .classList.add(
           "hidden"
         );
-
-      }
 
     }
   );
@@ -4162,13 +3449,25 @@ function hideAllScreens(){
     );
 
 
-  if(menu){
-
+  if(menu)
     menu.classList.add(
       "hidden"
     );
 
-  }
+
+  const floatingMenu =
+    document.getElementById(
+      "floatingSocialMenu"
+    );
+
+
+  if(floatingMenu)
+    floatingMenu.classList.add(
+      "hidden"
+    );
+
+
+  updateFloatingSocial();
 
 }
 
@@ -4178,14 +3477,11 @@ function showMain(){
   hideAllScreens();
 
 
-  document
-    .getElementById(
-      "mainScreen"
-    )
-    .classList
-    .remove(
-      "hidden"
-    );
+  document.getElementById(
+    "mainScreen"
+  ).classList.remove(
+    "hidden"
+  );
 
 
   updateMain();
@@ -4198,14 +3494,11 @@ function showSubpage(pageId){
   hideAllScreens();
 
 
-  document
-    .getElementById(
-      pageId
-    )
-    .classList
-    .remove(
-      "hidden"
-    );
+  document.getElementById(
+    pageId
+  ).classList.remove(
+    "hidden"
+  );
 
 
   if(
@@ -4216,9 +3509,6 @@ function showSubpage(pageId){
     updateRoulette(
       "rouletteLarge"
     );
-
-
-    updateRouletteTimer();
 
   }
 
@@ -4247,14 +3537,11 @@ function showSubpage(pageId){
 
 function toggleMenu(){
 
-  document
-    .getElementById(
-      "menuPanel"
-    )
-    .classList
-    .toggle(
-      "hidden"
-    );
+  document.getElementById(
+    "menuPanel"
+  ).classList.toggle(
+    "hidden"
+  );
 
 }
 
@@ -4317,42 +3604,100 @@ function updateWinners(){
 
 
 /* ==========================================================
-   INICIO DEL SITIO
+   BOTÓN FLOTANTE DE REDES
+   ========================================================== */
+
+function toggleFloatingSocial(){
+
+  const menu =
+    document.getElementById(
+      "floatingSocialMenu"
+    );
+
+
+  if(!menu)
+    return;
+
+
+  menu.classList.toggle(
+    "hidden"
+  );
+
+}
+
+
+function updateFloatingSocial(){
+
+  const floating =
+    document.getElementById(
+      "floatingSocial"
+    );
+
+
+  if(!floating)
+    return;
+
+
+  /*
+    La pantalla inicial de redes
+    NO muestra el botón flotante.
+  */
+
+  const socialVisible =
+    !document
+      .getElementById(
+        "socialScreen"
+      )
+      .classList
+      .contains(
+        "hidden"
+      );
+
+
+  if(socialVisible){
+
+    floating.classList.add(
+      "hidden"
+    );
+
+  }else{
+
+    floating.classList.remove(
+      "hidden"
+    );
+
+  }
+
+}
+
+
+/* ==========================================================
+   INICIO
    ========================================================== */
 
 function startSite(){
 
   /*
-    Primero restauramos
-    el estado individual
-    de cada red.
+    Al abrir la web:
+
+    1. Comprueba el acceso de redes.
+    2. Si expiró, muestra nuevamente redes.
+    3. Si sigue activo, muestra principal.
   */
 
-  restoreSocialState();
 
-
-  /*
-    Comprobamos si las 2 horas
-    ya terminaron.
-  */
-
-  const accessValid =
-    checkSocialExpiration();
-
-
-  if(accessValid){
+  if(
+    checkSocialExpiration()
+  ){
 
     hideAllScreens();
 
 
-    document
-      .getElementById(
-        "mainScreen"
-      )
-      .classList
-      .remove(
-        "hidden"
-      );
+    document.getElementById(
+      "mainScreen"
+    ).classList.remove(
+      "hidden"
+    );
 
 
     updateMain();
@@ -4363,17 +3708,20 @@ function startSite(){
     hideAllScreens();
 
 
-    document
-      .getElementById(
-        "socialScreen"
-      )
-      .classList
-      .remove(
-        "hidden"
-      );
+    document.getElementById(
+      "socialScreen"
+    ).classList.remove(
+      "hidden"
+    );
 
 
-    checkAllSocials();
+    updateFloatingSocial();
+
+
+    checkSocialTime();
+
+
+    updateSocialProgress();
 
   }
 
@@ -4381,55 +3729,55 @@ function startSite(){
 
 
 /* ==========================================================
-   ACTUALIZACIÓN CADA SEGUNDO
+   ACTUALIZACIÓN AUTOMÁTICA
    ========================================================== */
 
 setInterval(
-  function(){
+  ()=>{
 
-    /*
-      Comprobar las redes.
-    */
-
-    checkAllSocials();
+    checkSocialTime();
 
 
-    /*
-      Comprobar las 2 horas.
-    */
-
-    checkSocialExpiration();
-
-
-    /*
-      Actualizar temporizador
-      del próximo sorteo.
-    */
-
-    updateRouletteTimer();
+    const socialVisible =
+      !document
+        .getElementById(
+          "socialScreen"
+        )
+        .classList
+        .contains(
+          "hidden"
+        );
 
 
-    /*
-      Actualizar pantalla principal
-      si está visible.
-    */
+    if(socialVisible){
 
-    const main =
-      document.getElementById(
-        "mainScreen"
-      );
+      updateSocialProgress();
+
+    }
 
 
-    if(
-      main &&
-      !main.classList.contains(
-        "hidden"
-      )
-    ){
+    const mainVisible =
+      !document
+        .getElementById(
+          "mainScreen"
+        )
+        .classList
+        .contains(
+          "hidden"
+        );
+
+
+    if(mainVisible){
 
       updateMain();
 
     }
+
+
+    checkSocialExpiration();
+
+
+    updateFloatingSocial();
 
   },
   1000
@@ -4437,18 +3785,20 @@ setInterval(
 
 
 /* ==========================================================
-   REGRESO DESDE RED SOCIAL
+   REGRESO DESDE REDES
    ========================================================== */
 
 document.addEventListener(
   "visibilitychange",
-  function(){
+  ()=>{
 
-    if(
-      !document.hidden
-    ){
+    if(!document.hidden){
 
-      checkAllSocials();
+      checkSocialTime();
+
+      updateSocialProgress();
+
+      updateFloatingSocial();
 
     }
 
@@ -4457,32 +3807,26 @@ document.addEventListener(
 
 
 window.addEventListener(
-  "focus",
-  function(){
-
-    checkAllSocials();
-
-  }
-);
-
-
-window.addEventListener(
   "pageshow",
-  function(){
+  ()=>{
 
-    checkAllSocials();
+    checkSocialTime();
+
+    updateSocialProgress();
+
+    updateFloatingSocial();
 
   }
 );
 
 
 /* ==========================================================
-   ENTER EN ADMINISTRACIÓN
+   ENTER EN CONTRASEÑA ADMIN
    ========================================================== */
 
 document.addEventListener(
   "keydown",
-  function(event){
+  event=>{
 
     const adminLogin =
       document.getElementById(
@@ -4491,7 +3835,6 @@ document.addEventListener(
 
 
     if(
-      adminLogin &&
       !adminLogin.classList.contains(
         "hidden"
       ) &&
