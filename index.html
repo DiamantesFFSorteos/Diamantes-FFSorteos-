@@ -7,10 +7,19 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#000;color:#fff}
+
+html,body{
+  min-height:100%;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#000;
+  color:#fff
+}
+
 body{overflow-x:hidden}
+
 button,input{font:inherit}
 button{cursor:pointer}
+
 .hidden{display:none!important}
 
 body{
@@ -32,7 +41,11 @@ body{
   padding:18px 14px 90px;
 }
 
-/* ---------- PANTALLA DE REDES ---------- */
+
+/* ==========================================================
+   PANTALLA DE REDES
+   ========================================================== */
+
 .social-landing{
   display:flex;
   flex-direction:column;
@@ -70,7 +83,9 @@ body{
   border:1px solid rgba(255,208,0,.55);
   border-radius:24px;
   padding:22px 16px;
-  box-shadow:0 0 28px rgba(255,193,7,.12),inset 0 0 25px rgba(255,193,7,.025);
+  box-shadow:
+    0 0 28px rgba(255,193,7,.12),
+    inset 0 0 25px rgba(255,193,7,.025);
 }
 
 .card h2{
@@ -168,7 +183,9 @@ body{
   margin:17px 0 12px;
 }
 
-.completed-count strong{color:#ffd000}
+.completed-count strong{
+  color:#ffd000
+}
 
 .continue-button{
   width:100%;
@@ -188,7 +205,11 @@ body{
   cursor:pointer;
 }
 
-/* ---------- PANTALLA PRINCIPAL ---------- */
+
+/* ==========================================================
+   PANTALLA PRINCIPAL
+   ========================================================== */
+
 .main-screen{
   padding-top:12px;
 }
@@ -245,14 +266,22 @@ body{
   margin:5px 0 24px;
 }
 
-.welcome .crown{font-size:50px}
+.welcome .crown{
+  font-size:50px
+}
+
 .welcome h2{
   color:#ffd000;
   font-size:32px;
   margin-top:3px;
   text-shadow:0 0 10px rgba(255,208,0,.35);
 }
-.welcome p{color:#aaa;margin-top:10px;font-size:15px}
+
+.welcome p{
+  color:#aaa;
+  margin-top:10px;
+  font-size:15px
+}
 
 .draw-card{
   background:linear-gradient(145deg,#292200,#111);
@@ -275,7 +304,10 @@ body{
   margin:22px 0 12px;
 }
 
-.draw-time{color:#aaa;font-size:16px}
+.draw-time{
+  color:#aaa;
+  font-size:16px
+}
 
 .registration-status{
   display:inline-block;
@@ -323,13 +355,21 @@ body{
   margin-top:12px;
 }
 
-.slots{text-align:center}
+.slots{
+  text-align:center
+}
+
 .slots-number{
   color:#ffd000;
   font-size:50px;
   font-weight:900;
 }
-.slots-label{color:#999;margin-top:4px}
+
+.slots-label{
+  color:#999;
+  margin-top:4px
+}
+
 .progress{
   height:12px;
   background:#2c2c2c;
@@ -337,6 +377,7 @@ body{
   overflow:hidden;
   margin-top:18px;
 }
+
 .progress-bar{
   height:100%;
   width:0%;
@@ -348,13 +389,18 @@ body{
   grid-template-columns:1fr 1fr;
   gap:14px;
 }
-.stat{text-align:center}
+
+.stat{
+  text-align:center
+}
+
 .stat-number{
   display:block;
   color:#ffd000;
   font-size:28px;
   font-weight:900;
 }
+
 .stat-label{
   display:block;
   color:#999;
@@ -362,12 +408,14 @@ body{
   margin-top:6px;
 }
 
-.participants-box h3,.roulette-box h3{
+.participants-box h3,
+.roulette-box h3{
   text-align:center;
   color:#ffd000;
   font-size:22px;
   margin-bottom:14px;
 }
+
 .participant{
   background:#181818;
   border:1px solid #2d2d2d;
@@ -385,9 +433,19 @@ body{
   margin-top:14px;
 }
 
-/* ---------- FORMULARIO ---------- */
-.register-card h2{margin-bottom:10px}
-.input-group{margin-top:15px}
+
+/* ==========================================================
+   FORMULARIO
+   ========================================================== */
+
+.register-card h2{
+  margin-bottom:10px
+}
+
+.input-group{
+  margin-top:15px
+}
+
 .input-group label{
   display:block;
   color:#ddd;
@@ -395,6 +453,7 @@ body{
   font-size:14px;
   margin-bottom:8px;
 }
+
 .input-group input{
   width:100%;
   padding:15px;
@@ -405,10 +464,12 @@ body{
   outline:none;
   font-size:16px;
 }
+
 .input-group input:focus{
   border-color:#ffd000;
   box-shadow:0 0 10px rgba(255,208,0,.15);
 }
+
 .error{
   display:none;
   margin-top:12px;
@@ -420,6 +481,7 @@ body{
   text-align:center;
   font-size:12px;
 }
+
 .confirm-button{
   width:100%;
   border:0;
@@ -431,6 +493,7 @@ body{
   font-weight:900;
   font-size:16px;
 }
+
 .back-button{
   border:1px solid #555;
   background:#171717;
@@ -442,7 +505,11 @@ body{
   margin-bottom:12px;
 }
 
-/* ---------- RULETA ---------- */
+
+/* ==========================================================
+   RULETA
+   ========================================================== */
+
 .roulette-wrap{
   position:relative;
   width:min(88vw,430px);
@@ -513,7 +580,11 @@ body{
   text-overflow:ellipsis;
 }
 
-/* ---------- SUBPÁGINAS ---------- */
+
+/* ==========================================================
+   SUBPÁGINAS
+   ========================================================== */
+
 .subpage-title{
   color:#ffd000;
   text-align:center;
@@ -521,6 +592,7 @@ body{
   font-weight:900;
   margin-bottom:15px;
 }
+
 .winner{
   text-align:center;
   padding:25px 10px;
@@ -529,369 +601,636 @@ body{
   font-weight:900;
 }
 
-/* ---------- RESPONSIVE ---------- */
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
 @media(max-width:400px){
-  .screen{padding-left:10px;padding-right:10px}
-  .brand h1{font-size:31px}
-  .welcome h2{font-size:27px}
-  .draw-date{font-size:31px}
-  .social-button{padding:10px 9px}
-  .social-info strong{font-size:14px}
+
+  .screen{
+    padding-left:10px;
+    padding-right:10px
+  }
+
+  .brand h1{
+    font-size:31px
+  }
+
+  .welcome h2{
+    font-size:27px
+  }
+
+  .draw-date{
+    font-size:31px
+  }
+
+  .social-button{
+    padding:10px 9px
+  }
+
+  .social-info strong{
+    font-size:14px
+  }
 }
 </style>
 </head>
 
 <body>
+
 <div class="app">
 
-  <!-- PRIMERA PANTALLA: SOLO REDES -->
-  <section id="socialScreen" class="screen social-landing">
+<!-- ======================================================
+     PANTALLA DE REDES
+     ====================================================== -->
 
-    <div class="brand">
-      <div class="crown">👑</div>
-      <h1>SOY SIGAS</h1>
-      <p>SÍGUEME EN MIS REDES</p>
+<section id="socialScreen" class="screen social-landing">
+
+  <div class="brand">
+    <div class="crown">👑</div>
+    <h1>SOY SIGAS</h1>
+    <p>SÍGUEME EN MIS REDES</p>
+  </div>
+
+  <div class="card">
+
+    <h2>🔥 Mis redes oficiales</h2>
+
+    <p class="description">
+      Son obligatorias para poder participar.
+      Completa las tres redes y después podrás entrar al sorteo.
+    </p>
+
+
+    <!-- YOUTUBE -->
+
+    <div id="social-youtube" class="social-item">
+
+      <div class="social-icon youtube">▶</div>
+
+      <div class="social-info">
+        <strong>YouTube</strong>
+        <span>Soy Sigas Official</span>
+      </div>
+
+      <a
+        id="button-youtube"
+        class="social-button"
+        href="https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="startSocial('youtube')"
+      >
+        SEGUIR
+      </a>
+
     </div>
 
-    <div class="card">
-      <h2>🔥 Mis redes oficiales</h2>
 
-      <p class="description">
-        Son obligatorias para poder participar.
-        Completa las tres redes y después podrás entrar al sorteo.
-      </p>
+    <!-- FACEBOOK -->
 
-      <div id="social-youtube" class="social-item">
-        <div class="social-icon youtube">▶</div>
-        <div class="social-info">
-          <strong>YouTube</strong>
-          <span>Soy Sigas Official</span>
-        </div>
-        <a id="button-youtube" class="social-button"
-          href="https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b"
-          target="_blank" rel="noopener noreferrer"
-          onclick="startSocial('youtube')">SEGUIR</a>
+    <div id="social-facebook" class="social-item">
+
+      <div class="social-icon facebook">f</div>
+
+      <div class="social-info">
+        <strong>Facebook</strong>
+        <span>Soy Sigas</span>
       </div>
 
-      <div id="social-facebook" class="social-item">
-        <div class="social-icon facebook">f</div>
-        <div class="social-info">
-          <strong>Facebook</strong>
-          <span>Soy Sigas</span>
-        </div>
-        <a id="button-facebook" class="social-button"
-          href="https://www.facebook.com/profile.php?id=61593805138979"
-          target="_blank" rel="noopener noreferrer"
-          onclick="startSocial('facebook')">SEGUIR</a>
-      </div>
+      <a
+        id="button-facebook"
+        class="social-button"
+        href="https://www.facebook.com/profile.php?id=61593805138979"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="startSocial('facebook')"
+      >
+        SEGUIR
+      </a>
 
-      <div id="social-whatsapp" class="social-item">
-        <div class="social-icon whatsapp">☎</div>
-        <div class="social-info">
-          <strong>WhatsApp</strong>
-          <span>Canal Soy Sigas</span>
-        </div>
-        <a id="button-whatsapp" class="social-button"
-          href="https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g"
-          target="_blank" rel="noopener noreferrer"
-          onclick="startSocial('whatsapp')">SEGUIR</a>
-      </div>
-
-      <div class="completed-count">
-        Completadas: <strong id="socialCount">0 de 3</strong>
-      </div>
-
-      <button id="continueButton" class="continue-button">
-        🔒 CONTINUAR
-      </button>
-    </div>
-  </section>
-
-
-  <!-- SEGUNDA PANTALLA: SORTEO -->
-  <section id="mainScreen" class="screen main-screen hidden">
-
-    <div class="top-header">
-      <button class="menu-button" onclick="toggleMenu()">☰</button>
-
-      <div id="menuPanel" class="menu-panel hidden">
-        <div class="menu-title">MENÚ PRINCIPAL</div>
-        <button class="menu-option" onclick="showSubpage('roulettePage')">🎡 Ruleta</button>
-        <button class="menu-option" onclick="showSubpage('statsPage')">📊 Estadísticas</button>
-        <button class="menu-option" onclick="showSubpage('winnersPage')">🏆 Ganadores</button>
-      </div>
     </div>
 
-    <div class="welcome">
-      <div class="crown">👑</div>
-      <h2>FFSORTEOS Diamantes y más</h2>
-      <p>Bienvenido a la familia Soy Sigas.</p>
+
+    <!-- WHATSAPP -->
+
+    <div id="social-whatsapp" class="social-item">
+
+      <div class="social-icon whatsapp">☎</div>
+
+      <div class="social-info">
+        <strong>WhatsApp</strong>
+        <span>Canal Soy Sigas</span>
+      </div>
+
+      <a
+        id="button-whatsapp"
+        class="social-button"
+        href="https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="startSocial('whatsapp')"
+      >
+        SEGUIR
+      </a>
+
     </div>
 
-    <div class="card">
 
-      <div class="draw-card">
-        <h3>🎡 PRÓXIMO SORTEO</h3>
-        <div id="drawDate" class="draw-date">Cargando...</div>
-        <div class="draw-time">Sorteo: <strong>9:30 PM</strong></div>
-        <div id="registrationStatus" class="registration-status">🟢 INSCRIPCIONES ABIERTAS</div>
-
-        <button class="participate-button" onclick="openRegistration()">
-          🎟️ PARTICIPAR EN EL SORTEO
-        </button>
-      </div>
-
-      <div class="countdown-box">
-        <div id="countdownTitle" class="countdown-title">TIEMPO RESTANTE PARA EL SORTEO</div>
-        <div id="countdown" class="countdown">--</div>
-      </div>
-
-      <div class="slots">
-        <div id="slotsNumber" class="slots-number">50</div>
-        <div class="slots-label">CUPOS DISPONIBLES</div>
-        <div class="progress">
-          <div id="progressBar" class="progress-bar"></div>
-        </div>
-        <p id="slotsMessage" class="notice">¡Regístrate antes de que se acaben!</p>
-      </div>
-
-      <div class="stats">
-        <div class="stat">
-          <span id="participantCount" class="stat-number">0/50</span>
-          <span class="stat-label">PARTICIPANTES</span>
-        </div>
-        <div class="stat">
-          <span id="totalParticipants" class="stat-number">0</span>
-          <span class="stat-label">TOTAL DE PARTICIPANTES</span>
-        </div>
-      </div>
-
-      <div class="participants-box">
-        <h3>👥 PARTICIPANTES</h3>
-        <div id="participantList">
-          <div class="participant">Aún no hay participantes.</div>
-        </div>
-      </div>
-
-      <div class="roulette-box">
-        <h3>🎡 RULETA DEL SORTEO</h3>
-        <div class="roulette-wrap">
-          <div class="needle"></div>
-          <div id="roulette" class="roulette">
-            <div class="roulette-center"></div>
-          </div>
-        </div>
-        <p class="notice">
-          Cada participante ocupa una partición de la ruleta.
-          El nombre aparece dentro de su partición.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- FORMULARIO: SOLO APARECE AL PULSAR PARTICIPAR -->
-  <section id="registerScreen" class="screen hidden">
-    <div class="brand">
-      <div class="crown">👑</div>
-      <h1>SOY SIGAS</h1>
-      <p>FFSORTEOS DIAMANTES Y MÁS</p>
+    <div class="completed-count">
+      Completadas:
+      <strong id="socialCount">0 de 3</strong>
     </div>
 
-    <div class="card register-card">
-      <button class="back-button" onclick="showMain()">←</button>
 
-      <h2>🎟️ Participar en el sorteo</h2>
+    <button
+      id="continueButton"
+      class="continue-button"
+      type="button"
+    >
+      🔒 CONTINUAR
+    </button>
 
-      <p class="description">
-        Completa tu nombre y apellidos y tu ID de Free Fire.
-      </p>
+  </div>
 
-      <div class="input-group">
-        <label for="playerName">👤 NOMBRE Y APELLIDOS</label>
-        <input id="playerName" type="text" maxlength="60"
-          autocomplete="name" placeholder="Ej.: Juan Pérez García">
+</section>
+
+
+<!-- ======================================================
+     PANTALLA PRINCIPAL
+     ====================================================== -->
+
+<section id="mainScreen" class="screen main-screen hidden">
+
+  <div class="top-header">
+
+    <button
+      class="menu-button"
+      type="button"
+      onclick="toggleMenu()"
+    >
+      ☰
+    </button>
+
+    <div id="menuPanel" class="menu-panel hidden">
+
+      <div class="menu-title">
+        MENÚ PRINCIPAL
       </div>
 
-      <div class="input-group">
-        <label for="playerId">🆔 ID DE FREE FIRE</label>
-        <input id="playerId" type="text" inputmode="numeric"
-          maxlength="11" placeholder="ID de 8 a 11 cifras">
-      </div>
-
-      <div id="registerError" class="error"></div>
-
-      <button class="confirm-button" onclick="registerParticipant()">
-        ✅ CONFIRMAR PARTICIPACIÓN
+      <button
+        class="menu-option"
+        onclick="showSubpage('roulettePage')"
+      >
+        🎡 Ruleta
       </button>
 
-      <div class="notice">
-        Tu nombre aparecerá públicamente en la lista de participantes.
-        <br><br>
-        Tu ID no se mostrará públicamente.
-      </div>
+      <button
+        class="menu-option"
+        onclick="showSubpage('statsPage')"
+      >
+        📊 Estadísticas
+      </button>
+
+      <button
+        class="menu-option"
+        onclick="showSubpage('winnersPage')"
+      >
+        🏆 Ganadores
+      </button>
+
     </div>
-  </section>
+
+  </div>
 
 
-  <!-- SUBPÁGINA RULETA -->
-  <section id="roulettePage" class="screen hidden">
-    <div class="card">
-      <button class="back-button" onclick="showMain()">←</button>
-      <div class="subpage-title">🎡 RULETA DEL SORTEO</div>
+  <div class="welcome">
+
+    <div class="crown">👑</div>
+
+    <h2>
+      FFSORTEOS Diamantes y más
+    </h2>
+
+    <p>
+      Bienvenido a la familia Soy Sigas.
+    </p>
+
+  </div>
+
+
+  <div class="card">
+
+    <div class="draw-card">
+
+      <h3>🎡 PRÓXIMO SORTEO</h3>
+
+      <div id="drawDate" class="draw-date">
+        Cargando...
+      </div>
+
+      <div class="draw-time">
+        Sorteo: <strong>9:30 PM</strong>
+      </div>
+
+      <div
+        id="registrationStatus"
+        class="registration-status"
+      >
+        🟢 INSCRIPCIONES ABIERTAS
+      </div>
+
+      <button
+        class="participate-button"
+        onclick="openRegistration()"
+      >
+        🎟️ PARTICIPAR EN EL SORTEO
+      </button>
+
+    </div>
+
+
+    <div class="countdown-box">
+
+      <div
+        id="countdownTitle"
+        class="countdown-title"
+      >
+        TIEMPO RESTANTE PARA EL SORTEO
+      </div>
+
+      <div
+        id="countdown"
+        class="countdown"
+      >
+        --
+      </div>
+
+    </div>
+
+
+    <div class="slots">
+
+      <div
+        id="slotsNumber"
+        class="slots-number"
+      >
+        50
+      </div>
+
+      <div class="slots-label">
+        CUPOS DISPONIBLES
+      </div>
+
+      <div class="progress">
+
+        <div
+          id="progressBar"
+          class="progress-bar"
+        ></div>
+
+      </div>
+
+      <p
+        id="slotsMessage"
+        class="notice"
+      >
+        ¡Regístrate antes de que se acaben!
+      </p>
+
+    </div>
+
+
+    <div class="stats">
+
+      <div class="stat">
+
+        <span
+          id="participantCount"
+          class="stat-number"
+        >
+          0/50
+        </span>
+
+        <span class="stat-label">
+          PARTICIPANTES
+        </span>
+
+      </div>
+
+
+      <div class="stat">
+
+        <span
+          id="totalParticipants"
+          class="stat-number"
+        >
+          0
+        </span>
+
+        <span class="stat-label">
+          TOTAL DE PARTICIPANTES
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="participants-box">
+
+      <h3>
+        👥 PARTICIPANTES
+      </h3>
+
+      <div id="participantList">
+
+        <div class="participant">
+          Aún no hay participantes.
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="roulette-box">
+
+      <h3>
+        🎡 RULETA DEL SORTEO
+      </h3>
+
       <div class="roulette-wrap">
+
         <div class="needle"></div>
-        <div id="rouletteLarge" class="roulette">
+
+        <div
+          id="roulette"
+          class="roulette"
+        >
+
           <div class="roulette-center"></div>
+
         </div>
+
       </div>
+
+      <p class="notice">
+        Cada participante ocupa una partición de la ruleta.
+        El nombre aparece dentro de su partición.
+      </p>
+
     </div>
-  </section>
+
+  </div>
+
+</section>
 
 
-  <!-- SUBPÁGINA ESTADÍSTICAS -->
-  <section id="statsPage" class="screen hidden">
-    <div class="card">
-      <button class="back-button" onclick="showMain()">←</button>
-      <div class="subpage-title">📊 ESTADÍSTICAS</div>
-      <div class="stats">
-        <div class="stat">
-          <span id="statsCurrent" class="stat-number">0</span>
-          <span class="stat-label">PARTICIPANTES ACTUALES</span>
-        </div>
-        <div class="stat">
-          <span id="statsTotal" class="stat-number">0</span>
-          <span class="stat-label">TOTAL HISTÓRICO</span>
-        </div>
+<!-- ======================================================
+     FORMULARIO
+     ====================================================== -->
+
+<section id="registerScreen" class="screen hidden">
+
+  <div class="brand">
+
+    <div class="crown">👑</div>
+
+    <h1>SOY SIGAS</h1>
+
+    <p>
+      FFSORTEOS DIAMANTES Y MÁS
+    </p>
+
+  </div>
+
+
+  <div class="card register-card">
+
+    <button
+      class="back-button"
+      onclick="showMain()"
+    >
+      ←
+    </button>
+
+    <h2>
+      🎟️ Participar en el sorteo
+    </h2>
+
+    <p class="description">
+      Completa tu nombre y apellidos y tu ID de Free Fire.
+    </p>
+
+
+    <div class="input-group">
+
+      <label for="playerName">
+        👤 NOMBRE Y APELLIDOS
+      </label>
+
+      <input
+        id="playerName"
+        type="text"
+        maxlength="60"
+        autocomplete="name"
+        placeholder="Ej.: Juan Pérez García"
+      >
+
+    </div>
+
+
+    <div class="input-group">
+
+      <label for="playerId">
+        🆔 ID DE FREE FIRE
+      </label>
+
+      <input
+        id="playerId"
+        type="text"
+        inputmode="numeric"
+        maxlength="11"
+        placeholder="ID de 8 a 11 cifras"
+      >
+
+    </div>
+
+
+    <div
+      id="registerError"
+      class="error"
+    ></div>
+
+
+    <button
+      class="confirm-button"
+      onclick="registerParticipant()"
+    >
+      ✅ CONFIRMAR PARTICIPACIÓN
+    </button>
+
+
+    <div class="notice">
+
+      Tu nombre aparecerá públicamente en la lista de participantes.
+
+      <br><br>
+
+      Tu ID no se mostrará públicamente.
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     RULETA
+     ====================================================== -->
+
+<section id="roulettePage" class="screen hidden">
+
+  <div class="card">
+
+    <button
+      class="back-button"
+      onclick="showMain()"
+    >
+      ←
+    </button>
+
+    <div class="subpage-title">
+      🎡 RULETA DEL SORTEO
+    </div>
+
+    <div class="roulette-wrap">
+
+      <div class="needle"></div>
+
+      <div
+        id="rouletteLarge"
+        class="roulette"
+      >
+
+        <div class="roulette-center"></div>
+
       </div>
+
     </div>
-  </section>
+
+  </div>
+
+</section>
 
 
-  <!-- SUBPÁGINA GANADORES -->
-  <section id="winnersPage" class="screen hidden">
-    <div class="card">
-      <button class="back-button" onclick="showMain()">←</button>
-      <div class="subpage-title">🏆 GANADORES</div>
-      <div class="winner">Los ganadores aparecerán aquí después del sorteo.</div>
+<!-- ======================================================
+     ESTADÍSTICAS
+     ====================================================== -->
+
+<section id="statsPage" class="screen hidden">
+
+  <div class="card">
+
+    <button
+      class="back-button"
+      onclick="showMain()"
+    >
+      ←
+    </button>
+
+    <div class="subpage-title">
+      📊 ESTADÍSTICAS
     </div>
-  </section>
+
+    <div class="stats">
+
+      <div class="stat">
+
+        <span
+          id="statsCurrent"
+          class="stat-number"
+        >
+          0
+        </span>
+
+        <span class="stat-label">
+          PARTICIPANTES ACTUALES
+        </span>
+
+      </div>
+
+
+      <div class="stat">
+
+        <span
+          id="statsTotal"
+          class="stat-number"
+        >
+          0
+        </span>
+
+        <span class="stat-label">
+          TOTAL HISTÓRICO
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     GANADORES
+     ====================================================== -->
+
+<section id="winnersPage" class="screen hidden">
+
+  <div class="card">
+
+    <button
+      class="back-button"
+      onclick="showMain()"
+    >
+      ←
+    </button>
+
+    <div class="subpage-title">
+      🏆 GANADORES
+    </div>
+
+    <div class="winner">
+      Los ganadores aparecerán aquí después del sorteo.
+    </div>
+
+  </div>
+
+</section>
 
 </div>
 
 
 <script>
+
 /* ==========================================================
    CONFIGURACIÓN
    ========================================================== */
 
-const REQUIRED_SOCIAL_TIME = 25000; // 25 segundos por red
+const REQUIRED_SOCIAL_TIME = 25000;
+
+/*
+   Después de completar LAS TRES REDES,
+   el acceso queda válido durante 2 horas.
+*/
+const SOCIAL_VALID_TIME = 2 * 60 * 60 * 1000;
+
 const MAX_PARTICIPANTS = 50;
 
-const SOCIALS = {
-  youtube: "https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b",
-  facebook: "https://www.facebook.com/profile.php?id=61593805138979",
-  whatsapp: "https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g"
-};
-
-let participants = JSON.parse(
-  localStorage.getItem("soysigas_participants_current") || "[]"
-);
-
-let totalHistoricalParticipants = Number(
-  localStorage.getItem("soysigas_total_historical") || "0"
-);
-
-const socialState = {
-  youtube:{openedAt:null,completed:false},
-  facebook:{openedAt:null,completed:false},
-  whatsapp:{openedAt:null,completed:false}
-};
-
 
 /* ==========================================================
-   FECHAS DEL SORTEO: 15 Y 30 A LAS 9:30 PM
-   ========================================================== */
-
-function getDrawDate(){
-  const now = new Date();
-  const y = now.getFullYear();
-  const m = now.getMonth();
-
-  for(const day of [15,30]){
-    const d = new Date(y,m,day,21,30,0,0);
-    if(d > now) return d;
-  }
-
-  return new Date(y,m+1,15,21,30,0,0);
-}
-
-function formatDate(date){
-  return date.toLocaleDateString("es-PR",{
-    day:"numeric",
-    month:"long",
-    year:"numeric"
-  });
-}
-
-function formatCountdown(ms){
-  if(ms <= 0) return "0 minutos";
-
-  const seconds = Math.floor(ms/1000);
-  const days = Math.floor(seconds/86400);
-  const hours = Math.floor((seconds%86400)/3600);
-  const mins = Math.floor((seconds%3600)/60);
-
-  if(days > 0)
-    return `${days}${days===1?" día ":" días "}${hours}${hours===1?" hora":" horas"}`;
-
-  if(hours > 0)
-    return `${hours}${hours===1?" hora ":" horas "}${mins}${mins===1?" minuto":" minutos"}`;
-
-  return `${mins}${mins===1?" minuto":" minutos"}`;
-}
-
-
-/* ==========================================================
-   PANTALLA DE REDES
-   ========================================================== */
-
-function startSocial(network){
-  if(!socialState[network] || socialState[network].completed) return;
-
-  const now = Date.now();
-
-  socialState[network].openedAt = now;
-
-  localStorage.setItem(
-    "soysigas_social_opened",
-    JSON.stringify({
-      network: network,
-      openedAt: now
-    })
-  );
-}
-
-function checkSocialTime(){
-  let changed = false;
-
-  // Recuperar el último seguimiento aunque el usuario haya salido
-  // completamente de esta página para entrar a una red social.
-  const saved = localStorage.getItem("soysigas_social_opened");
-
-  if(saved){
-    try{
-      const data = JSON.parse(saved);
-
-      if(
-        data &&
-        socialState[data.network] &&
-        !socialState[data.network].completed
-      ){
-        socialState[data.network].openedAt = Number(data.openedAt);
-
-        if(Date.now() - socialState[data.network].openedAt >= REQUIRED_SOCIAL_TIME){
-          socialState[data.network].completed = true;
-          socialState[data.network].openedAt = null;
-          m
+   ENLA
