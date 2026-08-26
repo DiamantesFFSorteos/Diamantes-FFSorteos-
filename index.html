@@ -98,12 +98,13 @@ button,input{font-family:inherit} button{cursor:pointer}.hidden{display:none!imp
 <section id="registerScreen" class="screen">
   <div class="logo"><div class="crown">👑</div><h1>SOY SIGAS</h1><p>FFSORTEOS DIAMANTES Y MÁS</p></div>
   <div class="card">
-    <h2>🎟️ Acceso al sorteo</h2>
-    <p class="description">Escribe obligatoriamente tu nombre y apellido, junto con tu ID de jugador, para continuar.</p>
+    <button class="back-button" onclick="showMain()" style="margin-bottom:15px">←</button>
+    <h2>🎟️ Registro al sorteo</h2>
+    <p class="description">Completa tu nombre y apellido junto con tu ID de jugador para participar en el sorteo.</p>
     <div class="input-group"><label for="playerName">👤 Nombre y apellido</label><input id="playerName" type="text" maxlength="60" autocomplete="name" placeholder="Ej.: Juan Pérez García"></div>
     <div class="input-group"><label for="playerId">🆔 ID del jugador</label><input id="playerId" type="text" inputmode="numeric" maxlength="11" placeholder="ID de 8 a 11 cifras"></div>
     <div id="registerError" class="error-message"></div>
-    <button class="register-button" onclick="startRegistration()">CONTINUAR</button>
+    <button class="register-button" onclick="startRegistration()">✅ CONFIRMAR REGISTRO</button>
     <div class="notice">Tu nombre aparecerá públicamente en la lista de participantes.<br><br>Tu ID será privado y solamente estará disponible para la administración.</div>
   </div>
 </section>
@@ -112,7 +113,7 @@ button,input{font-family:inherit} button{cursor:pointer}.hidden{display:none!imp
   <div class="logo"><div class="crown">👑</div><h1>SOY SIGAS</h1><p>SÍGUEME EN MIS REDES</p></div>
   <div class="card">
     <h2>🔥 Mis redes oficiales</h2>
-    <p class="description">Visita las tres redes oficiales. No se muestra ningún contador de espera; cada botón se marca cuando se completa el tiempo requerido.</p>
+    <p class="description">Antes de participar debes completar este paso siguiendo las tres redes oficiales. Después de completarlo, entrarás a la pantalla principal de los sorteos.</p>
 
     <div id="social-youtube" class="social-item">
       <div class="social-icon youtube">▶</div><div class="social-info"><strong>YouTube</strong><span>Soy Sigas Official</span></div>
@@ -149,7 +150,7 @@ button,input{font-family:inherit} button{cursor:pointer}.hidden{display:none!imp
   <div class="welcome"><div class="crown">👑</div><h2>FFSORTEOS Diamantes y más</h2><p>Bienvenido a la familia Soy Sigas.</p></div>
 
   <div class="card">
-    <div class="draw-card"><h3>🎡 PRÓXIMO SORTEO</h3><div id="drawDate" class="draw-date">Cargando...</div><div class="draw-time">Sorteo: <strong>9:30 PM</strong></div><div id="registrationStatus" class="registration-status">Cargando...</div></div>
+    <div class="draw-card"><h3>🎡 PRÓXIMO SORTEO</h3><div id="drawDate" class="draw-date">Cargando...</div><div class="draw-time">Sorteo: <strong>9:30 PM</strong></div><div id="registrationStatus" class="registration-status">Cargando...</div><button class="register-button" onclick="openRegistration()">🎟️ REGISTRARME AL SORTEO</button></div>
     <div class="countdown-box"><div id="countdownTitle" class="countdown-title">Cargando...</div><div id="countdown" class="countdown">--</div></div>
 
     <div class="slots"><div id="slotsNumber" class="slots-number">50</div><div class="slots-label">CUPOS DISPONIBLES</div><div class="progress"><div id="progressBar" class="progress-bar"></div></div><p id="slotsMessage" style="margin-top:10px;color:#aaa;font-size:12px">¡Regístrate antes de que se acaben!</p></div>
@@ -243,7 +244,4 @@ function getDrawKey(){
   return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
 }
 function getRegistrationStart(draw){const d=new Date(draw);d.setDate(d.getDate()-10);return d}
-function formatDate(d){return d.toLocaleDateString("es-PR",{day:"numeric",month:"long",year:"numeric"})}
-function formatCountdown(ms){
-  if(ms<=0)return "0 minutos";
-  const s=Math.floor(ms/1000),days=Math.floor(s/86400),hours=Math.floor((s%86400)/3600),min
+function formatDate(d){return d.toLocaleD
