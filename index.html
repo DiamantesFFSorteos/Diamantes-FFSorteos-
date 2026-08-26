@@ -65,17 +65,18 @@ button,input{font-family:inherit} button{cursor:pointer}.hidden{display:none!imp
   transform:rotate(0deg);
   transition:transform 6s cubic-bezier(.08,.75,.12,1);
 }
-.roulette-sector-label{
-  position:absolute;left:50%;top:50%;
-  width:clamp(42px,18vw,82px);min-height:18px;
-  display:flex;align-items:center;justify-content:center;
-  text-align:center;color:#fff;font-weight:900;line-height:1.05;
-  text-shadow:0 1px 3px #000,0 0 2px #000;
-  white-space:normal;overflow:hidden;pointer-events:none;
+.roulette-sector{
+  position:absolute;left:50%;top:50%;width:50%;height:50%;
+  transform-origin:0% 0%;overflow:hidden;
+  border-left:1px solid rgba(255,255,255,.75);
+  border-top:1px solid rgba(255,255,255,.75);
 }
-.roulette-empty{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  color:#777;font-size:13px;font-weight:800;text-align:center;
+.roulette-sector-label{
+  position:absolute;left:10%;top:10%;width:80%;height:80%;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;color:#fff;font-weight:900;font-size:clamp(8px,2.5vw,14px);
+  text-shadow:0 1px 3px #000;transform:rotate(45deg);
+  white-space:nowrap;overflow:hidden;
 }
 .needle{position:absolute;z-index:10;top:-4px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:38px solid #fff;filter:drop-shadow(0 0 5px #000)}
 .roulette-center{position:absolute;width:48px;height:48px;border-radius:50%;background:#111;border:4px solid #ffd000;top:50%;left:50%;transform:translate(-50%,-50%);z-index:5}
@@ -94,16 +95,15 @@ button,input{font-family:inherit} button{cursor:pointer}.hidden{display:none!imp
 <body>
 <div class="app">
 
-<section id="registerScreen" class="screen">
+<section id="registerScreen" class="screen hidden">
   <div class="logo"><div class="crown">👑</div><h1>SOY SIGAS</h1><p>FFSORTEOS DIAMANTES Y MÁS</p></div>
   <div class="card">
-    <button class="back-button" onclick="showMain()" style="margin-bottom:15px">←</button>
-    <h2>🎟️ Registro al sorteo</h2>
-    <p class="description">Completa tu nombre y apellido junto con tu ID de jugador para participar en el sorteo.</p>
+    <h2>🎟️ Acceso al sorteo</h2>
+    <p class="description">Escribe obligatoriamente tu nombre y apellido, junto con tu ID de jugador, para continuar.</p>
     <div class="input-group"><label for="playerName">👤 Nombre y apellido</label><input id="playerName" type="text" maxlength="60" autocomplete="name" placeholder="Ej.: Juan Pérez García"></div>
     <div class="input-group"><label for="playerId">🆔 ID del jugador</label><input id="playerId" type="text" inputmode="numeric" maxlength="11" placeholder="ID de 8 a 11 cifras"></div>
     <div id="registerError" class="error-message"></div>
-    <button class="register-button" onclick="startRegistration()">✅ CONFIRMAR REGISTRO</button>
+    <button class="register-button" onclick="startRegistration()">CONTINUAR</button>
     <div class="notice">Tu nombre aparecerá públicamente en la lista de participantes.<br><br>Tu ID será privado y solamente estará disponible para la administración.</div>
   </div>
 </section>
@@ -112,7 +112,7 @@ button,input{font-family:inherit} button{cursor:pointer}.hidden{display:none!imp
   <div class="logo"><div class="crown">👑</div><h1>SOY SIGAS</h1><p>SÍGUEME EN MIS REDES</p></div>
   <div class="card">
     <h2>🔥 Mis redes oficiales</h2>
-    <p class="description">Antes de participar debes completar este paso siguiendo las tres redes oficiales. Después de completarlo, entrarás a la pantalla principal de los sorteos.</p>
+    <p class="description">Visita las tres redes oficiales. No se muestra ningún contador de espera; cada botón se marca cuando se completa el tiempo requerido.</p>
 
     <div id="social-youtube" class="social-item">
       <div class="social-icon youtube">▶</div><div class="social-info"><strong>YouTube</strong><span>Soy Sigas Official</span></div>
@@ -149,7 +149,7 @@ button,input{font-family:inherit} button{cursor:pointer}.hidden{display:none!imp
   <div class="welcome"><div class="crown">👑</div><h2>FFSORTEOS Diamantes y más</h2><p>Bienvenido a la familia Soy Sigas.</p></div>
 
   <div class="card">
-    <div class="draw-card"><h3>🎡 PRÓXIMO SORTEO</h3><div id="drawDate" class="draw-date">Cargando...</div><div class="draw-time">Sorteo: <strong>9:30 PM</strong></div><div id="registrationStatus" class="registration-status">Cargando...</div><button class="register-button" onclick="openRegistration()">🎟️ REGISTRARME AL SORTEO</button></div>
+    <div class="draw-card"><h3>🎡 PRÓXIMO SORTEO</h3><div id="drawDate" class="draw-date">Cargando...</div><div class="draw-time">Sorteo: <strong>9:30 PM</strong></div><div id="registrationStatus" class="registration-status">Cargando...</div></div><button class="register-button" onclick="openRegistration()">🎟️ REGISTRARME AL SORTEO</button>
     <div class="countdown-box"><div id="countdownTitle" class="countdown-title">Cargando...</div><div id="countdown" class="countdown">--</div></div>
 
     <div class="slots"><div id="slotsNumber" class="slots-number">50</div><div class="slots-label">CUPOS DISPONIBLES</div><div class="progress"><div id="progressBar" class="progress-bar"></div></div><p id="slotsMessage" style="margin-top:10px;color:#aaa;font-size:12px">¡Regístrate antes de que se acaben!</p></div>
@@ -161,7 +161,7 @@ button,input{font-family:inherit} button{cursor:pointer}.hidden{display:none!imp
 
     <div class="participants"><h3>👥 PARTICIPANTES</h3><div id="participantList" class="participant-list"><div class="participant">Aún no hay participantes.</div></div></div>
 
-    <div class="roulette-section"><h3>🎡 RULETA DEL SORTEO</h3><div class="roulette-wrap"><div class="needle"></div><div id="roulette" class="roulette"><div class="roulette-center"></div></div></div><p style="color:#999;font-size:11px;line-height:1.5;margin-top:10px">Cada participante ocupa una partición de la ruleta. 20 participantes = 20 particiones; 50 participantes = 50 particiones.</p></div>
+    <div class="roulette-section"><h3>🎡 RULETA DEL SORTEO</h3><div class="roulette-wrap"><div class="needle"></div><div id="roulette" class="roulette"><div class="roulette-center"></div></div></div><p style="color:#999;font-size:11px;line-height:1.5;margin-top:10px">La ruleta pública muestra únicamente los nombres. El ID se revela únicamente al anunciar al ganador.</p></div>
 
     <div class="notice">El sorteo solamente se realizará si hay entre <strong>25 y 50 participantes</strong>.<br><br>Con menos de 25 participantes, el sorteo quedará cerrado y será anunciado públicamente.</div>
   </div>
@@ -243,4 +243,6 @@ function getDrawKey(){
   return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
 }
 function getRegistrationStart(draw){const d=new Date(draw);d.setDate(d.getDate()-10);return d}
-function formatDate(d){return d.toLocaleDateString("es-
+function formatDate(d){return d.toLocaleDateString("es-PR",{day:"numeric",month:"long",year:"numeric"})}
+function formatCountdown(ms){
+  if(ms<=0)return "0 minuto
