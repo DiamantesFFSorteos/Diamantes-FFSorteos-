@@ -7,13 +7,16 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+
 html,body{
   min-height:100%;
   font-family:Arial,Helvetica,sans-serif;
   background:#000;
-  color:#fff
+  color:#fff;
 }
+
 body{overflow-x:hidden}
+
 button,input{font:inherit}
 button{cursor:pointer}
 .hidden{display:none!important}
@@ -37,15 +40,9 @@ body{
   padding:18px 14px 90px;
 }
 
-/* ==============================
-   PANTALLA DE REDES
-   ============================== */
-
-.social-landing{
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-}
+/* =========================
+   MARCA
+========================= */
 
 .brand{
   text-align:center;
@@ -73,6 +70,10 @@ body{
   margin-top:8px;
 }
 
+/* =========================
+   CARDS
+========================= */
+
 .card{
   background:rgba(9,9,9,.97);
   border:1px solid rgba(255,208,0,.55);
@@ -97,6 +98,16 @@ body{
   font-size:14px;
   line-height:1.55;
   margin-bottom:20px;
+}
+
+/* =========================
+   REDES
+========================= */
+
+.social-landing{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
 }
 
 .social-item{
@@ -164,8 +175,6 @@ body{
   font-size:12px;
   font-weight:900;
   white-space:nowrap;
-  min-width:92px;
-  transition:.2s;
 }
 
 .social-button.completed{
@@ -202,9 +211,9 @@ body{
   cursor:pointer;
 }
 
-/* ==============================
-   PANTALLA PRINCIPAL
-   ============================== */
+/* =========================
+   PRINCIPAL
+========================= */
 
 .main-screen{
   padding-top:12px;
@@ -214,7 +223,7 @@ body{
   display:flex;
   justify-content:flex-end;
   position:relative;
-  z-index:20;
+  z-index:50;
 }
 
 .menu-button{
@@ -231,7 +240,7 @@ body{
   position:absolute;
   top:64px;
   right:0;
-  width:250px;
+  width:260px;
   background:#0d0d0d;
   border:1px solid rgba(255,208,0,.55);
   border-radius:16px;
@@ -434,9 +443,9 @@ body{
   margin-top:14px;
 }
 
-/* ==============================
+/* =========================
    FORMULARIO
-   ============================== */
+========================= */
 
 .register-card h2{
   margin-bottom:10px;
@@ -505,9 +514,9 @@ body{
   margin-bottom:12px;
 }
 
-/* ==============================
+/* =========================
    RULETA
-   ============================== */
+========================= */
 
 .roulette-wrap{
   position:relative;
@@ -561,6 +570,7 @@ body{
   height:50%;
   transform-origin:0 0;
   overflow:visible;
+  border-right:1px solid rgba(0,0,0,.45);
 }
 
 .segment-label{
@@ -579,9 +589,9 @@ body{
   text-overflow:ellipsis;
 }
 
-/* ==============================
+/* =========================
    SUBPÁGINAS
-   ============================== */
+========================= */
 
 .subpage-title{
   color:#ffd000;
@@ -599,12 +609,193 @@ body{
   font-weight:900;
 }
 
-/* ==============================
+/* =========================
+   PERFIL
+========================= */
+
+.profile-box{
+  background:#151515;
+  border:1px solid #333;
+  border-radius:16px;
+  padding:18px;
+  margin-top:12px;
+}
+
+.profile-row{
+  padding:12px 0;
+  border-bottom:1px solid #292929;
+}
+
+.profile-row:last-child{
+  border-bottom:0;
+}
+
+.profile-label{
+  color:#888;
+  font-size:12px;
+  margin-bottom:5px;
+}
+
+.profile-value{
+  color:#fff;
+  font-size:17px;
+  font-weight:900;
+}
+
+/* =========================
+   ADMINISTRACIÓN
+========================= */
+
+.admin-warning{
+  background:#211800;
+  border:1px solid #ffd000;
+  border-radius:14px;
+  padding:14px;
+  text-align:center;
+  color:#ffd000;
+  font-size:12px;
+  line-height:1.5;
+  margin-bottom:15px;
+}
+
+.admin-participant{
+  background:#151515;
+  border:1px solid #333;
+  border-radius:15px;
+  padding:14px;
+  margin:10px 0;
+}
+
+.admin-participant.selected{
+  border-color:#20d66b;
+  box-shadow:0 0 12px rgba(32,214,107,.12);
+}
+
+.admin-name{
+  color:#fff;
+  font-size:16px;
+  font-weight:900;
+}
+
+.admin-id{
+  color:#aaa;
+  font-size:13px;
+  margin-top:6px;
+}
+
+.admin-actions{
+  display:flex;
+  gap:8px;
+  margin-top:12px;
+}
+
+.admin-select{
+  flex:1;
+  border:0;
+  border-radius:10px;
+  padding:12px 8px;
+  background:linear-gradient(135deg,#ffd000,#ff9800);
+  color:#000;
+  font-size:12px;
+  font-weight:900;
+}
+
+.admin-selected{
+  background:#20d66b;
+  color:#fff;
+}
+
+.admin-status{
+  text-align:center;
+  padding:13px;
+  background:#151515;
+  border:1px solid #333;
+  border-radius:14px;
+  color:#aaa;
+  margin-bottom:15px;
+}
+
+.admin-status strong{
+  color:#ffd000;
+}
+
+/* =========================
+   GANADOR
+========================= */
+
+.winner-overlay{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(0,0,0,.92);
+}
+
+.winner-modal{
+  width:100%;
+  max-width:430px;
+  background:linear-gradient(145deg,#211b00,#090909);
+  border:2px solid #ffd000;
+  border-radius:25px;
+  padding:28px 18px;
+  text-align:center;
+  box-shadow:0 0 40px rgba(255,208,0,.3);
+}
+
+.winner-crown{
+  font-size:60px;
+  filter:drop-shadow(0 0 15px #ffd000);
+}
+
+.winner-modal h2{
+  color:#ffd000;
+  font-size:30px;
+  margin:10px 0 20px;
+}
+
+.winner-name{
+  color:#fff;
+  font-size:24px;
+  font-weight:900;
+  margin-bottom:14px;
+}
+
+.winner-id{
+  color:#ffd000;
+  font-size:18px;
+  font-weight:900;
+}
+
+.winner-disclosure{
+  color:#888;
+  font-size:11px;
+  line-height:1.5;
+  margin-top:18px;
+}
+
+.winner-public-name{
+  text-align:center;
+  padding:20px;
+  border-radius:18px;
+  background:#151515;
+  border:1px solid #333;
+}
+
+.winner-public-name strong{
+  display:block;
+  color:#ffd000;
+  font-size:23px;
+  margin-top:8px;
+}
+
+/* =========================
    RESPONSIVE
-   ============================== */
+========================= */
 
 @media(max-width:400px){
-
   .screen{
     padding-left:10px;
     padding-right:10px;
@@ -624,7 +815,6 @@ body{
 
   .social-button{
     padding:10px 9px;
-    min-width:88px;
   }
 
   .social-info strong{
@@ -638,9 +828,9 @@ body{
 
 <div class="app">
 
-<!-- ======================================================
-     PANTALLA DE REDES
-     ====================================================== -->
+<!-- =====================================================
+     REDES
+===================================================== -->
 
 <section id="socialScreen" class="screen social-landing">
 
@@ -659,98 +849,75 @@ body{
       Completa las tres redes y después podrás entrar al sorteo.
     </p>
 
-    <!-- YOUTUBE -->
-
     <div id="social-youtube" class="social-item">
 
-      <div class="social-icon youtube">
-        ▶
-      </div>
+      <div class="social-icon youtube">▶</div>
 
       <div class="social-info">
         <strong>YouTube</strong>
         <span>Soy Sigas Official</span>
       </div>
 
-      <a
-        id="button-youtube"
-        class="social-button"
-        href="https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b"
-        target="_blank"
-        rel="noopener noreferrer"
-        onclick="startSocial('youtube')"
-      >
+      <a id="button-youtube"
+         class="social-button"
+         href="https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b"
+         target="_blank"
+         rel="noopener noreferrer"
+         onclick="startSocial('youtube')">
         SEGUIR
       </a>
 
     </div>
 
 
-    <!-- FACEBOOK -->
-
     <div id="social-facebook" class="social-item">
 
-      <div class="social-icon facebook">
-        f
-      </div>
+      <div class="social-icon facebook">f</div>
 
       <div class="social-info">
         <strong>Facebook</strong>
         <span>Soy Sigas</span>
       </div>
 
-      <a
-        id="button-facebook"
-        class="social-button"
-        href="https://www.facebook.com/profile.php?id=61593805138979"
-        target="_blank"
-        rel="noopener noreferrer"
-        onclick="startSocial('facebook')"
-      >
+      <a id="button-facebook"
+         class="social-button"
+         href="https://www.facebook.com/profile.php?id=61593805138979"
+         target="_blank"
+         rel="noopener noreferrer"
+         onclick="startSocial('facebook')">
         SEGUIR
       </a>
 
     </div>
 
 
-    <!-- WHATSAPP -->
-
     <div id="social-whatsapp" class="social-item">
 
-      <div class="social-icon whatsapp">
-        ☎
-      </div>
+      <div class="social-icon whatsapp">☎</div>
 
       <div class="social-info">
         <strong>WhatsApp</strong>
         <span>Canal Soy Sigas</span>
       </div>
 
-      <a
-        id="button-whatsapp"
-        class="social-button"
-        href="https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g"
-        target="_blank"
-        rel="noopener noreferrer"
-        onclick="startSocial('whatsapp')"
-      >
+      <a id="button-whatsapp"
+         class="social-button"
+         href="https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g"
+         target="_blank"
+         rel="noopener noreferrer"
+         onclick="startSocial('whatsapp')">
         SEGUIR
       </a>
 
     </div>
-
 
     <div class="completed-count">
       Completadas:
       <strong id="socialCount">0 de 3</strong>
     </div>
 
-
-    <button
-      id="continueButton"
-      class="continue-button"
-      disabled
-    >
+    <button id="continueButton"
+            class="continue-button">
       🔒 CONTINUAR
     </button>
 
@@ -759,46 +926,50 @@ body{
 </section>
 
 
-<!-- ======================================================
-     PANTALLA PRINCIPAL
-     ====================================================== -->
+<!-- =====================================================
+     PRINCIPAL
+===================================================== -->
 
-<section id="mainScreen" class="screen main-screen hidden">
+<section id="mainScreen"
+         class="screen main-screen hidden">
 
   <div class="top-header">
 
-    <button
-      class="menu-button"
-      onclick="toggleMenu()"
-    >
+    <button class="menu-button"
+            onclick="toggleMenu()">
       ☰
     </button>
 
-    <div id="menuPanel" class="menu-panel hidden">
+    <div id="menuPanel"
+         class="menu-panel hidden">
 
       <div class="menu-title">
         MENÚ PRINCIPAL
       </div>
 
-      <button
-        class="menu-option"
-        onclick="showSubpage('roulettePage')"
-      >
+      <button class="menu-option"
+              onclick="showSubpage('profilePage')">
+        👤 Mi perfil
+      </button>
+
+      <button class="menu-option"
+              onclick="showSubpage('roulettePage')">
         🎡 Ruleta
       </button>
 
-      <button
-        class="menu-option"
-        onclick="showSubpage('statsPage')"
-      >
+      <button class="menu-option"
+              onclick="showSubpage('statsPage')">
         📊 Estadísticas
       </button>
 
-      <button
-        class="menu-option"
-        onclick="showSubpage('winnersPage')"
-      >
+      <button class="menu-option"
+              onclick="showSubpage('winnersPage')">
         🏆 Ganadores
+      </button>
+
+      <button class="menu-option"
+              onclick="openAdministration()">
+        ⚙️ Administración
       </button>
 
     </div>
@@ -808,9 +979,7 @@ body{
 
   <div class="welcome">
 
-    <div class="crown">
-      👑
-    </div>
+    <div class="crown">👑</div>
 
     <h2>
       FFSORTEOS Diamantes y más
@@ -831,10 +1000,8 @@ body{
         🎡 PRÓXIMO SORTEO
       </h3>
 
-      <div
-        id="drawDate"
-        class="draw-date"
-      >
+      <div id="drawDate"
+           class="draw-date">
         Cargando...
       </div>
 
@@ -843,17 +1010,13 @@ body{
         <strong>9:30 PM</strong>
       </div>
 
-      <div
-        id="registrationStatus"
-        class="registration-status"
-      >
+      <div id="registrationStatus"
+           class="registration-status">
         🟢 INSCRIPCIONES ABIERTAS
       </div>
 
-      <button
-        class="participate-button"
-        onclick="openRegistration()"
-      >
+      <button class="participate-button"
+              onclick="openRegistration()">
         🎟️ PARTICIPAR EN EL SORTEO
       </button>
 
@@ -862,17 +1025,13 @@ body{
 
     <div class="countdown-box">
 
-      <div
-        id="countdownTitle"
-        class="countdown-title"
-      >
+      <div id="countdownTitle"
+           class="countdown-title">
         TIEMPO RESTANTE PARA EL SORTEO
       </div>
 
-      <div
-        id="countdown"
-        class="countdown"
-      >
+      <div id="countdown"
+           class="countdown">
         --
       </div>
 
@@ -881,10 +1040,8 @@ body{
 
     <div class="slots">
 
-      <div
-        id="slotsNumber"
-        class="slots-number"
-      >
+      <div id="slotsNumber"
+           class="slots-number">
         50
       </div>
 
@@ -893,16 +1050,15 @@ body{
       </div>
 
       <div class="progress">
-        <div
-          id="progressBar"
-          class="progress-bar"
-        ></div>
+
+        <div id="progressBar"
+             class="progress-bar">
+        </div>
+
       </div>
 
-      <p
-        id="slotsMessage"
-        class="notice"
-      >
+      <p id="slotsMessage"
+         class="notice">
         ¡Regístrate antes de que se acaben!
       </p>
 
@@ -913,10 +1069,8 @@ body{
 
       <div class="stat">
 
-        <span
-          id="participantCount"
-          class="stat-number"
-        >
+        <span id="participantCount"
+              class="stat-number">
           0/50
         </span>
 
@@ -929,10 +1083,8 @@ body{
 
       <div class="stat">
 
-        <span
-          id="totalParticipants"
-          class="stat-number"
-        >
+        <span id="totalParticipants"
+              class="stat-number">
           0
         </span>
 
@@ -970,11 +1122,11 @@ body{
 
         <div class="needle"></div>
 
-        <div
-          id="roulette"
-          class="roulette"
-        >
+        <div id="roulette"
+             class="roulette">
+
           <div class="roulette-center"></div>
+
         </div>
 
       </div>
@@ -991,21 +1143,18 @@ body{
 </section>
 
 
-<!-- ======================================================
-     FORMULARIO
-     ====================================================== -->
+<!-- =====================================================
+     REGISTRO
+===================================================== -->
 
-<section id="registerScreen" class="screen hidden">
+<section id="registerScreen"
+         class="screen hidden">
 
   <div class="brand">
 
-    <div class="crown">
-      👑
-    </div>
+    <div class="crown">👑</div>
 
-    <h1>
-      SOY SIGAS
-    </h1>
+    <h1>SOY SIGAS</h1>
 
     <p>
       FFSORTEOS DIAMANTES Y MÁS
@@ -1016,10 +1165,8 @@ body{
 
   <div class="card register-card">
 
-    <button
-      class="back-button"
-      onclick="showMain()"
-    >
+    <button class="back-button"
+            onclick="showMain()">
       ←
     </button>
 
@@ -1038,13 +1185,11 @@ body{
         👤 NOMBRE Y APELLIDOS
       </label>
 
-      <input
-        id="playerName"
-        type="text"
-        maxlength="60"
-        autocomplete="name"
-        placeholder="Ej.: Juan Pérez García"
-      >
+      <input id="playerName"
+             type="text"
+             maxlength="60"
+             autocomplete="name"
+             placeholder="Ej.: Juan Pérez García">
 
     </div>
 
@@ -1055,40 +1200,30 @@ body{
         🆔 ID DE FREE FIRE
       </label>
 
-      <input
-        id="playerId"
-        type="text"
-        inputmode="numeric"
-        maxlength="11"
-        placeholder="ID de 8 a 11 cifras"
-      >
+      <input id="playerId"
+             type="text"
+             inputmode="numeric"
+             maxlength="11"
+             placeholder="ID de 8 a 11 cifras">
 
     </div>
 
 
-    <div
-      id="registerError"
-      class="error"
-    ></div>
+    <div id="registerError"
+         class="error">
+    </div>
 
 
-    <button
-      class="confirm-button"
-      onclick="registerParticipant()"
-    >
+    <button class="confirm-button"
+            onclick="registerParticipant()">
       ✅ CONFIRMAR PARTICIPACIÓN
     </button>
 
 
     <div class="notice">
-
-      Tu nombre aparecerá públicamente
-      en la lista de participantes.
-
+      Tu nombre aparecerá públicamente en la lista de participantes.
       <br><br>
-
       Tu ID no se mostrará públicamente.
-
     </div>
 
   </div>
@@ -1096,18 +1231,43 @@ body{
 </section>
 
 
-<!-- ======================================================
-     RULETA
-     ====================================================== -->
+<!-- =====================================================
+     PERFIL
+===================================================== -->
 
-<section id="roulettePage" class="screen hidden">
+<section id="profilePage"
+         class="screen hidden">
 
   <div class="card">
 
-    <button
-      class="back-button"
-      onclick="showMain()"
-    >
+    <button class="back-button"
+            onclick="showMain()">
+      ←
+    </button>
+
+    <div class="subpage-title">
+      👤 MI PERFIL
+    </div>
+
+    <div id="profileContent">
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     RULETA
+===================================================== -->
+
+<section id="roulettePage"
+         class="screen hidden">
+
+  <div class="card">
+
+    <button class="back-button"
+            onclick="showMain()">
       ←
     </button>
 
@@ -1119,11 +1279,11 @@ body{
 
       <div class="needle"></div>
 
-      <div
-        id="rouletteLarge"
-        class="roulette"
-      >
+      <div id="rouletteLarge"
+           class="roulette">
+
         <div class="roulette-center"></div>
+
       </div>
 
     </div>
@@ -1133,18 +1293,17 @@ body{
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      ESTADÍSTICAS
-     ====================================================== -->
+===================================================== -->
 
-<section id="statsPage" class="screen hidden">
+<section id="statsPage"
+         class="screen hidden">
 
   <div class="card">
 
-    <button
-      class="back-button"
-      onclick="showMain()"
-    >
+    <button class="back-button"
+            onclick="showMain()">
       ←
     </button>
 
@@ -1156,10 +1315,8 @@ body{
 
       <div class="stat">
 
-        <span
-          id="statsCurrent"
-          class="stat-number"
-        >
+        <span id="statsCurrent"
+              class="stat-number">
           0
         </span>
 
@@ -1172,10 +1329,8 @@ body{
 
       <div class="stat">
 
-        <span
-          id="statsTotal"
-          class="stat-number"
-        >
+        <span id="statsTotal"
+              class="stat-number">
           0
         </span>
 
@@ -1192,18 +1347,17 @@ body{
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      GANADORES
-     ====================================================== -->
+===================================================== -->
 
-<section id="winnersPage" class="screen hidden">
+<section id="winnersPage"
+         class="screen hidden">
 
   <div class="card">
 
-    <button
-      class="back-button"
-      onclick="showMain()"
-    >
+    <button class="back-button"
+            onclick="showMain()">
       ←
     </button>
 
@@ -1211,8 +1365,56 @@ body{
       🏆 GANADORES
     </div>
 
-    <div class="winner">
-      Los ganadores aparecerán aquí después del sorteo.
+    <div id="winnersList">
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     ADMINISTRACIÓN
+===================================================== -->
+
+<section id="adminPage"
+         class="screen hidden">
+
+  <div class="card">
+
+    <button class="back-button"
+            onclick="showMain()">
+      ←
+    </button>
+
+    <div class="subpage-title">
+      ⚙️ ADMINISTRACIÓN
+    </div>
+
+
+    <div class="admin-warning">
+      🔐 Área administrativa.
+      <br>
+      Solo el navegador autorizado puede acceder.
+    </div>
+
+
+    <div class="admin-status">
+
+      Ganador seleccionado:
+
+      <strong id="adminSelectedWinner">
+        Ninguno
+      </strong>
+
+    </div>
+
+
+    <h3 class="section-title">
+      👥 PARTICIPANTES ACTUALES
+    </h3>
+
+    <div id="adminParticipants">
     </div>
 
   </div>
@@ -1222,22 +1424,58 @@ body{
 </div>
 
 
-<script>
+<!-- =====================================================
+     MODAL GANADOR
+===================================================== -->
 
+<div id="winnerOverlay"
+     class="winner-overlay hidden">
+
+  <div class="winner-modal">
+
+    <div class="winner-crown">
+      🏆
+    </div>
+
+    <h2>
+      ¡GANADOR!
+    </h2>
+
+    <div id="winnerName"
+         class="winner-name">
+    </div>
+
+    <div id="winnerId"
+         class="winner-id">
+    </div>
+
+    <div class="winner-disclosure">
+      Resultado seleccionado mediante la función administrativa
+      del sorteo.
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
 /* ==========================================================
    CONFIGURACIÓN
-   ========================================================== */
+========================================================== */
 
 const REQUIRED_SOCIAL_TIME = 25000;
-
-/*
-   Las redes completadas duran 2 horas.
-   Después de 2 horas se borran automáticamente.
-*/
-const SOCIAL_VALID_TIME = 2 * 60 * 60 * 1000;
+const SOCIAL_RENEW_TIME = 2 * 60 * 60 * 1000;
 
 const MAX_PARTICIPANTS = 50;
 
+const DRAW_HOUR = 21;
+const DRAW_MINUTE = 30;
+
+
+/* ==========================================================
+   REDES
+========================================================== */
 
 const SOCIALS = {
 
@@ -1254,28 +1492,307 @@ const SOCIALS = {
 
 
 /* ==========================================================
-   PARTICIPANTES
-   ========================================================== */
+   ESTADO DEL NAVEGADOR
+========================================================== */
 
-let participants = JSON.parse(
-  localStorage.getItem(
-    "soysigas_participants_current"
-  ) || "[]"
-);
+const BROWSER_ID_KEY =
+  "soysigas_browser_id";
+
+const ADMIN_BROWSER_KEY =
+  "soysigas_admin_browser";
+
+const SOCIAL_COMPLETED_KEY =
+  "soysigas_social_completed_at";
 
 
-let totalHistoricalParticipants = Number(
-  localStorage.getItem(
-    "soysigas_total_historical"
-  ) || "0"
-);
+function getBrowserId(){
+
+  let id =
+    localStorage.getItem(BROWSER_ID_KEY);
+
+  if(!id){
+
+    id =
+      "browser-" +
+      Date.now() +
+      "-" +
+      Math.random().toString(36).slice(2);
+
+    localStorage.setItem(
+      BROWSER_ID_KEY,
+      id
+    );
+
+  }
+
+  return id;
+}
+
+
+/*
+  IMPORTANTE:
+  Esta autorización está basada en almacenamiento local
+  del navegador. No constituye autenticación de servidor.
+*/
+
+function isAdminBrowser(){
+
+  const browser =
+    getBrowserId();
+
+  const admin =
+    localStorage.getItem(
+      ADMIN_BROWSER_KEY
+    );
+
+  return !!admin && admin === browser;
+}
+
+
+/*
+  Para registrar inicialmente este navegador como
+  administrador se utiliza esta función.
+
+  Ejecutarla una sola vez desde el navegador que será
+  administrador.
+*/
+
+function registerCurrentBrowserAsAdmin(){
+
+  const browser =
+    getBrowserId();
+
+  localStorage.setItem(
+    ADMIN_BROWSER_KEY,
+    browser
+  );
+
+  alert(
+    "🔐 Este navegador ha quedado registrado como navegador administrativo."
+  );
+
+}
 
 
 /* ==========================================================
-   ESTADO DE LAS REDES
-   ========================================================== */
+   SORTEOS
+========================================================== */
 
-let socialState = {
+function getDrawDate(){
+
+  const now =
+    new Date();
+
+  const y =
+    now.getFullYear();
+
+  const m =
+    now.getMonth();
+
+
+  for(const day of [15,30]){
+
+    const d =
+      new Date(
+        y,
+        m,
+        day,
+        DRAW_HOUR,
+        DRAW_MINUTE,
+        0,
+        0
+      );
+
+    if(d > now)
+      return d;
+
+  }
+
+
+  return new Date(
+    y,
+    m + 1,
+    15,
+    DRAW_HOUR,
+    DRAW_MINUTE,
+    0,
+    0
+  );
+
+}
+
+
+function getCurrentDrawId(){
+
+  const draw =
+    getDrawDate();
+
+  return [
+    draw.getFullYear(),
+    draw.getMonth() + 1,
+    draw.getDate()
+  ].join("-");
+}
+
+
+function getStorageKey(name){
+
+  return name +
+    "_" +
+    getCurrentDrawId();
+
+}
+
+
+function formatDate(date){
+
+  return date.toLocaleDateString(
+    "es-PR",
+    {
+      day:"numeric",
+      month:"long",
+      year:"numeric"
+    }
+  );
+
+}
+
+
+function formatCountdown(ms){
+
+  if(ms <= 0)
+    return "0 minutos";
+
+
+  const seconds =
+    Math.floor(ms / 1000);
+
+  const days =
+    Math.floor(seconds / 86400);
+
+  const hours =
+    Math.floor(
+      (seconds % 86400) / 3600
+    );
+
+  const mins =
+    Math.floor(
+      (seconds % 3600) / 60
+    );
+
+
+  if(days > 0){
+
+    return (
+      days +
+      (days === 1 ? " día " : " días ") +
+      hours +
+      (hours === 1 ? " hora" : " horas")
+    );
+
+  }
+
+
+  if(hours > 0){
+
+    return (
+      hours +
+      (hours === 1 ? " hora " : " horas ") +
+      mins +
+      (mins === 1 ? " minuto" : " minutos")
+    );
+
+  }
+
+
+  return (
+    mins +
+    (mins === 1 ? " minuto" : " minutos")
+  );
+
+}
+
+
+/* ==========================================================
+   PARTICIPANTES
+========================================================== */
+
+function getParticipants(){
+
+  return JSON.parse(
+    localStorage.getItem(
+      getStorageKey(
+        "soysigas_participants"
+      )
+    ) || "[]"
+  );
+
+}
+
+
+function saveParticipants(list){
+
+  localStorage.setItem(
+    getStorageKey(
+      "soysigas_participants"
+    ),
+    JSON.stringify(list)
+  );
+
+}
+
+
+function getHistorical(){
+
+  return Number(
+    localStorage.getItem(
+      "soysigas_total_historical"
+    ) || "0"
+  );
+
+}
+
+
+function saveHistorical(value){
+
+  localStorage.setItem(
+    "soysigas_total_historical",
+    String(value)
+  );
+
+}
+
+
+function getMyRegistration(){
+
+  return JSON.parse(
+    localStorage.getItem(
+      getStorageKey(
+        "soysigas_my_registration"
+      )
+    ) || "null"
+  );
+
+}
+
+
+function saveMyRegistration(data){
+
+  localStorage.setItem(
+    getStorageKey(
+      "soysigas_my_registration"
+    ),
+    JSON.stringify(data)
+  );
+
+}
+
+
+/* ==========================================================
+   REDES SOCIALES
+========================================================== */
+
+const socialState = {
 
   youtube:{
     openedAt:null,
@@ -1295,253 +1812,74 @@ let socialState = {
 };
 
 
-/* ==========================================================
-   GUARDAR ESTADO
-   ========================================================== */
+function loadSocialCompletion(){
 
-function saveSocialState(){
+  const saved =
+    localStorage.getItem(
+      SOCIAL_COMPLETED_KEY
+    );
+
+  if(!saved)
+    return;
+
+
+  const completedAt =
+    Number(saved);
+
+
+  if(
+    Date.now() -
+    completedAt >=
+    SOCIAL_RENEW_TIME
+  ){
+
+    localStorage.removeItem(
+      SOCIAL_COMPLETED_KEY
+    );
+
+    return;
+
+  }
+
+
+  Object.keys(socialState)
+    .forEach(network=>{
+
+      socialState[network].completed =
+        true;
+
+    });
+
+}
+
+
+function startSocial(network){
+
+  if(
+    !socialState[network] ||
+    socialState[network].completed
+  )
+    return;
+
+
+  const now =
+    Date.now();
+
+
+  socialState[network].openedAt =
+    now;
+
 
   localStorage.setItem(
-    "soysigas_social_state",
-    JSON.stringify(socialState)
+    "soysigas_social_opened",
+    JSON.stringify({
+      network:network,
+      openedAt:now
+    })
   );
 
 }
 
-
-/* ==========================================================
-   CARGAR ESTADO
-   ========================================================== */
-
-function loadSocialState(){
-
-  const saved =
-    localStorage.getItem(
-      "soysigas_social_state"
-    );
-
-  if(!saved) return;
-
-  try{
-
-    const data = JSON.parse(saved);
-
-    if(!data) return;
-
-
-    ["youtube","facebook","whatsapp"].forEach(network=>{
-
-      if(data[network]){
-
-        socialState[network].openedAt =
-          data[network].openedAt || null;
-
-        socialState[network].completed =
-          data[network].completed === true;
-
-      }
-
-    });
-
-  }catch(error){
-
-    console.log(
-      "No se pudo cargar el estado de redes."
-    );
-
-  }
-
-}
-
-
-/* ==========================================================
-   COMPROBAR SI YA PASARON LAS 2 HORAS
-   ========================================================== */
-
-function checkSocialExpiration(){
-
-  const lastCompleted =
-    Number(
-      localStorage.getItem(
-        "soysigas_social_completed_at"
-      ) || "0"
-    );
-
-
-  if(!lastCompleted) return;
-
-
-  const elapsed =
-    Date.now() - lastCompleted;
-
-
-  if(elapsed >= SOCIAL_VALID_TIME){
-
-    /*
-      Pasaron 2 horas.
-      Todo vuelve a empezar.
-    */
-
-    localStorage.removeItem(
-      "soysigas_social_state"
-    );
-
-    localStorage.removeItem(
-      "soysigas_social_completed_at"
-    );
-
-    localStorage.removeItem(
-      "soysigas_social_completed"
-    );
-
-
-    socialState = {
-
-      youtube:{
-        openedAt:null,
-        completed:false
-      },
-
-      facebook:{
-        openedAt:null,
-        completed:false
-      },
-
-      whatsapp:{
-        openedAt:null,
-        completed:false
-      }
-
-    };
-
-  }
-
-}
-
-
-/* ==========================================================
-   INICIAR UNA RED
-   ========================================================== */
-
-function startSocial(network){
-
-  if(!socialState[network]) return;
-
-
-  if(socialState[network].completed){
-
-    return;
-
-  }
-
-
-  /*
-    MUY IMPORTANTE:
-
-    Guardamos exactamente el momento
-    en que el usuario tocó SEGUIR.
-  */
-
-  const now = Date.now();
-
-
-  socialState[network].openedAt = now;
-
-
-  saveSocialState();
-
-
-  /*
-    Comprobamos automáticamente los 25 segundos.
-
-    No mostramos ningún contador.
-  */
-
-  setTimeout(function(){
-
-    checkSpecificSocial(network);
-
-  }, REQUIRED_SOCIAL_TIME + 100);
-
-
-}
-
-
-/* ==========================================================
-   COMPROBAR UNA RED ESPECÍFICA
-   ========================================================== */
-
-function checkSpecificSocial(network){
-
-  if(!socialState[network]) return;
-
-
-  if(socialState[network].completed){
-
-    return;
-
-  }
-
-
-  const openedAt =
-    Number(
-      socialState[network].openedAt || "0"
-    );
-
-
-  if(!openedAt) return;
-
-
-  const elapsed =
-    Date.now() - openedAt;
-
-
-  /*
-    Si ya pasaron los 25 segundos,
-    automáticamente queda completada.
-  */
-
-  if(elapsed >= REQUIRED_SOCIAL_TIME){
-
-    socialState[network].completed = true;
-
-    socialState[network].openedAt = null;
-
-    saveSocialState();
-
-    markSocialCompleted(network);
-
-    updateSocialProgress();
-
-  }
-
-}
-
-
-/* ==========================================================
-   COMPROBAR TODAS LAS REDES
-   ========================================================== */
-
-function checkSocialTime(){
-
-  checkSocialExpiration();
-
-
-  ["youtube","facebook","whatsapp"].forEach(network=>{
-
-    checkSpecificSocial(network);
-
-  });
-
-
-  updateSocialProgress();
-
-}
-
-
-/* ==========================================================
-   MARCAR RED COMO COMPLETADA
-   ========================================================== */
 
 function markSocialCompleted(network){
 
@@ -1550,55 +1888,126 @@ function markSocialCompleted(network){
       "social-" + network
     );
 
-
   const button =
     document.getElementById(
       "button-" + network
     );
 
 
-  if(!item || !button) return;
+  if(!item || !button)
+    return;
 
 
-  item.classList.add("completed");
+  item.classList.add(
+    "completed"
+  );
 
-  button.classList.add("completed");
+  button.classList.add(
+    "completed"
+  );
 
   button.textContent =
     "✓ COMPLETADO";
 
+  button.removeAttribute(
+    "href"
+  );
 
-  /*
-    Quitamos el enlace para que
-    una red completada no vuelva a abrirse.
-  */
+  button.removeAttribute(
+    "target"
+  );
 
-  button.removeAttribute("href");
+  button.removeAttribute(
+    "rel"
+  );
 
-  button.removeAttribute("target");
+  button.onclick =
+    function(event){
 
-  button.removeAttribute("rel");
+      event.preventDefault();
 
-
-  button.onclick = function(event){
-
-    event.preventDefault();
-
-  };
+    };
 
 }
 
 
-/* ==========================================================
-   ACTUALIZAR PROGRESO
-   ========================================================== */
+function checkSocialTime(){
+
+  const saved =
+    localStorage.getItem(
+      "soysigas_social_opened"
+    );
+
+
+  if(saved){
+
+    try{
+
+      const data =
+        JSON.parse(saved);
+
+
+      if(
+        data &&
+        socialState[data.network] &&
+        !socialState[data.network].completed
+      ){
+
+        socialState[data.network].openedAt =
+          Number(data.openedAt);
+
+
+        if(
+          Date.now() -
+          socialState[data.network].openedAt
+          >=
+          REQUIRED_SOCIAL_TIME
+        ){
+
+          socialState[data.network].completed =
+            true;
+
+          socialState[data.network].openedAt =
+            null;
+
+
+          markSocialCompleted(
+            data.network
+          );
+
+
+          localStorage.removeItem(
+            "soysigas_social_opened"
+          );
+
+        }
+
+      }
+
+    }catch(e){
+
+      localStorage.removeItem(
+        "soysigas_social_opened"
+      );
+
+    }
+
+  }
+
+
+  updateSocialProgress();
+
+}
+
 
 function updateSocialProgress(){
 
   const completed =
-    Object.values(socialState)
-      .filter(item=>item.completed)
-      .length;
+    Object.values(
+      socialState
+    ).filter(
+      x => x.completed
+    ).length;
 
 
   document.getElementById(
@@ -1607,7 +2016,7 @@ function updateSocialProgress(){
     `${completed} de 3`;
 
 
-  const continueButton =
+  const button =
     document.getElementById(
       "continueButton"
     );
@@ -1615,127 +2024,60 @@ function updateSocialProgress(){
 
   if(completed === 3){
 
-    continueButton.classList.add(
+    button.classList.add(
       "active"
     );
 
-    continueButton.disabled = false;
-
-    continueButton.textContent =
+    button.textContent =
       "✅ CONTINUAR";
 
-    continueButton.onclick =
+    button.onclick =
       finishSocialStep;
-
-
-    /*
-      Guardamos el momento en que
-      las tres redes quedaron completadas.
-    */
-
-    if(
-      !localStorage.getItem(
-        "soysigas_social_completed_at"
-      )
-    ){
-
-      localStorage.setItem(
-        "soysigas_social_completed_at",
-        String(Date.now())
-      );
-
-    }
-
 
   }else{
 
-    continueButton.classList.remove(
+    button.classList.remove(
       "active"
     );
 
-    continueButton.disabled = true;
-
-    continueButton.textContent =
+    button.textContent =
       "🔒 CONTINUAR";
 
-    continueButton.onclick = null;
+    button.onclick =
+      null;
 
   }
 
 }
 
-
-/* ==========================================================
-   RESTAURAR VISUALMENTE LAS REDES
-   ========================================================== */
-
-function restoreSocialButtons(){
-
-  ["youtube","facebook","whatsapp"]
-    .forEach(network=>{
-
-      if(
-        socialState[network] &&
-        socialState[network].completed
-      ){
-
-        markSocialCompleted(network);
-
-      }
-
-    });
-
-
-  updateSocialProgress();
-
-}
-
-
-/* ==========================================================
-   FINALIZAR PASO DE REDES
-   ========================================================== */
 
 function finishSocialStep(){
 
   const completed =
-    Object.values(socialState)
-      .filter(item=>item.completed)
-      .length;
+    Object.values(
+      socialState
+    ).filter(
+      x => x.completed
+    ).length;
 
 
-  if(completed !== 3){
-
+  if(completed !== 3)
     return;
-
-  }
 
 
   localStorage.setItem(
-    "soysigas_social_completed",
-    "1"
+    SOCIAL_COMPLETED_KEY,
+    String(Date.now())
   );
-
-
-  if(
-    !localStorage.getItem(
-      "soysigas_social_completed_at"
-    )
-  ){
-
-    localStorage.setItem(
-      "soysigas_social_completed_at",
-      String(Date.now())
-    );
-
-  }
 
 
   hideAllScreens();
 
-
-  document
-    .getElementById("mainScreen")
-    .classList.remove("hidden");
+  document.getElementById(
+    "mainScreen"
+  ).classList.remove(
+    "hidden"
+  );
 
 
   updateMain();
@@ -1744,136 +2086,16 @@ function finishSocialStep(){
 
 
 /* ==========================================================
-   FECHAS DEL SORTEO
-   ========================================================== */
-
-function getDrawDate(){
-
-  const now = new Date();
-
-  const y = now.getFullYear();
-
-  const m = now.getMonth();
-
-
-  for(const day of [15,30]){
-
-    const d =
-      new Date(
-        y,
-        m,
-        day,
-        21,
-        30,
-        0,
-        0
-      );
-
-
-    if(d > now){
-
-      return d;
-
-    }
-
-  }
-
-
-  return new Date(
-    y,
-    m + 1,
-    15,
-    21,
-    30,
-    0,
-    0
-  );
-
-}
-
-
-/* ==========================================================
-   FORMATEAR FECHA
-   ========================================================== */
-
-function formatDate(date){
-
-  return date.toLocaleDateString(
-    "es-PR",
-    {
-      day:"numeric",
-      month:"long",
-      year:"numeric"
-    }
-  );
-
-}
-
-
-/* ==========================================================
-   CONTADOR
-   ========================================================== */
-
-function formatCountdown(ms){
-
-  if(ms <= 0){
-
-    return "0 minutos";
-
-  }
-
-
-  const seconds =
-    Math.floor(ms / 1000);
-
-
-  const days =
-    Math.floor(
-      seconds / 86400
-    );
-
-
-  const hours =
-    Math.floor(
-      (seconds % 86400) / 3600
-    );
-
-
-  const mins =
-    Math.floor(
-      (seconds % 3600) / 60
-    );
-
-
-  if(days > 0){
-
-    return `${days}${days===1?" día ":" días "}${hours}${hours===1?" hora":" horas"}`;
-
-  }
-
-
-  if(hours > 0){
-
-    return `${hours}${hours===1?" hora ":" horas "}${mins}${mins===1?" minuto":" minutos"}`;
-
-  }
-
-
-  return `${mins}${mins===1?" minuto":" minutos"}`;
-
-}
-
-
-/* ==========================================================
    REGISTRO
-   ========================================================== */
+========================================================== */
 
 function openRegistration(){
 
-  if(
-    participants.length >=
-    MAX_PARTICIPANTS
-  ){
+  const participants =
+    getParticipants();
+
+
+  if(participants.length >= MAX_PARTICIPANTS){
 
     alert(
       "🔴 Los 50 cupos ya están ocupados."
@@ -1884,28 +2106,40 @@ function openRegistration(){
   }
 
 
+  const registration =
+    getMyRegistration();
+
+
+  if(registration){
+
+    alert(
+      "⚠️ Este navegador ya está registrado en este sorteo."
+    );
+
+    return;
+
+  }
+
+
   hideAllScreens();
 
-
-  document
-    .getElementById("registerScreen")
-    .classList.remove("hidden");
+  document.getElementById(
+    "registerScreen"
+  ).classList.remove(
+    "hidden"
+  );
 
 
   setTimeout(()=>{
 
-    document
-      .getElementById("playerName")
-      .focus();
+    document.getElementById(
+      "playerName"
+    ).focus();
 
   },100);
 
 }
 
-
-/* ==========================================================
-   VALIDAR NOMBRE
-   ========================================================== */
 
 function isValidFullName(name){
 
@@ -1918,11 +2152,8 @@ function isValidFullName(name){
   if(
     !/^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s'-]+$/
       .test(clean)
-  ){
-
+  )
     return false;
-
-  }
 
 
   const words =
@@ -1934,16 +2165,13 @@ function isValidFullName(name){
   return (
     words.length >= 2 &&
     words.every(
-      word=>word.length >= 2
+      word =>
+        word.length >= 2
     )
   );
 
 }
 
-
-/* ==========================================================
-   REGISTRAR PARTICIPANTE
-   ========================================================== */
 
 function registerParticipant(){
 
@@ -1952,12 +2180,10 @@ function registerParticipant(){
       "playerName"
     );
 
-
   const idInput =
     document.getElementById(
       "playerId"
     );
-
 
   const error =
     document.getElementById(
@@ -2001,10 +2227,11 @@ function registerParticipant(){
   }
 
 
-  if(
-    participants.length >=
-    MAX_PARTICIPANTS
-  ){
+  const participants =
+    getParticipants();
+
+
+  if(participants.length >= MAX_PARTICIPANTS){
 
     showError(
       "Los 50 cupos ya están ocupados."
@@ -2016,8 +2243,21 @@ function registerParticipant(){
 
 
   if(
+    getMyRegistration()
+  ){
+
+    showError(
+      "Este navegador ya está registrado en este sorteo."
+    );
+
+    return;
+
+  }
+
+
+  if(
     participants.some(
-      p=>p.id === id
+      p => p.id === id
     )
   ){
 
@@ -2034,7 +2274,12 @@ function registerParticipant(){
 
     name:name,
 
-    id:id
+    id:id,
+
+    browserId:getBrowserId(),
+
+    registeredAt:
+      Date.now()
 
   };
 
@@ -2044,27 +2289,26 @@ function registerParticipant(){
   );
 
 
-  localStorage.setItem(
-    "soysigas_participants_current",
-    JSON.stringify(
-      participants
-    )
+  saveParticipants(
+    participants
   );
 
 
-  totalHistoricalParticipants++;
+  saveMyRegistration(
+    participant
+  );
 
 
-  localStorage.setItem(
-    "soysigas_total_historical",
-    String(
-      totalHistoricalParticipants
-    )
+  const historical =
+    getHistorical() + 1;
+
+
+  saveHistorical(
+    historical
   );
 
 
   nameInput.value = "";
-
   idInput.value = "";
 
 
@@ -2075,20 +2319,17 @@ function registerParticipant(){
 
   hideAllScreens();
 
-
-  document
-    .getElementById("mainScreen")
-    .classList.remove("hidden");
+  document.getElementById(
+    "mainScreen"
+  ).classList.remove(
+    "hidden"
+  );
 
 
   updateMain();
 
 }
 
-
-/* ==========================================================
-   ERROR
-   ========================================================== */
 
 function showError(message){
 
@@ -2101,7 +2342,6 @@ function showError(message){
   error.textContent =
     message;
 
-
   error.style.display =
     "block";
 
@@ -2109,8 +2349,346 @@ function showError(message){
 
 
 /* ==========================================================
-   ACTUALIZAR PRINCIPAL
-   ========================================================== */
+   ADMINISTRACIÓN
+========================================================== */
+
+function openAdministration(){
+
+  if(!isAdminBrowser()){
+
+    alert(
+      "🔒 Acceso denegado. Este navegador no está autorizado para Administración."
+    );
+
+    return;
+
+  }
+
+
+  hideAllScreens();
+
+  document.getElementById(
+    "adminPage"
+  ).classList.remove(
+    "hidden"
+  );
+
+
+  updateAdministration();
+
+}
+
+
+function getSelectedWinner(){
+
+  return JSON.parse(
+    localStorage.getItem(
+      getStorageKey(
+        "soysigas_selected_winner"
+      )
+    ) || "null"
+  );
+
+}
+
+
+function saveSelectedWinner(participant){
+
+  localStorage.setItem(
+    getStorageKey(
+      "soysigas_selected_winner"
+    ),
+    JSON.stringify(
+      participant
+    )
+  );
+
+}
+
+
+function chooseWinner(index){
+
+  if(!isAdminBrowser()){
+
+    alert(
+      "🔒 Acceso administrativo denegado."
+    );
+
+    return;
+
+  }
+
+
+  const participants =
+    getParticipants();
+
+
+  const participant =
+    participants[index];
+
+
+  if(!participant)
+    return;
+
+
+  saveSelectedWinner(
+    participant
+  );
+
+
+  alert(
+    "🎯 Participante seleccionado como ganador del sorteo actual."
+  );
+
+
+  updateAdministration();
+
+}
+
+
+function updateAdministration(){
+
+  const container =
+    document.getElementById(
+      "adminParticipants"
+    );
+
+
+  const selected =
+    getSelectedWinner();
+
+
+  const selectedText =
+    document.getElementById(
+      "adminSelectedWinner"
+    );
+
+
+  if(selected){
+
+    selectedText.textContent =
+      selected.name;
+
+  }else{
+
+    selectedText.textContent =
+      "Ninguno";
+
+  }
+
+
+  const participants =
+    getParticipants();
+
+
+  container.innerHTML =
+    "";
+
+
+  if(participants.length === 0){
+
+    container.innerHTML =
+      '<div class="participant">Aún no hay participantes.</div>';
+
+    return;
+
+  }
+
+
+  participants.forEach(
+    (participant,index)=>{
+
+      const box =
+        document.createElement(
+          "div"
+        );
+
+
+      box.className =
+        "admin-participant";
+
+
+      if(
+        selected &&
+        selected.id === participant.id
+      ){
+
+        box.classList.add(
+          "selected"
+        );
+
+      }
+
+
+      const name =
+        document.createElement(
+          "div"
+        );
+
+
+      name.className =
+        "admin-name";
+
+
+      name.textContent =
+        `${index+1}. ${participant.name}`;
+
+
+      const id =
+        document.createElement(
+          "div"
+        );
+
+
+      id.className =
+        "admin-id";
+
+
+      id.textContent =
+        `ID: ${participant.id}`;
+
+
+      const actions =
+        document.createElement(
+          "div"
+        );
+
+
+      actions.className =
+        "admin-actions";
+
+
+      const button =
+        document.createElement(
+          "button"
+        );
+
+
+      button.className =
+        "admin-select";
+
+
+      if(
+        selected &&
+        selected.id === participant.id
+      ){
+
+        button.classList.add(
+          "admin-selected"
+        );
+
+        button.textContent =
+          "✓ GANADOR SELECCIONADO";
+
+      }else{
+
+        button.textContent =
+          "🎯 ELEGIR GANADOR";
+
+      }
+
+
+      button.onclick =
+        ()=>chooseWinner(index);
+
+
+      actions.appendChild(
+        button
+      );
+
+
+      box.appendChild(
+        name
+      );
+
+      box.appendChild(
+        id
+      );
+
+      box.appendChild(
+        actions
+      );
+
+
+      container.appendChild(
+        box
+      );
+
+    }
+  );
+
+}
+
+
+/* ==========================================================
+   PERFIL
+========================================================== */
+
+function updateProfile(){
+
+  const container =
+    document.getElementById(
+      "profileContent"
+    );
+
+
+  const registration =
+    getMyRegistration();
+
+
+  if(!registration){
+
+    container.innerHTML = `
+      <div class="notice">
+        Todavía no tienes una participación registrada
+        en este sorteo.
+      </div>
+    `;
+
+    return;
+
+  }
+
+
+  container.innerHTML = `
+
+    <div class="profile-box">
+
+      <div class="profile-row">
+
+        <div class="profile-label">
+          NOMBRE Y APELLIDOS
+        </div>
+
+        <div class="profile-value">
+          ${escapeHTML(registration.name)}
+        </div>
+
+      </div>
+
+
+      <div class="profile-row">
+
+        <div class="profile-label">
+          ID DE FREE FIRE
+        </div>
+
+        <div class="profile-value">
+          ${escapeHTML(registration.id)}
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* ==========================================================
+   PRINCIPAL
+========================================================== */
 
 function updateMain(){
 
@@ -2145,7 +2723,6 @@ function updateMain(){
     title.textContent =
       "🎡 SORTEO EN CURSO";
 
-
     countdown.textContent =
       "9:30 PM";
 
@@ -2153,7 +2730,6 @@ function updateMain(){
 
     title.textContent =
       "🟢 TIEMPO RESTANTE PARA EL SORTEO";
-
 
     countdown.textContent =
       formatCountdown(
@@ -2168,11 +2744,11 @@ function updateMain(){
 }
 
 
-/* ==========================================================
-   ACTUALIZAR PARTICIPANTES
-   ========================================================== */
-
 function updateParticipants(){
+
+  const participants =
+    getParticipants();
+
 
   const count =
     participants.length;
@@ -2200,7 +2776,7 @@ function updateParticipants(){
   document.getElementById(
     "totalParticipants"
   ).textContent =
-    totalHistoricalParticipants;
+    getHistorical();
 
 
   document.getElementById(
@@ -2212,6 +2788,7 @@ function updateParticipants(){
   document.getElementById(
     "slotsMessage"
   ).textContent =
+
     available === 0
       ? "🔴 ¡CUPOS AGOTADOS!"
       : "¡Regístrate antes de que se acaben!";
@@ -2229,6 +2806,10 @@ function updateParticipants(){
     );
 
 
+  const myRegistration =
+    getMyRegistration();
+
+
   if(available === 0){
 
     status.textContent =
@@ -2239,6 +2820,23 @@ function updateParticipants(){
 
     status.style.background =
       "#321515";
+
+    registerButton.disabled =
+      true;
+
+    registerButton.style.opacity =
+      ".5";
+
+  }else if(myRegistration){
+
+    status.textContent =
+      "✅ YA ESTÁS REGISTRADO";
+
+    status.style.color =
+      "#20e46f";
+
+    status.style.background =
+      "#173818";
 
     registerButton.disabled =
       true;
@@ -2272,7 +2870,8 @@ function updateParticipants(){
     );
 
 
-  list.innerHTML = "";
+  list.innerHTML =
+    "";
 
 
   if(count === 0){
@@ -2313,7 +2912,6 @@ function updateParticipants(){
     "roulette"
   );
 
-
   updateRoulette(
     "rouletteLarge"
   );
@@ -2328,14 +2926,17 @@ function updateParticipants(){
   document.getElementById(
     "statsTotal"
   ).textContent =
-    totalHistoricalParticipants;
+    getHistorical();
+
+
+  updateWinners();
 
 }
 
 
 /* ==========================================================
    RULETA
-   ========================================================== */
+========================================================== */
 
 function updateRoulette(elementId){
 
@@ -2345,18 +2946,24 @@ function updateRoulette(elementId){
     );
 
 
-  if(!roulette) return;
+  if(!roulette)
+    return;
 
 
   roulette.innerHTML =
     '<div class="roulette-center"></div>';
 
 
+  const participants =
+    getParticipants();
+
+
   const count =
     participants.length;
 
 
-  if(count === 0) return;
+  if(count === 0)
+    return;
 
 
   const colors = [
@@ -2415,10 +3022,10 @@ function updateRoulette(elementId){
 
 
       const fontSize =
+
         count >= 40 ? 7 :
         count >= 30 ? 8 :
-        count >= 20 ? 9 :
-        11;
+        count >= 20 ? 9 : 11;
 
 
       label.style.fontSize =
@@ -2445,8 +3052,334 @@ function updateRoulette(elementId){
 
 
 /* ==========================================================
+   ANIMACIÓN DE RULETA
+========================================================== */
+
+let rouletteRunning =
+  false;
+
+
+function startDrawAnimation(){
+
+  if(rouletteRunning)
+    return;
+
+
+  const participants =
+    getParticipants();
+
+
+  if(participants.length === 0){
+
+    alert(
+      "No hay participantes para realizar el sorteo."
+    );
+
+    return;
+
+  }
+
+
+  const selected =
+    getSelectedWinner();
+
+
+  if(!selected){
+
+    alert(
+      "No hay un participante seleccionado en Administración."
+    );
+
+    return;
+
+  }
+
+
+  const index =
+    participants.findIndex(
+      p => p.id === selected.id
+    );
+
+
+  if(index < 0){
+
+    alert(
+      "El participante seleccionado ya no existe en el sorteo."
+    );
+
+    return;
+
+  }
+
+
+  rouletteRunning =
+    true;
+
+
+  const roulettes = [
+    document.getElementById("roulette"),
+    document.getElementById("rouletteLarge")
+  ];
+
+
+  const slice =
+    360 / participants.length;
+
+
+  /*
+    El indicador está arriba.
+    Ajustamos la rotación para que la partición
+    seleccionada termine debajo del indicador.
+  */
+
+  const targetAngle =
+    360 - (
+      index * slice +
+      slice / 2
+    );
+
+
+  const extraTurns =
+    360 * 12;
+
+
+  const finalRotation =
+    extraTurns +
+    targetAngle;
+
+
+  roulettes.forEach(
+    roulette=>{
+
+      if(!roulette)
+        return;
+
+
+      roulette.style.transition =
+        "none";
+
+      roulette.style.transform =
+        "rotate(0deg)";
+
+      void roulette.offsetWidth;
+
+      roulette.style.transition =
+        "transform 60s cubic-bezier(.12,.72,.08,1)";
+
+      roulette.style.transform =
+        `rotate(${finalRotation}deg)`;
+
+    }
+  );
+
+
+  setTimeout(()=>{
+
+    rouletteRunning =
+      false;
+
+
+    showWinner(
+      selected
+    );
+
+  },60000);
+
+}
+
+
+/* ==========================================================
+   GANADOR
+========================================================== */
+
+function showWinner(participant){
+
+  document.getElementById(
+    "winnerName"
+  ).textContent =
+    participant.name;
+
+
+  document.getElementById(
+    "winnerId"
+  ).textContent =
+    "ID: " + participant.id;
+
+
+  document.getElementById(
+    "winnerOverlay"
+  ).classList.remove(
+    "hidden"
+  );
+
+
+  saveWinnerHistory(
+    participant
+  );
+
+
+  setTimeout(()=>{
+
+    document.getElementById(
+      "winnerId"
+    ).classList.add(
+      "hidden"
+    );
+
+
+    setTimeout(()=>{
+
+      document.getElementById(
+        "winnerOverlay"
+      ).classList.add(
+        "hidden"
+      );
+
+
+      document.getElementById(
+        "winnerId"
+      ).classList.remove(
+        "hidden"
+      );
+
+
+    },1000);
+
+  },180000);
+
+}
+
+
+function saveWinnerHistory(participant){
+
+  const key =
+    "soysigas_winners_history";
+
+
+  const history =
+    JSON.parse(
+      localStorage.getItem(
+        key
+      ) || "[]"
+    );
+
+
+  const exists =
+    history.some(
+      w =>
+        w.drawId ===
+        getCurrentDrawId()
+    );
+
+
+  if(!exists){
+
+    history.push({
+
+      drawId:
+        getCurrentDrawId(),
+
+      date:
+        new Date().toISOString(),
+
+      name:
+        participant.name
+
+    });
+
+
+    localStorage.setItem(
+      key,
+      JSON.stringify(history)
+    );
+
+  }
+
+}
+
+
+/* ==========================================================
+   GANADORES
+========================================================== */
+
+function updateWinners(){
+
+  const container =
+    document.getElementById(
+      "winnersList"
+    );
+
+
+  if(!container)
+    return;
+
+
+  const history =
+    JSON.parse(
+      localStorage.getItem(
+        "soysigas_winners_history"
+      ) || "[]"
+    );
+
+
+  container.innerHTML =
+    "";
+
+
+  if(history.length === 0){
+
+    container.innerHTML = `
+      <div class="winner">
+        Los ganadores aparecerán aquí
+        después de cada sorteo.
+      </div>
+    `;
+
+    return;
+
+  }
+
+
+  history
+    .slice()
+    .reverse()
+    .forEach(
+      winner=>{
+
+        const box =
+          document.createElement(
+            "div"
+          );
+
+
+        box.className =
+          "winner-public-name";
+
+
+        box.innerHTML = `
+          🏆 GANADOR
+          <strong>
+            ${escapeHTML(winner.name)}
+          </strong>
+          <div class="notice">
+            Sorteo: ${escapeHTML(winner.drawId)}
+          </div>
+        `;
+
+
+        container.appendChild(
+          box
+        );
+
+      }
+    );
+
+}
+
+
+/* ==========================================================
    NAVEGACIÓN
-   ========================================================== */
+========================================================== */
 
 function hideAllScreens(){
 
@@ -2455,133 +3388,166 @@ function hideAllScreens(){
     "socialScreen",
     "mainScreen",
     "registerScreen",
+    "profilePage",
     "roulettePage",
     "statsPage",
-    "winnersPage"
+    "winnersPage",
+    "adminPage"
 
   ].forEach(id=>{
 
-    document
-      .getElementById(id)
-      .classList.add(
+    const element =
+      document.getElementById(id);
+
+    if(element)
+      element.classList.add(
         "hidden"
       );
 
   });
 
 
-  document
-    .getElementById("menuPanel")
-    .classList.add(
+  const menu =
+    document.getElementById(
+      "menuPanel"
+    );
+
+
+  if(menu)
+    menu.classList.add(
       "hidden"
     );
 
 }
 
 
-/* ==========================================================
-   MOSTRAR PRINCIPAL
-   ========================================================== */
-
 function showMain(){
 
   hideAllScreens();
 
-
-  document
-    .getElementById("mainScreen")
-    .classList.remove(
-      "hidden"
-    );
-
+  document.getElementById(
+    "mainScreen"
+  ).classList.remove(
+    "hidden"
+  );
 
   updateMain();
 
 }
 
 
-/* ==========================================================
-   SUBPÁGINAS
-   ========================================================== */
-
 function showSubpage(pageId){
 
   hideAllScreens();
 
-
-  document
-    .getElementById(pageId)
-    .classList.remove(
-      "hidden"
+  const page =
+    document.getElementById(
+      pageId
     );
 
 
-  if(pageId === "roulettePage"){
+  if(!page)
+    return;
 
+
+  page.classList.remove(
+    "hidden"
+  );
+
+
+  if(pageId === "roulettePage")
     updateRoulette(
       "rouletteLarge"
     );
 
-  }
+
+  if(pageId === "profilePage")
+    updateProfile();
+
+
+  if(pageId === "winnersPage")
+    updateWinners();
+
+
+  if(pageId === "statsPage")
+    updateMain();
+
+}
+
+
+function toggleMenu(){
+
+  document.getElementById(
+    "menuPanel"
+  ).classList.toggle(
+    "hidden"
+  );
 
 }
 
 
 /* ==========================================================
-   MENÚ
-   ========================================================== */
+   ESCAPE HTML
+========================================================== */
 
-function toggleMenu(){
+function escapeHTML(value){
 
-  document
-    .getElementById("menuPanel")
-    .classList.toggle(
-      "hidden"
-    );
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 
 }
 
 
 /* ==========================================================
    INICIO
-   ========================================================== */
+========================================================== */
 
 function startSite(){
 
   /*
-    Primero comprobamos si ya pasaron
-    las 2 horas.
+    Carga el estado de las redes.
   */
 
-  checkSocialExpiration();
+  loadSocialCompletion();
 
 
   /*
-    Después cargamos el estado.
+    Si las redes todavía están vigentes,
+    se recupera su estado.
   */
 
-  loadSocialState();
+  if(
+    localStorage.getItem(
+      SOCIAL_COMPLETED_KEY
+    )
+  ){
 
+    Object.keys(
+      socialState
+    ).forEach(
+      network=>{
 
-  /*
-    Comprobamos si alguna red
-    ya cumplió sus 25 segundos.
-  */
+        socialState[network].completed =
+          true;
 
-  checkSocialTime();
+        markSocialCompleted(
+          network
+        );
 
+      }
+    );
 
-  /*
-    Restauramos los botones.
-  */
-
-  restoreSocialButtons();
+  }
 
 
   const socialCompleted =
-    Object.values(socialState)
-      .filter(item=>item.completed)
-      .length === 3;
+    localStorage.getItem(
+      SOCIAL_COMPLETED_KEY
+    );
 
 
   hideAllScreens();
@@ -2589,16 +3555,50 @@ function startSite(){
 
   if(socialCompleted){
 
-    document
-      .getElementById("mainScreen")
-      .classList.remove(
+    if(
+      Date.now() -
+      Number(socialCompleted)
+      >=
+      SOCIAL_RENEW_TIME
+    ){
+
+      localStorage.removeItem(
+        SOCIAL_COMPLETED_KEY
+      );
+
+      Object.keys(
+        socialState
+      ).forEach(
+        network=>{
+
+          socialState[network].completed =
+            false;
+
+          socialState[network].openedAt =
+            null;
+
+        }
+      );
+
+
+      document.getElementById(
+        "socialScreen"
+      ).classList.remove(
         "hidden"
       );
 
 
-    localStorage.setItem(
-      "soysigas_social_completed",
-      "1"
+      updateSocialProgress();
+
+      return;
+
+    }
+
+
+    document.getElementById(
+      "mainScreen"
+    ).classList.remove(
+      "hidden"
     );
 
 
@@ -2606,17 +3606,14 @@ function startSite(){
 
   }else{
 
-    /*
-      Si todavía falta alguna red,
-      volvemos a mostrar la pantalla
-      de redes.
-    */
+    document.getElementById(
+      "socialScreen"
+    ).classList.remove(
+      "hidden"
+    );
 
-    document
-      .getElementById("socialScreen")
-      .classList.remove(
-        "hidden"
-      );
+
+    updateSocialProgress();
 
   }
 
@@ -2624,46 +3621,93 @@ function startSite(){
 
 
 /* ==========================================================
-   COMPROBACIÓN AUTOMÁTICA
-   ========================================================== */
+   ACTUALIZACIÓN AUTOMÁTICA
+========================================================== */
 
-setInterval(function(){
+setInterval(()=>{
 
   checkSocialTime();
 
 
   const mainVisible =
-    !document
-      .getElementById(
-        "mainScreen"
-      )
-      .classList.contains(
-        "hidden"
-      );
+    !document.getElementById(
+      "mainScreen"
+    ).classList.contains(
+      "hidden"
+    );
 
 
-  if(mainVisible){
-
+  if(mainVisible)
     updateMain();
 
-  }
+
+  /*
+    El sorteo se inicia automáticamente
+    al llegar exactamente a las 9:30 PM.
+  */
+
+  checkAutomaticDraw();
 
 },1000);
 
 
 /* ==========================================================
-   AL VOLVER DE YOUTUBE / FACEBOOK / WHATSAPP
-   ========================================================== */
+   CONTROL AUTOMÁTICO DEL SORTEO
+========================================================== */
+
+function checkAutomaticDraw(){
+
+  const now =
+    new Date();
+
+
+  const draw =
+    getDrawDate();
+
+
+  /*
+    Identificador para impedir que el mismo
+    navegador lance repetidamente la animación.
+  */
+
+  const drawKey =
+    "soysigas_draw_started_" +
+    getCurrentDrawId();
+
+
+  if(
+    now >= draw &&
+    localStorage.getItem(drawKey) !== "1"
+  ){
+
+    localStorage.setItem(
+      drawKey,
+      "1"
+    );
+
+
+    startDrawAnimation();
+
+  }
+
+}
+
+
+/* ==========================================================
+   VISIBILITY / PAGESHOW
+========================================================== */
 
 document.addEventListener(
   "visibilitychange",
-  function(){
+  ()=>{
 
     if(!document.hidden){
 
       checkSocialTime();
 
-      restoreSocialButtons();
+      updateSocialProgress();
+
+      updateMain();
 
     }
 
@@ -2673,11 +3717,11 @@ document.addEventListener(
 
 window.addEventListener(
   "pageshow",
-  function(){
+  ()=>{
 
     checkSocialTime();
 
-    restoreSocialButtons();
+    updateSocialProgress();
 
   }
 );
@@ -2685,7 +3729,9 @@ window.addEventListener(
 
 /* ==========================================================
    INICIAR
-   ========================================================== */
+========================================================== */
+
+getBrowserId();
 
 startSite();
 
