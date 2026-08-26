@@ -7,19 +7,15 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-
 html,body{
   min-height:100%;
   font-family:Arial,Helvetica,sans-serif;
   background:#000;
   color:#fff
 }
-
 body{overflow-x:hidden}
-
 button,input{font:inherit}
 button{cursor:pointer}
-
 .hidden{display:none!important}
 
 body{
@@ -41,10 +37,9 @@ body{
   padding:18px 14px 90px;
 }
 
-
-/* ==========================================================
+/* ==============================
    PANTALLA DE REDES
-   ========================================================== */
+   ============================== */
 
 .social-landing{
   display:flex;
@@ -169,6 +164,8 @@ body{
   font-size:12px;
   font-weight:900;
   white-space:nowrap;
+  min-width:92px;
+  transition:.2s;
 }
 
 .social-button.completed{
@@ -184,7 +181,7 @@ body{
 }
 
 .completed-count strong{
-  color:#ffd000
+  color:#ffd000;
 }
 
 .continue-button{
@@ -205,10 +202,9 @@ body{
   cursor:pointer;
 }
 
-
-/* ==========================================================
+/* ==============================
    PANTALLA PRINCIPAL
-   ========================================================== */
+   ============================== */
 
 .main-screen{
   padding-top:12px;
@@ -267,7 +263,7 @@ body{
 }
 
 .welcome .crown{
-  font-size:50px
+  font-size:50px;
 }
 
 .welcome h2{
@@ -280,7 +276,7 @@ body{
 .welcome p{
   color:#aaa;
   margin-top:10px;
-  font-size:15px
+  font-size:15px;
 }
 
 .draw-card{
@@ -291,7 +287,8 @@ body{
   padding:27px 14px;
 }
 
-.draw-card h3,.section-title{
+.draw-card h3,
+.section-title{
   color:#ffd000;
   font-size:20px;
   font-weight:900;
@@ -306,7 +303,7 @@ body{
 
 .draw-time{
   color:#aaa;
-  font-size:16px
+  font-size:16px;
 }
 
 .registration-status{
@@ -332,7 +329,11 @@ body{
   box-shadow:0 0 18px rgba(255,193,7,.18);
 }
 
-.countdown-box,.slots,.stat,.participants-box,.roulette-box{
+.countdown-box,
+.slots,
+.stat,
+.participants-box,
+.roulette-box{
   background:#101010;
   border:1px solid #303030;
   border-radius:20px;
@@ -356,7 +357,7 @@ body{
 }
 
 .slots{
-  text-align:center
+  text-align:center;
 }
 
 .slots-number{
@@ -367,7 +368,7 @@ body{
 
 .slots-label{
   color:#999;
-  margin-top:4px
+  margin-top:4px;
 }
 
 .progress{
@@ -391,7 +392,7 @@ body{
 }
 
 .stat{
-  text-align:center
+  text-align:center;
 }
 
 .stat-number{
@@ -433,17 +434,16 @@ body{
   margin-top:14px;
 }
 
-
-/* ==========================================================
+/* ==============================
    FORMULARIO
-   ========================================================== */
+   ============================== */
 
 .register-card h2{
-  margin-bottom:10px
+  margin-bottom:10px;
 }
 
 .input-group{
-  margin-top:15px
+  margin-top:15px;
 }
 
 .input-group label{
@@ -505,10 +505,9 @@ body{
   margin-bottom:12px;
 }
 
-
-/* ==========================================================
+/* ==============================
    RULETA
-   ========================================================== */
+   ============================== */
 
 .roulette-wrap{
   position:relative;
@@ -580,10 +579,9 @@ body{
   text-overflow:ellipsis;
 }
 
-
-/* ==========================================================
+/* ==============================
    SUBPÁGINAS
-   ========================================================== */
+   ============================== */
 
 .subpage-title{
   color:#ffd000;
@@ -601,36 +599,36 @@ body{
   font-weight:900;
 }
 
-
-/* ==========================================================
+/* ==============================
    RESPONSIVE
-   ========================================================== */
+   ============================== */
 
 @media(max-width:400px){
 
   .screen{
     padding-left:10px;
-    padding-right:10px
+    padding-right:10px;
   }
 
   .brand h1{
-    font-size:31px
+    font-size:31px;
   }
 
   .welcome h2{
-    font-size:27px
+    font-size:27px;
   }
 
   .draw-date{
-    font-size:31px
+    font-size:31px;
   }
 
   .social-button{
-    padding:10px 9px
+    padding:10px 9px;
+    min-width:88px;
   }
 
   .social-info strong{
-    font-size:14px
+    font-size:14px;
   }
 }
 </style>
@@ -661,12 +659,13 @@ body{
       Completa las tres redes y después podrás entrar al sorteo.
     </p>
 
-
     <!-- YOUTUBE -->
 
     <div id="social-youtube" class="social-item">
 
-      <div class="social-icon youtube">▶</div>
+      <div class="social-icon youtube">
+        ▶
+      </div>
 
       <div class="social-info">
         <strong>YouTube</strong>
@@ -691,7 +690,9 @@ body{
 
     <div id="social-facebook" class="social-item">
 
-      <div class="social-icon facebook">f</div>
+      <div class="social-icon facebook">
+        f
+      </div>
 
       <div class="social-info">
         <strong>Facebook</strong>
@@ -716,7 +717,9 @@ body{
 
     <div id="social-whatsapp" class="social-item">
 
-      <div class="social-icon whatsapp">☎</div>
+      <div class="social-icon whatsapp">
+        ☎
+      </div>
 
       <div class="social-info">
         <strong>WhatsApp</strong>
@@ -746,7 +749,7 @@ body{
     <button
       id="continueButton"
       class="continue-button"
-      type="button"
+      disabled
     >
       🔒 CONTINUAR
     </button>
@@ -766,7 +769,6 @@ body{
 
     <button
       class="menu-button"
-      type="button"
       onclick="toggleMenu()"
     >
       ☰
@@ -806,7 +808,9 @@ body{
 
   <div class="welcome">
 
-    <div class="crown">👑</div>
+    <div class="crown">
+      👑
+    </div>
 
     <h2>
       FFSORTEOS Diamantes y más
@@ -823,14 +827,20 @@ body{
 
     <div class="draw-card">
 
-      <h3>🎡 PRÓXIMO SORTEO</h3>
+      <h3>
+        🎡 PRÓXIMO SORTEO
+      </h3>
 
-      <div id="drawDate" class="draw-date">
+      <div
+        id="drawDate"
+        class="draw-date"
+      >
         Cargando...
       </div>
 
       <div class="draw-time">
-        Sorteo: <strong>9:30 PM</strong>
+        Sorteo:
+        <strong>9:30 PM</strong>
       </div>
 
       <div
@@ -883,12 +893,10 @@ body{
       </div>
 
       <div class="progress">
-
         <div
           id="progressBar"
           class="progress-bar"
         ></div>
-
       </div>
 
       <p
@@ -944,11 +952,9 @@ body{
       </h3>
 
       <div id="participantList">
-
         <div class="participant">
           Aún no hay participantes.
         </div>
-
       </div>
 
     </div>
@@ -968,9 +974,7 @@ body{
           id="roulette"
           class="roulette"
         >
-
           <div class="roulette-center"></div>
-
         </div>
 
       </div>
@@ -995,9 +999,13 @@ body{
 
   <div class="brand">
 
-    <div class="crown">👑</div>
+    <div class="crown">
+      👑
+    </div>
 
-    <h1>SOY SIGAS</h1>
+    <h1>
+      SOY SIGAS
+    </h1>
 
     <p>
       FFSORTEOS DIAMANTES Y MÁS
@@ -1074,7 +1082,8 @@ body{
 
     <div class="notice">
 
-      Tu nombre aparecerá públicamente en la lista de participantes.
+      Tu nombre aparecerá públicamente
+      en la lista de participantes.
 
       <br><br>
 
@@ -1114,9 +1123,7 @@ body{
         id="rouletteLarge"
         class="roulette"
       >
-
         <div class="roulette-center"></div>
-
       </div>
 
     </div>
@@ -1224,13 +1231,1465 @@ body{
 const REQUIRED_SOCIAL_TIME = 25000;
 
 /*
-   Después de completar LAS TRES REDES,
-   el acceso queda válido durante 2 horas.
+   Las redes completadas duran 2 horas.
+   Después de 2 horas se borran automáticamente.
 */
 const SOCIAL_VALID_TIME = 2 * 60 * 60 * 1000;
 
 const MAX_PARTICIPANTS = 50;
 
 
+const SOCIALS = {
+
+  youtube:
+    "https://youtube.com/@soysigasofficial?si=RoCdWuHVo7JHyV6b",
+
+  facebook:
+    "https://www.facebook.com/profile.php?id=61593805138979",
+
+  whatsapp:
+    "https://whatsapp.com/channel/0029Vb8Uc9fHgZWWuiZSzb1g"
+
+};
+
+
 /* ==========================================================
-   ENLA
+   PARTICIPANTES
+   ========================================================== */
+
+let participants = JSON.parse(
+  localStorage.getItem(
+    "soysigas_participants_current"
+  ) || "[]"
+);
+
+
+let totalHistoricalParticipants = Number(
+  localStorage.getItem(
+    "soysigas_total_historical"
+  ) || "0"
+);
+
+
+/* ==========================================================
+   ESTADO DE LAS REDES
+   ========================================================== */
+
+let socialState = {
+
+  youtube:{
+    openedAt:null,
+    completed:false
+  },
+
+  facebook:{
+    openedAt:null,
+    completed:false
+  },
+
+  whatsapp:{
+    openedAt:null,
+    completed:false
+  }
+
+};
+
+
+/* ==========================================================
+   GUARDAR ESTADO
+   ========================================================== */
+
+function saveSocialState(){
+
+  localStorage.setItem(
+    "soysigas_social_state",
+    JSON.stringify(socialState)
+  );
+
+}
+
+
+/* ==========================================================
+   CARGAR ESTADO
+   ========================================================== */
+
+function loadSocialState(){
+
+  const saved =
+    localStorage.getItem(
+      "soysigas_social_state"
+    );
+
+  if(!saved) return;
+
+  try{
+
+    const data = JSON.parse(saved);
+
+    if(!data) return;
+
+
+    ["youtube","facebook","whatsapp"].forEach(network=>{
+
+      if(data[network]){
+
+        socialState[network].openedAt =
+          data[network].openedAt || null;
+
+        socialState[network].completed =
+          data[network].completed === true;
+
+      }
+
+    });
+
+  }catch(error){
+
+    console.log(
+      "No se pudo cargar el estado de redes."
+    );
+
+  }
+
+}
+
+
+/* ==========================================================
+   COMPROBAR SI YA PASARON LAS 2 HORAS
+   ========================================================== */
+
+function checkSocialExpiration(){
+
+  const lastCompleted =
+    Number(
+      localStorage.getItem(
+        "soysigas_social_completed_at"
+      ) || "0"
+    );
+
+
+  if(!lastCompleted) return;
+
+
+  const elapsed =
+    Date.now() - lastCompleted;
+
+
+  if(elapsed >= SOCIAL_VALID_TIME){
+
+    /*
+      Pasaron 2 horas.
+      Todo vuelve a empezar.
+    */
+
+    localStorage.removeItem(
+      "soysigas_social_state"
+    );
+
+    localStorage.removeItem(
+      "soysigas_social_completed_at"
+    );
+
+    localStorage.removeItem(
+      "soysigas_social_completed"
+    );
+
+
+    socialState = {
+
+      youtube:{
+        openedAt:null,
+        completed:false
+      },
+
+      facebook:{
+        openedAt:null,
+        completed:false
+      },
+
+      whatsapp:{
+        openedAt:null,
+        completed:false
+      }
+
+    };
+
+  }
+
+}
+
+
+/* ==========================================================
+   INICIAR UNA RED
+   ========================================================== */
+
+function startSocial(network){
+
+  if(!socialState[network]) return;
+
+
+  if(socialState[network].completed){
+
+    return;
+
+  }
+
+
+  /*
+    MUY IMPORTANTE:
+
+    Guardamos exactamente el momento
+    en que el usuario tocó SEGUIR.
+  */
+
+  const now = Date.now();
+
+
+  socialState[network].openedAt = now;
+
+
+  saveSocialState();
+
+
+  /*
+    Comprobamos automáticamente los 25 segundos.
+
+    No mostramos ningún contador.
+  */
+
+  setTimeout(function(){
+
+    checkSpecificSocial(network);
+
+  }, REQUIRED_SOCIAL_TIME + 100);
+
+
+}
+
+
+/* ==========================================================
+   COMPROBAR UNA RED ESPECÍFICA
+   ========================================================== */
+
+function checkSpecificSocial(network){
+
+  if(!socialState[network]) return;
+
+
+  if(socialState[network].completed){
+
+    return;
+
+  }
+
+
+  const openedAt =
+    Number(
+      socialState[network].openedAt || "0"
+    );
+
+
+  if(!openedAt) return;
+
+
+  const elapsed =
+    Date.now() - openedAt;
+
+
+  /*
+    Si ya pasaron los 25 segundos,
+    automáticamente queda completada.
+  */
+
+  if(elapsed >= REQUIRED_SOCIAL_TIME){
+
+    socialState[network].completed = true;
+
+    socialState[network].openedAt = null;
+
+    saveSocialState();
+
+    markSocialCompleted(network);
+
+    updateSocialProgress();
+
+  }
+
+}
+
+
+/* ==========================================================
+   COMPROBAR TODAS LAS REDES
+   ========================================================== */
+
+function checkSocialTime(){
+
+  checkSocialExpiration();
+
+
+  ["youtube","facebook","whatsapp"].forEach(network=>{
+
+    checkSpecificSocial(network);
+
+  });
+
+
+  updateSocialProgress();
+
+}
+
+
+/* ==========================================================
+   MARCAR RED COMO COMPLETADA
+   ========================================================== */
+
+function markSocialCompleted(network){
+
+  const item =
+    document.getElementById(
+      "social-" + network
+    );
+
+
+  const button =
+    document.getElementById(
+      "button-" + network
+    );
+
+
+  if(!item || !button) return;
+
+
+  item.classList.add("completed");
+
+  button.classList.add("completed");
+
+  button.textContent =
+    "✓ COMPLETADO";
+
+
+  /*
+    Quitamos el enlace para que
+    una red completada no vuelva a abrirse.
+  */
+
+  button.removeAttribute("href");
+
+  button.removeAttribute("target");
+
+  button.removeAttribute("rel");
+
+
+  button.onclick = function(event){
+
+    event.preventDefault();
+
+  };
+
+}
+
+
+/* ==========================================================
+   ACTUALIZAR PROGRESO
+   ========================================================== */
+
+function updateSocialProgress(){
+
+  const completed =
+    Object.values(socialState)
+      .filter(item=>item.completed)
+      .length;
+
+
+  document.getElementById(
+    "socialCount"
+  ).textContent =
+    `${completed} de 3`;
+
+
+  const continueButton =
+    document.getElementById(
+      "continueButton"
+    );
+
+
+  if(completed === 3){
+
+    continueButton.classList.add(
+      "active"
+    );
+
+    continueButton.disabled = false;
+
+    continueButton.textContent =
+      "✅ CONTINUAR";
+
+    continueButton.onclick =
+      finishSocialStep;
+
+
+    /*
+      Guardamos el momento en que
+      las tres redes quedaron completadas.
+    */
+
+    if(
+      !localStorage.getItem(
+        "soysigas_social_completed_at"
+      )
+    ){
+
+      localStorage.setItem(
+        "soysigas_social_completed_at",
+        String(Date.now())
+      );
+
+    }
+
+
+  }else{
+
+    continueButton.classList.remove(
+      "active"
+    );
+
+    continueButton.disabled = true;
+
+    continueButton.textContent =
+      "🔒 CONTINUAR";
+
+    continueButton.onclick = null;
+
+  }
+
+}
+
+
+/* ==========================================================
+   RESTAURAR VISUALMENTE LAS REDES
+   ========================================================== */
+
+function restoreSocialButtons(){
+
+  ["youtube","facebook","whatsapp"]
+    .forEach(network=>{
+
+      if(
+        socialState[network] &&
+        socialState[network].completed
+      ){
+
+        markSocialCompleted(network);
+
+      }
+
+    });
+
+
+  updateSocialProgress();
+
+}
+
+
+/* ==========================================================
+   FINALIZAR PASO DE REDES
+   ========================================================== */
+
+function finishSocialStep(){
+
+  const completed =
+    Object.values(socialState)
+      .filter(item=>item.completed)
+      .length;
+
+
+  if(completed !== 3){
+
+    return;
+
+  }
+
+
+  localStorage.setItem(
+    "soysigas_social_completed",
+    "1"
+  );
+
+
+  if(
+    !localStorage.getItem(
+      "soysigas_social_completed_at"
+    )
+  ){
+
+    localStorage.setItem(
+      "soysigas_social_completed_at",
+      String(Date.now())
+    );
+
+  }
+
+
+  hideAllScreens();
+
+
+  document
+    .getElementById("mainScreen")
+    .classList.remove("hidden");
+
+
+  updateMain();
+
+}
+
+
+/* ==========================================================
+   FECHAS DEL SORTEO
+   ========================================================== */
+
+function getDrawDate(){
+
+  const now = new Date();
+
+  const y = now.getFullYear();
+
+  const m = now.getMonth();
+
+
+  for(const day of [15,30]){
+
+    const d =
+      new Date(
+        y,
+        m,
+        day,
+        21,
+        30,
+        0,
+        0
+      );
+
+
+    if(d > now){
+
+      return d;
+
+    }
+
+  }
+
+
+  return new Date(
+    y,
+    m + 1,
+    15,
+    21,
+    30,
+    0,
+    0
+  );
+
+}
+
+
+/* ==========================================================
+   FORMATEAR FECHA
+   ========================================================== */
+
+function formatDate(date){
+
+  return date.toLocaleDateString(
+    "es-PR",
+    {
+      day:"numeric",
+      month:"long",
+      year:"numeric"
+    }
+  );
+
+}
+
+
+/* ==========================================================
+   CONTADOR
+   ========================================================== */
+
+function formatCountdown(ms){
+
+  if(ms <= 0){
+
+    return "0 minutos";
+
+  }
+
+
+  const seconds =
+    Math.floor(ms / 1000);
+
+
+  const days =
+    Math.floor(
+      seconds / 86400
+    );
+
+
+  const hours =
+    Math.floor(
+      (seconds % 86400) / 3600
+    );
+
+
+  const mins =
+    Math.floor(
+      (seconds % 3600) / 60
+    );
+
+
+  if(days > 0){
+
+    return `${days}${days===1?" día ":" días "}${hours}${hours===1?" hora":" horas"}`;
+
+  }
+
+
+  if(hours > 0){
+
+    return `${hours}${hours===1?" hora ":" horas "}${mins}${mins===1?" minuto":" minutos"}`;
+
+  }
+
+
+  return `${mins}${mins===1?" minuto":" minutos"}`;
+
+}
+
+
+/* ==========================================================
+   REGISTRO
+   ========================================================== */
+
+function openRegistration(){
+
+  if(
+    participants.length >=
+    MAX_PARTICIPANTS
+  ){
+
+    alert(
+      "🔴 Los 50 cupos ya están ocupados."
+    );
+
+    return;
+
+  }
+
+
+  hideAllScreens();
+
+
+  document
+    .getElementById("registerScreen")
+    .classList.remove("hidden");
+
+
+  setTimeout(()=>{
+
+    document
+      .getElementById("playerName")
+      .focus();
+
+  },100);
+
+}
+
+
+/* ==========================================================
+   VALIDAR NOMBRE
+   ========================================================== */
+
+function isValidFullName(name){
+
+  const clean =
+    name
+      .replace(/\s+/g," ")
+      .trim();
+
+
+  if(
+    !/^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s'-]+$/
+      .test(clean)
+  ){
+
+    return false;
+
+  }
+
+
+  const words =
+    clean
+      .split(" ")
+      .filter(Boolean);
+
+
+  return (
+    words.length >= 2 &&
+    words.every(
+      word=>word.length >= 2
+    )
+  );
+
+}
+
+
+/* ==========================================================
+   REGISTRAR PARTICIPANTE
+   ========================================================== */
+
+function registerParticipant(){
+
+  const nameInput =
+    document.getElementById(
+      "playerName"
+    );
+
+
+  const idInput =
+    document.getElementById(
+      "playerId"
+    );
+
+
+  const error =
+    document.getElementById(
+      "registerError"
+    );
+
+
+  error.style.display =
+    "none";
+
+
+  const name =
+    nameInput.value
+      .replace(/\s+/g," ")
+      .trim();
+
+
+  const id =
+    idInput.value.trim();
+
+
+  if(!isValidFullName(name)){
+
+    showError(
+      "Escribe obligatoriamente tu nombre y apellidos."
+    );
+
+    return;
+
+  }
+
+
+  if(!/^\d{8,11}$/.test(id)){
+
+    showError(
+      "El ID debe tener entre 8 y 11 cifras."
+    );
+
+    return;
+
+  }
+
+
+  if(
+    participants.length >=
+    MAX_PARTICIPANTS
+  ){
+
+    showError(
+      "Los 50 cupos ya están ocupados."
+    );
+
+    return;
+
+  }
+
+
+  if(
+    participants.some(
+      p=>p.id === id
+    )
+  ){
+
+    showError(
+      "Este ID ya está registrado en este sorteo."
+    );
+
+    return;
+
+  }
+
+
+  const participant = {
+
+    name:name,
+
+    id:id
+
+  };
+
+
+  participants.push(
+    participant
+  );
+
+
+  localStorage.setItem(
+    "soysigas_participants_current",
+    JSON.stringify(
+      participants
+    )
+  );
+
+
+  totalHistoricalParticipants++;
+
+
+  localStorage.setItem(
+    "soysigas_total_historical",
+    String(
+      totalHistoricalParticipants
+    )
+  );
+
+
+  nameInput.value = "";
+
+  idInput.value = "";
+
+
+  alert(
+    "🎉 ¡Participación registrada correctamente!"
+  );
+
+
+  hideAllScreens();
+
+
+  document
+    .getElementById("mainScreen")
+    .classList.remove("hidden");
+
+
+  updateMain();
+
+}
+
+
+/* ==========================================================
+   ERROR
+   ========================================================== */
+
+function showError(message){
+
+  const error =
+    document.getElementById(
+      "registerError"
+    );
+
+
+  error.textContent =
+    message;
+
+
+  error.style.display =
+    "block";
+
+}
+
+
+/* ==========================================================
+   ACTUALIZAR PRINCIPAL
+   ========================================================== */
+
+function updateMain(){
+
+  const draw =
+    getDrawDate();
+
+
+  const now =
+    new Date();
+
+
+  document.getElementById(
+    "drawDate"
+  ).textContent =
+    formatDate(draw);
+
+
+  const countdown =
+    document.getElementById(
+      "countdown"
+    );
+
+
+  const title =
+    document.getElementById(
+      "countdownTitle"
+    );
+
+
+  if(now >= draw){
+
+    title.textContent =
+      "🎡 SORTEO EN CURSO";
+
+
+    countdown.textContent =
+      "9:30 PM";
+
+  }else{
+
+    title.textContent =
+      "🟢 TIEMPO RESTANTE PARA EL SORTEO";
+
+
+    countdown.textContent =
+      formatCountdown(
+        draw - now
+      );
+
+  }
+
+
+  updateParticipants();
+
+}
+
+
+/* ==========================================================
+   ACTUALIZAR PARTICIPANTES
+   ========================================================== */
+
+function updateParticipants(){
+
+  const count =
+    participants.length;
+
+
+  const available =
+    Math.max(
+      MAX_PARTICIPANTS - count,
+      0
+    );
+
+
+  document.getElementById(
+    "slotsNumber"
+  ).textContent =
+    available;
+
+
+  document.getElementById(
+    "participantCount"
+  ).textContent =
+    `${count}/${MAX_PARTICIPANTS}`;
+
+
+  document.getElementById(
+    "totalParticipants"
+  ).textContent =
+    totalHistoricalParticipants;
+
+
+  document.getElementById(
+    "progressBar"
+  ).style.width =
+    `${(count/MAX_PARTICIPANTS)*100}%`;
+
+
+  document.getElementById(
+    "slotsMessage"
+  ).textContent =
+    available === 0
+      ? "🔴 ¡CUPOS AGOTADOS!"
+      : "¡Regístrate antes de que se acaben!";
+
+
+  const status =
+    document.getElementById(
+      "registrationStatus"
+    );
+
+
+  const registerButton =
+    document.querySelector(
+      ".participate-button"
+    );
+
+
+  if(available === 0){
+
+    status.textContent =
+      "🔴 CUPOS AGOTADOS";
+
+    status.style.color =
+      "#ff5555";
+
+    status.style.background =
+      "#321515";
+
+    registerButton.disabled =
+      true;
+
+    registerButton.style.opacity =
+      ".5";
+
+  }else{
+
+    status.textContent =
+      "🟢 INSCRIPCIONES ABIERTAS";
+
+    status.style.color =
+      "#20e46f";
+
+    status.style.background =
+      "#173818";
+
+    registerButton.disabled =
+      false;
+
+    registerButton.style.opacity =
+      "1";
+
+  }
+
+
+  const list =
+    document.getElementById(
+      "participantList"
+    );
+
+
+  list.innerHTML = "";
+
+
+  if(count === 0){
+
+    list.innerHTML =
+      '<div class="participant">Aún no hay participantes.</div>';
+
+  }else{
+
+    participants.forEach(
+      (p,index)=>{
+
+        const item =
+          document.createElement(
+            "div"
+          );
+
+
+        item.className =
+          "participant";
+
+
+        item.textContent =
+          `${index+1}. ${p.name}`;
+
+
+        list.appendChild(
+          item
+        );
+
+      }
+    );
+
+  }
+
+
+  updateRoulette(
+    "roulette"
+  );
+
+
+  updateRoulette(
+    "rouletteLarge"
+  );
+
+
+  document.getElementById(
+    "statsCurrent"
+  ).textContent =
+    count;
+
+
+  document.getElementById(
+    "statsTotal"
+  ).textContent =
+    totalHistoricalParticipants;
+
+}
+
+
+/* ==========================================================
+   RULETA
+   ========================================================== */
+
+function updateRoulette(elementId){
+
+  const roulette =
+    document.getElementById(
+      elementId
+    );
+
+
+  if(!roulette) return;
+
+
+  roulette.innerHTML =
+    '<div class="roulette-center"></div>';
+
+
+  const count =
+    participants.length;
+
+
+  if(count === 0) return;
+
+
+  const colors = [
+
+    "#ffd000",
+    "#ff9800",
+    "#e91e63",
+    "#9c27b0",
+    "#3f51b5",
+    "#03a9f4",
+    "#00bcd4",
+    "#20d66b"
+
+  ];
+
+
+  const slice =
+    360 / count;
+
+
+  participants.forEach(
+    (participant,index)=>{
+
+      const segment =
+        document.createElement(
+          "div"
+        );
+
+
+      segment.className =
+        "segment";
+
+
+      const angle =
+        index * slice;
+
+
+      segment.style.transform =
+        `rotate(${angle}deg) skewY(${-(90-slice)}deg)`;
+
+
+      segment.style.background =
+        colors[
+          index % colors.length
+        ];
+
+
+      const label =
+        document.createElement(
+          "div"
+        );
+
+
+      label.className =
+        "segment-label";
+
+
+      const fontSize =
+        count >= 40 ? 7 :
+        count >= 30 ? 8 :
+        count >= 20 ? 9 :
+        11;
+
+
+      label.style.fontSize =
+        fontSize + "px";
+
+
+      label.textContent =
+        participant.name;
+
+
+      segment.appendChild(
+        label
+      );
+
+
+      roulette.appendChild(
+        segment
+      );
+
+    }
+  );
+
+}
+
+
+/* ==========================================================
+   NAVEGACIÓN
+   ========================================================== */
+
+function hideAllScreens(){
+
+  [
+
+    "socialScreen",
+    "mainScreen",
+    "registerScreen",
+    "roulettePage",
+    "statsPage",
+    "winnersPage"
+
+  ].forEach(id=>{
+
+    document
+      .getElementById(id)
+      .classList.add(
+        "hidden"
+      );
+
+  });
+
+
+  document
+    .getElementById("menuPanel")
+    .classList.add(
+      "hidden"
+    );
+
+}
+
+
+/* ==========================================================
+   MOSTRAR PRINCIPAL
+   ========================================================== */
+
+function showMain(){
+
+  hideAllScreens();
+
+
+  document
+    .getElementById("mainScreen")
+    .classList.remove(
+      "hidden"
+    );
+
+
+  updateMain();
+
+}
+
+
+/* ==========================================================
+   SUBPÁGINAS
+   ========================================================== */
+
+function showSubpage(pageId){
+
+  hideAllScreens();
+
+
+  document
+    .getElementById(pageId)
+    .classList.remove(
+      "hidden"
+    );
+
+
+  if(pageId === "roulettePage"){
+
+    updateRoulette(
+      "rouletteLarge"
+    );
+
+  }
+
+}
+
+
+/* ==========================================================
+   MENÚ
+   ========================================================== */
+
+function toggleMenu(){
+
+  document
+    .getElementById("menuPanel")
+    .classList.toggle(
+      "hidden"
+    );
+
+}
+
+
+/* ==========================================================
+   INICIO
+   ========================================================== */
+
+function startSite(){
+
+  /*
+    Primero comprobamos si ya pasaron
+    las 2 horas.
+  */
+
+  checkSocialExpiration();
+
+
+  /*
+    Después cargamos el estado.
+  */
+
+  loadSocialState();
+
+
+  /*
+    Comprobamos si alguna red
+    ya cumplió sus 25 segundos.
+  */
+
+  checkSocialTime();
+
+
+  /*
+    Restauramos los botones.
+  */
+
+  restoreSocialButtons();
+
+
+  const socialCompleted =
+    Object.values(socialState)
+      .filter(item=>item.completed)
+      .length === 3;
+
+
+  hideAllScreens();
+
+
+  if(socialCompleted){
+
+    document
+      .getElementById("mainScreen")
+      .classList.remove(
+        "hidden"
+      );
+
+
+    localStorage.setItem(
+      "soysigas_social_completed",
+      "1"
+    );
+
+
+    updateMain();
+
+  }else{
+
+    /*
+      Si todavía falta alguna red,
+      volvemos a mostrar la pantalla
+      de redes.
+    */
+
+    document
+      .getElementById("socialScreen")
+      .classList.remove(
+        "hidden"
+      );
+
+  }
+
+}
+
+
+/* ==========================================================
+   COMPROBACIÓN AUTOMÁTICA
+   ========================================================== */
+
+setInterval(function(){
+
+  checkSocialTime();
+
+
+  const mainVisible =
+    !document
+      .getElementById(
+        "mainScreen"
+      )
+      .classList.contains(
+        "hidden"
+      );
+
+
+  if(mainVisible){
+
+    updateMain();
+
+  }
+
+},1000);
+
+
+/* ==========================================================
+   AL VOLVER DE YOUTUBE / FACEBOOK / WHATSAPP
+   ========================================================== */
+
+document.addEventListener(
+  "visibilitychange",
+  function(){
+
+    if(!document.hidden){
+
+      checkSocialTime();
+
+      restoreSocialButtons();
+
+    }
+
+  }
+);
+
+
+window.addEventListener(
+  "pageshow",
+  function(){
+
+    checkSocialTime();
+
+    restoreSocialButtons();
+
+  }
+);
+
+
+/* ==========================================================
+   INICIAR
+   ========================================================== */
+
+startSite();
+
+</script>
+
+</body>
+</html>
