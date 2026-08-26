@@ -7,16 +7,13 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-
 html,body{
   min-height:100%;
   font-family:Arial,Helvetica,sans-serif;
   background:#000;
-  color:#fff;
+  color:#fff
 }
-
 body{overflow-x:hidden}
-
 button,input{font:inherit}
 button{cursor:pointer}
 .hidden{display:none!important}
@@ -40,9 +37,15 @@ body{
   padding:18px 14px 90px;
 }
 
-/* =========================
-   MARCA
-========================= */
+/* ==========================================================
+   REDES
+   ========================================================== */
+
+.social-landing{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
 
 .brand{
   text-align:center;
@@ -60,7 +63,9 @@ body{
   line-height:1;
   font-weight:900;
   letter-spacing:3px;
-  text-shadow:0 0 8px #ffb300,0 0 22px rgba(255,193,7,.55);
+  text-shadow:
+    0 0 8px #ffb300,
+    0 0 22px rgba(255,193,7,.55);
 }
 
 .brand p{
@@ -69,10 +74,6 @@ body{
   letter-spacing:3px;
   margin-top:8px;
 }
-
-/* =========================
-   CARDS
-========================= */
 
 .card{
   background:rgba(9,9,9,.97);
@@ -98,16 +99,6 @@ body{
   font-size:14px;
   line-height:1.55;
   margin-bottom:20px;
-}
-
-/* =========================
-   REDES
-========================= */
-
-.social-landing{
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
 }
 
 .social-item{
@@ -189,9 +180,7 @@ body{
   margin:17px 0 12px;
 }
 
-.completed-count strong{
-  color:#ffd000;
-}
+.completed-count strong{color:#ffd000}
 
 .continue-button{
   width:100%;
@@ -211,9 +200,9 @@ body{
   cursor:pointer;
 }
 
-/* =========================
+/* ==========================================================
    PRINCIPAL
-========================= */
+   ========================================================== */
 
 .main-screen{
   padding-top:12px;
@@ -223,7 +212,7 @@ body{
   display:flex;
   justify-content:flex-end;
   position:relative;
-  z-index:50;
+  z-index:20;
 }
 
 .menu-button{
@@ -271,9 +260,7 @@ body{
   margin:5px 0 24px;
 }
 
-.welcome .crown{
-  font-size:50px;
-}
+.welcome .crown{font-size:50px}
 
 .welcome h2{
   color:#ffd000;
@@ -296,8 +283,7 @@ body{
   padding:27px 14px;
 }
 
-.draw-card h3,
-.section-title{
+.draw-card h3,.section-title{
   color:#ffd000;
   font-size:20px;
   font-weight:900;
@@ -338,11 +324,7 @@ body{
   box-shadow:0 0 18px rgba(255,193,7,.18);
 }
 
-.countdown-box,
-.slots,
-.stat,
-.participants-box,
-.roulette-box{
+.countdown-box,.slots,.stat,.participants-box,.roulette-box{
   background:#101010;
   border:1px solid #303030;
   border-radius:20px;
@@ -365,9 +347,7 @@ body{
   margin-top:12px;
 }
 
-.slots{
-  text-align:center;
-}
+.slots{text-align:center}
 
 .slots-number{
   color:#ffd000;
@@ -400,9 +380,7 @@ body{
   gap:14px;
 }
 
-.stat{
-  text-align:center;
-}
+.stat{text-align:center}
 
 .stat-number{
   display:block;
@@ -443,9 +421,9 @@ body{
   margin-top:14px;
 }
 
-/* =========================
+/* ==========================================================
    FORMULARIO
-========================= */
+   ========================================================== */
 
 .register-card h2{
   margin-bottom:10px;
@@ -491,6 +469,18 @@ body{
   font-size:12px;
 }
 
+.success{
+  display:none;
+  margin-top:12px;
+  padding:11px;
+  border-radius:10px;
+  color:#20e46f;
+  background:rgba(32,214,107,.1);
+  border:1px solid rgba(32,214,107,.35);
+  text-align:center;
+  font-size:12px;
+}
+
 .confirm-button{
   width:100%;
   border:0;
@@ -514,9 +504,9 @@ body{
   margin-bottom:12px;
 }
 
-/* =========================
+/* ==========================================================
    RULETA
-========================= */
+   ========================================================== */
 
 .roulette-wrap{
   position:relative;
@@ -570,7 +560,6 @@ body{
   height:50%;
   transform-origin:0 0;
   overflow:visible;
-  border-right:1px solid rgba(0,0,0,.45);
 }
 
 .segment-label{
@@ -589,16 +578,12 @@ body{
   text-overflow:ellipsis;
 }
 
-/* =========================
-   SUBPÁGINAS
-========================= */
+/* ==========================================================
+   GANADOR
+   ========================================================== */
 
-.subpage-title{
-  color:#ffd000;
+.winner-card{
   text-align:center;
-  font-size:22px;
-  font-weight:900;
-  margin-bottom:15px;
 }
 
 .winner{
@@ -609,191 +594,158 @@ body{
   font-weight:900;
 }
 
-/* =========================
-   PERFIL
-========================= */
-
-.profile-box{
-  background:#151515;
-  border:1px solid #333;
-  border-radius:16px;
-  padding:18px;
+.winner-id{
   margin-top:12px;
-}
-
-.profile-row{
-  padding:12px 0;
-  border-bottom:1px solid #292929;
-}
-
-.profile-row:last-child{
-  border-bottom:0;
-}
-
-.profile-label{
-  color:#888;
-  font-size:12px;
-  margin-bottom:5px;
-}
-
-.profile-value{
   color:#fff;
-  font-size:17px;
+  font-size:20px;
   font-weight:900;
 }
 
-/* =========================
-   ADMINISTRACIÓN
-========================= */
-
-.admin-warning{
-  background:#211800;
+.winner-name-permanent{
+  margin-top:18px;
+  padding:18px;
+  border-radius:15px;
+  background:#181818;
   border:1px solid #ffd000;
-  border-radius:14px;
-  padding:14px;
-  text-align:center;
   color:#ffd000;
-  font-size:12px;
-  line-height:1.5;
-  margin-bottom:15px;
+  font-size:20px;
+  font-weight:900;
+}
+
+/* ==========================================================
+   PERFIL
+   ========================================================== */
+
+.profile-box{
+  text-align:center;
+}
+
+.profile-avatar{
+  font-size:58px;
+  margin-bottom:10px;
+}
+
+.profile-name{
+  color:#ffd000;
+  font-size:24px;
+  font-weight:900;
+}
+
+.profile-id{
+  margin-top:12px;
+  padding:14px;
+  background:#181818;
+  border-radius:12px;
+  color:#fff;
+  font-weight:900;
+}
+
+/* ==========================================================
+   ADMINISTRACIÓN
+   ========================================================== */
+
+.admin-login{
+  text-align:center;
+}
+
+.admin-lock{
+  font-size:60px;
+  margin-bottom:10px;
+}
+
+.admin-login h2{
+  margin-bottom:8px;
+}
+
+.password-input{
+  width:100%;
+  padding:16px;
+  border-radius:13px;
+  border:1px solid #3b3b3b;
+  background:#151515;
+  color:#fff;
+  outline:none;
+  margin-top:15px;
+  text-align:center;
+  letter-spacing:2px;
+}
+
+.password-input:focus{
+  border-color:#ffd000;
+  box-shadow:0 0 10px rgba(255,208,0,.15);
+}
+
+.admin-button{
+  width:100%;
+  border:0;
+  border-radius:14px;
+  padding:16px;
+  margin-top:15px;
+  background:linear-gradient(135deg,#ffd000,#ff9800);
+  color:#000;
+  font-weight:900;
+}
+
+.admin-error{
+  display:none;
+  color:#ff7474;
+  margin-top:12px;
+  font-size:13px;
+  font-weight:900;
 }
 
 .admin-participant{
-  background:#151515;
+  background:#171717;
   border:1px solid #333;
   border-radius:15px;
   padding:14px;
   margin:10px 0;
 }
 
-.admin-participant.selected{
-  border-color:#20d66b;
-  box-shadow:0 0 12px rgba(32,214,107,.12);
-}
-
-.admin-name{
-  color:#fff;
+.admin-participant strong{
+  color:#ffd000;
+  display:block;
   font-size:16px;
-  font-weight:900;
 }
 
-.admin-id{
+.admin-participant span{
+  display:block;
   color:#aaa;
-  font-size:13px;
   margin-top:6px;
+  font-size:13px;
 }
 
-.admin-actions{
-  display:flex;
-  gap:8px;
-  margin-top:12px;
-}
-
-.admin-select{
-  flex:1;
+.choose-winner{
+  width:100%;
   border:0;
-  border-radius:10px;
-  padding:12px 8px;
-  background:linear-gradient(135deg,#ffd000,#ff9800);
+  border-radius:11px;
+  padding:12px;
+  margin-top:12px;
+  background:#ffd000;
   color:#000;
-  font-size:12px;
   font-weight:900;
 }
 
-.admin-selected{
+.choose-winner.selected{
   background:#20d66b;
   color:#fff;
 }
 
-.admin-status{
+/* ==========================================================
+   SUBPÁGINAS
+   ========================================================== */
+
+.subpage-title{
+  color:#ffd000;
   text-align:center;
-  padding:13px;
-  background:#151515;
-  border:1px solid #333;
-  border-radius:14px;
-  color:#aaa;
+  font-size:22px;
+  font-weight:900;
   margin-bottom:15px;
 }
 
-.admin-status strong{
-  color:#ffd000;
-}
-
-/* =========================
-   GANADOR
-========================= */
-
-.winner-overlay{
-  position:fixed;
-  inset:0;
-  z-index:1000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  background:rgba(0,0,0,.92);
-}
-
-.winner-modal{
-  width:100%;
-  max-width:430px;
-  background:linear-gradient(145deg,#211b00,#090909);
-  border:2px solid #ffd000;
-  border-radius:25px;
-  padding:28px 18px;
-  text-align:center;
-  box-shadow:0 0 40px rgba(255,208,0,.3);
-}
-
-.winner-crown{
-  font-size:60px;
-  filter:drop-shadow(0 0 15px #ffd000);
-}
-
-.winner-modal h2{
-  color:#ffd000;
-  font-size:30px;
-  margin:10px 0 20px;
-}
-
-.winner-name{
-  color:#fff;
-  font-size:24px;
-  font-weight:900;
-  margin-bottom:14px;
-}
-
-.winner-id{
-  color:#ffd000;
-  font-size:18px;
-  font-weight:900;
-}
-
-.winner-disclosure{
-  color:#888;
-  font-size:11px;
-  line-height:1.5;
-  margin-top:18px;
-}
-
-.winner-public-name{
-  text-align:center;
-  padding:20px;
-  border-radius:18px;
-  background:#151515;
-  border:1px solid #333;
-}
-
-.winner-public-name strong{
-  display:block;
-  color:#ffd000;
-  font-size:23px;
-  margin-top:8px;
-}
-
-/* =========================
+/* ==========================================================
    RESPONSIVE
-========================= */
+   ========================================================== */
 
 @media(max-width:400px){
   .screen{
@@ -828,9 +780,9 @@ body{
 
 <div class="app">
 
-<!-- =====================================================
-     REDES
-===================================================== -->
+<!-- ========================================================
+     PANTALLA INICIAL: SOLO REDES
+     ======================================================== -->
 
 <section id="socialScreen" class="screen social-landing">
 
@@ -845,7 +797,6 @@ body{
     <h2>🔥 Mis redes oficiales</h2>
 
     <p class="description">
-      Son obligatorias para poder participar.
       Completa las tres redes y después podrás entrar al sorteo.
     </p>
 
@@ -864,11 +815,10 @@ body{
          target="_blank"
          rel="noopener noreferrer"
          onclick="startSocial('youtube')">
-        SEGUIR
+         SEGUIR
       </a>
 
     </div>
-
 
     <div id="social-facebook" class="social-item">
 
@@ -885,11 +835,10 @@ body{
          target="_blank"
          rel="noopener noreferrer"
          onclick="startSocial('facebook')">
-        SEGUIR
+         SEGUIR
       </a>
 
     </div>
-
 
     <div id="social-whatsapp" class="social-item">
 
@@ -906,7 +855,7 @@ body{
          target="_blank"
          rel="noopener noreferrer"
          onclick="startSocial('whatsapp')">
-        SEGUIR
+         SEGUIR
       </a>
 
     </div>
@@ -926,12 +875,11 @@ body{
 </section>
 
 
-<!-- =====================================================
-     PRINCIPAL
-===================================================== -->
+<!-- ========================================================
+     PANTALLA PRINCIPAL
+     ======================================================== -->
 
-<section id="mainScreen"
-         class="screen main-screen hidden">
+<section id="mainScreen" class="screen main-screen hidden">
 
   <div class="top-header">
 
@@ -940,8 +888,7 @@ body{
       ☰
     </button>
 
-    <div id="menuPanel"
-         class="menu-panel hidden">
+    <div id="menuPanel" class="menu-panel hidden">
 
       <div class="menu-title">
         MENÚ PRINCIPAL
@@ -968,8 +915,8 @@ body{
       </button>
 
       <button class="menu-option"
-              onclick="openAdministration()">
-        ⚙️ Administración
+              onclick="openAdminLogin()">
+        🔐 Administración
       </button>
 
     </div>
@@ -996,9 +943,7 @@ body{
 
     <div class="draw-card">
 
-      <h3>
-        🎡 PRÓXIMO SORTEO
-      </h3>
+      <h3>🎡 PRÓXIMO SORTEO</h3>
 
       <div id="drawDate"
            class="draw-date">
@@ -1050,11 +995,9 @@ body{
       </div>
 
       <div class="progress">
-
         <div id="progressBar"
              class="progress-bar">
         </div>
-
       </div>
 
       <p id="slotsMessage"
@@ -1079,7 +1022,6 @@ body{
         </span>
 
       </div>
-
 
       <div class="stat">
 
@@ -1143,9 +1085,9 @@ body{
 </section>
 
 
-<!-- =====================================================
+<!-- ========================================================
      REGISTRO
-===================================================== -->
+     ======================================================== -->
 
 <section id="registerScreen"
          class="screen hidden">
@@ -1221,9 +1163,14 @@ body{
 
 
     <div class="notice">
-      Tu nombre aparecerá públicamente en la lista de participantes.
+
+      Tu nombre aparecerá públicamente en la lista
+      de participantes.
+
       <br><br>
+
       Tu ID no se mostrará públicamente.
+
     </div>
 
   </div>
@@ -1231,14 +1178,14 @@ body{
 </section>
 
 
-<!-- =====================================================
+<!-- ========================================================
      PERFIL
-===================================================== -->
+     ======================================================== -->
 
 <section id="profilePage"
          class="screen hidden">
 
-  <div class="card">
+  <div class="card profile-box">
 
     <button class="back-button"
             onclick="showMain()">
@@ -1249,7 +1196,18 @@ body{
       👤 MI PERFIL
     </div>
 
-    <div id="profileContent">
+    <div class="profile-avatar">
+      👤
+    </div>
+
+    <div id="profileName"
+         class="profile-name">
+      Sin registro
+    </div>
+
+    <div id="profileId"
+         class="profile-id">
+      ID: —
     </div>
 
   </div>
@@ -1257,9 +1215,9 @@ body{
 </section>
 
 
-<!-- =====================================================
+<!-- ========================================================
      RULETA
-===================================================== -->
+     ======================================================== -->
 
 <section id="roulettePage"
          class="screen hidden">
@@ -1293,9 +1251,9 @@ body{
 </section>
 
 
-<!-- =====================================================
+<!-- ========================================================
      ESTADÍSTICAS
-===================================================== -->
+     ======================================================== -->
 
 <section id="statsPage"
          class="screen hidden">
@@ -1326,7 +1284,6 @@ body{
 
       </div>
 
-
       <div class="stat">
 
         <span id="statsTotal"
@@ -1347,14 +1304,14 @@ body{
 </section>
 
 
-<!-- =====================================================
+<!-- ========================================================
      GANADORES
-===================================================== -->
+     ======================================================== -->
 
 <section id="winnersPage"
          class="screen hidden">
 
-  <div class="card">
+  <div class="card winner-card">
 
     <button class="back-button"
             onclick="showMain()">
@@ -1365,7 +1322,12 @@ body{
       🏆 GANADORES
     </div>
 
-    <div id="winnersList">
+    <div id="winnerContent">
+
+      <div class="winner">
+        Los ganadores aparecerán aquí después del sorteo.
+      </div>
+
     </div>
 
   </div>
@@ -1373,9 +1335,56 @@ body{
 </section>
 
 
-<!-- =====================================================
+<!-- ========================================================
+     LOGIN ADMINISTRACIÓN
+     ======================================================== -->
+
+<section id="adminLoginPage"
+         class="screen hidden">
+
+  <div class="card admin-login">
+
+    <button class="back-button"
+            onclick="showMain()">
+      ←
+    </button>
+
+    <div class="admin-lock">
+      🔐
+    </div>
+
+    <h2>
+      Administración
+    </h2>
+
+    <p class="description">
+      Introduce la contraseña para continuar.
+    </p>
+
+    <input id="adminPassword"
+           class="password-input"
+           type="password"
+           autocomplete="off"
+           placeholder="Contraseña">
+
+    <div id="adminError"
+         class="admin-error">
+      Contraseña incorrecta.
+    </div>
+
+    <button class="admin-button"
+            onclick="verifyAdminPassword()">
+      🔓 ACCEDER
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================
      ADMINISTRACIÓN
-===================================================== -->
+     ======================================================== -->
 
 <section id="adminPage"
          class="screen hidden">
@@ -1388,33 +1397,14 @@ body{
     </button>
 
     <div class="subpage-title">
-      ⚙️ ADMINISTRACIÓN
+      🔐 ADMINISTRACIÓN
     </div>
 
+    <p class="description">
+      Participantes actuales de este sorteo.
+    </p>
 
-    <div class="admin-warning">
-      🔐 Área administrativa.
-      <br>
-      Solo el navegador autorizado puede acceder.
-    </div>
-
-
-    <div class="admin-status">
-
-      Ganador seleccionado:
-
-      <strong id="adminSelectedWinner">
-        Ninguno
-      </strong>
-
-    </div>
-
-
-    <h3 class="section-title">
-      👥 PARTICIPANTES ACTUALES
-    </h3>
-
-    <div id="adminParticipants">
+    <div id="adminParticipantsList">
     </div>
 
   </div>
@@ -1424,58 +1414,23 @@ body{
 </div>
 
 
-<!-- =====================================================
-     MODAL GANADOR
-===================================================== -->
-
-<div id="winnerOverlay"
-     class="winner-overlay hidden">
-
-  <div class="winner-modal">
-
-    <div class="winner-crown">
-      🏆
-    </div>
-
-    <h2>
-      ¡GANADOR!
-    </h2>
-
-    <div id="winnerName"
-         class="winner-name">
-    </div>
-
-    <div id="winnerId"
-         class="winner-id">
-    </div>
-
-    <div class="winner-disclosure">
-      Resultado seleccionado mediante la función administrativa
-      del sorteo.
-    </div>
-
-  </div>
-
-</div>
-
-
 <script>
+
 /* ==========================================================
    CONFIGURACIÓN
-========================================================== */
+   ========================================================== */
 
 const REQUIRED_SOCIAL_TIME = 25000;
-const SOCIAL_RENEW_TIME = 2 * 60 * 60 * 1000;
-
+const SOCIAL_ACCESS_TIME = 2 * 60 * 60 * 1000;
 const MAX_PARTICIPANTS = 50;
 
-const DRAW_HOUR = 21;
-const DRAW_MINUTE = 30;
+/*
+  Hash SHA-256 de la contraseña de Administración.
+  La contraseña original NO aparece escrita en el código.
+*/
+const ADMIN_PASSWORD_HASH =
+"5e811585a9cab529da28178719ddc89f18059ed133afaa5634e9d42bf13218a3";
 
-
-/* ==========================================================
-   REDES
-========================================================== */
 
 const SOCIALS = {
 
@@ -1492,103 +1447,76 @@ const SOCIALS = {
 
 
 /* ==========================================================
-   ESTADO DEL NAVEGADOR
-========================================================== */
+   DATOS
+   ========================================================== */
 
-const BROWSER_ID_KEY =
-  "soysigas_browser_id";
+let participants = JSON.parse(
+  localStorage.getItem(
+    "soysigas_participants_current"
+  ) || "[]"
+);
 
-const ADMIN_BROWSER_KEY =
-  "soysigas_admin_browser";
+let totalHistoricalParticipants =
+  Number(
+    localStorage.getItem(
+      "soysigas_total_historical"
+    ) || "0"
+  );
 
-const SOCIAL_COMPLETED_KEY =
-  "soysigas_social_completed_at";
+
+let selectedWinnerId =
+  localStorage.getItem(
+    "soysigas_selected_winner_id"
+  ) || null;
 
 
-function getBrowserId(){
+let currentParticipant =
+  JSON.parse(
+    localStorage.getItem(
+      "soysigas_current_participant"
+    ) || "null"
+  );
 
-  let id =
-    localStorage.getItem(BROWSER_ID_KEY);
 
-  if(!id){
+let winners =
+  JSON.parse(
+    localStorage.getItem(
+      "soysigas_winners"
+    ) || "[]"
+  );
 
-    id =
-      "browser-" +
-      Date.now() +
-      "-" +
-      Math.random().toString(36).slice(2);
 
-    localStorage.setItem(
-      BROWSER_ID_KEY,
-      id
-    );
+const socialState = {
 
+  youtube:{
+    openedAt:null,
+    completed:false
+  },
+
+  facebook:{
+    openedAt:null,
+    completed:false
+  },
+
+  whatsapp:{
+    openedAt:null,
+    completed:false
   }
 
-  return id;
-}
-
-
-/*
-  IMPORTANTE:
-  Esta autorización está basada en almacenamiento local
-  del navegador. No constituye autenticación de servidor.
-*/
-
-function isAdminBrowser(){
-
-  const browser =
-    getBrowserId();
-
-  const admin =
-    localStorage.getItem(
-      ADMIN_BROWSER_KEY
-    );
-
-  return !!admin && admin === browser;
-}
-
-
-/*
-  Para registrar inicialmente este navegador como
-  administrador se utiliza esta función.
-
-  Ejecutarla una sola vez desde el navegador que será
-  administrador.
-*/
-
-function registerCurrentBrowserAsAdmin(){
-
-  const browser =
-    getBrowserId();
-
-  localStorage.setItem(
-    ADMIN_BROWSER_KEY,
-    browser
-  );
-
-  alert(
-    "🔐 Este navegador ha quedado registrado como navegador administrativo."
-  );
-
-}
+};
 
 
 /* ==========================================================
-   SORTEOS
-========================================================== */
+   FECHA DEL SORTEO
+   DÍAS 15 Y 30 A LAS 9:30 PM
+   ========================================================== */
 
 function getDrawDate(){
 
-  const now =
-    new Date();
+  const now = new Date();
 
-  const y =
-    now.getFullYear();
-
-  const m =
-    now.getMonth();
-
+  const y = now.getFullYear();
+  const m = now.getMonth();
 
   for(const day of [15,30]){
 
@@ -1597,8 +1525,8 @@ function getDrawDate(){
         y,
         m,
         day,
-        DRAW_HOUR,
-        DRAW_MINUTE,
+        21,
+        30,
         0,
         0
       );
@@ -1608,38 +1536,15 @@ function getDrawDate(){
 
   }
 
-
   return new Date(
     y,
     m + 1,
     15,
-    DRAW_HOUR,
-    DRAW_MINUTE,
+    21,
+    30,
     0,
     0
   );
-
-}
-
-
-function getCurrentDrawId(){
-
-  const draw =
-    getDrawDate();
-
-  return [
-    draw.getFullYear(),
-    draw.getMonth() + 1,
-    draw.getDate()
-  ].join("-");
-}
-
-
-function getStorageKey(name){
-
-  return name +
-    "_" +
-    getCurrentDrawId();
 
 }
 
@@ -1663,12 +1568,13 @@ function formatCountdown(ms){
   if(ms <= 0)
     return "0 minutos";
 
-
   const seconds =
     Math.floor(ms / 1000);
 
   const days =
-    Math.floor(seconds / 86400);
+    Math.floor(
+      seconds / 86400
+    );
 
   const hours =
     Math.floor(
@@ -1683,183 +1589,35 @@ function formatCountdown(ms){
 
   if(days > 0){
 
-    return (
-      days +
-      (days === 1 ? " día " : " días ") +
-      hours +
-      (hours === 1 ? " hora" : " horas")
-    );
+    return `${days}${days===1?" día ":" días "}${hours}${hours===1?" hora":" horas"}`;
 
   }
 
 
   if(hours > 0){
 
-    return (
-      hours +
-      (hours === 1 ? " hora " : " horas ") +
-      mins +
-      (mins === 1 ? " minuto" : " minutos")
-    );
+    return `${hours}${hours===1?" hora ":" horas "}${mins}${mins===1?" minuto":" minutos"}`;
 
   }
 
 
-  return (
-    mins +
-    (mins === 1 ? " minuto" : " minutos")
-  );
+  return `${mins}${mins===1?" minuto":" minutos"}`;
 
 }
 
 
 /* ==========================================================
-   PARTICIPANTES
-========================================================== */
-
-function getParticipants(){
-
-  return JSON.parse(
-    localStorage.getItem(
-      getStorageKey(
-        "soysigas_participants"
-      )
-    ) || "[]"
-  );
-
-}
-
-
-function saveParticipants(list){
-
-  localStorage.setItem(
-    getStorageKey(
-      "soysigas_participants"
-    ),
-    JSON.stringify(list)
-  );
-
-}
-
-
-function getHistorical(){
-
-  return Number(
-    localStorage.getItem(
-      "soysigas_total_historical"
-    ) || "0"
-  );
-
-}
-
-
-function saveHistorical(value){
-
-  localStorage.setItem(
-    "soysigas_total_historical",
-    String(value)
-  );
-
-}
-
-
-function getMyRegistration(){
-
-  return JSON.parse(
-    localStorage.getItem(
-      getStorageKey(
-        "soysigas_my_registration"
-      )
-    ) || "null"
-  );
-
-}
-
-
-function saveMyRegistration(data){
-
-  localStorage.setItem(
-    getStorageKey(
-      "soysigas_my_registration"
-    ),
-    JSON.stringify(data)
-  );
-
-}
-
-
-/* ==========================================================
-   REDES SOCIALES
-========================================================== */
-
-const socialState = {
-
-  youtube:{
-    openedAt:null,
-    completed:false
-  },
-
-  facebook:{
-    openedAt:null,
-    completed:false
-  },
-
-  whatsapp:{
-    openedAt:null,
-    completed:false
-  }
-
-};
-
-
-function loadSocialCompletion(){
-
-  const saved =
-    localStorage.getItem(
-      SOCIAL_COMPLETED_KEY
-    );
-
-  if(!saved)
-    return;
-
-
-  const completedAt =
-    Number(saved);
-
-
-  if(
-    Date.now() -
-    completedAt >=
-    SOCIAL_RENEW_TIME
-  ){
-
-    localStorage.removeItem(
-      SOCIAL_COMPLETED_KEY
-    );
-
-    return;
-
-  }
-
-
-  Object.keys(socialState)
-    .forEach(network=>{
-
-      socialState[network].completed =
-        true;
-
-    });
-
-}
-
+   REDES
+   ========================================================== */
 
 function startSocial(network){
 
   if(
     !socialState[network] ||
     socialState[network].completed
-  )
+  ){
     return;
+  }
 
 
   const now =
@@ -1877,6 +1635,72 @@ function startSocial(network){
       openedAt:now
     })
   );
+
+}
+
+
+function checkSocialTime(){
+
+  const saved =
+    localStorage.getItem(
+      "soysigas_social_opened"
+    );
+
+
+  if(!saved)
+    return;
+
+
+  try{
+
+    const data =
+      JSON.parse(saved);
+
+
+    if(
+      data &&
+      socialState[data.network] &&
+      !socialState[data.network].completed
+    ){
+
+      socialState[data.network].openedAt =
+        Number(data.openedAt);
+
+
+      if(
+        Date.now() -
+        socialState[data.network].openedAt
+        >=
+        REQUIRED_SOCIAL_TIME
+      ){
+
+        socialState[data.network].completed =
+          true;
+
+        socialState[data.network].openedAt =
+          null;
+
+        markSocialCompleted(
+          data.network
+        );
+
+        localStorage.removeItem(
+          "soysigas_social_opened"
+        );
+
+        updateSocialProgress();
+
+      }
+
+    }
+
+  }catch(e){
+
+    localStorage.removeItem(
+      "soysigas_social_opened"
+    );
+
+  }
 
 }
 
@@ -1902,12 +1726,15 @@ function markSocialCompleted(network){
     "completed"
   );
 
+
   button.classList.add(
     "completed"
   );
 
+
   button.textContent =
     "✓ COMPLETADO";
+
 
   button.removeAttribute(
     "href"
@@ -1921,81 +1748,13 @@ function markSocialCompleted(network){
     "rel"
   );
 
+
   button.onclick =
     function(event){
 
       event.preventDefault();
 
     };
-
-}
-
-
-function checkSocialTime(){
-
-  const saved =
-    localStorage.getItem(
-      "soysigas_social_opened"
-    );
-
-
-  if(saved){
-
-    try{
-
-      const data =
-        JSON.parse(saved);
-
-
-      if(
-        data &&
-        socialState[data.network] &&
-        !socialState[data.network].completed
-      ){
-
-        socialState[data.network].openedAt =
-          Number(data.openedAt);
-
-
-        if(
-          Date.now() -
-          socialState[data.network].openedAt
-          >=
-          REQUIRED_SOCIAL_TIME
-        ){
-
-          socialState[data.network].completed =
-            true;
-
-          socialState[data.network].openedAt =
-            null;
-
-
-          markSocialCompleted(
-            data.network
-          );
-
-
-          localStorage.removeItem(
-            "soysigas_social_opened"
-          );
-
-        }
-
-      }
-
-    }catch(e){
-
-      localStorage.removeItem(
-        "soysigas_social_opened"
-      );
-
-    }
-
-  }
-
-
-  updateSocialProgress();
 
 }
 
@@ -2034,18 +1793,6 @@ function updateSocialProgress(){
     button.onclick =
       finishSocialStep;
 
-  }else{
-
-    button.classList.remove(
-      "active"
-    );
-
-    button.textContent =
-      "🔒 CONTINUAR";
-
-    button.onclick =
-      null;
-
   }
 
 }
@@ -2066,12 +1813,19 @@ function finishSocialStep(){
 
 
   localStorage.setItem(
-    SOCIAL_COMPLETED_KEY,
+    "soysigas_social_completed",
+    "1"
+  );
+
+
+  localStorage.setItem(
+    "soysigas_social_completed_at",
     String(Date.now())
   );
 
 
   hideAllScreens();
+
 
   document.getElementById(
     "mainScreen"
@@ -2086,16 +1840,168 @@ function finishSocialStep(){
 
 
 /* ==========================================================
+   CONTROL DE LAS 2 HORAS
+   ========================================================== */
+
+function checkSocialExpiration(){
+
+  const completed =
+    localStorage.getItem(
+      "soysigas_social_completed"
+    ) === "1";
+
+
+  if(!completed)
+    return false;
+
+
+  const completedAt =
+    Number(
+      localStorage.getItem(
+        "soysigas_social_completed_at"
+      ) || "0"
+    );
+
+
+  if(!completedAt)
+    return false;
+
+
+  if(
+    Date.now() - completedAt
+    >=
+    SOCIAL_ACCESS_TIME
+  ){
+
+    localStorage.removeItem(
+      "soysigas_social_completed"
+    );
+
+    localStorage.removeItem(
+      "soysigas_social_completed_at"
+    );
+
+    resetSocialState();
+
+    return false;
+
+  }
+
+
+  return true;
+
+}
+
+
+function resetSocialState(){
+
+  socialState.youtube = {
+    openedAt:null,
+    completed:false
+  };
+
+  socialState.facebook = {
+    openedAt:null,
+    completed:false
+  };
+
+  socialState.whatsapp = {
+    openedAt:null,
+    completed:false
+  };
+
+
+  localStorage.removeItem(
+    "soysigas_social_opened"
+  );
+
+
+  [
+    "youtube",
+    "facebook",
+    "whatsapp"
+  ].forEach(network=>{
+
+    const item =
+      document.getElementById(
+        "social-" + network
+      );
+
+    const button =
+      document.getElementById(
+        "button-" + network
+      );
+
+
+    if(item)
+      item.classList.remove(
+        "completed"
+      );
+
+
+    if(button){
+
+      button.classList.remove(
+        "completed"
+      );
+
+      button.textContent =
+        "SEGUIR";
+
+      button.href =
+        SOCIALS[network];
+
+      button.target =
+        "_blank";
+
+      button.rel =
+        "noopener noreferrer";
+
+      button.onclick =
+        function(){
+          startSocial(network);
+        };
+
+    }
+
+  });
+
+
+  document.getElementById(
+    "socialCount"
+  ).textContent =
+    "0 de 3";
+
+
+  const continueButton =
+    document.getElementById(
+      "continueButton"
+    );
+
+
+  continueButton.classList.remove(
+    "active"
+  );
+
+  continueButton.textContent =
+    "🔒 CONTINUAR";
+
+  continueButton.onclick =
+    null;
+
+}
+
+
+/* ==========================================================
    REGISTRO
-========================================================== */
+   ========================================================== */
 
 function openRegistration(){
 
-  const participants =
-    getParticipants();
-
-
-  if(participants.length >= MAX_PARTICIPANTS){
+  if(
+    participants.length >=
+    MAX_PARTICIPANTS
+  ){
 
     alert(
       "🔴 Los 50 cupos ya están ocupados."
@@ -2106,14 +2012,21 @@ function openRegistration(){
   }
 
 
-  const registration =
-    getMyRegistration();
+  /*
+    Un navegador solo puede participar
+    una vez en el sorteo actual.
+  */
+
+  const alreadyRegistered =
+    localStorage.getItem(
+      "soysigas_registered_current_draw"
+    ) === "1";
 
 
-  if(registration){
+  if(alreadyRegistered){
 
     alert(
-      "⚠️ Este navegador ya está registrado en este sorteo."
+      "⚠️ Este navegador ya tiene una participación registrada en este sorteo."
     );
 
     return;
@@ -2122,6 +2035,7 @@ function openRegistration(){
 
 
   hideAllScreens();
+
 
   document.getElementById(
     "registerScreen"
@@ -2152,8 +2066,11 @@ function isValidFullName(name){
   if(
     !/^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s'-]+$/
       .test(clean)
-  )
+  ){
+
     return false;
+
+  }
 
 
   const words =
@@ -2165,8 +2082,7 @@ function isValidFullName(name){
   return (
     words.length >= 2 &&
     words.every(
-      word =>
-        word.length >= 2
+      word => word.length >= 2
     )
   );
 
@@ -2227,27 +2143,13 @@ function registerParticipant(){
   }
 
 
-  const participants =
-    getParticipants();
-
-
-  if(participants.length >= MAX_PARTICIPANTS){
-
-    showError(
-      "Los 50 cupos ya están ocupados."
-    );
-
-    return;
-
-  }
-
-
   if(
-    getMyRegistration()
+    participants.length >=
+    MAX_PARTICIPANTS
   ){
 
     showError(
-      "Este navegador ya está registrado en este sorteo."
+      "Los 50 cupos ya están ocupados."
     );
 
     return;
@@ -2270,16 +2172,34 @@ function registerParticipant(){
   }
 
 
+  /*
+    Protección adicional:
+    este navegador ya no podrá
+    registrar otra participación.
+  */
+
+  if(
+    localStorage.getItem(
+      "soysigas_registered_current_draw"
+    ) === "1"
+  ){
+
+    showError(
+      "Este navegador ya tiene una participación registrada."
+    );
+
+    return;
+
+  }
+
+
   const participant = {
 
     name:name,
 
     id:id,
 
-    browserId:getBrowserId(),
-
-    registeredAt:
-      Date.now()
+    browserRegistered:true
 
   };
 
@@ -2289,27 +2209,48 @@ function registerParticipant(){
   );
 
 
-  saveParticipants(
-    participants
+  localStorage.setItem(
+    "soysigas_participants_current",
+    JSON.stringify(
+      participants
+    )
   );
 
 
-  saveMyRegistration(
-    participant
+  localStorage.setItem(
+    "soysigas_registered_current_draw",
+    "1"
   );
 
 
-  const historical =
-    getHistorical() + 1;
-
-
-  saveHistorical(
-    historical
+  localStorage.setItem(
+    "soysigas_current_participant",
+    JSON.stringify(
+      participant
+    )
   );
 
 
-  nameInput.value = "";
-  idInput.value = "";
+  currentParticipant =
+    participant;
+
+
+  totalHistoricalParticipants++;
+
+
+  localStorage.setItem(
+    "soysigas_total_historical",
+    String(
+      totalHistoricalParticipants
+    )
+  );
+
+
+  nameInput.value =
+    "";
+
+  idInput.value =
+    "";
 
 
   alert(
@@ -2318,6 +2259,7 @@ function registerParticipant(){
 
 
   hideAllScreens();
+
 
   document.getElementById(
     "mainScreen"
@@ -2331,6 +2273,10 @@ function registerParticipant(){
 }
 
 
+/* ==========================================================
+   ERRORES
+   ========================================================== */
+
 function showError(message){
 
   const error =
@@ -2342,6 +2288,7 @@ function showError(message){
   error.textContent =
     message;
 
+
   error.style.display =
     "block";
 
@@ -2349,346 +2296,8 @@ function showError(message){
 
 
 /* ==========================================================
-   ADMINISTRACIÓN
-========================================================== */
-
-function openAdministration(){
-
-  if(!isAdminBrowser()){
-
-    alert(
-      "🔒 Acceso denegado. Este navegador no está autorizado para Administración."
-    );
-
-    return;
-
-  }
-
-
-  hideAllScreens();
-
-  document.getElementById(
-    "adminPage"
-  ).classList.remove(
-    "hidden"
-  );
-
-
-  updateAdministration();
-
-}
-
-
-function getSelectedWinner(){
-
-  return JSON.parse(
-    localStorage.getItem(
-      getStorageKey(
-        "soysigas_selected_winner"
-      )
-    ) || "null"
-  );
-
-}
-
-
-function saveSelectedWinner(participant){
-
-  localStorage.setItem(
-    getStorageKey(
-      "soysigas_selected_winner"
-    ),
-    JSON.stringify(
-      participant
-    )
-  );
-
-}
-
-
-function chooseWinner(index){
-
-  if(!isAdminBrowser()){
-
-    alert(
-      "🔒 Acceso administrativo denegado."
-    );
-
-    return;
-
-  }
-
-
-  const participants =
-    getParticipants();
-
-
-  const participant =
-    participants[index];
-
-
-  if(!participant)
-    return;
-
-
-  saveSelectedWinner(
-    participant
-  );
-
-
-  alert(
-    "🎯 Participante seleccionado como ganador del sorteo actual."
-  );
-
-
-  updateAdministration();
-
-}
-
-
-function updateAdministration(){
-
-  const container =
-    document.getElementById(
-      "adminParticipants"
-    );
-
-
-  const selected =
-    getSelectedWinner();
-
-
-  const selectedText =
-    document.getElementById(
-      "adminSelectedWinner"
-    );
-
-
-  if(selected){
-
-    selectedText.textContent =
-      selected.name;
-
-  }else{
-
-    selectedText.textContent =
-      "Ninguno";
-
-  }
-
-
-  const participants =
-    getParticipants();
-
-
-  container.innerHTML =
-    "";
-
-
-  if(participants.length === 0){
-
-    container.innerHTML =
-      '<div class="participant">Aún no hay participantes.</div>';
-
-    return;
-
-  }
-
-
-  participants.forEach(
-    (participant,index)=>{
-
-      const box =
-        document.createElement(
-          "div"
-        );
-
-
-      box.className =
-        "admin-participant";
-
-
-      if(
-        selected &&
-        selected.id === participant.id
-      ){
-
-        box.classList.add(
-          "selected"
-        );
-
-      }
-
-
-      const name =
-        document.createElement(
-          "div"
-        );
-
-
-      name.className =
-        "admin-name";
-
-
-      name.textContent =
-        `${index+1}. ${participant.name}`;
-
-
-      const id =
-        document.createElement(
-          "div"
-        );
-
-
-      id.className =
-        "admin-id";
-
-
-      id.textContent =
-        `ID: ${participant.id}`;
-
-
-      const actions =
-        document.createElement(
-          "div"
-        );
-
-
-      actions.className =
-        "admin-actions";
-
-
-      const button =
-        document.createElement(
-          "button"
-        );
-
-
-      button.className =
-        "admin-select";
-
-
-      if(
-        selected &&
-        selected.id === participant.id
-      ){
-
-        button.classList.add(
-          "admin-selected"
-        );
-
-        button.textContent =
-          "✓ GANADOR SELECCIONADO";
-
-      }else{
-
-        button.textContent =
-          "🎯 ELEGIR GANADOR";
-
-      }
-
-
-      button.onclick =
-        ()=>chooseWinner(index);
-
-
-      actions.appendChild(
-        button
-      );
-
-
-      box.appendChild(
-        name
-      );
-
-      box.appendChild(
-        id
-      );
-
-      box.appendChild(
-        actions
-      );
-
-
-      container.appendChild(
-        box
-      );
-
-    }
-  );
-
-}
-
-
-/* ==========================================================
-   PERFIL
-========================================================== */
-
-function updateProfile(){
-
-  const container =
-    document.getElementById(
-      "profileContent"
-    );
-
-
-  const registration =
-    getMyRegistration();
-
-
-  if(!registration){
-
-    container.innerHTML = `
-      <div class="notice">
-        Todavía no tienes una participación registrada
-        en este sorteo.
-      </div>
-    `;
-
-    return;
-
-  }
-
-
-  container.innerHTML = `
-
-    <div class="profile-box">
-
-      <div class="profile-row">
-
-        <div class="profile-label">
-          NOMBRE Y APELLIDOS
-        </div>
-
-        <div class="profile-value">
-          ${escapeHTML(registration.name)}
-        </div>
-
-      </div>
-
-
-      <div class="profile-row">
-
-        <div class="profile-label">
-          ID DE FREE FIRE
-        </div>
-
-        <div class="profile-value">
-          ${escapeHTML(registration.id)}
-        </div>
-
-      </div>
-
-    </div>
-
-  `;
-
-}
-
-
-/* ==========================================================
    PRINCIPAL
-========================================================== */
+   ========================================================== */
 
 function updateMain(){
 
@@ -2741,14 +2350,16 @@ function updateMain(){
 
   updateParticipants();
 
+  updateProfile();
+
 }
 
 
+/* ==========================================================
+   PARTICIPANTES
+   ========================================================== */
+
 function updateParticipants(){
-
-  const participants =
-    getParticipants();
-
 
   const count =
     participants.length;
@@ -2776,7 +2387,7 @@ function updateParticipants(){
   document.getElementById(
     "totalParticipants"
   ).textContent =
-    getHistorical();
+    totalHistoricalParticipants;
 
 
   document.getElementById(
@@ -2788,7 +2399,6 @@ function updateParticipants(){
   document.getElementById(
     "slotsMessage"
   ).textContent =
-
     available === 0
       ? "🔴 ¡CUPOS AGOTADOS!"
       : "¡Regístrate antes de que se acaben!";
@@ -2806,8 +2416,10 @@ function updateParticipants(){
     );
 
 
-  const myRegistration =
-    getMyRegistration();
+  const browserRegistered =
+    localStorage.getItem(
+      "soysigas_registered_current_draw"
+    ) === "1";
 
 
   if(available === 0){
@@ -2827,27 +2439,12 @@ function updateParticipants(){
     registerButton.style.opacity =
       ".5";
 
-  }else if(myRegistration){
-
-    status.textContent =
-      "✅ YA ESTÁS REGISTRADO";
-
-    status.style.color =
-      "#20e46f";
-
-    status.style.background =
-      "#173818";
-
-    registerButton.disabled =
-      true;
-
-    registerButton.style.opacity =
-      ".5";
-
   }else{
 
     status.textContent =
-      "🟢 INSCRIPCIONES ABIERTAS";
+      browserRegistered
+        ? "🟢 PARTICIPACIÓN REGISTRADA"
+        : "🟢 INSCRIPCIONES ABIERTAS";
 
     status.style.color =
       "#20e46f";
@@ -2856,10 +2453,12 @@ function updateParticipants(){
       "#173818";
 
     registerButton.disabled =
-      false;
+      browserRegistered;
 
     registerButton.style.opacity =
-      "1";
+      browserRegistered
+        ? ".5"
+        : "1";
 
   }
 
@@ -2889,14 +2488,11 @@ function updateParticipants(){
             "div"
           );
 
-
         item.className =
           "participant";
 
-
         item.textContent =
           `${index+1}. ${p.name}`;
-
 
         list.appendChild(
           item
@@ -2926,17 +2522,55 @@ function updateParticipants(){
   document.getElementById(
     "statsTotal"
   ).textContent =
-    getHistorical();
+    totalHistoricalParticipants;
+
+}
 
 
-  updateWinners();
+/* ==========================================================
+   PERFIL
+   ========================================================== */
+
+function updateProfile(){
+
+  const name =
+    document.getElementById(
+      "profileName"
+    );
+
+  const id =
+    document.getElementById(
+      "profileId"
+    );
+
+
+  if(
+    currentParticipant
+  ){
+
+    name.textContent =
+      currentParticipant.name;
+
+    id.textContent =
+      "ID: " +
+      currentParticipant.id;
+
+  }else{
+
+    name.textContent =
+      "Sin registro";
+
+    id.textContent =
+      "ID: —";
+
+  }
 
 }
 
 
 /* ==========================================================
    RULETA
-========================================================== */
+   ========================================================== */
 
 function updateRoulette(elementId){
 
@@ -2952,10 +2586,6 @@ function updateRoulette(elementId){
 
   roulette.innerHTML =
     '<div class="roulette-center"></div>';
-
-
-  const participants =
-    getParticipants();
 
 
   const count =
@@ -3022,10 +2652,13 @@ function updateRoulette(elementId){
 
 
       const fontSize =
-
-        count >= 40 ? 7 :
-        count >= 30 ? 8 :
-        count >= 20 ? 9 : 11;
+        count >= 40
+          ? 7
+          : count >= 30
+          ? 8
+          : count >= 20
+          ? 9
+          : 11;
 
 
       label.style.fontSize =
@@ -3052,273 +2685,185 @@ function updateRoulette(elementId){
 
 
 /* ==========================================================
-   ANIMACIÓN DE RULETA
-========================================================== */
+   ADMINISTRACIÓN
+   ========================================================== */
 
-let rouletteRunning =
-  false;
+/*
+  Se utiliza Web Crypto API para calcular
+  SHA-256 de la contraseña introducida.
+*/
 
+async function sha256(text){
 
-function startDrawAnimation(){
-
-  if(rouletteRunning)
-    return;
-
-
-  const participants =
-    getParticipants();
+  const encoder =
+    new TextEncoder();
 
 
-  if(participants.length === 0){
-
-    alert(
-      "No hay participantes para realizar el sorteo."
-    );
-
-    return;
-
-  }
+  const data =
+    encoder.encode(text);
 
 
-  const selected =
-    getSelectedWinner();
-
-
-  if(!selected){
-
-    alert(
-      "No hay un participante seleccionado en Administración."
-    );
-
-    return;
-
-  }
-
-
-  const index =
-    participants.findIndex(
-      p => p.id === selected.id
+  const hashBuffer =
+    await crypto.subtle.digest(
+      "SHA-256",
+      data
     );
 
 
-  if(index < 0){
-
-    alert(
-      "El participante seleccionado ya no existe en el sorteo."
-    );
-
-    return;
-
-  }
-
-
-  rouletteRunning =
-    true;
-
-
-  const roulettes = [
-    document.getElementById("roulette"),
-    document.getElementById("rouletteLarge")
-  ];
-
-
-  const slice =
-    360 / participants.length;
-
-
-  /*
-    El indicador está arriba.
-    Ajustamos la rotación para que la partición
-    seleccionada termine debajo del indicador.
-  */
-
-  const targetAngle =
-    360 - (
-      index * slice +
-      slice / 2
+  const hashArray =
+    Array.from(
+      new Uint8Array(
+        hashBuffer
+      )
     );
 
 
-  const extraTurns =
-    360 * 12;
-
-
-  const finalRotation =
-    extraTurns +
-    targetAngle;
-
-
-  roulettes.forEach(
-    roulette=>{
-
-      if(!roulette)
-        return;
-
-
-      roulette.style.transition =
-        "none";
-
-      roulette.style.transform =
-        "rotate(0deg)";
-
-      void roulette.offsetWidth;
-
-      roulette.style.transition =
-        "transform 60s cubic-bezier(.12,.72,.08,1)";
-
-      roulette.style.transform =
-        `rotate(${finalRotation}deg)`;
-
-    }
-  );
-
-
-  setTimeout(()=>{
-
-    rouletteRunning =
-      false;
-
-
-    showWinner(
-      selected
-    );
-
-  },60000);
+  return hashArray
+    .map(
+      b =>
+        b.toString(16)
+         .padStart(2,"0")
+    )
+    .join("");
 
 }
 
 
-/* ==========================================================
-   GANADOR
-========================================================== */
+function openAdminLogin(){
 
-function showWinner(participant){
-
-  document.getElementById(
-    "winnerName"
-  ).textContent =
-    participant.name;
+  hideAllScreens();
 
 
   document.getElementById(
-    "winnerId"
-  ).textContent =
-    "ID: " + participant.id;
-
-
-  document.getElementById(
-    "winnerOverlay"
+    "adminLoginPage"
   ).classList.remove(
     "hidden"
   );
 
 
-  saveWinnerHistory(
-    participant
-  );
+  document.getElementById(
+    "adminPassword"
+  ).value =
+    "";
+
+
+  document.getElementById(
+    "adminError"
+  ).style.display =
+    "none";
 
 
   setTimeout(()=>{
 
     document.getElementById(
-      "winnerId"
-    ).classList.add(
-      "hidden"
-    );
+      "adminPassword"
+    ).focus();
 
-
-    setTimeout(()=>{
-
-      document.getElementById(
-        "winnerOverlay"
-      ).classList.add(
-        "hidden"
-      );
-
-
-      document.getElementById(
-        "winnerId"
-      ).classList.remove(
-        "hidden"
-      );
-
-
-    },1000);
-
-  },180000);
+  },100);
 
 }
 
 
-function saveWinnerHistory(participant){
+async function verifyAdminPassword(){
 
-  const key =
-    "soysigas_winners_history";
-
-
-  const history =
-    JSON.parse(
-      localStorage.getItem(
-        key
-      ) || "[]"
+  const input =
+    document.getElementById(
+      "adminPassword"
     );
 
 
-  const exists =
-    history.some(
-      w =>
-        w.drawId ===
-        getCurrentDrawId()
+  const error =
+    document.getElementById(
+      "adminError"
     );
 
 
-  if(!exists){
-
-    history.push({
-
-      drawId:
-        getCurrentDrawId(),
-
-      date:
-        new Date().toISOString(),
-
-      name:
-        participant.name
-
-    });
+  const entered =
+    input.value;
 
 
-    localStorage.setItem(
-      key,
-      JSON.stringify(history)
-    );
+  if(!entered){
+
+    error.textContent =
+      "Introduce la contraseña.";
+
+    error.style.display =
+      "block";
+
+    return;
+
+  }
+
+
+  try{
+
+    const hash =
+      await sha256(
+        entered
+      );
+
+
+    if(
+      hash ===
+      ADMIN_PASSWORD_HASH
+    ){
+
+      error.style.display =
+        "none";
+
+
+      showAdmin();
+
+    }else{
+
+      error.textContent =
+        "Contraseña incorrecta.";
+
+      error.style.display =
+        "block";
+
+      input.value =
+        "";
+
+      input.focus();
+
+    }
+
+  }catch(e){
+
+    error.textContent =
+      "No fue posible verificar la contraseña.";
+
+    error.style.display =
+      "block";
 
   }
 
 }
 
 
-/* ==========================================================
-   GANADORES
-========================================================== */
+function showAdmin(){
 
-function updateWinners(){
+  hideAllScreens();
+
+
+  document.getElementById(
+    "adminPage"
+  ).classList.remove(
+    "hidden"
+  );
+
+
+  updateAdminParticipants();
+
+}
+
+
+function updateAdminParticipants(){
 
   const container =
     document.getElementById(
-      "winnersList"
-    );
-
-
-  if(!container)
-    return;
-
-
-  const history =
-    JSON.parse(
-      localStorage.getItem(
-        "soysigas_winners_history"
-      ) || "[]"
+      "adminParticipantsList"
     );
 
 
@@ -3326,60 +2871,156 @@ function updateWinners(){
     "";
 
 
-  if(history.length === 0){
+  if(
+    participants.length === 0
+  ){
 
-    container.innerHTML = `
-      <div class="winner">
-        Los ganadores aparecerán aquí
-        después de cada sorteo.
-      </div>
-    `;
+    container.innerHTML =
+      '<div class="participant">No hay participantes registrados.</div>';
 
     return;
 
   }
 
 
-  history
-    .slice()
-    .reverse()
-    .forEach(
-      winner=>{
+  participants.forEach(
+    (participant,index)=>{
 
-        const box =
-          document.createElement(
-            "div"
-          );
-
-
-        box.className =
-          "winner-public-name";
-
-
-        box.innerHTML = `
-          🏆 GANADOR
-          <strong>
-            ${escapeHTML(winner.name)}
-          </strong>
-          <div class="notice">
-            Sorteo: ${escapeHTML(winner.drawId)}
-          </div>
-        `;
-
-
-        container.appendChild(
-          box
+      const box =
+        document.createElement(
+          "div"
         );
 
+
+      box.className =
+        "admin-participant";
+
+
+      const strong =
+        document.createElement(
+          "strong"
+        );
+
+
+      strong.textContent =
+        `${index+1}. ${participant.name}`;
+
+
+      const id =
+        document.createElement(
+          "span"
+        );
+
+
+      id.textContent =
+        "ID: " +
+        participant.id;
+
+
+      const button =
+        document.createElement(
+          "button"
+        );
+
+
+      button.className =
+        "choose-winner";
+
+
+      if(
+        selectedWinnerId ===
+        participant.id
+      ){
+
+        button.classList.add(
+          "selected"
+        );
+
+        button.textContent =
+          "✓ GANADOR SELECCIONADO";
+
+      }else{
+
+        button.textContent =
+          "🏆 ELEGIR GANADOR";
+
       }
+
+
+      button.onclick =
+        function(){
+
+          chooseWinner(
+            participant.id
+          );
+
+        };
+
+
+      box.appendChild(
+        strong
+      );
+
+      box.appendChild(
+        id
+      );
+
+      box.appendChild(
+        button
+      );
+
+
+      container.appendChild(
+        box
+      );
+
+    }
+  );
+
+}
+
+
+function chooseWinner(id){
+
+  const participant =
+    participants.find(
+      p => p.id === id
     );
+
+
+  if(!participant)
+    return;
+
+
+  selectedWinnerId =
+    participant.id;
+
+
+  /*
+    Este dato solamente se guarda
+    para el funcionamiento privado
+    de la ruleta.
+  */
+
+  localStorage.setItem(
+    "soysigas_selected_winner_id",
+    selectedWinnerId
+  );
+
+
+  updateAdminParticipants();
+
+
+  alert(
+    "🏆 Ganador seleccionado para este sorteo."
+  );
 
 }
 
 
 /* ==========================================================
    NAVEGACIÓN
-========================================================== */
+   ========================================================== */
 
 function hideAllScreens(){
 
@@ -3392,15 +3033,14 @@ function hideAllScreens(){
     "roulettePage",
     "statsPage",
     "winnersPage",
+    "adminLoginPage",
     "adminPage"
 
   ].forEach(id=>{
 
-    const element =
-      document.getElementById(id);
-
-    if(element)
-      element.classList.add(
+    document
+      .getElementById(id)
+      .classList.add(
         "hidden"
       );
 
@@ -3425,11 +3065,13 @@ function showMain(){
 
   hideAllScreens();
 
+
   document.getElementById(
     "mainScreen"
   ).classList.remove(
     "hidden"
   );
+
 
   updateMain();
 
@@ -3440,37 +3082,44 @@ function showSubpage(pageId){
 
   hideAllScreens();
 
-  const page =
-    document.getElementById(
-      pageId
-    );
 
-
-  if(!page)
-    return;
-
-
-  page.classList.remove(
+  document.getElementById(
+    pageId
+  ).classList.remove(
     "hidden"
   );
 
 
-  if(pageId === "roulettePage")
+  if(
+    pageId ===
+    "roulettePage"
+  ){
+
     updateRoulette(
       "rouletteLarge"
     );
 
+  }
 
-  if(pageId === "profilePage")
+
+  if(
+    pageId ===
+    "profilePage"
+  ){
+
     updateProfile();
 
+  }
 
-  if(pageId === "winnersPage")
+
+  if(
+    pageId ===
+    "winnersPage"
+  ){
+
     updateWinners();
 
-
-  if(pageId === "statsPage")
-    updateMain();
+  }
 
 }
 
@@ -3487,112 +3136,87 @@ function toggleMenu(){
 
 
 /* ==========================================================
-   ESCAPE HTML
-========================================================== */
+   GANADORES
+   ========================================================== */
 
-function escapeHTML(value){
+function updateWinners(){
 
-  return String(value)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
+  const container =
+    document.getElementById(
+      "winnerContent"
+    );
+
+
+  container.innerHTML =
+    "";
+
+
+  if(
+    winners.length === 0
+  ){
+
+    container.innerHTML =
+      '<div class="winner">Los ganadores aparecerán aquí después del sorteo.</div>';
+
+    return;
+
+  }
+
+
+  winners.forEach(
+    winner=>{
+
+      const box =
+        document.createElement(
+          "div"
+        );
+
+
+      box.className =
+        "winner-name-permanent";
+
+
+      box.textContent =
+        "🏆 " +
+        winner.name;
+
+
+      container.appendChild(
+        box
+      );
+
+    }
+  );
 
 }
 
 
 /* ==========================================================
    INICIO
-========================================================== */
+   ========================================================== */
 
 function startSite(){
 
   /*
-    Carga el estado de las redes.
+    ESTA ES LA REGLA PRINCIPAL:
+
+    Al abrir la web:
+    primero SIEMPRE se comprueba
+    el estado de las redes.
+
+    Si no están completadas,
+    SOLO aparece la pantalla de redes.
+
+    Si ya están completadas dentro
+    de las 2 horas, aparece la principal.
   */
 
-  loadSocialCompletion();
-
-
-  /*
-    Si las redes todavía están vigentes,
-    se recupera su estado.
-  */
 
   if(
-    localStorage.getItem(
-      SOCIAL_COMPLETED_KEY
-    )
+    checkSocialExpiration()
   ){
 
-    Object.keys(
-      socialState
-    ).forEach(
-      network=>{
-
-        socialState[network].completed =
-          true;
-
-        markSocialCompleted(
-          network
-        );
-
-      }
-    );
-
-  }
-
-
-  const socialCompleted =
-    localStorage.getItem(
-      SOCIAL_COMPLETED_KEY
-    );
-
-
-  hideAllScreens();
-
-
-  if(socialCompleted){
-
-    if(
-      Date.now() -
-      Number(socialCompleted)
-      >=
-      SOCIAL_RENEW_TIME
-    ){
-
-      localStorage.removeItem(
-        SOCIAL_COMPLETED_KEY
-      );
-
-      Object.keys(
-        socialState
-      ).forEach(
-        network=>{
-
-          socialState[network].completed =
-            false;
-
-          socialState[network].openedAt =
-            null;
-
-        }
-      );
-
-
-      document.getElementById(
-        "socialScreen"
-      ).classList.remove(
-        "hidden"
-      );
-
-
-      updateSocialProgress();
-
-      return;
-
-    }
+    hideAllScreens();
 
 
     document.getElementById(
@@ -3604,7 +3228,11 @@ function startSite(){
 
     updateMain();
 
+
   }else{
+
+    hideAllScreens();
+
 
     document.getElementById(
       "socialScreen"
@@ -3612,6 +3240,8 @@ function startSite(){
       "hidden"
     );
 
+
+    checkSocialTime();
 
     updateSocialProgress();
 
@@ -3622,80 +3252,64 @@ function startSite(){
 
 /* ==========================================================
    ACTUALIZACIÓN AUTOMÁTICA
-========================================================== */
+   ========================================================== */
 
 setInterval(()=>{
 
   checkSocialTime();
 
 
+  const socialVisible =
+    !document
+      .getElementById(
+        "socialScreen"
+      )
+      .classList
+      .contains(
+        "hidden"
+      );
+
+
+  if(socialVisible){
+
+    updateSocialProgress();
+
+  }
+
+
   const mainVisible =
-    !document.getElementById(
-      "mainScreen"
-    ).classList.contains(
-      "hidden"
-    );
+    !document
+      .getElementById(
+        "mainScreen"
+      )
+      .classList
+      .contains(
+        "hidden"
+      );
 
 
-  if(mainVisible)
+  if(mainVisible){
+
     updateMain();
+
+  }
 
 
   /*
-    El sorteo se inicia automáticamente
-    al llegar exactamente a las 9:30 PM.
+    Si pasan las 2 horas mientras
+    el usuario está dentro de la web,
+    el próximo acceso deberá volver
+    a solicitar las redes.
   */
 
-  checkAutomaticDraw();
+  checkSocialExpiration();
 
 },1000);
 
 
 /* ==========================================================
-   CONTROL AUTOMÁTICO DEL SORTEO
-========================================================== */
-
-function checkAutomaticDraw(){
-
-  const now =
-    new Date();
-
-
-  const draw =
-    getDrawDate();
-
-
-  /*
-    Identificador para impedir que el mismo
-    navegador lance repetidamente la animación.
-  */
-
-  const drawKey =
-    "soysigas_draw_started_" +
-    getCurrentDrawId();
-
-
-  if(
-    now >= draw &&
-    localStorage.getItem(drawKey) !== "1"
-  ){
-
-    localStorage.setItem(
-      drawKey,
-      "1"
-    );
-
-
-    startDrawAnimation();
-
-  }
-
-}
-
-
-/* ==========================================================
-   VISIBILITY / PAGESHOW
-========================================================== */
+   REGRESO DESDE REDES
+   ========================================================== */
 
 document.addEventListener(
   "visibilitychange",
@@ -3706,8 +3320,6 @@ document.addEventListener(
       checkSocialTime();
 
       updateSocialProgress();
-
-      updateMain();
 
     }
 
@@ -3728,10 +3340,37 @@ window.addEventListener(
 
 
 /* ==========================================================
-   INICIAR
-========================================================== */
+   ENTER EN CONTRASEÑA ADMIN
+   ========================================================== */
 
-getBrowserId();
+document.addEventListener(
+  "keydown",
+  event=>{
+
+    const adminLogin =
+      document.getElementById(
+        "adminLoginPage"
+      );
+
+
+    if(
+      !adminLogin.classList.contains(
+        "hidden"
+      ) &&
+      event.key === "Enter"
+    ){
+
+      verifyAdminPassword();
+
+    }
+
+  }
+);
+
+
+/* ==========================================================
+   INICIAR
+   ========================================================== */
 
 startSite();
 
